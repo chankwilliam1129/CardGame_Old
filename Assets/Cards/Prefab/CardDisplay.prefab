@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 6598979584696924775}
   - component: {fileID: 870691814166881236}
   - component: {fileID: 1731477091131696794}
+  - component: {fileID: 279079054729955238}
   m_Layer: 5
   m_Name: CardDisplay
   m_TagString: Untagged
@@ -497,6 +498,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &279079054729955238
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973268544365596493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21a278f3bfaa6fa4f99aa659e39faa1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2973268544599528915
 GameObject:
   m_ObjectHideFlags: 0

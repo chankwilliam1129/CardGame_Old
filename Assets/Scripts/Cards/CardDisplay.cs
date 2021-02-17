@@ -32,14 +32,14 @@ public class CardDisplay : MonoBehaviour
 
     public void OnPointEnter()
     {
-        transform.localScale = new Vector3(1.3f, 1.3f);
         GetComponent<Canvas>().sortingOrder += 10;
+        GetComponent<Animator>().SetBool("isSelect", true);
     }
 
     public void OnPointExit()
     {
-        transform.localScale = new Vector3(1.0f, 1.0f);
         GetComponent<Canvas>().sortingOrder -= 10;
+        GetComponent<Animator>().SetBool("isSelect", false);
     }
 
     public void OnPointClick()
