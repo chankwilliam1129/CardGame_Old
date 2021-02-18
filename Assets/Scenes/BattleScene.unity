@@ -240,6 +240,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1681980459}
     m_Modifications:
+    - target: {fileID: 469500944634691343, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495247838682375926, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
+      propertyPath: cardSlot
+      value: 
+      objectReference: {fileID: 1619958959}
+    - target: {fileID: 6495247838682375926, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
+      propertyPath: powerSlotImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a8b99e1b5576444b8effe4855ea5235, type: 3}
+    - target: {fileID: 6495247838682375926, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
+      propertyPath: emptyPowerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9facc7ac780885249aac187d4a5c7e5c, type: 3}
+    - target: {fileID: 6495247838682375926, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
+      propertyPath: brokenPowerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 06210df99b62bca47b94092d0296ce2c, type: 3}
+    - target: {fileID: 6495247838682375926, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
+      propertyPath: normalPowerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f8d5a4a44c14da4187278351d56f895, type: 3}
     - target: {fileID: 6962236541741287004, guid: dff765007cd690d4f89ed897ab76aeba, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2185,7 +2209,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1619958959}
           m_TargetAssemblyTypeName: CardSlot, Assembly-CSharp
-          m_MethodName: OnPointerUp
+          m_MethodName: OnDrop
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,13 @@ public class CardSlot : MonoBehaviour
 
     [Space]
     public CardDisplay card;
+    public List<CardDisplay> power;
 
     [Space]
     public TextMeshProUGUI nameText;
     public Image cardImage;
+
+    public event EventHandler OnSlotChange;
 
     void Start()
     {
@@ -26,21 +30,40 @@ public class CardSlot : MonoBehaviour
 
     public void InputCard(CardDisplay card)
     {
-        nameText.text = card.card.name;
-        cardImage.color = Color.white;
-        cardImage.sprite = card.card.image;
+        if (this.card == null)
+        {
+            this.card = card;
+            nameText.text = card.card.name;
+            cardImage.color = Color.white;
+            cardImage.sprite = card.card.image;
+        }
+        else
+        {
+            int curPower = card.card.brokenPower + card.card.emptyPower + card.card.normalPower;
+            foreach (CardDisplay c in power)
+            {
+                curPower += c.card.emptyPower;
+                curPower += c.card.normalPower;
+                curPower += c.card.brokenPower;
+            }
+
+            if (curPower <= this.card.card.powerSpace) power.Add(card);
+            else Debug.Log("PowerFull");
+        }
+        OnSlotChange?.Invoke(this, EventArgs.Empty);
     }
 
     public void DeleteCard()
     {
+        card = null;
         nameText.text = "";
         cardImage.sprite = null;
         cardImage.color = Color.clear;
+        power.Clear();
     }
 
-    public void OnPointerUp()
+    public void OnDrop()
     {
-        Debug.Log("Up");
         if(handCard.nowDraggingCard != null)
         {
             InputCard(handCard.nowDraggingCard);
