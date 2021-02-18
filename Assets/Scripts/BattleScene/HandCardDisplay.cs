@@ -7,6 +7,8 @@ public class HandCardDisplay : MonoBehaviour
     public BattleDeckManager battleDeck;
     public RectTransform battleDeckUI;
     public CardDisplay cardDisplay;
+    public GameObject DragArrow;
+
 
     public List<CardDisplay> cardDisplayList;
 
@@ -56,6 +58,10 @@ public class HandCardDisplay : MonoBehaviour
     public void SetNowDraggingCard(CardDisplay card)
     {
         nowDraggingCard = card;
+        if (card != null)
+        {
+            DragArrow.SetActive(true);
+            DragArrow.transform.position = card.transform.position;
+        }
     }
-
 }

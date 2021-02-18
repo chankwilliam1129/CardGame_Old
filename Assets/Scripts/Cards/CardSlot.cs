@@ -60,6 +60,8 @@ public class CardSlot : MonoBehaviour
         cardImage.sprite = null;
         cardImage.color = Color.clear;
         power.Clear();
+
+        OnSlotChange?.Invoke(this, EventArgs.Empty);
     }
 
     public void OnDrop()
@@ -68,5 +70,18 @@ public class CardSlot : MonoBehaviour
         {
             InputCard(handCard.nowDraggingCard);
         }
+    }
+
+    public void OnClick()
+    {
+        if (card != null)
+        {
+            handCard.Discard(card);
+            foreach (CardDisplay c in power)
+            {
+                handCard.Discard(c);
+            }
+        }
+        DeleteCard();
     }
 }

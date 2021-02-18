@@ -15,10 +15,6 @@ public class BezierArrows : MonoBehaviour
     public int arrowNodeNum;
 
     public float scaleFacter = 1f;
-
-    /// <summary>
-    ///  pos P0
-    /// </summary>
     private RectTransform origin;
 
 

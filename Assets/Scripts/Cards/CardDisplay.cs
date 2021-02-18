@@ -43,11 +43,6 @@ public class CardDisplay : MonoBehaviour
         GetComponent<Animator>().SetBool("isSelect", false);
     }
 
-    public void OnPointClick()
-    {
-        handCardDisplay.Discard(this);
-    }
-
 
     public void OnBeginDrag()
     {
@@ -57,5 +52,6 @@ public class CardDisplay : MonoBehaviour
     public void OnEndDrag()
     {
         handCardDisplay.SetNowDraggingCard(null);
+        handCardDisplay.DragArrow.SetActive(false);
     }
 }

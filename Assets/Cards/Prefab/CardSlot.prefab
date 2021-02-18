@@ -39,7 +39,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -5, y: 10}
+  m_AnchoredPosition: {x: -5.08, y: 4.01}
   m_SizeDelta: {x: 117, y: 17}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &6495247838682375926
@@ -54,8 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3379922eec704439b09df97450b633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: {fileID: 6962236541741287007}
-  card: {fileID: 0}
+  cardSlot: {fileID: 0}
   slots:
   - {fileID: 9105628685699961772}
   - {fileID: 1602192495234740719}
@@ -684,8 +683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.39
-  m_fontSizeBase: 21.39
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -738,6 +737,7 @@ GameObject:
   - component: {fileID: 6962236541741287007}
   - component: {fileID: 6962236541741286993}
   - component: {fileID: 6962236541741287006}
+  - component: {fileID: 6482319493949334054}
   m_Layer: 5
   m_Name: CardSlot
   m_TagString: Untagged
@@ -824,6 +824,35 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6482319493949334054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6962236541741287005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6962236541741287007}
+          m_TargetAssemblyTypeName: CardSlot, Assembly-CSharp
+          m_MethodName: OnClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6962236542124717642
 GameObject:
   m_ObjectHideFlags: 0
