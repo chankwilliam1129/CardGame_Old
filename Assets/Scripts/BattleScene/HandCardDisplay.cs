@@ -11,6 +11,11 @@ public class HandCardDisplay : MonoBehaviour
     public List<CardDisplay> cardDisplayList;
 
     public float cardSizeX;
+
+    [Space]
+    [Header("GameUpdate")]
+    public CardDisplay nowDraggingCard;
+
     private void Start()
     {
     }
@@ -47,4 +52,10 @@ public class HandCardDisplay : MonoBehaviour
             cardDisplayList[i].GetComponent<Canvas>().sortingOrder = i;
         }
     }
+
+    public void SetNowDraggingCard(CardDisplay card)
+    {
+        nowDraggingCard = card;
+    }
+
 }

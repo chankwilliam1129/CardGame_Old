@@ -19,4 +19,6 @@ MonoBehaviour:
   emptyPower: 3
   normalPower: 1
   brokenPower: 0
-  cardEffect: {fileID: 11400000, guid: 5999ae2f47bd135488fac27a67b78756, type: 2}
+  playEffects:
+  - type: 0
+    valueA: {x: 6, y: 4}
