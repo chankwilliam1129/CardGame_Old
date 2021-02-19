@@ -25,10 +25,6 @@ public class CardDisplay : MonoBehaviour
     private void Update()
     {
 
-        if (transform.position != targetPosition)
-        {
-             transform.position += (targetPosition - transform.position) * 0.1f;
-        }
     }
 
     public void OnPointEnter()
@@ -46,12 +42,22 @@ public class CardDisplay : MonoBehaviour
 
     public void OnBeginDrag()
     {
-        handCardDisplay.SetNowDraggingCard(this);
+        if (!GetComponent<Animator>().GetBool("isSlot"))
+        {
+            handCardDisplay.SetNowDraggingCard(this);
+            GetComponent<Animator>().SetBool("isDragging", true);
+        }
     }
 
     public void OnEndDrag()
     {
         handCardDisplay.SetNowDraggingCard(null);
         handCardDisplay.DragArrow.SetActive(false);
+        GetComponent<Animator>().SetBool("isDragging", false);
+    }
+
+    public void OnInputSlot()
+    {
+        GetComponent<Animator>().SetBool("isSlot", true);
     }
 }

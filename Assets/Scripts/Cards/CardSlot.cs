@@ -8,6 +8,7 @@ using TMPro;
 
 public class CardSlot : MonoBehaviour
 {
+    public BattleDeckManager battleDeck;
     public HandCardDisplay handCard;
 
     [Space]
@@ -32,10 +33,12 @@ public class CardSlot : MonoBehaviour
     {
         if (this.card == null)
         {
+            card.OnInputSlot();
             this.card = card;
             nameText.text = card.card.name;
             cardImage.color = Color.white;
             cardImage.sprite = card.card.image;
+
         }
         else
         {
@@ -47,7 +50,11 @@ public class CardSlot : MonoBehaviour
                 curPower += c.card.brokenPower;
             }
 
-            if (curPower <= this.card.card.powerSpace) power.Add(card);
+            if (curPower <= this.card.card.powerSpace)
+            {
+                card.OnInputSlot();
+                power.Add(card);
+            }
             else Debug.Log("PowerFull");
         }
         OnSlotChange?.Invoke(this, EventArgs.Empty);
@@ -76,10 +83,10 @@ public class CardSlot : MonoBehaviour
     {
         if (card != null)
         {
-            handCard.Discard(card);
+            battleDeck.Discard(card,BattleDeckManager.RemoveType.ToDiscardPile);
             foreach (CardDisplay c in power)
             {
-                handCard.Discard(c);
+                battleDeck.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);
             }
         }
         DeleteCard();

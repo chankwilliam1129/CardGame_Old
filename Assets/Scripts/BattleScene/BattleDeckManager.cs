@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,20 +6,38 @@ using UnityEngine;
 public class BattleDeckManager : MonoBehaviour
 {
     public BattleStateManager battleState;
+    public BattleEventManager battleEvent;
 
     public MainDeck mainDeck;
     public HandCardDisplay handCardDisplay;
     public List<Card> battleDeck;
     public List<Card> discardPile;
 
+
+
+    public enum DrawType
+    {
+        FromBattleDeck,
+        FromDiscardPile,
+        ByCreating,
+    }
+    public event EventHandler<DrawType> OnAddCardToHand;
+
+    public enum RemoveType
+    {
+        ToDiscardPile,
+        Destory,
+    }
+    public event EventHandler<RemoveType> OnRemoveCardFromHand;
+
     void Start()
     {
-        battleState.OnBattleStart += BattleState_OnBattleStart;
-        battleState.OnPlayerTurnStart += BattleState_OnPlayerTurnStart;
+        battleState.OnBattleStart += BattleDeckInit;
+        battleState.OnPlayerTurnStart += TurnStartDrawCard;
     }
 
 
-    private void BattleState_OnBattleStart(object sender, System.EventArgs e)
+    private void BattleDeckInit(object sender, System.EventArgs e)
     {
         mainDeck.CreateNewCard();
         battleDeck = new List<Card>(mainDeck.deck);
@@ -26,40 +45,66 @@ public class BattleDeckManager : MonoBehaviour
         discardPile = new List<Card>();
     }
 
-    private void BattleState_OnPlayerTurnStart(object sender, System.EventArgs e)
+    private void TurnStartDrawCard(object sender, System.EventArgs e)
     {
         while (handCardDisplay.cardDisplayList.Count < 5)
         {
-            DrawCardFromBattleDeckTop();
+            DrawCard(DrawType.FromBattleDeck);
         }
     }
+
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            DrawCardFromBattleDeckTop();
-        }
     }
 
-    public void DrawCardFromBattleDeckTop()
+
+    public void DrawCard(DrawType type)
     {
-        if(battleDeck.Count ==0)
+        switch(type)
         {
-            battleDeck = new List<Card>(discardPile);
-            ShuffleDeck(battleDeck);
-            discardPile.Clear();
+            case DrawType.FromBattleDeck:
+                if (battleDeck.Count == 0)
+                {
+                    battleDeck = new List<Card>(discardPile);
+                    ShuffleDeck(battleDeck);
+                    discardPile.Clear();
+                }
+
+                handCardDisplay.Add(battleDeck[0]);
+                battleDeck.Remove(battleDeck[0]);
+                break;
+
+            default:
+                break;
         }
 
-        handCardDisplay.DrawCard(battleDeck[0]);
-        battleDeck.Remove(battleDeck[0]);
+        OnAddCardToHand?.Invoke(this, type);
     }
+
+    public void Discard(CardDisplay cardDisplay,RemoveType type)
+    {
+
+        switch (type)
+        {
+            case RemoveType.ToDiscardPile:
+                discardPile.Add(cardDisplay.card);
+                break;
+
+            default:
+                break;
+        }
+
+        handCardDisplay.Remove(cardDisplay);
+        OnRemoveCardFromHand?.Invoke(this, type);
+    }
+
 
     public void ShuffleDeck(List<Card> cards)
     {
         for(int i = 0;i<cards.Count;i++)
         {
-            int r = Random.Range(i, cards.Count);
+            int r = UnityEngine.Random.Range(i, cards.Count);
             Card temp = cards[i];
             cards[i] = cards[r];
             cards[r] = temp;

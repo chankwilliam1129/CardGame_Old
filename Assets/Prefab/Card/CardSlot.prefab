@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3379922eec704439b09df97450b633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSlot: {fileID: 0}
+  cardSlot: {fileID: 6962236541741287007}
   slots:
   - {fileID: 9105628685699961772}
   - {fileID: 1602192495234740719}
@@ -781,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e2e1f532f04bf47a42a266213cb925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleDeck: {fileID: 0}
   handCard: {fileID: 0}
   card: {fileID: 0}
   power: []
@@ -844,6 +845,22 @@ MonoBehaviour:
         - m_Target: {fileID: 6962236541741287007}
           m_TargetAssemblyTypeName: CardSlot, Assembly-CSharp
           m_MethodName: OnClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6962236541741287007}
+          m_TargetAssemblyTypeName: CardSlot, Assembly-CSharp
+          m_MethodName: OnDrop
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -26,33 +26,18 @@ public class HandCardDisplay : MonoBehaviour
     {
     }
 
-    public void DrawCard(Card card)
+    public void Add(Card card)
     {
-        CardDisplay newCard = Instantiate(cardDisplay, battleDeckUI.position, Quaternion.identity, transform);
+        CardDisplay newCard = Instantiate(cardDisplay, transform);
         newCard.handCardDisplay = this;
         newCard.card = card;
         cardDisplayList.Add(newCard);
-        FixCardDisplayTransform();
     }
 
-    public void Discard(CardDisplay card)
+    public void Remove(CardDisplay card)
     {
         cardDisplayList.Remove(card);
-        battleDeck.discardPile.Add(card.card);
         Destroy(card.gameObject);
-        FixCardDisplayTransform();
-    }
-
-    private void FixCardDisplayTransform()
-    {
-        int total = cardDisplayList.Count - 1;
-        for (int i = 0; i <= total; i++) 
-        {
-            Vector3 pos = transform.position;
-            pos.x += (i * cardSizeX * transform.lossyScale.x) - (total * cardSizeX * transform.lossyScale.x * 0.5f);
-            cardDisplayList[i].targetPosition = pos;
-            cardDisplayList[i].GetComponent<Canvas>().sortingOrder = i;
-        }
     }
 
     public void SetNowDraggingCard(CardDisplay card)
