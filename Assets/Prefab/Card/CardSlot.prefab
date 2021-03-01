@@ -39,7 +39,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -5.08, y: 4.01}
+  m_AnchoredPosition: {x: -5.080017, y: 4.01001}
   m_SizeDelta: {x: 117, y: 17}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &6495247838682375926
@@ -62,10 +62,10 @@ MonoBehaviour:
   - {fileID: 5113854945570198315}
   - {fileID: 7689219665198842353}
   - {fileID: 5748104037630678359}
-  powerSlotImage: {fileID: 0}
-  emptyPowerImage: {fileID: 0}
-  normalPowerImage: {fileID: 0}
-  brokenPowerImage: {fileID: 0}
+  powerSlotImage: {fileID: 21300000, guid: 7a8b99e1b5576444b8effe4855ea5235, type: 3}
+  emptyPowerImage: {fileID: 21300000, guid: 9facc7ac780885249aac187d4a5c7e5c, type: 3}
+  normalPowerImage: {fileID: 21300000, guid: 1f8d5a4a44c14da4187278351d56f895, type: 3}
+  brokenPowerImage: {fileID: 21300000, guid: 06210df99b62bca47b94092d0296ce2c, type: 3}
 --- !u!1 &1031452725399001294
 GameObject:
   m_ObjectHideFlags: 0

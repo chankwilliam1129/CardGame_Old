@@ -12,9 +12,9 @@ public class CardDisplay : MonoBehaviour
 
     [Space]
     public TextMeshProUGUI nameText;
+
     public Image cardImage;
     public Vector3 targetPosition;
-
 
     private void Start()
     {
@@ -24,21 +24,20 @@ public class CardDisplay : MonoBehaviour
 
     private void Update()
     {
-
     }
 
     public void OnPointEnter()
     {
+        GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
         GetComponent<Canvas>().sortingOrder += 10;
         GetComponent<Animator>().SetBool("isSelect", true);
     }
 
     public void OnPointExit()
     {
-        GetComponent<Canvas>().sortingOrder -= 10;
+        GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
         GetComponent<Animator>().SetBool("isSelect", false);
     }
-
 
     public void OnBeginDrag()
     {

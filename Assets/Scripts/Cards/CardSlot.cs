@@ -13,19 +13,22 @@ public class CardSlot : MonoBehaviour
 
     [Space]
     public CardDisplay card;
+
     public List<CardDisplay> power;
 
     [Space]
     public TextMeshProUGUI nameText;
+
     public Image cardImage;
 
     public event EventHandler OnSlotChange;
 
-    void Start()
+    private void Start()
     {
         DeleteCard();
     }
-    void Update()
+
+    private void Update()
     {
     }
 
@@ -38,7 +41,6 @@ public class CardSlot : MonoBehaviour
             nameText.text = card.card.name;
             cardImage.color = Color.white;
             cardImage.sprite = card.card.image;
-
         }
         else
         {
@@ -73,7 +75,7 @@ public class CardSlot : MonoBehaviour
 
     public void OnDrop()
     {
-        if(handCard.nowDraggingCard != null)
+        if (handCard.nowDraggingCard != null)
         {
             InputCard(handCard.nowDraggingCard);
         }
@@ -83,10 +85,10 @@ public class CardSlot : MonoBehaviour
     {
         if (card != null)
         {
-            battleDeck.Discard(card,BattleDeckManager.RemoveType.ToDiscardPile);
+            battleDeck.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);
             foreach (CardDisplay c in power)
             {
-                battleDeck.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);
+                battleDeck.Discard(c, BattleDeckManager.RemoveType.ToDiscardPile);
             }
         }
         DeleteCard();

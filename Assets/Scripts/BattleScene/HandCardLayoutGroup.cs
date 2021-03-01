@@ -12,35 +12,32 @@ public class HandCardLayoutGroup : MonoBehaviour
 
     private void Start()
     {
-        battleDeck.OnAddCardToHand += BattleDeck_OnAddCardToHand;
-        battleDeck.OnRemoveCardFromHand += BattleDeck_OnRemoveCardFromHand;
     }
 
-    private void BattleDeck_OnRemoveCardFromHand(object sender, BattleDeckManager.RemoveType e)
-    {
-        Invoke("ElementUpdate",0.05f);
-    }
-
-    private void BattleDeck_OnAddCardToHand(object sender, BattleDeckManager.DrawType e)
-    {
-        Invoke("ElementUpdate", 0.05f);
-    }
-
-    private void ElementUpdate()
+    public void ElementUpdate()
     {
         float totalWidth = 0;
-        foreach (HandCardElement e in elements) totalWidth += e.FlexibleWidth;
-
-        float curWidth = 0;
         foreach (HandCardElement e in elements)
         {
-            Vector3 pos = transform.position;
-            curWidth += e.FlexibleWidth;
-            float OffsetX = (curWidth - totalWidth * 0.5f) * width;
-            pos.x += OffsetX;
+            if (e.isActivity) totalWidth += e.flexibleWidth;
+        }
+        float curWidth = 0;
+        int order = 0;
+        foreach (HandCardElement e in elements)
+        {
+            if (e.isActivity)
+            {
+                curWidth += e.flexibleWidth;
+                float OffsetX = (curWidth - totalWidth) * 0.5f * width;
+                curWidth += e.flexibleWidth;
 
-            e.SetMovingStart(pos);
+                Vector3 pos = transform.position;
+                pos.x += OffsetX;
+                e.MovingTo(pos);
+
+                e.GetComponent<Canvas>().sortingOrder = order;
+                order++;
+            }
         }
     }
-
 }
