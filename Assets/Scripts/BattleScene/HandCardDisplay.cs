@@ -9,7 +9,6 @@ public class HandCardDisplay : MonoBehaviour
     public CardDisplay cardDisplay;
     public GameObject DragArrow;
 
-
     public List<CardDisplay> cardDisplayList;
 
     public float cardSizeX;
@@ -26,11 +25,11 @@ public class HandCardDisplay : MonoBehaviour
     {
     }
 
-    public void Add(Card card)
+    public void Add(CardBattleData card)
     {
         CardDisplay newCard = Instantiate(cardDisplay, transform);
         newCard.handCardDisplay = this;
-        newCard.card = card;
+        newCard.data = card;
         cardDisplayList.Add(newCard);
     }
 

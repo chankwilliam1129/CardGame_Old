@@ -38,21 +38,21 @@ public class CardSlot : MonoBehaviour
         {
             card.OnInputSlot();
             this.card = card;
-            nameText.text = card.card.name;
+            nameText.text = card.data.preset.name;
             cardImage.color = Color.white;
-            cardImage.sprite = card.card.image;
+            cardImage.sprite = card.data.preset.image;
         }
         else
         {
-            int curPower = card.card.brokenPower + card.card.emptyPower + card.card.normalPower;
+            int curPower = card.data.brokenPower + card.data.emptyPower + card.data.normalPower;
             foreach (CardDisplay c in power)
             {
-                curPower += c.card.emptyPower;
-                curPower += c.card.normalPower;
-                curPower += c.card.brokenPower;
+                curPower += c.data.emptyPower;
+                curPower += c.data.normalPower;
+                curPower += c.data.brokenPower;
             }
 
-            if (curPower <= this.card.card.powerSpace)
+            if (curPower <= this.card.data.powerSpace)
             {
                 card.OnInputSlot();
                 power.Add(card);

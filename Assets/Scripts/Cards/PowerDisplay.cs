@@ -12,14 +12,14 @@ public class PowerDisplay : MonoBehaviour
 
     private void Start()
     {
-        int maxPower = card.card.emptyPower + card.card.normalPower + card.card.brokenPower;
+        int maxPower = card.data.emptyPower + card.data.normalPower + card.data.brokenPower;
         for (int i = 0; i < maxPower; i++)
         {
             Vector3 pos = transform.position;
             pos.x += (maxPower * -10f * card.transform.lossyScale.x) + (i + 0.5f) * 20f * card.transform.lossyScale.x;
 
-            if (i < card.card.emptyPower) Instantiate(emptyPowerIcon, pos, Quaternion.identity, transform);
-            else if (i < card.card.emptyPower + card.card.normalPower) Instantiate(normalPowerIcon, pos, Quaternion.identity, transform);
+            if (i < card.data.emptyPower) Instantiate(emptyPowerIcon, pos, Quaternion.identity, transform);
+            else if (i < card.data.emptyPower + card.data.normalPower) Instantiate(normalPowerIcon, pos, Quaternion.identity, transform);
             else Instantiate(brokenPowerIcon, pos, Quaternion.identity, transform);
         }
     }

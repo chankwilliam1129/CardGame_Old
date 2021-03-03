@@ -10,10 +10,8 @@ public class BattleDeckManager : MonoBehaviour
 
     public MainDeck mainDeck;
     public HandCardDisplay handCardDisplay;
-    public List<Card> battleDeck;
-    public List<Card> discardPile;
-
-
+    public List<CardBattleData> battleDeck;
+    public List<CardBattleData> discardPile;
 
     public enum DrawType
     {
@@ -21,6 +19,7 @@ public class BattleDeckManager : MonoBehaviour
         FromDiscardPile,
         ByCreating,
     }
+
     public event EventHandler<DrawType> OnAddCardToHand;
 
     public enum RemoveType
@@ -28,21 +27,21 @@ public class BattleDeckManager : MonoBehaviour
         ToDiscardPile,
         Destory,
     }
+
     public event EventHandler<RemoveType> OnRemoveCardFromHand;
 
-    void Start()
+    private void Start()
     {
         battleState.OnBattleStart += BattleDeckInit;
         battleState.OnPlayerTurnStart += TurnStartDrawCard;
     }
 
-
     private void BattleDeckInit(object sender, System.EventArgs e)
     {
         mainDeck.CreateNewCard();
-        battleDeck = new List<Card>(mainDeck.deck);
+        battleDeck = new List<CardBattleData>(mainDeck.deck);
         ShuffleDeck(battleDeck);
-        discardPile = new List<Card>();
+        discardPile = new List<CardBattleData>();
     }
 
     private void TurnStartDrawCard(object sender, System.EventArgs e)
@@ -53,20 +52,18 @@ public class BattleDeckManager : MonoBehaviour
         }
     }
 
-
-    void Update()
+    private void Update()
     {
     }
 
-
     public void DrawCard(DrawType type)
     {
-        switch(type)
+        switch (type)
         {
             case DrawType.FromBattleDeck:
                 if (battleDeck.Count == 0)
                 {
-                    battleDeck = new List<Card>(discardPile);
+                    battleDeck = new List<CardBattleData>(discardPile);
                     ShuffleDeck(battleDeck);
                     discardPile.Clear();
                 }
@@ -82,13 +79,12 @@ public class BattleDeckManager : MonoBehaviour
         OnAddCardToHand?.Invoke(this, type);
     }
 
-    public void Discard(CardDisplay cardDisplay,RemoveType type)
+    public void Discard(CardDisplay cardDisplay, RemoveType type)
     {
-
         switch (type)
         {
             case RemoveType.ToDiscardPile:
-                discardPile.Add(cardDisplay.card);
+                discardPile.Add(cardDisplay.data);
                 break;
 
             default:
@@ -99,16 +95,14 @@ public class BattleDeckManager : MonoBehaviour
         OnRemoveCardFromHand?.Invoke(this, type);
     }
 
-
-    public void ShuffleDeck(List<Card> cards)
+    public void ShuffleDeck(List<CardBattleData> cards)
     {
-        for(int i = 0;i<cards.Count;i++)
+        for (int i = 0; i < cards.Count; i++)
         {
             int r = UnityEngine.Random.Range(i, cards.Count);
-            Card temp = cards[i];
+            CardBattleData temp = cards[i];
             cards[i] = cards[r];
             cards[r] = temp;
         }
     }
-
 }

@@ -7,7 +7,7 @@ using TMPro;
 
 public class CardDisplay : MonoBehaviour
 {
-    public Card card;
+    public CardBattleData data;
     public HandCardDisplay handCardDisplay;
 
     [Space]
@@ -18,8 +18,8 @@ public class CardDisplay : MonoBehaviour
 
     private void Start()
     {
-        nameText.text = card.name;
-        cardImage.sprite = card.image;
+        nameText.text = data.preset.name;
+        cardImage.sprite = data.preset.image;
     }
 
     private void Update()
@@ -28,7 +28,10 @@ public class CardDisplay : MonoBehaviour
 
     public void OnPointEnter()
     {
-        GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
+        if (!GetComponent<Animator>().GetBool("isSlot"))
+        {
+            GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
+        }
         GetComponent<Canvas>().sortingOrder += 10;
         GetComponent<Animator>().SetBool("isSelect", true);
     }

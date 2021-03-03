@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PowerSlot : MonoBehaviour
 {
-
     public CardSlot cardSlot;
 
     public List<Image> slots;
@@ -14,15 +13,14 @@ public class PowerSlot : MonoBehaviour
     public Sprite normalPowerImage;
     public Sprite brokenPowerImage;
 
-    void Start()
+    private void Start()
     {
         cardSlot.OnSlotChange += Slot_OnSlotChange;
         gameObject.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        
     }
 
     private void Slot_OnSlotChange(object sender, System.EventArgs e)
@@ -31,7 +29,7 @@ public class PowerSlot : MonoBehaviour
         {
             gameObject.SetActive(true);
 
-            int maxPower = cardSlot.card.card.powerSpace;
+            int maxPower = cardSlot.card.data.powerSpace;
             int totalEmptyPower = 0;
             int totalNormalPower = 0;
             int totalBrokenPower = 0;
@@ -40,9 +38,9 @@ public class PowerSlot : MonoBehaviour
             {
                 foreach (CardDisplay c in cardSlot.power)
                 {
-                    totalEmptyPower += c.card.emptyPower;
-                    totalNormalPower += c.card.normalPower;
-                    totalBrokenPower += c.card.brokenPower;
+                    totalEmptyPower += c.data.emptyPower;
+                    totalNormalPower += c.data.normalPower;
+                    totalBrokenPower += c.data.brokenPower;
                 }
             }
 
