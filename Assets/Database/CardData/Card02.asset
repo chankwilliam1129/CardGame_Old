@@ -24,9 +24,9 @@ MonoBehaviour:
     playEffects:
     - type:
         id: 0
-      value: {x: 0, y: 0}
+      value: {x: 3, y: 2}
     modEffects: []
   references:
     version: 1
     00000000:
-      type: {class: , ns: , asm: }
+      type: {class: DealXDamage, ns: , asm: Assembly-CSharp}

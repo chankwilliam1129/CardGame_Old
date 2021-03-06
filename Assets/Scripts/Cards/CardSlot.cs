@@ -83,6 +83,8 @@ public class CardSlot : MonoBehaviour
 
     public void OnClick()
     {
+        battleDeck.battleEvent.PlayCard(this);
+
         if (card != null)
         {
             battleDeck.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);

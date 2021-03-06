@@ -2,14 +2,17 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface PlayEffect
+public class CardEffect
 {
-    void OnPlay(Vector2Int value);
-}
+    public virtual void OnStart(Vector2Int value, BattleEventManager battle)
+    {
+        return;
+    }
 
-public interface ModEffect
-{
-    void OnMod(Vector2Int value);
+    public virtual void OnResult(Vector2Int value, BattleEventManager battle)
+    {
+        return;
+    }
 }
 
 [Serializable]
@@ -18,19 +21,10 @@ public struct CardBattleData
     public Card preset;
 
     [Serializable]
-    public struct OnPlay
+    public struct Effect
     {
         [SerializeReference, SubclassSelector]
-        public PlayEffect type;
-
-        public Vector2Int value;
-    }
-
-    [Serializable]
-    public struct OnMod
-    {
-        [SerializeReference, SubclassSelector]
-        public ModEffect type;
+        public CardEffect type;
 
         public Vector2Int value;
     }
@@ -40,6 +34,6 @@ public struct CardBattleData
     [Range(0, 6)] public int normalPower;
     [Range(0, 6)] public int brokenPower;
 
-    [SerializeField] public List<OnPlay> playEffects;
-    [SerializeField] public List<OnMod> modEffects;
+    [SerializeField] public List<Effect> playEffects;
+    [SerializeField] public List<Effect> modEffects;
 }
