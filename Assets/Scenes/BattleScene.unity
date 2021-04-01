@@ -1938,6 +1938,8 @@ MonoBehaviour:
   handCardDisplay: {fileID: 1935921569}
   battleDeck: []
   discardPile: []
+  references:
+    version: 1
 --- !u!4 &1267462545
 Transform:
   m_ObjectHideFlags: 0
@@ -2585,6 +2587,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd17fdc024ff154b8eac7c562e08909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalPower: 0
+  emptyPower: 0
+  brokenPower: 0
+  dealDamage: 0
+  drawCard: 0
 --- !u!4 &1842604823
 Transform:
   m_ObjectHideFlags: 0
