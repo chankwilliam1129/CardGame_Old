@@ -9,3 +9,11 @@ public class DealXDamage : CardEffect
         battle.dealDamage += value.x + battle.normalPower * value.y;
     }
 }
+
+public class DrawCard : CardEffect
+{
+    public override void OnStart(Vector2Int value, BattleEventManager battle)
+    {
+        battle.drawCard += value.x + battle.normalPower * value.y;
+    }
+}

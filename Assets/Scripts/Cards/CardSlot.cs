@@ -9,7 +9,7 @@ using TMPro;
 public class CardSlot : MonoBehaviour
 {
     public BattleDeckManager battleDeck;
-    public HandCardDisplay handCard;
+    public EnemyArea enemyArea;
 
     [Space]
     public CardDisplay card;
@@ -73,15 +73,7 @@ public class CardSlot : MonoBehaviour
         OnSlotChange?.Invoke(this, EventArgs.Empty);
     }
 
-    public void OnDrop()
-    {
-        if (handCard.nowDraggingCard != null)
-        {
-            InputCard(handCard.nowDraggingCard);
-        }
-    }
-
-    public void OnClick()
+    public void OnUse()
     {
         battleDeck.battleEvent.PlayCard(this);
 
@@ -94,5 +86,9 @@ public class CardSlot : MonoBehaviour
             }
         }
         DeleteCard();
+    }
+
+    public void OnCancel()
+    {
     }
 }

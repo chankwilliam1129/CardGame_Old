@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BattleEventManager : MonoBehaviour
 {
+    public CardSlot slot;
+
     public int normalPower;
     public int emptyPower;
     public int brokenPower;

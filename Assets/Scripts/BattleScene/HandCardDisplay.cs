@@ -42,7 +42,7 @@ public class HandCardDisplay : MonoBehaviour
     public void SetNowDraggingCard(CardDisplay card)
     {
         nowDraggingCard = card;
-        if (card != null)
+        if (card != null && card.data.enemySelect)
         {
             DragArrow.SetActive(true);
             DragArrow.transform.position = card.transform.position;

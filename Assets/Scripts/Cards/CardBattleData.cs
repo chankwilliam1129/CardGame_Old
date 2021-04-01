@@ -19,6 +19,7 @@ public class CardEffect
 public struct CardBattleData
 {
     public Card preset;
+    public bool enemySelect;
 
     [Serializable]
     public struct Effect
