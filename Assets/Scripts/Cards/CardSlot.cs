@@ -14,6 +14,8 @@ public class CardSlot : MonoBehaviour
     [Space]
     public CardDisplay card;
 
+    public Character character;
+
     public List<CardDisplay> power;
 
     [Space]
@@ -34,31 +36,32 @@ public class CardSlot : MonoBehaviour
 
     public void InputCard(CardDisplay card)
     {
-        if (this.card == null)
-        {
-            card.OnInputSlot();
-            this.card = card;
-            nameText.text = card.data.preset.name;
-            cardImage.color = Color.white;
-            cardImage.sprite = card.data.preset.image;
-        }
-        else
-        {
-            int curPower = card.data.brokenPower + card.data.emptyPower + card.data.normalPower;
-            foreach (CardDisplay c in power)
-            {
-                curPower += c.data.emptyPower;
-                curPower += c.data.normalPower;
-                curPower += c.data.brokenPower;
-            }
+        //if (this.card == null)
+        //{
+        gameObject.SetActive(true);
+        card.OnInputSlot();
+        this.card = card;
+        nameText.text = card.data.preset.name;
+        cardImage.color = Color.white;
+        cardImage.sprite = card.data.preset.image;
+        //}
+        //else
+        //{
+        //    int curPower = card.data.brokenPower + card.data.emptyPower + card.data.normalPower;
+        //    foreach (CardDisplay c in power)
+        //    {
+        //        curPower += c.data.emptyPower;
+        //        curPower += c.data.normalPower;
+        //        curPower += c.data.brokenPower;
+        //    }
 
-            if (curPower <= this.card.data.powerSpace)
-            {
-                card.OnInputSlot();
-                power.Add(card);
-            }
-            else Debug.Log("PowerFull");
-        }
+        //    if (curPower <= this.card.data.powerSpace)
+        //    {
+        //        card.OnInputSlot();
+        //        power.Add(card);
+        //    }
+        //    else Debug.Log("PowerFull");
+        //}
         OnSlotChange?.Invoke(this, EventArgs.Empty);
     }
 

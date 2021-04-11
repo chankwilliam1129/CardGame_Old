@@ -395,11 +395,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601f6e4fcd6a41141ad7d8ebc5b5ccc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 45f93c188ec768a4092b3e17d1a066e2, type: 2}
+  data:
+    preset: {fileID: 0}
+    enemySelect: 0
+    powerSpace: 0
+    emptyPower: 0
+    normalPower: 0
+    brokenPower: 0
+    playEffects: []
+    modEffects: []
   handCardDisplay: {fileID: 0}
   nameText: {fileID: 2973268543484328595}
   cardImage: {fileID: 7276710370647708579}
   targetPosition: {x: 0, y: 0, z: 0}
+  references:
+    version: 1
 --- !u!223 &6598979584696924775
 Canvas:
   m_ObjectHideFlags: 0
@@ -506,6 +516,22 @@ MonoBehaviour:
         - m_Target: {fileID: 2973268544365596480}
           m_TargetAssemblyTypeName: CardDisplay, Assembly-CSharp
           m_MethodName: OnEndDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2973268544365596480}
+          m_TargetAssemblyTypeName: CardDisplay, Assembly-CSharp
+          m_MethodName: OnDrop
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

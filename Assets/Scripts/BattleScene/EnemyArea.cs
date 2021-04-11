@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyArea : MonoBehaviour
 {
+    public CardSlot cardSlot;
+    public HandCardDisplay handCardDisplay;
+    public Character nowSelectEnemy;
+
     private void Start()
     {
     }
