@@ -17,8 +17,6 @@ public class BattleStateManager : MonoBehaviour
         BATTLE_END,
     }
 
-    public List<Func<bool>> stateActionList;
-
     public event EventHandler OnBattleStart;
     public event EventHandler OnPlayerTurnStart;
     public event EventHandler OnPlayerTurnEnd;
@@ -74,15 +72,6 @@ public class BattleStateManager : MonoBehaviour
 
     }
 
-    bool stateActionEmpty()
-    {
-        if (stateActionList.Count == 0) return true;
-        else
-        {
-            if (stateActionList[0]()) stateActionList.Remove(stateActionList[0]);
-            return false;
-        }
-    }
 
     public void PlayerTurnEnd()
     {
