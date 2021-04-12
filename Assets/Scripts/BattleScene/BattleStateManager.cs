@@ -17,6 +17,9 @@ public class BattleStateManager : MonoBehaviour
         BATTLE_END,
     }
 
+
+    public bool test;
+
     public event EventHandler OnBattleStart;
     public event EventHandler OnPlayerTurnStart;
     public event EventHandler OnPlayerTurnEnd;
