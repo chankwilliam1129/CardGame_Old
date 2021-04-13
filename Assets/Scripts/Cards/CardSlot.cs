@@ -8,10 +8,6 @@ using TMPro;
 
 public class CardSlot : MonoBehaviour
 {
-    public BattleDeckManager battleDeck;
-    public EnemyArea enemyArea;
-
-    [Space]
     public CardDisplay card;
 
     public Character character;
@@ -60,10 +56,10 @@ public class CardSlot : MonoBehaviour
     {
         if (card != null)
         {
-            battleDeck.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);
+            BattleDeckManager.Instance.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);
             foreach (CardDisplay c in power)
             {
-                battleDeck.Discard(c, BattleDeckManager.RemoveType.ToDiscardPile);
+                BattleDeckManager.Instance.Discard(c, BattleDeckManager.RemoveType.ToDiscardPile);
             }
         }
         DeleteCard();

@@ -806,7 +806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a2d4bd4d2fb904b92de15036c621bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleDeck: {fileID: 1267462544}
   total: {fileID: 873375151}
 --- !u!1 &691483967
 GameObject:
@@ -1398,7 +1397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3ff5f23540be34bb5419de41d29121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleDeck: {fileID: 1267462544}
   total: {fileID: 2071629500}
 --- !u!114 &853784782
 MonoBehaviour:

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CardEventTrigger : MonoBehaviour
 {
-    //public HandCardDisplay handCardDisplay;
     public CardDisplay cardDisplay;
 
     private void Start()

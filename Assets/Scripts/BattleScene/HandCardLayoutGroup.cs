@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HandCardLayoutGroup : MonoBehaviour
 {
-    public BattleDeckManager battleDeck;
     public List<HandCardElement> elements;
 
     public float width;
