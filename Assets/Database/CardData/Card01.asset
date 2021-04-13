@@ -25,9 +25,9 @@ MonoBehaviour:
     playEffects:
     - type:
         id: 0
-      value: {x: 5, y: 3}
+      value: {x: 0, y: 0}
     modEffects: []
   references:
     version: 1
     00000000:
-      type: {class: DealXDamage, ns: , asm: Assembly-CSharp}
+      type: {class: CardEffect, ns: , asm: Assembly-CSharp}

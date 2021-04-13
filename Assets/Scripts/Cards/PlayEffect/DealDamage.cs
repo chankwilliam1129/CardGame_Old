@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DealXDamage : CardEffect
+public class DealDamage : CardEffect
 {
-    public override void OnStart(Vector2Int value, BattleEventManager battle)
-    {
-        battle.dealDamage += value.x + battle.normalPower * value.y;
-    }
-}
+    public int damage;
+    public int count;
 
-public class DrawCard : CardEffect
-{
-    public override void OnStart(Vector2Int value, BattleEventManager battle)
+    public void OnPlay()
     {
-        battle.drawCard += value.x + battle.normalPower * value.y;
+        
     }
+    public void OnMod()
+    {
+    }
+
 }

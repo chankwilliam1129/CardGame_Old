@@ -2,19 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardEffect
-{
-    public virtual void OnStart(Vector2Int value, BattleEventManager battle)
-    {
-        return;
-    }
-
-    public virtual void OnResult(Vector2Int value, BattleEventManager battle)
-    {
-        return;
-    }
-}
-
 [Serializable]
 public struct CardBattleData
 {

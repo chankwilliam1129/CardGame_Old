@@ -1,29 +1,15 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class CardDisplay : MonoBehaviour
+public class CardEventTrigger : MonoBehaviour
 {
-    public CardBattleData data;
-    public HandCardDisplay handCardDisplay;
-
-    [Space]
-    public TextMeshProUGUI nameText;
-
-    public Image cardImage;
-    public Vector3 targetPosition;
+    //public HandCardDisplay handCardDisplay;
+    public CardDisplay cardDisplay;
 
     private void Start()
     {
-        nameText.text = data.preset.name;
-        cardImage.sprite = data.preset.image;
-    }
-
-    private void Update()
-    {
+        cardDisplay = GetComponent<CardDisplay>();
     }
 
     public void OnPointEnter()
@@ -46,20 +32,16 @@ public class CardDisplay : MonoBehaviour
     {
         if (!GetComponent<Animator>().GetBool("isSlot"))
         {
-            handCardDisplay.SetNowDraggingCard(this);
+            HandCardDisplay.Instance.SetNowDraggingCard(cardDisplay);
             GetComponent<Animator>().SetBool("isDragging", true);
         }
     }
 
     public void OnEndDrag()
     {
-        handCardDisplay.SetNowDraggingCard(null);
-        handCardDisplay.DragArrow.SetActive(false);
+        HandCardDisplay.Instance.SetNowDraggingCard(null);
+        HandCardDisplay.Instance.DragArrow.SetActive(false);
         GetComponent<Animator>().SetBool("isDragging", false);
     }
 
-    public void OnInputSlot()
-    {
-        GetComponent<Animator>().SetBool("isSlot", true);
-    }
 }

@@ -1135,6 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9e27d1c58977b4388248cde1ae9154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 0
   nowState: 0
 --- !u!4 &753272156
 Transform:
@@ -2722,7 +2723,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1842604822
 MonoBehaviour:
@@ -2737,11 +2738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 1838399469}
-  normalPower: 0
-  emptyPower: 0
-  brokenPower: 0
-  dealDamage: 0
-  drawCard: 0
 --- !u!4 &1842604823
 Transform:
   m_ObjectHideFlags: 0

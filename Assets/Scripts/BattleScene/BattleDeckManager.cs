@@ -36,6 +36,12 @@ public class BattleDeckManager : MonoBehaviour
         battleState.OnPlayerTurnStart += TurnStartDrawCard;
     }
 
+    private void OnDestroy()
+    {
+        battleState.OnBattleStart -= BattleDeckInit;
+        battleState.OnPlayerTurnStart -= TurnStartDrawCard;
+    }
+
     private void BattleDeckInit(object sender, System.EventArgs e)
     {
         mainDeck.CreateNewCard();

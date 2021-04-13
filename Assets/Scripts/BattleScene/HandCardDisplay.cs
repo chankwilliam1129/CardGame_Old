@@ -17,6 +17,13 @@ public class HandCardDisplay : MonoBehaviour
     [Header("GameUpdate")]
     public CardDisplay nowDraggingCard;
 
+    public static HandCardDisplay Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
     }
@@ -28,7 +35,6 @@ public class HandCardDisplay : MonoBehaviour
     public void Add(CardBattleData card)
     {
         CardDisplay newCard = Instantiate(cardDisplay, transform);
-        newCard.handCardDisplay = this;
         newCard.data = card;
         cardDisplayList.Add(newCard);
     }

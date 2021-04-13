@@ -30,4 +30,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: DealXDamage, ns: , asm: Assembly-CSharp}
+      type: {class: DealDamage, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 0
+        count: 0
