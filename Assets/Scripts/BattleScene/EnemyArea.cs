@@ -5,8 +5,14 @@ using UnityEngine;
 public class EnemyArea : MonoBehaviour
 {
     public CardSlot cardSlot;
-    public HandCardDisplay handCardDisplay;
     public Character nowSelectEnemy;
+
+    public static EnemyArea Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

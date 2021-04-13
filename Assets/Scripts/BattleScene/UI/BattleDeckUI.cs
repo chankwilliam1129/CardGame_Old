@@ -5,19 +5,19 @@ using TMPro;
 
 public class BattleDeckUI : MonoBehaviour
 {
-    public BattleDeckManager battleDeck;
-
     public TextMeshProUGUI total;
 
     private void Start()
     {
     }
+
     private void Update()
     {
         UpdateTotalNumber();
     }
+
     public void UpdateTotalNumber()
     {
-        total.text = battleDeck.battleDeck.Count.ToString();
+        total.text = BattleDeckManager.Instance.battleDeck.Count.ToString();
     }
 }

@@ -17,25 +17,33 @@ public class BattleStateManager : MonoBehaviour
         BATTLE_END,
     }
 
-
-    public bool test;
-
     public event EventHandler OnBattleStart;
+
     public event EventHandler OnPlayerTurnStart;
+
     public event EventHandler OnPlayerTurnEnd;
+
     public event EventHandler OnEnemyTurnStart;
+
     public event EventHandler OnEnemyTurnEnd;
 
     public BattleSceneState nowState;
 
-    void Start()
+    public static BattleStateManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
     {
         nowState = BattleSceneState.BATTLE_START;
     }
 
-    void Update()
+    private void Update()
     {
-        switch(nowState)
+        switch (nowState)
         {
             case BattleSceneState.BATTLE_START:
                 OnBattleStart?.Invoke(this, EventArgs.Empty);
@@ -70,15 +78,12 @@ public class BattleStateManager : MonoBehaviour
                 break;
 
             case BattleSceneState.BATTLE_END:
-                break; 
+                break;
         }
-
     }
-
 
     public void PlayerTurnEnd()
     {
         if (nowState == BattleSceneState.PLAYER_TURN_UPDATE) nowState = BattleSceneState.PLAYER_TURN_END;
     }
-
 }

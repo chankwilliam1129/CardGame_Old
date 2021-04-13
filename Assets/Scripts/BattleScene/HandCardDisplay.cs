@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HandCardDisplay : MonoBehaviour
 {
-    public BattleDeckManager battleDeck;
     public RectTransform battleDeckUI;
     public CardDisplay cardDisplay;
     public GameObject DragArrow;

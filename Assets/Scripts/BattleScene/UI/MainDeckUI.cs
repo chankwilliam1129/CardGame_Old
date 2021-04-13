@@ -18,6 +18,7 @@ public class MainDeckUI : MonoBehaviour
     private void Start()
     {
     }
+
     private void Update()
     {
         UpdateTotalNumber();

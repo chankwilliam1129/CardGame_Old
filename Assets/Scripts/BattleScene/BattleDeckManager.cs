@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class BattleDeckManager : MonoBehaviour
 {
-    public BattleStateManager battleState;
-    public BattleEventManager battleEvent;
-
     public MainDeck mainDeck;
-    public HandCardDisplay handCardDisplay;
     public List<CardBattleData> battleDeck;
     public List<CardBattleData> discardPile;
 
@@ -30,16 +26,23 @@ public class BattleDeckManager : MonoBehaviour
 
     public event EventHandler<RemoveType> OnRemoveCardFromHand;
 
+    public static BattleDeckManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        battleState.OnBattleStart += BattleDeckInit;
-        battleState.OnPlayerTurnStart += TurnStartDrawCard;
+        BattleStateManager.Instance.OnBattleStart += BattleDeckInit;
+        BattleStateManager.Instance.OnPlayerTurnStart += TurnStartDrawCard;
     }
 
     private void OnDestroy()
     {
-        battleState.OnBattleStart -= BattleDeckInit;
-        battleState.OnPlayerTurnStart -= TurnStartDrawCard;
+        BattleStateManager.Instance.OnBattleStart -= BattleDeckInit;
+        BattleStateManager.Instance.OnPlayerTurnStart -= TurnStartDrawCard;
     }
 
     private void BattleDeckInit(object sender, System.EventArgs e)
@@ -52,7 +55,7 @@ public class BattleDeckManager : MonoBehaviour
 
     private void TurnStartDrawCard(object sender, System.EventArgs e)
     {
-        while (handCardDisplay.cardDisplayList.Count < 5)
+        while (HandCardDisplay.Instance.cardDisplayList.Count < 5)
         {
             DrawCard(DrawType.FromBattleDeck);
         }
@@ -74,7 +77,7 @@ public class BattleDeckManager : MonoBehaviour
                     discardPile.Clear();
                 }
 
-                handCardDisplay.Add(battleDeck[0]);
+                HandCardDisplay.Instance.Add(battleDeck[0]);
                 battleDeck.Remove(battleDeck[0]);
                 break;
 
@@ -97,7 +100,7 @@ public class BattleDeckManager : MonoBehaviour
                 break;
         }
 
-        handCardDisplay.Remove(cardDisplay);
+        HandCardDisplay.Instance.Remove(cardDisplay);
         OnRemoveCardFromHand?.Invoke(this, type);
     }
 

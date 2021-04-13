@@ -5,5 +5,10 @@ using UnityEngine;
 
 public class BattleEventManager : MonoBehaviour
 {
-    public CardSlot slot;
+    public static BattleEventManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 }

@@ -8,14 +8,12 @@ using TMPro;
 public class EnemyDisplay : MonoBehaviour
 {
     private Character character;
-    private EnemyArea enemyArea;
 
     public TextMeshProUGUI healthText;
     public Image healthBar;
 
     private void Start()
     {
-        enemyArea = GetComponentInParent<EnemyArea>();
         character = GetComponent<Character>();
         character.OnHealthChanged += Character_OnHealthChanged;
     }
@@ -32,12 +30,12 @@ public class EnemyDisplay : MonoBehaviour
 
     public void OnPointEnter()
     {
-        enemyArea.nowSelectEnemy = character;
+        EnemyArea.Instance.nowSelectEnemy = character;
     }
 
     public void OnPointExit()
     {
-        enemyArea.nowSelectEnemy = null;
+        EnemyArea.Instance.nowSelectEnemy = null;
     }
 
     public void OnDrop()
