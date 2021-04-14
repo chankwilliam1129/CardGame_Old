@@ -9,11 +9,9 @@ public struct CardBattleData
     public bool enemySelect;
 
     [Serializable]
-    public struct Effect
+    public class Effect
     {
-        [SerializeReference, SubclassSelector]
         public CardEffect type;
-
         public Vector2Int value;
     }
 

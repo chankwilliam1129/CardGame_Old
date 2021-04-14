@@ -23,11 +23,8 @@ MonoBehaviour:
     normalPower: 1
     brokenPower: 0
     playEffects:
-    - type:
-        id: 0
-      value: {x: 0, y: 0}
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 5, y: 2}
     modEffects: []
-  references:
-    version: 1
-    00000000:
-      type: {class: CardEffect, ns: , asm: Assembly-CSharp}

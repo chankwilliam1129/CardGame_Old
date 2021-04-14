@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "CardEffect/DealDamage", fileName = "DealDamage")]
 public class DealDamage : CardEffect
 {
-    public int damage;
-    public int count;
-
-    public void OnPlay()
+    public override string GetDescription(Vector2Int value)
     {
-        
+        return value.x.ToString() + "É_ÉÅÅ[ÉWÇó^Ç¶ÇÈ";
     }
-    public void OnMod()
-    {
-    }
-
 }

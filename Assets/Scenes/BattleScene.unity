@@ -2134,8 +2134,6 @@ MonoBehaviour:
   mainDeck: {fileID: 11400000, guid: 0273e1a599829164192cb48b942028d2, type: 2}
   battleDeck: []
   discardPile: []
-  references:
-    version: 1
 --- !u!4 &1267462545
 Transform:
   m_ObjectHideFlags: 0
