@@ -2768,7 +2768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bdbf4a85d6315d40867aa7f52fa7fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleDeck: {fileID: 1267462544}
   elements: []
   width: 120
   speed: 2.5
