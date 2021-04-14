@@ -13,7 +13,7 @@ public class CardEventTrigger : MonoBehaviour
 
     public void OnPointEnter()
     {
-        if (!GetComponent<Animator>().GetBool("isSlot"))
+        if (!GetComponent<Animator>().GetBool("isMod"))
         {
             GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
         }
@@ -29,7 +29,7 @@ public class CardEventTrigger : MonoBehaviour
 
     public void OnBeginDrag()
     {
-        if (!GetComponent<Animator>().GetBool("isSlot"))
+        if (!GetComponent<Animator>().GetBool("isMod"))
         {
             HandCardDisplay.Instance.SetNowDraggingCard(cardDisplay);
             GetComponent<Animator>().SetBool("isDragging", true);
@@ -43,4 +43,17 @@ public class CardEventTrigger : MonoBehaviour
         GetComponent<Animator>().SetBool("isDragging", false);
     }
 
+    public void SetModMode()
+    {
+        if (!GetComponent<Animator>().GetBool("isMod"))
+        {
+            HandCardDisplay.Instance.nowModCard.Add(cardDisplay);
+            GetComponent<Animator>().SetBool("isMod", true);
+        }
+        else
+        {
+            HandCardDisplay.Instance.nowModCard.Remove(cardDisplay);
+            GetComponent<Animator>().SetBool("isMod", false);
+        }
+    }
 }

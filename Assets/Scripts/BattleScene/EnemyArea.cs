@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyArea : MonoBehaviour
 {
-    public CardSlot cardSlot;
     public Character nowSelectEnemy;
 
     public static EnemyArea Instance { get; private set; }
