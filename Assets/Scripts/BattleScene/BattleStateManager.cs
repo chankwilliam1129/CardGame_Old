@@ -29,6 +29,10 @@ public class BattleStateManager : MonoBehaviour
 
     public BattleSceneState nowState;
 
+    public Transform mainGameCanvas;
+    [Space]
+    public BattleEvent playerTurnStartText;
+
     public static BattleStateManager Instance { get; private set; }
 
     private void Awake()
@@ -39,6 +43,12 @@ public class BattleStateManager : MonoBehaviour
     private void Start()
     {
         nowState = BattleSceneState.BATTLE_START;
+        OnPlayerTurnStart += BattleStateManager_OnPlayerTurnStart;
+    }
+
+    private void BattleStateManager_OnPlayerTurnStart(object sender, EventArgs e)
+    {
+        Instantiate(playerTurnStartText, mainGameCanvas).AddEvent();
     }
 
     private void Update()
@@ -48,33 +58,48 @@ public class BattleStateManager : MonoBehaviour
             case BattleSceneState.BATTLE_START:
                 OnBattleStart?.Invoke(this, EventArgs.Empty);
                 nowState = BattleSceneState.PLAYER_TURN_START;
+                OnPlayerTurnStart?.Invoke(this, EventArgs.Empty);
                 break;
 
             case BattleSceneState.PLAYER_TURN_START:
-                OnPlayerTurnStart?.Invoke(this, EventArgs.Empty);
-                nowState = BattleSceneState.PLAYER_TURN_UPDATE;
+                if (!BattleEventManager.Instance.Execute())
+                {
+                    nowState = BattleSceneState.PLAYER_TURN_UPDATE;
+                }
                 break;
 
             case BattleSceneState.PLAYER_TURN_UPDATE:
                 break;
 
             case BattleSceneState.PLAYER_TURN_END:
-                OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
-                nowState = BattleSceneState.ENEMY_TURN_START;
+                if (!BattleEventManager.Instance.Execute())
+                {
+                    nowState = BattleSceneState.ENEMY_TURN_START;
+                    OnEnemyTurnStart?.Invoke(this, EventArgs.Empty);
+                }
                 break;
 
             case BattleSceneState.ENEMY_TURN_START:
-                OnEnemyTurnStart?.Invoke(this, EventArgs.Empty);
-                nowState = BattleSceneState.ENEMY_TURN_UPDATE;
+                if (!BattleEventManager.Instance.Execute())
+                {
+                    nowState = BattleSceneState.ENEMY_TURN_UPDATE;
+                }
                 break;
 
             case BattleSceneState.ENEMY_TURN_UPDATE:
-                nowState = BattleSceneState.ENEMY_TURN_END;
+                if (!BattleEventManager.Instance.Execute())
+                {
+                    nowState = BattleSceneState.ENEMY_TURN_END;
+                    OnEnemyTurnEnd?.Invoke(this, EventArgs.Empty);
+                }
                 break;
 
             case BattleSceneState.ENEMY_TURN_END:
-                OnEnemyTurnEnd?.Invoke(this, EventArgs.Empty);
-                nowState = BattleSceneState.PLAYER_TURN_START;
+                if (!BattleEventManager.Instance.Execute())
+                {
+                    nowState = BattleSceneState.PLAYER_TURN_START;
+                    OnPlayerTurnStart?.Invoke(this, EventArgs.Empty);
+                }
                 break;
 
             case BattleSceneState.BATTLE_END:
@@ -84,6 +109,7 @@ public class BattleStateManager : MonoBehaviour
 
     public void PlayerTurnEnd()
     {
-        if (nowState == BattleSceneState.PLAYER_TURN_UPDATE) nowState = BattleSceneState.PLAYER_TURN_END;
+        if (!BattleEventManager.Instance.Execute()) nowState = BattleSceneState.PLAYER_TURN_END;
+        OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
     }
 }

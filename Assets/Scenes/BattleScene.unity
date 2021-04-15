@@ -1105,6 +1105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowState: 0
+  mainGameCanvas: {fileID: 1224047699}
+  playerTurnStartText: {fileID: 3110098497771192933, guid: 8cc0a20f031f6624a9c810a00e780ec2, type: 3}
 --- !u!4 &753272156
 Transform:
   m_ObjectHideFlags: 0
@@ -2566,6 +2568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd17fdc024ff154b8eac7c562e08909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventList: []
 --- !u!4 &1842604823
 Transform:
   m_ObjectHideFlags: 0
