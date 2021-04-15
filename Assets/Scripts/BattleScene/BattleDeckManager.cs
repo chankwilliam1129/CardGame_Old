@@ -9,6 +9,8 @@ public class BattleDeckManager : MonoBehaviour
     public List<CardBattleData> battleDeck;
     public List<CardBattleData> discardPile;
 
+    public BattleEvent drawCardEvent;
+
     public enum DrawType
     {
         FromBattleDeck,
@@ -55,9 +57,13 @@ public class BattleDeckManager : MonoBehaviour
 
     private void TurnStartDrawCard(object sender, System.EventArgs e)
     {
-        while (HandCardDisplay.Instance.cardDisplayList.Count < 5)
+        int num = 5 - HandCardDisplay.Instance.cardDisplayList.Count;
+        if (num > 0)
         {
-            DrawCard(DrawType.FromBattleDeck);
+            for(int i=0;i<num;i++)
+            {
+                Instantiate(drawCardEvent).AddEvent();
+            }
         }
     }
 

@@ -35,7 +35,7 @@ public class HandCardDisplay : MonoBehaviour
 
     public void Add(CardBattleData card)
     {
-        CardDisplay newCard = Instantiate(cardDisplay, transform);
+        CardDisplay newCard = Instantiate(cardDisplay, battleDeckUI.position,transform.rotation, transform);
         newCard.data = card;
         cardDisplayList.Add(newCard);
     }

@@ -2010,6 +2010,7 @@ MonoBehaviour:
   mainDeck: {fileID: 11400000, guid: 0273e1a599829164192cb48b942028d2, type: 2}
   battleDeck: []
   discardPile: []
+  drawCardEvent: {fileID: -8283996898797481477, guid: 725dc457534a68f4fbd0f10c43a540b5, type: 3}
 --- !u!4 &1267462545
 Transform:
   m_ObjectHideFlags: 0
