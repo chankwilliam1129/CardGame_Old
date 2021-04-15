@@ -6,4 +6,7 @@ public class MapSetting : MonoBehaviour
 {
     public int BossNodesMin;
     public int BossNodesMax;
+
+    public NodeMinMaxPositionX nodeMinMaxPositionX;
+    public NodeMinMaxPositionY nodeMinMaxPositionY;
 }

@@ -6,7 +6,6 @@ public class MapManager : MonoBehaviour
 {
     public Map currentMap;
     public MapGenerator mapGenerator;
-    public static MapSetting mapSetting; 
 
     private void Start()
     {
