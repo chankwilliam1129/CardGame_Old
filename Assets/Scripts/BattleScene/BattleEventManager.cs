@@ -23,7 +23,6 @@ public class BattleEventManager : MonoBehaviour
     public void Add(BattleEvent battleEvent)
     {
         eventList.Add(battleEvent);
-        eventList.Sort((e1, e2) => e1.sortOrder.CompareTo(e2.sortOrder));
     }
 
     public void Remove(BattleEvent battleEvent)

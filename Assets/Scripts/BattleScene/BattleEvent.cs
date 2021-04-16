@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BattleEvent : MonoBehaviour
 {
-    public int sortOrder;
     public bool autoDestroy = false;
     public float destroyTime;
 
