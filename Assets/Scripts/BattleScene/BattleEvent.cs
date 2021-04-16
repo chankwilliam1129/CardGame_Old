@@ -8,14 +8,14 @@ public class BattleEvent : MonoBehaviour
     public bool autoDestroy = false;
     public float destroyTime;
 
-    public void AddEvent()
+    public BattleEvent()
     {
-        BattleEventManager.Instance.Add(this);
-        gameObject.SetActive(false);
+        BattleEventManager.Instance?.Add(this);
     }
-    
+
     void Start()
     {
+        gameObject.SetActive(false);
     }
     void Update()
     {

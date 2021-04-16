@@ -62,7 +62,7 @@ public class BattleDeckManager : MonoBehaviour
         {
             for(int i=0;i<num;i++)
             {
-                Instantiate(drawCardEvent).AddEvent();
+                Instantiate(drawCardEvent);
             }
         }
     }

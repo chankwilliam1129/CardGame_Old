@@ -48,7 +48,7 @@ public class BattleStateManager : MonoBehaviour
 
     private void BattleStateManager_OnPlayerTurnStart(object sender, EventArgs e)
     {
-        Instantiate(playerTurnStartText, mainGameCanvas).AddEvent();
+        Instantiate(playerTurnStartText, mainGameCanvas);
     }
 
     private void Update()
