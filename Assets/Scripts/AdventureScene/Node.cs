@@ -6,10 +6,14 @@ using UnityEngine.UI;
 public class Node : MonoBehaviour
 {
     public NodeData data;
-    public int number;
     private void Start()
     {
         GetComponent<Image>().sprite = data.sprite;
+    }
+    public Node SetNodeData(NodeData nodeData)
+    {
+        data = nodeData;
+        return this;
     }
 }
 

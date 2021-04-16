@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d68602ded5f15419bf521e2e83a665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: -50
-  max: 50
+  min: -200
+  max: 200
