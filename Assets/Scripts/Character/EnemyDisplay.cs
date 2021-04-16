@@ -15,10 +15,11 @@ public class EnemyDisplay : MonoBehaviour
     private void Start()
     {
         character = GetComponent<Character>();
-        character.OnHealthChanged += Character_OnHealthChanged;
+        character.OnHealthChanged += Enemy_OnHealthChanged;
+        character.SetHealthPointMax(10);
     }
 
-    private void Character_OnHealthChanged(object sender, System.EventArgs e)
+    private void Enemy_OnHealthChanged(object sender, System.EventArgs e)
     {
         healthText.text = character.healthPoint.ToString() + "/" + character.healthPointMax.ToString();
         healthBar.rectTransform.localScale = new Vector3(character.healthPoint * 1.0f / character.healthPointMax * 1.0f, 1.0f, 1.0f);
@@ -44,6 +45,6 @@ public class EnemyDisplay : MonoBehaviour
 
     private void OnDestroy()
     {
-        character.OnHealthChanged -= Character_OnHealthChanged;
+        character.OnHealthChanged -= Enemy_OnHealthChanged;
     }
 }

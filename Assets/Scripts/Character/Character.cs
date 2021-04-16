@@ -11,13 +11,10 @@ public class Character : MonoBehaviour
     public event EventHandler OnHealthChanged;
     public event EventHandler OnCharacterDied;
 
-    public virtual int GetHealthPointMax() { return 10; }
+   // public virtual int GetHealthPointMax() { return 10; }
 
     void Start()
     {
-        healthPointMax = GetHealthPointMax();
-        healthPoint = healthPointMax;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
     void Update()
@@ -33,5 +30,12 @@ public class Character : MonoBehaviour
             OnCharacterDied?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }
+    }
+
+    public void SetHealthPointMax(int hp)
+    {
+        healthPointMax = hp;
+        healthPoint = hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 }
