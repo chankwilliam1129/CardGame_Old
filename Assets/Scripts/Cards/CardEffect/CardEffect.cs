@@ -8,4 +8,9 @@ public class CardEffect : ScriptableObject
     {
         return value.x.ToString() + " " + value.y.ToString();
     }
+
+    public virtual void Execute(Vector2Int value)
+    {
+        return;
+    }
 }

@@ -52,6 +52,7 @@ public class CardEventTrigger : MonoBehaviour
 
     public void OnEndDrag()
     {
+        CardEffectExecutor.Instance.Execute();
         HandCardDisplay.Instance.SetNowDraggingCard(null);
         GetComponent<HandCardElement>().isFront = false;
         GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
@@ -63,12 +64,12 @@ public class CardEventTrigger : MonoBehaviour
     {
         if (!GetComponent<Animator>().GetBool("isMod"))
         {
-            HandCardDisplay.Instance.nowModCard.Add(cardDisplay);
+            CardEffectExecutor.Instance.nowModCard.Add(cardDisplay);
             GetComponent<Animator>().SetBool("isMod", true);
         }
         else
         {
-            HandCardDisplay.Instance.nowModCard.Remove(cardDisplay);
+            CardEffectExecutor.Instance.nowModCard.Remove(cardDisplay);
             GetComponent<Animator>().SetBool("isMod", false);
         }
     }

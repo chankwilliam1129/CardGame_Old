@@ -12,13 +12,15 @@ public class BattleEvent : MonoBehaviour
         BattleEventManager.Instance?.Add(this);
     }
 
-    void Start()
+    private void Start()
     {
         gameObject.SetActive(false);
+        BattleEventManager.Instance?.Execute();
     }
-    void Update()
+
+    private void Update()
     {
-        if(autoDestroy)
+        if (autoDestroy)
         {
             destroyTime -= Time.deltaTime;
             if (destroyTime < 0.0f) Destroy(gameObject);

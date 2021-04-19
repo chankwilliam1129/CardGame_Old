@@ -15,8 +15,6 @@ public class HandCardDisplay : MonoBehaviour
     [Header("GameUpdate")]
     public CardDisplay nowDraggingCard;
 
-    public List<CardDisplay> nowModCard;
-
     public static HandCardDisplay Instance { get; private set; }
 
     private void Awake()
