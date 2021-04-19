@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf466edd20d3684b82a1e39ae03db8b, type: 3}
-  m_Name: DealDamage
+  m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
+  m_Name: Enemy01
   m_EditorClassIdentifier: 
-  damageEvent: {fileID: -7534321289174189548, guid: b54bfa6d3243bd34a9809a37d1187577, type: 3}
+  name: aaaa
+  image: {fileID: 0}
+  health: 10
+  EnemyActions:
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 5

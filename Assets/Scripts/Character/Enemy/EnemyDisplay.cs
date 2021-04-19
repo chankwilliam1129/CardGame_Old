@@ -11,13 +11,28 @@ public class EnemyDisplay : MonoBehaviour
 
     public TextMeshProUGUI healthText;
     public Image healthBar;
+    public EnemyData enemy;
+    
 
     private void Start()
     {
         character = GetComponent<Character>();
         EnemyArea.Instance.enemy = character;
         character.OnHealthChanged += Enemy_OnHealthChanged;
-        character.SetHealthPointMax(10);
+        character.SetHealthPointMax(enemy.health);
+        BattleStateManager.Instance.OnEnemyTurnStart += Instance_OnEnemyTurnStart;
+
+    }
+
+    private void Instance_OnEnemyTurnStart(object sender, System.EventArgs e)
+    {
+
+        foreach (EnemyData.EnemyActionData data in enemy.EnemyActions)
+        {
+
+            data.type.Execute(data.value);   
+
+        }
     }
 
     private void Enemy_OnHealthChanged(object sender, System.EventArgs e)
@@ -28,6 +43,9 @@ public class EnemyDisplay : MonoBehaviour
 
     private void Update()
     {
+
+
+
     }
 
     private void OnDestroy()

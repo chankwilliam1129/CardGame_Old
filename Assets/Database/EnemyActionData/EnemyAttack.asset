@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf466edd20d3684b82a1e39ae03db8b, type: 3}
-  m_Name: DealDamage
+  m_Script: {fileID: 11500000, guid: 152c8d68ac9954640ab6515f949f43c6, type: 3}
+  m_Name: EnemyAttack
   m_EditorClassIdentifier: 
-  damageEvent: {fileID: -7534321289174189548, guid: b54bfa6d3243bd34a9809a37d1187577, type: 3}
+  damage: {fileID: -7534321289174189548, guid: b54bfa6d3243bd34a9809a37d1187577, type: 3}

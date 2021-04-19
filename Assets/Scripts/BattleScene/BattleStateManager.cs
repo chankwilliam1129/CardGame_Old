@@ -91,6 +91,7 @@ public class BattleStateManager : MonoBehaviour
                 {
                     nowState = BattleSceneState.ENEMY_TURN_END;
                     OnEnemyTurnEnd?.Invoke(this, EventArgs.Empty);
+
                 }
                 break;
 
