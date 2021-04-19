@@ -15,6 +15,7 @@ public class EnemyDisplay : MonoBehaviour
     private void Start()
     {
         character = GetComponent<Character>();
+        EnemyArea.Instance.enemy = character;
         character.OnHealthChanged += Enemy_OnHealthChanged;
         character.SetHealthPointMax(10);
     }
@@ -26,20 +27,6 @@ public class EnemyDisplay : MonoBehaviour
     }
 
     private void Update()
-    {
-    }
-
-    public void OnPointEnter()
-    {
-        EnemyArea.Instance.nowSelectEnemy = character;
-    }
-
-    public void OnPointExit()
-    {
-        EnemyArea.Instance.nowSelectEnemy = null;
-    }
-
-    public void OnDrop()
     {
     }
 

@@ -17,17 +17,19 @@ public class CardEffectExecutor : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
     private void Update()
     {
     }
 
     public void Execute()
     {
-        foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.playEffects)
+        if (HandCardDisplay.Instance.nowDraggingCard != null)
         {
-            effect.type.Execute(effect.value);
+            foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.playEffects)
+            {
+                effect.type.Execute(effect.value);
+            }
+            BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, BattleDeckManager.RemoveType.ToDiscardPile);
         }
-        BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, BattleDeckManager.RemoveType.ToDiscardPile);
     }
 }

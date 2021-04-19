@@ -29,6 +29,7 @@ public class BattleEvent : MonoBehaviour
 
     private void OnDestroy()
     {
-        BattleEventManager.Instance.Remove(this);
+        BattleEventManager.Instance?.Remove(this);
+        BattleEventManager.Instance?.Execute();
     }
 }
