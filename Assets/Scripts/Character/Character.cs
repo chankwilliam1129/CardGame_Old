@@ -3,29 +3,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class DamageData
+{
+    public DamageData(int d, Character c)
+    {
+        damage = d;
+        from = c;
+    }
+
+    public int damage;
+    public Character from;
+}
+
 public class Character : MonoBehaviour
 {
     public int healthPoint;
     public int healthPointMax;
 
     public event EventHandler OnHealthChanged;
+
     public event EventHandler OnCharacterDied;
 
-   // public virtual int GetHealthPointMax() { return 10; }
+    public event EventHandler<DamageData> OnGetDamaged;
 
-    void Start()
+    private void Start()
     {
+        OnGetDamaged += Character_OnGetDamaged;
     }
 
-    void Update()
+    private void Character_OnGetDamaged(object sender, DamageData e)
     {
-        if(Input.GetKeyDown(KeyCode.H))
+        healthPoint -= e.damage;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            healthPoint--;
-            OnHealthChanged?.Invoke(this, EventArgs.Empty);
+            GetDamage(1, null);
         }
 
-        if(healthPoint<=0)
+        if (healthPoint <= 0)
         {
             OnCharacterDied?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
@@ -37,5 +56,11 @@ public class Character : MonoBehaviour
         healthPointMax = hp;
         healthPoint = hp;
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void GetDamage(int damage, Character from)
+    {
+        DamageData damageData = new DamageData(damage, from);
+        OnGetDamaged?.Invoke(this, damageData);
     }
 }

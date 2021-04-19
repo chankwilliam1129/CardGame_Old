@@ -14,11 +14,13 @@ public class HandCardElement : MonoBehaviour
     public float animationTimer;
 
     public bool isActivity;
+    public bool isFront;
     private bool isMoving;
 
     private void Start()
     {
         isMoving = false;
+        isFront = false;
         layoutGroup = transform.parent.GetComponent<HandCardLayoutGroup>();
         if (layoutGroup != null)
         {
@@ -69,5 +71,10 @@ public class HandCardElement : MonoBehaviour
     {
         flexibleWidth = width;
         layoutGroup?.ElementUpdate();
+    }
+
+    public bool IsMoving()
+    {
+        return isMoving;
     }
 }

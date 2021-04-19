@@ -35,6 +35,7 @@ public class HandCardLayoutGroup : MonoBehaviour
                 e.MovingTo(pos);
 
                 e.GetComponent<Canvas>().sortingOrder = order;
+                if (e.isFront) e.GetComponent<Canvas>().sortingOrder += 20;
                 order++;
             }
         }

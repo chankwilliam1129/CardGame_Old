@@ -6,7 +6,6 @@ public class HandCardDisplay : MonoBehaviour
 {
     public RectTransform battleDeckUI;
     public CardDisplay cardDisplay;
-    public GameObject DragArrow;
 
     public List<CardDisplay> cardDisplayList;
 
@@ -35,7 +34,7 @@ public class HandCardDisplay : MonoBehaviour
 
     public void Add(CardBattleData card)
     {
-        CardDisplay newCard = Instantiate(cardDisplay, battleDeckUI.position,transform.rotation, transform);
+        CardDisplay newCard = Instantiate(cardDisplay, battleDeckUI.position, transform.rotation, transform);
         newCard.data = card;
         cardDisplayList.Add(newCard);
     }
@@ -48,11 +47,18 @@ public class HandCardDisplay : MonoBehaviour
 
     public void SetNowDraggingCard(CardDisplay card)
     {
-        nowDraggingCard = card;
-        if (card != null && card.data.enemySelect)
+        if (nowDraggingCard != null)
         {
-            DragArrow.SetActive(true);
-            DragArrow.transform.position = card.transform.position;
+            nowDraggingCard.GetComponent<CardEventTrigger>().isDrag = false;
+            nowDraggingCard.GetComponent<HandCardElement>().isActivity = true;
+            GetComponent<HandCardLayoutGroup>().ElementUpdate();
+        }
+        nowDraggingCard = card;
+        if (nowDraggingCard != null)
+        {
+            nowDraggingCard.GetComponent<CardEventTrigger>().isDrag = true;
+            nowDraggingCard.GetComponent<HandCardElement>().isActivity = false;
+            GetComponent<HandCardLayoutGroup>().ElementUpdate();
         }
     }
 }
