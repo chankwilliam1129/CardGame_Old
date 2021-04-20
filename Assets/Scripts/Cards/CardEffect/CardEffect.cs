@@ -2,15 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardEffect : ScriptableObject
+public abstract class CardEffect : ScriptableObject
 {
-    public virtual string GetDescription(Vector2Int value)
-    {
-        return value.x.ToString() + " " + value.y.ToString();
-    }
+    public abstract string GetDescription(Vector2Int value);
 
-    public virtual void Execute(Vector2Int value)
-    {
-        return;
-    }
+    public abstract void Execute(Vector2Int value);
 }

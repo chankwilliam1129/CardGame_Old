@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CardEffect/DrawCard", fileName = "DrawCard")]
+[CreateAssetMenu(menuName = "Card/CardEffect/DrawCard", fileName = "DrawCard")]
 public class DrawCard : CardEffect
 {
     public GameObject drawCardEvent;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CardEffect/DealDamage", fileName = "DealDamage")]
+[CreateAssetMenu(menuName = "Card/CardEffect/DealDamage", fileName = "DealDamage")]
 public class DealDamage : CardEffect
 {
     public DealDamageEvent damageEvent;

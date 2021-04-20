@@ -3,17 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Enemy/EnemyData", fileName = "EnemyData")]
 public class EnemyData : ScriptableObject
 {
-
     //[Header("CardDisplay")]
     public new string name;
 
     public Sprite image;
 
     public int health;
-
 
     [Serializable]
     public class EnemyActionData
@@ -22,8 +20,5 @@ public class EnemyData : ScriptableObject
         public int value;
     }
 
-
     [SerializeField] public List<EnemyActionData> EnemyActions;
-
-
 }

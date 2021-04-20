@@ -1388,6 +1388,7 @@ MonoBehaviour:
   healthText: {fileID: 725133488}
   healthBar: {fileID: 1529943503}
   enemy: {fileID: 11400000, guid: 47c36b98f10cf0b4b93fbae535042bb6, type: 2}
+  count: 0
 --- !u!114 &819792468
 MonoBehaviour:
   m_ObjectHideFlags: 0

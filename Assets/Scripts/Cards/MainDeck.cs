@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Card/Other/MainDeck", fileName = "MainDeck")]
 public class MainDeck : ScriptableObject
 {
     public CardDatabase cardDatabase;
