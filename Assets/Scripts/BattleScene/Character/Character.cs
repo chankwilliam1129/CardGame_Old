@@ -26,6 +26,8 @@ public class Character : MonoBehaviour
 
     public event EventHandler<DamageData> OnGetDamaged;
 
+    public List<Condition> conditions;
+
     private void Start()
     {
         OnGetDamaged += Character_OnGetDamaged;
@@ -63,4 +65,13 @@ public class Character : MonoBehaviour
         DamageData damageData = new DamageData(damage, from);
         OnGetDamaged?.Invoke(this, damageData);
     }
+
+
+    public void AddCondition(Condition type,int value)
+    {
+        
+
+
+    }
+
 }
