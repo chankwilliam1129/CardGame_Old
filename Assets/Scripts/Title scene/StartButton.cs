@@ -10,27 +10,17 @@ public class StartButton : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "TitleScene")
         {
-
-            SceneManager.LoadScene("AdventureScene"); 
-            
+            SceneManager.LoadScene("AdventureScene");        
         }
-
 
         if (SceneManager.GetActiveScene().name == "AdventureScene")
         {
-
             SceneManager.LoadScene("BattleScene");
-
         }
-
 
         if (SceneManager.GetActiveScene().name == "BattleScene")
         {
-
             SceneManager.LoadScene("TitleScene");
-
         }
     }
-
-    
 }
