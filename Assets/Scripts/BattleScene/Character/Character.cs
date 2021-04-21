@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     private int healthPoint;
     private int healthPointMax;
 
+    public Transform conditionDisplay;
     public List<Condition> conditionList;
 
     public event EventHandler OnHealthChanged;

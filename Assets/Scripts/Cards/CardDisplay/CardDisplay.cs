@@ -28,4 +28,9 @@ public class CardDisplay : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("isSlot", true);
     }
+
+    public void SetUsable(bool isUsable)
+    {
+        GetComponent<Animator>().SetBool("isUsable", isUsable);
+    }
 }

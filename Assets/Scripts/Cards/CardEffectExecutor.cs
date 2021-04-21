@@ -5,6 +5,9 @@ using UnityEngine;
 public class CardEffectExecutor : MonoBehaviour
 {
     public List<CardDisplay> nowModCard;
+    public int totalNormalPower;
+    public int totalEmptyPower;
+    public int totalBrokenPower;
 
     public static CardEffectExecutor Instance { get; private set; }
 
@@ -30,6 +33,39 @@ public class CardEffectExecutor : MonoBehaviour
                 effect.type.Execute(effect.value);
             }
             BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, BattleDeckManager.RemoveType.ToDiscardPile);
+        }
+    }
+
+    public void AddModCard(CardDisplay card)
+    {
+        nowModCard.Add(card);
+        CountTotalPower();
+    }
+
+    public void RemoveModCard(CardDisplay card)
+    {
+        nowModCard.Remove(card);
+        CountTotalPower();
+    }
+
+    public void CountTotalPower()
+    {
+        totalNormalPower = 0;
+        totalBrokenPower = 0;
+        totalEmptyPower = 0;
+
+        foreach (var c in nowModCard)
+        {
+            totalNormalPower += c.data.normalPower;
+            totalBrokenPower += c.data.brokenPower;
+            totalEmptyPower += c.data.emptyPower;
+        }
+
+        int totolPower = totalNormalPower + totalBrokenPower + totalEmptyPower;
+
+        foreach (var c in HandCardDisplay.Instance.cardDisplayList)
+        {
+            c.SetUsable(c.data.powerSpace >= totolPower);
         }
     }
 }

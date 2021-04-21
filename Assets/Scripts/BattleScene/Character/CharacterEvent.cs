@@ -14,6 +14,11 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public event EventHandler<DamageData> OnGetDamaged;
 
+    private void CharacterEvent_OnGetDamaged(object sender, DamageData e)
+    {
+        character.LoseHealthPoint(e.damage);
+    }
+
     public void Start()
     {
         character = GetComponent<Character>();
@@ -33,11 +38,6 @@ public abstract class CharacterEvent : MonoBehaviour
     {
         DamageData damageData = new DamageData(damage, from);
         OnGetDamaged?.Invoke(this, damageData);
-    }
-
-    private void CharacterEvent_OnGetDamaged(object sender, DamageData e)
-    {
-        character.LoseHealthPoint(e.damage);
     }
 
     public void OnTurnStartEvent()

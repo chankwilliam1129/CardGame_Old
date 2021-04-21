@@ -67,7 +67,7 @@ public class CardEventTrigger : MonoBehaviour
 
     public void OnBeginDrag()
     {
-        if (!GetComponent<Animator>().GetBool("isMod"))
+        if (!GetComponent<Animator>().GetBool("isMod") && GetComponent<Animator>().GetBool("isUsable"))
         {
             isBeginDrag = true;
             GetComponent<Animator>().SetBool("isDragging", true);
@@ -95,12 +95,12 @@ public class CardEventTrigger : MonoBehaviour
     {
         if (!GetComponent<Animator>().GetBool("isMod"))
         {
-            CardEffectExecutor.Instance.nowModCard.Add(cardDisplay);
+            CardEffectExecutor.Instance.AddModCard(cardDisplay);
             GetComponent<Animator>().SetBool("isMod", true);
         }
         else
         {
-            CardEffectExecutor.Instance.nowModCard.Remove(cardDisplay);
+            CardEffectExecutor.Instance.RemoveModCard(cardDisplay);
             GetComponent<Animator>().SetBool("isMod", false);
         }
     }

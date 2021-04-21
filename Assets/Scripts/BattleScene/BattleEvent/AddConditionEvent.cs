@@ -23,7 +23,7 @@ public class AddConditionEvent : MonoBehaviour
             Condition con = condition.Exist(target);
             if (con == null)
             {
-                con = Instantiate(condition, target.transform);
+                con = Instantiate(condition, target.conditionDisplay);
                 con.character = target;
             }
             con.Add(value);

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Posion : Condition
 {
     public int stack;
+    public TextMeshProUGUI text;
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class Posion : Condition
     {
         character.LoseHealthPoint(stack);
         stack /= 2;
-
+        text.text = stack.ToString();
         if (stack <= 0)
         {
             Destroy(gameObject);
@@ -46,5 +48,6 @@ public class Posion : Condition
     public override void Add(int value)
     {
         stack += value;
+        text.text = stack.ToString();
     }
 }
