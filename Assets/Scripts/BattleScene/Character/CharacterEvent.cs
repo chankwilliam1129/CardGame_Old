@@ -14,7 +14,7 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public event EventHandler<DamageData> OnGetDamaged;
 
-    public event EventHandler<HealData> OnGetHeal;
+    public event EventHandler<int> OnGetHeal;
 
     private void CharacterEvent_OnGetDamaged(object sender, DamageData e)
     {
@@ -42,10 +42,12 @@ public abstract class CharacterEvent : MonoBehaviour
         OnGetDamaged?.Invoke(this, damageData);
     }
 
-    public void GetHeal(int heal, Character from)
+    public void GetHeal(int heal)
     {
-        HealData healData = new HealData(heal, from);
-        OnGetHeal?.Invoke(this, healData);
+      
+        OnGetHeal?.Invoke(this, heal);
+        character.HealHealthPoint(heal);
+
     }
 
     public void OnTurnStartEvent()

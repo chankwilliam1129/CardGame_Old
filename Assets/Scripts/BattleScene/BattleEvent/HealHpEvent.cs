@@ -18,6 +18,6 @@ public class HealHpEvent : MonoBehaviour
 
     private void OnDestroy()
     {
-        target.characterEvent.GetHeal(heal, from);
+        target.characterEvent.GetHeal(heal);
     }
 }
