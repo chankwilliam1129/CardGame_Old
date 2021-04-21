@@ -17,38 +17,21 @@ public class DamageData
 
 public class Character : MonoBehaviour
 {
-    public int healthPoint;
-    public int healthPointMax;
+    public CharacterEvent characterEvent;
+    private int healthPoint;
+    private int healthPointMax;
+
+    public List<Condition> conditionList;
 
     public event EventHandler OnHealthChanged;
 
-    public event EventHandler OnCharacterDied;
-
-    public event EventHandler<DamageData> OnGetDamaged;
-
     private void Start()
     {
-        OnGetDamaged += Character_OnGetDamaged;
-    }
-
-    private void Character_OnGetDamaged(object sender, DamageData e)
-    {
-        healthPoint -= e.damage;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+        characterEvent = GetComponent<CharacterEvent>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            GetDamage(1, null);
-        }
-
-        if (healthPoint <= 0)
-        {
-            OnCharacterDied?.Invoke(this, EventArgs.Empty);
-            Destroy(gameObject);
-        }
     }
 
     public void SetHealthPointMax(int hp)
@@ -58,9 +41,30 @@ public class Character : MonoBehaviour
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void GetDamage(int damage, Character from)
+    public void SetHealthPoint(int hp)
     {
-        DamageData damageData = new DamageData(damage, from);
-        OnGetDamaged?.Invoke(this, damageData);
+        healthPoint = hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void LoseHealthPoint(int hp)
+    {
+        healthPoint -= hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public int GetHealthPoint()
+    {
+        return healthPoint;
+    }
+
+    public int GetHealthPointMax()
+    {
+        return healthPointMax;
+    }
+
+    public bool IsAlive()
+    {
+        return healthPoint > 0;
     }
 }

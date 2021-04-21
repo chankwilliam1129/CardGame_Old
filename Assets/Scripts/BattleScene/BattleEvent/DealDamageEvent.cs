@@ -18,6 +18,6 @@ public class DealDamageEvent : MonoBehaviour
 
     private void OnDestroy()
     {
-        target.GetDamage(damage, from);
+        target.characterEvent.GetDamage(damage, from);
     }
 }
