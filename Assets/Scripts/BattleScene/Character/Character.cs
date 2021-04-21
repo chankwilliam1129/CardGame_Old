@@ -15,6 +15,18 @@ public class DamageData
     public Character from;
 }
 
+public class HealData
+{
+    public HealData(int d, Character c)
+    {
+        heal = d;
+        from = c;
+    }
+
+    public int heal;
+    public Character from;
+}
+
 public class Character : MonoBehaviour
 {
     public CharacterEvent characterEvent;
@@ -51,6 +63,13 @@ public class Character : MonoBehaviour
     public void LoseHealthPoint(int hp)
     {
         healthPoint -= hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+    public void HealHealthPoint(int hp)
+    {
+        if(GetHealthPointMax() > healthPoint)
+        healthPoint += hp;
+
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
