@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: CardData
+  m_Name: Card03
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u56DE\u5FA9"
   image: {fileID: 0}
   battleData:
-    preset: {fileID: 0}
+    preset: {fileID: 11400000}
     enemySelect: 0
-    powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
-    brokenPower: 0
-    playEffects: []
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 1
+    playEffects:
+    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
+      value: {x: 5, y: 2}
     modEffects: []
