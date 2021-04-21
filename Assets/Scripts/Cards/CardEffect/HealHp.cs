@@ -9,7 +9,7 @@ public class HealHp : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return value.x.ToString() + "ƒ_ƒ[ƒW‚ğ—^‚¦‚é";
+        return value.x.ToString() + "‚ğ‰ñ•œ‚·‚é";
     }
 
     public override void Execute(Vector2Int value)

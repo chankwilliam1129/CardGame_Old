@@ -57,7 +57,9 @@ public class Character : MonoBehaviour
 
     public void HealHealthPoint(int hp)
     {
+        if(GetHealthPointMax() > healthPoint)
         healthPoint += hp;
+
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
