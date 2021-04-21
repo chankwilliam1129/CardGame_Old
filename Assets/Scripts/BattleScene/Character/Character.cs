@@ -15,6 +15,18 @@ public class DamageData
     public Character from;
 }
 
+public class HealData
+{
+    public HealData(int d, Character c)
+    {
+        heal = d;
+        from = c;
+    }
+
+    public int heal;
+    public Character from;
+}
+
 public class Character : MonoBehaviour
 {
     public CharacterEvent characterEvent;
