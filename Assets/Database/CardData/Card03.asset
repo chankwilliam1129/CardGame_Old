@@ -20,7 +20,7 @@ MonoBehaviour:
     powerSpace: 3
     emptyPower: 1
     normalPower: 1
-    brokenPower: 1
+    brokenPower: 0
     playEffects:
     - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
       value: {x: 5, y: 2}

@@ -28,6 +28,6 @@ public class PlayerArea : MonoBehaviour
 
     private void Update()
     {
-        cardUsageText.text = "カード使える枚数：" + cardUsage.ToString();
+        cardUsageText.text = "エナジー：" + cardUsage.ToString();
     }
 }
