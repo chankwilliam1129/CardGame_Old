@@ -13,29 +13,13 @@ MonoBehaviour:
   m_Name: Card03
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u56DE\u5FA9"
-<<<<<<< Updated upstream
+  name: 
   image: {fileID: 0}
-  battleData:
-    preset: {fileID: 11400000}
-    enemySelect: 0
-    powerSpace: 3
-    emptyPower: 1
-    normalPower: 1
-    brokenPower: 1
-    playEffects:
-    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
-      value: {x: 5, y: 2}
-=======
-  image: {fileID: 21300000, guid: a4665049fa482c14a97941f3c11a4555, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0
     emptyPower: 0
     normalPower: 0
     brokenPower: 0
-    playEffects:
-    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
-      value: {x: 3, y: 0}
->>>>>>> Stashed changes
+    playEffects: []
     modEffects: []
