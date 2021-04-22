@@ -9,13 +9,14 @@ public class AddCondition : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return "(" + value.x.ToString() + ")" + addCondition.condition.conditionName + "ÅB";
+        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")" + addCondition.condition.conditionName + "ÅB";
+        return value.x.ToString() + addCondition.condition.conditionName + "ÅB";
     }
 
-    public override void Execute(Vector2Int value)
+    public override void Execute(Vector2Int value, int power)
     {
         AddConditionEvent e = Instantiate(addCondition);
-        e.value = value.x;
+        e.value = value.x + value.y * power;
         e.target = EnemyArea.Instance.enemy;
     }
 }

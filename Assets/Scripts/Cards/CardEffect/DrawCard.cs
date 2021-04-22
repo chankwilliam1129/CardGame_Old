@@ -9,12 +9,14 @@ public class DrawCard : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return "(" + value.x.ToString() + ")枚カードを引く。";
+        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")枚カードを引く。";
+        else return value.x.ToString() + "枚カードを引く。";
     }
 
-    public override void Execute(Vector2Int value)
+    public override void Execute(Vector2Int value, int power)
     {
-        for (int i = 0; i < value.x; i++)
+        int draw = value.x + value.y * power;
+        for (int i = 0; i < draw; i++)
         {
             Instantiate(drawCardEvent);
         }

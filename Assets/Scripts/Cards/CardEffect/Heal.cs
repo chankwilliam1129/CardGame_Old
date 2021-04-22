@@ -9,13 +9,14 @@ public class Heal : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return "(" + value.x.ToString() + ")‘Ì—Í‚ğ‰ñ•œ‚·‚éB";
+        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")‘Ì—Í‚ğ‰ñ•œ‚·‚éB";
+        return value.x.ToString() + "‘Ì—Í‚ğ‰ñ•œ‚·‚éB";
     }
 
-    public override void Execute(Vector2Int value)
+    public override void Execute(Vector2Int value, int power)
     {
         HealEvent e = Instantiate(healEvent);
-        e.heal = value.x;
+        e.heal = value.x + value.y * power;
         e.target = PlayerArea.Instance.player;
     }
 }

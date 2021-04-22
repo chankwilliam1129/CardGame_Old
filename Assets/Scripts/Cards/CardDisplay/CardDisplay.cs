@@ -13,6 +13,7 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
 
     public Image cardImage;
+    public PowerSpaceDisplay powerSpaceDisplay;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class CardDisplay : MonoBehaviour
 
     public void OnInputSlot()
     {
-        GetComponent<Animator>().SetBool("isSlot", true);
+        GetComponent<Animator>().SetBool("isMod", true);
     }
 
     public void SetUsable(bool isUsable)
