@@ -28,6 +28,8 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public event EventHandler<int> OnGetHeal;
 
+    public event EventHandler<int> OnGetSelfDamage;
+
     public void Start()
     {
         character = GetComponent<Character>();
@@ -53,6 +55,12 @@ public abstract class CharacterEvent : MonoBehaviour
     {
         OnGetHeal?.Invoke(this, heal);
         character.HealHealthPoint(heal);
+    }   
+    
+    public void GetSelfDamage(int damage)
+    {
+        OnGetSelfDamage?.Invoke(this, damage);
+        character.LoseHealthPoint(damage);
     }
 
     public void OnTurnStartEvent()
