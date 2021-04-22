@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class CharacterEvent : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public abstract class CharacterEvent : MonoBehaviour
         {
             OnCharacterDied?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
+
+            SceneManager.LoadScene("AdventureScene");
+
         }
     }
 
