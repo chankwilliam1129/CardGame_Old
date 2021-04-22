@@ -34,12 +34,4 @@ public class CardDisplay : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("isUsable", isUsable);
     }
-
-    public void PowerSpaceUpdate()
-    {
-        foreach (var card in HandCardDisplay.Instance.cardDisplayList)
-        {
-            card.powerSpaceDisplay.PowerDisplayUpdate();
-        }
-    }
 }

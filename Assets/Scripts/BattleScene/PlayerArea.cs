@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerArea : MonoBehaviour
 {
     public Character player;
+
     public static PlayerArea Instance { get; private set; }
 
     private void Awake()
@@ -16,7 +17,6 @@ public class PlayerArea : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
     private void Update()
     {
     }
