@@ -28,6 +28,8 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public event EventHandler<int> OnGetHeal;
 
+    public event EventHandler<int> OnGetHealEnergy;
+
     public event EventHandler<int> OnGetSelfDamage;
 
     public void Start()
@@ -55,8 +57,14 @@ public abstract class CharacterEvent : MonoBehaviour
     {
         OnGetHeal?.Invoke(this, heal);
         character.HealHealthPoint(heal);
-    }   
-    
+    }
+
+    public void GetHealEnergy(int heal)
+    {
+        OnGetHealEnergy?.Invoke(this, heal);
+        character.HealEnergyPoint(heal);
+    }
+
     public void GetSelfDamage(int damage)
     {
         OnGetSelfDamage?.Invoke(this, damage);
