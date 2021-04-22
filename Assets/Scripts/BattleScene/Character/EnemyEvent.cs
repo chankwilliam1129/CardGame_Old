@@ -25,4 +25,10 @@ public class EnemyEvent : CharacterEvent
     {
         base.Update();
     }
+
+    private void OnDestroy()
+    {
+        BattleStateManager.Instance.OnEnemyTurnStart -= OnEnemyTurnStart;
+        BattleStateManager.Instance.OnEnemyTurnEnd -= OnEnemyTurnEnd;
+    }
 }
