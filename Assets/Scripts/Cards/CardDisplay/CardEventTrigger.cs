@@ -47,63 +47,78 @@ public class CardEventTrigger : MonoBehaviour
 
     public void OnPointEnter()
     {
-        if (!GetComponent<Animator>().GetBool("isMod") && HandCardDisplay.Instance.nowDraggingCard == null)
+        if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            GetComponent<HandCardElement>().isFront = true;
-            GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
-            GetComponent<Animator>().SetBool("isSelect", true);
+            if (!GetComponent<Animator>().GetBool("isMod") && HandCardDisplay.Instance.nowDraggingCard == null)
+            {
+                GetComponent<HandCardElement>().isFront = true;
+                GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
+                GetComponent<Animator>().SetBool("isSelect", true);
+            }
         }
     }
 
     public void OnPointExit()
     {
-        if (HandCardDisplay.Instance.nowDraggingCard != cardDisplay)
+        if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            GetComponent<HandCardElement>().isFront = false;
-            GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
-            GetComponent<Animator>().SetBool("isSelect", false);
+            if (HandCardDisplay.Instance.nowDraggingCard != cardDisplay)
+            {
+                GetComponent<HandCardElement>().isFront = false;
+                GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
+                GetComponent<Animator>().SetBool("isSelect", false);
+            }
         }
     }
 
     public void OnBeginDrag()
     {
-        if (!GetComponent<Animator>().GetBool("isMod") && GetComponent<Animator>().GetBool("isUsable"))
+        if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            isBeginDrag = true;
-            GetComponent<Animator>().SetBool("isDragging", true);
+            if (!GetComponent<Animator>().GetBool("isMod") && GetComponent<Animator>().GetBool("isUsable"))
+            {
+                isBeginDrag = true;
+                GetComponent<Animator>().SetBool("isDragging", true);
+            }
         }
     }
 
     public void OnEndDrag()
     {
-        if (isDrag && PlayerArea.Instance.cardUsage != 0)
+        if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            CardEffectExecutor.Instance.Execute();
-            HandCardDisplay.Instance.SetNowDraggingCard(null);
-            PlayerArea.Instance.cardUsage--;
-        }
-        else
-        {
-            isBeginDrag = false;
-            HandCardDisplay.Instance.SetNowDraggingCard(null);
-            GetComponent<HandCardElement>().isFront = false;
-            GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
-            GetComponent<Animator>().SetBool("isSelect", false);
-            GetComponent<Animator>().SetBool("isDragging", false);
+            if (isDrag && PlayerArea.Instance.cardUsage != 0)
+            {
+                CardEffectExecutor.Instance.Execute();
+                HandCardDisplay.Instance.SetNowDraggingCard(null);
+                PlayerArea.Instance.cardUsage--;
+            }
+            else
+            {
+                isBeginDrag = false;
+                HandCardDisplay.Instance.SetNowDraggingCard(null);
+                GetComponent<HandCardElement>().isFront = false;
+                GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
+                GetComponent<Animator>().SetBool("isSelect", false);
+                GetComponent<Animator>().SetBool("isDragging", false);
+            }
         }
     }
 
     public void SetModMode()
     {
-        if (!GetComponent<Animator>().GetBool("isMod"))
+        if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            CardEffectExecutor.Instance.AddModCard(cardDisplay);
-            GetComponent<Animator>().SetBool("isMod", true);
-        }
-        else
-        {
-            CardEffectExecutor.Instance.RemoveModCard(cardDisplay);
-            GetComponent<Animator>().SetBool("isMod", false);
+            if (!GetComponent<Animator>().GetBool("isMod"))
+            {
+                CardEffectExecutor.Instance.AddModCard(cardDisplay);
+                GetComponent<Animator>().SetBool("isMod", true);
+            }
+            else
+            {
+                CardEffectExecutor.Instance.RemoveModCard(cardDisplay);
+                GetComponent<Animator>().SetBool("isMod", false);
+            }
         }
     }
 }

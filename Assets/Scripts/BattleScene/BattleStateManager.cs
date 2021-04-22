@@ -30,6 +30,7 @@ public class BattleStateManager : MonoBehaviour
     public BattleSceneState nowState;
 
     public Transform mainGameCanvas;
+
     [Space]
     public BattleEvent playerTurnStartText;
 
@@ -91,7 +92,6 @@ public class BattleStateManager : MonoBehaviour
                 {
                     nowState = BattleSceneState.ENEMY_TURN_END;
                     OnEnemyTurnEnd?.Invoke(this, EventArgs.Empty);
-
                 }
                 break;
 
@@ -106,6 +106,11 @@ public class BattleStateManager : MonoBehaviour
             case BattleSceneState.BATTLE_END:
                 break;
         }
+    }
+
+    public bool IsPlayerTurn()
+    {
+        return nowState == BattleSceneState.PLAYER_TURN_UPDATE;
     }
 
     public void PlayerTurnEnd()

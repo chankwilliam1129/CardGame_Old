@@ -18,7 +18,7 @@ public class DrawCard : CardEffect
         int draw = value.x + value.y * power;
         for (int i = 0; i < draw; i++)
         {
-            Instantiate(drawCardEvent);
+            Instantiate(drawCardEvent, BattleEventManager.Instance.transform);
         }
     }
 }

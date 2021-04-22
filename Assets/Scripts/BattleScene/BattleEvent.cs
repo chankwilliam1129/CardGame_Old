@@ -6,6 +6,12 @@ public class BattleEvent : MonoBehaviour
 {
     public bool autoDestroy = false;
     public float destroyTime;
+    public float timeCounter;
+
+    public bool autoMovement = false;
+    public AnimationCurve curve;
+    public Transform from;
+    public Transform target;
 
     public BattleEvent()
     {
@@ -15,6 +21,7 @@ public class BattleEvent : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
+        timeCounter = 0.0f;
         BattleEventManager.Instance?.Execute();
     }
 
@@ -22,8 +29,16 @@ public class BattleEvent : MonoBehaviour
     {
         if (autoDestroy)
         {
-            destroyTime -= Time.deltaTime;
-            if (destroyTime < 0.0f) Destroy(gameObject);
+            timeCounter += Time.deltaTime;
+
+            if (autoMovement)
+            {
+                float c = curve.Evaluate(timeCounter / destroyTime);
+                Vector3 pos = from.position + (target.position - from.position) * c;
+                transform.position = pos;
+            }
+
+            if (timeCounter > destroyTime) Destroy(gameObject);
         }
     }
 

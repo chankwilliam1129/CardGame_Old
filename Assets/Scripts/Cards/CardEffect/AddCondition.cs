@@ -15,7 +15,7 @@ public class AddCondition : CardEffect
 
     public override void Execute(Vector2Int value, int power)
     {
-        AddConditionEvent e = Instantiate(addCondition);
+        AddConditionEvent e = Instantiate(addCondition, BattleEventManager.Instance.transform);
         e.value = value.x + value.y * power;
         e.target = EnemyArea.Instance.enemy;
     }

@@ -15,7 +15,7 @@ public class Heal : CardEffect
 
     public override void Execute(Vector2Int value, int power)
     {
-        HealEvent e = Instantiate(healEvent);
+        HealEvent e = Instantiate(healEvent, BattleEventManager.Instance.transform);
         e.heal = value.x + value.y * power;
         e.target = PlayerArea.Instance.player;
     }

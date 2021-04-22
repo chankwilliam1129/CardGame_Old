@@ -15,7 +15,7 @@ public class SelfDamage : CardEffect
 
     public override void Execute(Vector2Int value, int power)
     {
-        SelfDamageEvent e = Instantiate(damageEvent);
+        SelfDamageEvent e = Instantiate(damageEvent, BattleEventManager.Instance.transform);
         e.damage = value.x + value.y * power;
         e.target = PlayerArea.Instance.player;
     }
