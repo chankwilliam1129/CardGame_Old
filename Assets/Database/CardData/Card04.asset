@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: Card04
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u6368\u3066\u8EAB"
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
-    brokenPower: 0
-    playEffects: []
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 1
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 8, y: 2}
+    - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
+      value: {x: 4, y: 2}
     modEffects: []
