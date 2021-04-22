@@ -60,7 +60,7 @@ public class BattleDeckManager : MonoBehaviour
         int num = 5 - HandCardDisplay.Instance.cardDisplayList.Count;
         if (num > 0)
         {
-            for(int i=0;i<num;i++)
+            for (int i = 0; i < num; i++)
             {
                 Instantiate(drawCardEvent);
             }

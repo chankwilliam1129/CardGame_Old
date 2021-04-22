@@ -76,14 +76,16 @@ public class CardEventTrigger : MonoBehaviour
 
     public void OnEndDrag()
     {
-        if (isDrag)
+        if (isDrag && PlayerArea.Instance.cardUsage != 0)
         {
             CardEffectExecutor.Instance.Execute();
             HandCardDisplay.Instance.SetNowDraggingCard(null);
+            PlayerArea.Instance.cardUsage--;
         }
         else
         {
             isBeginDrag = false;
+            HandCardDisplay.Instance.SetNowDraggingCard(null);
             GetComponent<HandCardElement>().isFront = false;
             GetComponent<HandCardElement>().SetFlexibleWidth(1.0f);
             GetComponent<Animator>().SetBool("isSelect", false);
