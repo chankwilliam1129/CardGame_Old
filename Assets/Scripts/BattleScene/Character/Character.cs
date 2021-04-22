@@ -56,6 +56,13 @@ public class Character : MonoBehaviour
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    public void HealEnergyPoint(int heal)
+    {
+        //if (GetHealthPointMax() > healthPoint)
+        PlayerArea.Instance.cardUsage += heal;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
     public int GetHealthPoint()
     {
         return healthPoint;
