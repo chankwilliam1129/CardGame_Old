@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealHpEvent : MonoBehaviour
+public class HealEvent : MonoBehaviour
 {
     public int heal;
-    public Character from;
     public Character target;
 
     private void Start()

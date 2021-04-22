@@ -9,7 +9,7 @@ public class DealDamage : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return value.x.ToString() + "ダメージを与える";
+        return "(" + value.x.ToString() + ")ダメージを与える。";
     }
 
     public override void Execute(Vector2Int value)

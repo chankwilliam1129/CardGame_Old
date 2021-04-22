@@ -4,6 +4,18 @@ using UnityEngine;
 
 public abstract class CharacterEvent : MonoBehaviour
 {
+    public struct DamageData
+    {
+        public DamageData(int d, Character c)
+        {
+            damage = d;
+            from = c;
+        }
+
+        public int damage;
+        public Character from;
+    }
+
     public Character character;
 
     public event EventHandler OnTurnStart;
@@ -16,15 +28,9 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public event EventHandler<int> OnGetHeal;
 
-    private void CharacterEvent_OnGetDamaged(object sender, DamageData e)
-    {
-        character.LoseHealthPoint(e.damage);
-    }
-
     public void Start()
     {
         character = GetComponent<Character>();
-        OnGetDamaged += CharacterEvent_OnGetDamaged;
     }
 
     public void Update()
@@ -40,14 +46,13 @@ public abstract class CharacterEvent : MonoBehaviour
     {
         DamageData damageData = new DamageData(damage, from);
         OnGetDamaged?.Invoke(this, damageData);
+        character.LoseHealthPoint(damage);
     }
 
     public void GetHeal(int heal)
     {
-      
         OnGetHeal?.Invoke(this, heal);
         character.HealHealthPoint(heal);
-
     }
 
     public void OnTurnStartEvent()

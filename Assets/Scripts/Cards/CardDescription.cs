@@ -14,7 +14,6 @@ public class CardDescription : MonoBehaviour
         foreach (var effect in cardDisplay.data.playEffects)
         {
             text += effect.type.GetDescription(effect.value);
-            text += "ÅB";
         }
 
         GetComponent<TextMeshProUGUI>().text = text;

@@ -9,6 +9,9 @@ public class CardEffectExecutor : MonoBehaviour
     public int totalEmptyPower;
     public int totalBrokenPower;
 
+    public int extraAttackCount;
+    public int extraDamage;
+
     public static CardEffectExecutor Instance { get; private set; }
 
     private void Awake()

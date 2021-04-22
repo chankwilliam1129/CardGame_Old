@@ -6,5 +6,13 @@ public abstract class CardEffect : ScriptableObject
 {
     public abstract string GetDescription(Vector2Int value);
 
-    public abstract void Execute(Vector2Int value);
+    public virtual void PreExecute(Vector2Int value)
+    {
+        return;
+    }
+
+    public virtual void Execute(Vector2Int value)
+    {
+        return;
+    }
 }

@@ -15,4 +15,9 @@ public class Card : ScriptableObject
 
     [Header("CardData")]
     public CardBattleData battleData;
+
+    public Card()
+    {
+        battleData.preset = this;
+    }
 }

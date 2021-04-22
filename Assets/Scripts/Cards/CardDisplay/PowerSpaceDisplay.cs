@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerSpaceDisplay : MonoBehaviour
 {
     public CardDisplay card;
+    public PowerDisplay powerDisplay;
     public Object powerSpaceIcon;
 
     private void Start()
@@ -15,10 +16,5 @@ public class PowerSpaceDisplay : MonoBehaviour
             pos.x += (card.data.powerSpace * -10f * card.transform.lossyScale.x) + (i + 0.5f) * 20f * card.transform.lossyScale.x;
             Instantiate(powerSpaceIcon, pos, Quaternion.identity, transform);
         }
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
     }
 }

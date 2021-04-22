@@ -16,17 +16,16 @@ public class Posion : Condition
 
     private void OnTurnEnd(object sender, System.EventArgs e)
     {
-        character.LoseHealthPoint(stack);
-        stack /= 2;
+        Settlement();
         text.text = stack.ToString();
-        if (stack <= 0)
-        {
-            Destroy(gameObject);
-        }
+        if (stack <= 0) Destroy(gameObject);
     }
 
-    private void Update()
+    public void Settlement()
     {
+        float value = character.GetHealthPoint() * (100.0f / (stack + 100.0f));
+        character.SetHealthPoint((int)value);
+        stack /= 2;
     }
 
     public override void DestoryEvent()

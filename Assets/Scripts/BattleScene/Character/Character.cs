@@ -3,19 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageData
-{
-    public DamageData(int d, Character c)
-    {
-        damage = d;
-        from = c;
-    }
-
-    public int damage;
-    public Character from;
-}
-
-
 public class Character : MonoBehaviour
 {
     public CharacterEvent characterEvent;
@@ -27,9 +14,16 @@ public class Character : MonoBehaviour
 
     public event EventHandler OnHealthChanged;
 
+    private void HealthChangeCheck(object sender, EventArgs e)
+    {
+        if (healthPoint > healthPointMax) healthPoint = healthPointMax;
+        if (healthPoint < 0) healthPoint = 0;
+    }
+
     private void Start()
     {
         characterEvent = GetComponent<CharacterEvent>();
+        OnHealthChanged += HealthChangeCheck;
     }
 
     private void Update()
@@ -57,9 +51,8 @@ public class Character : MonoBehaviour
 
     public void HealHealthPoint(int hp)
     {
-        if(GetHealthPointMax() > healthPoint)
-        healthPoint += hp;
-
+        if (GetHealthPointMax() > healthPoint)
+            healthPoint += hp;
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 

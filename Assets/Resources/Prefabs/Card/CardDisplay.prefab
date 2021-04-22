@@ -542,7 +542,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     preset: {fileID: 0}
-    enemySelect: 0
     powerSpace: 0
     emptyPower: 0
     normalPower: 0
@@ -941,6 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 2973268544365596480}
+  powerDisplay: {fileID: 2973268543453565205}
   powerSpaceIcon: {fileID: 6692882710129176294, guid: 25e0d164803798548bff81cf0a7ff2d2, type: 3}
 --- !u!1 &6358022943940958127
 GameObject:
@@ -1124,8 +1124,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

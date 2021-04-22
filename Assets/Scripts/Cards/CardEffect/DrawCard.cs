@@ -9,7 +9,7 @@ public class DrawCard : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return value.x.ToString() + "枚カードを引く";
+        return "(" + value.x.ToString() + ")枚カードを引く。";
     }
 
     public override void Execute(Vector2Int value)

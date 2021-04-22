@@ -5,8 +5,8 @@ using UnityEngine;
 [Serializable]
 public struct CardBattleData
 {
+    [HideInInspector]
     public Card preset;
-    public bool enemySelect;
 
     [Serializable]
     public class Effect

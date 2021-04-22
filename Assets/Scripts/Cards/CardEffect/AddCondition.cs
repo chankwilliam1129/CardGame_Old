@@ -9,7 +9,7 @@ public class AddCondition : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        return value.x.ToString() + addCondition.condition.conditionName;
+        return "(" + value.x.ToString() + ")" + addCondition.condition.conditionName + "ÅB";
     }
 
     public override void Execute(Vector2Int value)

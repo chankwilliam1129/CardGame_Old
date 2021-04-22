@@ -10,6 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b281e21649e83034da33a560d8a865f0, type: 3}
-  m_Name: HealHp
+  m_Name: Heal
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/Database/CardEffectData/HealHp.asset
   healHpEvent: {fileID: 6826624527149070198, guid: a992b719286bc224f98a1e085c7d2f78, type: 3}
+=======
+  healEvent: {fileID: 6826624527149070198, guid: a992b719286bc224f98a1e085c7d2f78, type: 3}
+>>>>>>> Stashed changes:Assets/Database/CardEffectData/Heal.asset

@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card/CardEffect/HealHP", fileName = "HealHp")]
-public class HealHp : CardEffect
+[CreateAssetMenu(menuName = "Card/CardEffect/Heal", fileName = "Heal")]
+public class Heal : CardEffect
 {
-    public HealHpEvent healHpEvent;
+    public HealEvent healEvent;
 
     public override string GetDescription(Vector2Int value)
     {
-        return value.x.ToString() + "‚ğ‰ñ•œ‚·‚é";
+        return "(" + value.x.ToString() + ")‘Ì—Í‚ğ‰ñ•œ‚·‚éB";
     }
 
     public override void Execute(Vector2Int value)
     {
-        HealHpEvent e = Instantiate(healHpEvent);
+        HealEvent e = Instantiate(healEvent);
         e.heal = value.x;
         e.target = PlayerArea.Instance.player;
     }
