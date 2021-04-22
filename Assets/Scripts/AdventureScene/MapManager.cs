@@ -10,6 +10,7 @@ public class MapManager : MonoBehaviour
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
 
     public List<List<Node>> nodeMap = new List<List<Node>>();
+    public Node selectNode;
 
     private void Start()
     {
