@@ -12,5 +12,201 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7daf5d7cf38404ba255a5d3329f721, type: 3}
   m_Name: PlayerMainDeck
   m_EditorClassIdentifier: 
-  cardDatabase: {fileID: 11400000, guid: 5a62e02e5e2e39c40a9c584dec7e3c39, type: 2}
-  deck: []
+  cardDatabase: {fileID: 11400000, guid: 376c195b93b2e574dbb5147006b42c9a, type: 2}
+  deck:
+  - preset: {fileID: 11400000, guid: 45f93c188ec768a4092b3e17d1a066e2, type: 2}
+    powerSpace: 6
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 45f93c188ec768a4092b3e17d1a066e2, type: 2}
+    powerSpace: 6
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 45f93c188ec768a4092b3e17d1a066e2, type: 2}
+    powerSpace: 6
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 45f93c188ec768a4092b3e17d1a066e2, type: 2}
+    powerSpace: 6
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0f4a3917881b0fd4f8bcaf4793348b47, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
+      value: {x: 3, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0f4a3917881b0fd4f8bcaf4793348b47, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
+      value: {x: 3, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0f4a3917881b0fd4f8bcaf4793348b47, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
+      value: {x: 3, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0f4a3917881b0fd4f8bcaf4793348b47, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
+      value: {x: 3, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: e3e11eec494a9d24f80e2aa4f7487e46, type: 2}
+    powerSpace: 4
+    emptyPower: 3
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 8, y: 2}
+    - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
+      value: {x: 4, y: -1}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: e3e11eec494a9d24f80e2aa4f7487e46, type: 2}
+    powerSpace: 4
+    emptyPower: 3
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 8, y: 2}
+    - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
+      value: {x: 4, y: -1}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 8d65f6358eea6824aad0174e6dcc6005, type: 2}
+    powerSpace: 4
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 1, y: 0}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 8d65f6358eea6824aad0174e6dcc6005, type: 2}
+    powerSpace: 4
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 1, y: 0}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 1832a4c64dd74f447bed3aa1bb0efb9d, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
+      value: {x: 5, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 1832a4c64dd74f447bed3aa1bb0efb9d, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
+      value: {x: 5, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 1832a4c64dd74f447bed3aa1bb0efb9d, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
+      value: {x: 5, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0af65a13fe2d24b448cd0ccf77caa59e, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 2, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0af65a13fe2d24b448cd0ccf77caa59e, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 2, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: 0af65a13fe2d24b448cd0ccf77caa59e, type: 2}
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 2, y: 2}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: dfb12cc0515ecba4ab333e082849500d, type: 2}
+    powerSpace: 4
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
+      value: {x: 1, y: 1}
+    modEffects: []
+  - preset: {fileID: 11400000, guid: dfb12cc0515ecba4ab333e082849500d, type: 2}
+    powerSpace: 4
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    playEffects:
+    - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
+      value: {x: 1, y: 1}
+    modEffects: []
