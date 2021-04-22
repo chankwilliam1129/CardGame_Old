@@ -132,6 +132,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2973268544365596480}
+        m_TargetAssemblyTypeName: CardDisplay, Assembly-CSharp
+        m_MethodName: PowerSpaceUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2973268542767583786
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,9 +278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 2973268544365596480}
-  emptyPowerIcon: {fileID: 3597501777735827489, guid: 6c66b8bca9561084fa76ef875743bf4e, type: 3}
-  normalPowerIcon: {fileID: 3597501777735827489, guid: 661392c54aec1f343914b9ae85969c4b, type: 3}
-  brokenPowerIcon: {fileID: 3597501777735827489, guid: 2e4298e17bfaddd4fa371f5a154468b7, type: 3}
+  emptyPowerIcon: {fileID: 5216131840610119064, guid: 6c66b8bca9561084fa76ef875743bf4e, type: 3}
+  normalPowerIcon: {fileID: 7063203783581190565, guid: 661392c54aec1f343914b9ae85969c4b, type: 3}
+  brokenPowerIcon: {fileID: 9157571185297848838, guid: 2e4298e17bfaddd4fa371f5a154468b7, type: 3}
 --- !u!1 &2973268543484328593
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +562,7 @@ MonoBehaviour:
     modEffects: []
   nameText: {fileID: 2973268543484328595}
   cardImage: {fileID: 7276710370647708579}
+  powerSpaceDisplay: {fileID: 7310156853514480781}
 --- !u!114 &1900496018582286537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 2973268544365596480}
   powerDisplay: {fileID: 2973268543453565205}
-  powerSpaceIcon: {fileID: 6692882710129176294, guid: 25e0d164803798548bff81cf0a7ff2d2, type: 3}
+  powerSpaceIcon: {fileID: 1083269607798663010, guid: 25e0d164803798548bff81cf0a7ff2d2, type: 3}
+  powerList: []
 --- !u!1 &6358022943940958127
 GameObject:
   m_ObjectHideFlags: 0

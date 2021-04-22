@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerDisplay : MonoBehaviour
 {
     public CardDisplay card;
 
-    public Object emptyPowerIcon;
-    public Object normalPowerIcon;
-    public Object brokenPowerIcon;
+    public Image emptyPowerIcon;
+    public Image normalPowerIcon;
+    public Image brokenPowerIcon;
 
     private void Start()
     {
