@@ -5,38 +5,24 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public Node node;
-    public Transform canvas;
+    public Transform mapParent;
 
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
 
     public List<List<Node>> nodeMap = new List<List<Node>>();
-    public Node selectNode;
 
+    private int mapSize = 5;
     private void Start()
-    {
-        List<Node> nodeList = CreateNodeList();
-        int nodeValue = Random.Range(3, 6);
-        for (int v = 0; v < nodeValue; v++)
+    {        
+        for (int i = 0; i < mapSize; i++)
         {
-            nodeList.Add(CreateNode(NodeType.EliteEnemy, new Vector2(nodeList.Count * 100, nodeMap.Count * 100)));
+            CreateMap(NodeType.EliteEnemy, 5);
         }
-        nodeMap.Add(nodeList);
-
-        List<Node> nodeList2 = CreateNodeList();
-        int nodeValue2 = Random.Range(3, 6);
-        for (int v = 0; v < nodeValue2; v++)
-        {
-            nodeList2.Add(CreateNode(NodeType.MinorEnemy, new Vector2(nodeList2.Count * 100, nodeMap.Count * 100)));
-        }
-        nodeMap.Add(nodeList2);
     }
 
-    public Node CreateNode(NodeType nodeType, Vector2 pos)
+    public Node CreateNode(NodeType nodeType, Vector2Int location)
     {
-        Vector3 cp = canvas.position;
-        cp.x += pos.x;
-        cp.y += pos.y;
-        return Instantiate(node, cp, Quaternion.identity, canvas).SetNodeData(nodeDatas[(int)nodeType]);
+        return Instantiate(node, mapParent).SetNodeData(nodeDatas[(int)nodeType], location);
     }
     
     public List<Node> CreateNodeList()
@@ -44,4 +30,18 @@ public class MapManager : MonoBehaviour
         List<Node> nodeList = new List<Node>();
         return nodeList;
     }
+
+    private void CreateMap(NodeType nodeType, int value)
+    {
+        List<Node> nodeList = CreateNodeList();
+        for (int v = 0; v < value; v++)
+        {
+            nodeList.Add(CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count)));
+        }
+        nodeMap.Add(nodeList);
+    }
+    //public void PassNodes()
+    //{
+    //    GetComponent<Animator>().SetBool("isPass", true);
+    //}
 }
