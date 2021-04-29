@@ -35,10 +35,10 @@ public class CardEffectExecutor : MonoBehaviour
             {
                 effect.type.Execute(effect.value, totalNormalPower);
             }
-            BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, BattleDeckManager.RemoveType.ToDiscardPile);
+            BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
             foreach (var card in nowModCard)
             {
-                BattleDeckManager.Instance.Discard(card, BattleDeckManager.RemoveType.ToDiscardPile);
+                BattleDeckManager.Instance.Discard(card, card.data.removeType);
             }
             nowModCard.Clear();
             CountTotalPower();
