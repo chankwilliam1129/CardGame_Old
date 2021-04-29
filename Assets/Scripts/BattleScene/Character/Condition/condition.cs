@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class Condition : MonoBehaviour
 {
+    public int stack;
+    public TextMeshProUGUI text;
+
     public Character character;
     public string conditionName;
 

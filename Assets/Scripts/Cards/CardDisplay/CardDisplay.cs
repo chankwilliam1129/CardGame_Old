@@ -14,11 +14,15 @@ public class CardDisplay : MonoBehaviour
 
     public Image cardImage;
     public PowerSpaceDisplay powerSpaceDisplay;
+    public CardDescription cardDescription;
+
 
     private void Start()
     {
         nameText.text = data.preset.name;
         cardImage.sprite = data.preset.image;
+        cardImage.material = new Material(cardImage.material);
+        cardImage.material.SetTexture("_MainText", data.preset.image.texture);
     }
 
     private void Update()

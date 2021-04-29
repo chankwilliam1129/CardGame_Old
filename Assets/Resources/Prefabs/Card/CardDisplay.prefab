@@ -558,11 +558,13 @@ MonoBehaviour:
     emptyPower: 0
     normalPower: 0
     brokenPower: 0
+    removeType: 0
     playEffects: []
     modEffects: []
   nameText: {fileID: 2973268543484328595}
   cardImage: {fileID: 7276710370647708579}
   powerSpaceDisplay: {fileID: 7310156853514480781}
+  cardDescription: {fileID: 7855206188505380580}
 --- !u!114 &1900496018582286537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 26afb2efdb3a76146bbe039de9fdb9bf, type: 2}
+  m_Material: {fileID: 2100000, guid: 9676273fd211ef94e8366a54f1d3301a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}

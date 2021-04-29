@@ -9,8 +9,7 @@ public class DealDamage : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")ダメージを与える。";
-        else return value.x.ToString() + "ダメージを与える。";
+        return GetValueString(value) + "ダメージを与える。";
     }
 
     public override void Execute(Vector2Int value, int power)

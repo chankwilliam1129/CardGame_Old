@@ -4,13 +4,33 @@ using UnityEngine;
 
 public class CardEffectExecutor : MonoBehaviour
 {
+    public enum AffectType
+    {
+        Attack,
+        Condition,
+        Buff,
+        Debuff,
+        Heal,
+        Shield,
+        Special,
+        Curse,
+        All,
+        MAX,
+    }
+
+    [System.Serializable]
+    public class AffectList
+    {
+        public List<Affact> List = new List<Affact>();
+    }
+
+    [SerializeField]
+    public List<AffectList> affectLists = new List<AffectList>();
+
     public List<CardDisplay> nowModCard;
     public int totalNormalPower;
     public int totalEmptyPower;
     public int totalBrokenPower;
-
-    public int extraAttackCount;
-    public int extraDamage;
 
     public static CardEffectExecutor Instance { get; private set; }
 
@@ -21,10 +41,10 @@ public class CardEffectExecutor : MonoBehaviour
 
     private void Start()
     {
-    }
-
-    private void Update()
-    {
+        for(int i=0;i<(int)AffectType.MAX;i++)
+        {
+            affectLists.Add(new AffectList());
+        }
     }
 
     public void Execute()
@@ -81,5 +101,25 @@ public class CardEffectExecutor : MonoBehaviour
         {
             card.powerSpaceDisplay.PowerDisplayUpdate();
         }
+    }
+
+    public Vector2Int GetValueAdd(AffectType type)
+    {
+        Vector2Int value = Vector2Int.zero;
+        foreach(var a in affectLists[(int)type].List)
+        {
+            value += a.GetValueAdd();
+        }
+        return value;
+    }
+
+    public Vector2 GetValueMulti(AffectType type)
+    {
+        Vector2 value = Vector2.zero;
+        foreach (var a in affectLists[(int)type].List)
+        {
+            value += a.GetValueMulti();
+        }
+        return value;
     }
 }

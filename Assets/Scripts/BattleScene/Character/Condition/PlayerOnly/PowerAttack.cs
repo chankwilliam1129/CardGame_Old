@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class Posion : Condition
+public class PowerAttack : Condition
 {
     private void Start()
     {
@@ -13,16 +12,9 @@ public class Posion : Condition
 
     private void OnTurnEnd(object sender, System.EventArgs e)
     {
-        Settlement();
         text.text = stack.ToString();
+        stack--;
         if (stack <= 0) Destroy(gameObject);
-    }
-
-    public void Settlement()
-    {
-        float value = character.GetHealthPoint() * (100.0f / (stack + 100.0f));
-        character.SetHealthPoint((int)value);
-        stack /= 2;
     }
 
     public override void DestoryEvent()
@@ -35,7 +27,7 @@ public class Posion : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<Posion>();
+            condition = con.GetComponent<PowerAttack>();
             if (condition != null) break;
         }
         return condition;

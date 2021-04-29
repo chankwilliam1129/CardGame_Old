@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d92ea928dd75874a8db5408206e6022, type: 3}
-  m_Name: Posion
+  m_Name: AddPowerAttack
   m_EditorClassIdentifier: 
-  addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
+  addCondition: {fileID: 8782225051060949500, guid: 27a98f07197ffba4d85a8c3d41716645, type: 3}
+  toPlayer: 1

@@ -9,6 +9,11 @@ public class CardDescription : MonoBehaviour
 
     private void Start()
     {
+        DescriptionUpdate();
+    }
+
+    public void DescriptionUpdate()
+    {
         string text = "";
 
         foreach (var effect in cardDisplay.data.playEffects)
