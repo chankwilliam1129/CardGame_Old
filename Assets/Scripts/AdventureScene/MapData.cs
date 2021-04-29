@@ -6,7 +6,6 @@ using UnityEngine;
 public class MapData : ScriptableObject
 {
     public Vector2Int playerLocation;
-
     public static MapData Instance { get; private set; }
 
     private void OnEnable()

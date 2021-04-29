@@ -14,13 +14,6 @@ public class Node : MonoBehaviour
         GetComponent<Image>().sprite = data.sprite;
         transform.localPosition = new Vector3(location.x * 100, location.y * 100, 0);
     }
-    private void Update()
-    {
-        if (IsUnderLocation())
-        {
-            GetComponent<Animator>().SetBool("isPass", true);
-        }
-    }
     public Node SetNodeData(NodeData nodeData, Vector2Int lo)
     {
         data = nodeData;
@@ -29,31 +22,40 @@ public class Node : MonoBehaviour
     } 
     public void NodePointerEnter()
     {
-        if (IsNextLocation())
+        if (CanWalk())
         {
             GetComponent<Animator>().SetBool("isTouch", true);
         }
     }
-
     public void NodePointerExit()
     {
         GetComponent<Animator>().SetBool("isTouch", false);
     }
 
     public void NodePointerClick()
-    {
-        //if (this.data.nodeType == NodeType.EliteEnemy)
-        //{
-        //    SceneManager.LoadScene("BattleScene");
-        //}
-        
-        if (IsNextLocation()) 
+    {    
+        if (CanWalk()) 
         {
+            Node curNode = MapManager.Instance.GetNodeList(MapData.Instance.playerLocation.y)[MapData.Instance.playerLocation.x];
+            curNode.GetComponent<Animator>().SetBool("isSelect", false);
+            curNode.GetComponent<Animator>().SetBool("isPass", false);
+            curNode.GetComponent<Animator>().SetBool("isSelected", true);
+ 
             MapData.Instance.playerLocation = location;
+
             GetComponent<Animator>().SetBool("isSelect", true);
+            foreach (var n in MapManager.Instance.GetNodeList(MapData.Instance.playerLocation.y))
+            {
+                if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
+            }
+
+            SceneManager.LoadScene("BattleScene");
         }
     }
-
+    private bool CanWalk()
+    {
+        return IsNextLocation();
+    }
     private bool IsNextLocation()
     {
         return location.y == MapData.Instance.playerLocation.y + 1;

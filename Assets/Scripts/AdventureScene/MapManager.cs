@@ -6,31 +6,34 @@ public class MapManager : MonoBehaviour
 {
     public Node node;
     public Transform mapParent;
+    public int mapSize;
 
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
-
     public List<List<Node>> nodeMap = new List<List<Node>>();
 
-    private int mapSize = 5;
+    public static MapManager Instance { get; private set; }
+
+    private MapManager()
+    {
+        Instance = this;
+    }
     private void Start()
-    {        
+    {
+        CreateMap(NodeType.EliteEnemy, 1);
         for (int i = 0; i < mapSize; i++)
         {
             CreateMap(NodeType.EliteEnemy, 5);
         }
     }
-
     public Node CreateNode(NodeType nodeType, Vector2Int location)
     {
         return Instantiate(node, mapParent).SetNodeData(nodeDatas[(int)nodeType], location);
     }
-    
     public List<Node> CreateNodeList()
     {
         List<Node> nodeList = new List<Node>();
         return nodeList;
     }
-
     private void CreateMap(NodeType nodeType, int value)
     {
         List<Node> nodeList = CreateNodeList();
@@ -40,8 +43,9 @@ public class MapManager : MonoBehaviour
         }
         nodeMap.Add(nodeList);
     }
-    //public void PassNodes()
-    //{
-    //    GetComponent<Animator>().SetBool("isPass", true);
-    //}
+    public List<Node> GetNodeList(int y)
+    {
+        if (y < 0) { y = 0; }
+        return nodeMap[y];
+    }
 }
