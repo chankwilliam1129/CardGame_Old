@@ -21,6 +21,10 @@ public class Affact : MonoBehaviour
     private void OnDestroy()
     {
         CardEffectExecutor.Instance.affectLists[(int)type].List.Remove(this);
+        foreach (var card in HandCardDisplay.Instance.cardDisplayList)
+        {
+            card.cardDescription.DescriptionUpdate();
+        }
     }
 
     public virtual Vector2Int GetValueAdd()

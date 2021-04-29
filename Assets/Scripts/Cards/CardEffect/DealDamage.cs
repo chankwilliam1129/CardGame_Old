@@ -15,7 +15,7 @@ public class DealDamage : CardEffect
     public override void Execute(Vector2Int value, int power)
     {
         DealDamageEvent e = Instantiate(damageEvent, BattleEventManager.Instance.transform);
-        e.damage = value.x + value.y * power;
+        e.damage = GetFinalValue(value, power);
         e.target = EnemyArea.Instance.enemy;
         e.from = PlayerArea.Instance.player;
     }

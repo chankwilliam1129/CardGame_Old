@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class CardEffect : ScriptableObject
 {
     protected CardEffectExecutor.AffectType type;
-    private object red;
 
     public abstract string GetDescription(Vector2Int value);
 
@@ -36,6 +35,12 @@ public abstract class CardEffect : ScriptableObject
         {
             return new Vector2Int((int)temp.x, (int)temp.y);
         }
+    }
+
+    protected int GetFinalValue(Vector2Int value,int power)
+    {
+        Vector2Int temp = GetValue(value);
+        return temp.x + temp.y * power;
     }
 
     protected string GetValueString(Vector2Int v)
