@@ -12,8 +12,8 @@ public class PowerAttack : Condition
 
     private void OnTurnEnd(object sender, System.EventArgs e)
     {
-        text.text = stack.ToString();
         stack--;
+        text.text = stack.ToString();
         if (stack <= 0) Destroy(gameObject);
     }
 

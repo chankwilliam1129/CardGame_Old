@@ -10,14 +10,13 @@ public class HealEnergy : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")エナジーを回復する。";
-        return value.x.ToString() + "エナジーを回復する。";
+        return GetValueString(value) + "エナジーを回復する";
     }
 
     public override void Execute(Vector2Int value, int power)
     {
         HealEnergyEvent e = Instantiate(healEvent, BattleEventManager.Instance.transform);
-        e.heal = value.x + value.y * power;
+        e.heal = GetFinalValue(value, power);
         e.target = PlayerArea.Instance.player;
     }
 }

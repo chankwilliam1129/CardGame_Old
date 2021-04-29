@@ -9,14 +9,13 @@ public class SelfDamage : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")ダメージを自分に与える。";
-        return value.x.ToString() + "ダメージを自分に与える。";
+        return GetValueString(value) + "ダメージを自分に与える。";
     }
 
     public override void Execute(Vector2Int value, int power)
     {
         SelfDamageEvent e = Instantiate(damageEvent, BattleEventManager.Instance.transform);
-        e.damage = value.x + value.y * power;
+        e.damage = GetFinalValue(value, power);
         e.target = PlayerArea.Instance.player;
     }
 }

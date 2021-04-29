@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class CardEffect : ScriptableObject
 {
-    protected CardEffectExecutor.AffectType type;
+    public CardEffectExecutor.AffectType type;
 
     public abstract string GetDescription(Vector2Int value);
 

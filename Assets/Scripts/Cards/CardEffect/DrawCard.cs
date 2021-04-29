@@ -9,13 +9,12 @@ public class DrawCard : CardEffect
 
     public override string GetDescription(Vector2Int value)
     {
-        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")枚カードを引く。";
-        else return value.x.ToString() + "枚カードを引く。";
+        return GetValueString(value) + "枚カードを引く。";
     }
 
     public override void Execute(Vector2Int value, int power)
     {
-        int draw = value.x + value.y * power;
+        int draw = GetFinalValue(value, power);
         for (int i = 0; i < draw; i++)
         {
             Instantiate(drawCardEvent, BattleEventManager.Instance.transform);
