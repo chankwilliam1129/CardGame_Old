@@ -4,40 +4,70 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class Node : MonoBehaviour
 {
     public NodeData data;
+    public Vector2Int location;
+
     private void Start()
     {
         GetComponent<Image>().sprite = data.sprite;
+        transform.localPosition = new Vector3(location.x * 100, location.y * 100, 0);
     }
-    public Node SetNodeData(NodeData nodeData)
+    private void Update()
+    {
+        if (IsUnderLocation())
+        {
+            GetComponent<Animator>().SetBool("isPass", true);
+        }
+    }
+    public Node SetNodeData(NodeData nodeData, Vector2Int lo)
     {
         data = nodeData;
+        location = lo;
         return this;
-    }
-    
+    } 
     public void NodePointerEnter()
     {
-        if (this.data.nodeType == NodeType.EliteEnemy)
+        if (IsNextLocation())
         {
-            Debug.Log("EliteEnemy");         
-        }
-        else if (this.data.nodeType == NodeType.MinorEnemy)
-        {
-            Debug.Log("MinorEnemy");
+            GetComponent<Animator>().SetBool("isTouch", true);
         }
     }
+
+    public void NodePointerExit()
+    {
+        GetComponent<Animator>().SetBool("isTouch", false);
+    }
+
     public void NodePointerClick()
     {
-        if (this.data.nodeType == NodeType.EliteEnemy)
+        //if (this.data.nodeType == NodeType.EliteEnemy)
+        //{
+        //    SceneManager.LoadScene("BattleScene");
+        //}
+        
+        if (IsNextLocation()) 
         {
-            SceneManager.LoadScene("BattleScene");
+            MapData.Instance.playerLocation = location;
+            GetComponent<Animator>().SetBool("isSelect", true);
         }
-        else if (this.data.nodeType == NodeType.MinorEnemy)
-        {
-            SceneManager.LoadScene("BattleScene");
-        }
+    }
+
+    private bool IsNextLocation()
+    {
+        return location.y == MapData.Instance.playerLocation.y + 1;
+    }
+    private bool IsUpLocation()
+    {
+        return location.y > MapData.Instance.playerLocation.y; 
+    } 
+    private bool IsUnderLocation()
+    {
+        return location.y < MapData.Instance.playerLocation.y;
+    }
+    private bool IsSameLocation()
+    {
+        return location.y == MapData.Instance.playerLocation.y;
     }
 }
