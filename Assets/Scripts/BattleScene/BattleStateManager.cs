@@ -18,6 +18,8 @@ public class BattleStateManager : MonoBehaviour
         MAX,
     }
 
+    public bool isPause;
+
     public event EventHandler OnBattleStart;
 
     public event EventHandler OnPlayerTurnStart;
@@ -116,7 +118,10 @@ public class BattleStateManager : MonoBehaviour
 
     public void PlayerTurnEnd()
     {
-        if (!BattleEventManager.Instance.Execute()) nowState = BattleSceneState.PLAYER_TURN_END;
-        OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
+        if (!isPause && IsPlayerTurn())
+        {
+            if (!BattleEventManager.Instance.Execute()) nowState = BattleSceneState.PLAYER_TURN_END;
+            OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
