@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de5df77a5b62a046a75d1cb738c5b01, type: 3}
-  m_Name: EnemyAddCondition
+  m_Name: EnemyAddPoison
   m_EditorClassIdentifier: 
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
