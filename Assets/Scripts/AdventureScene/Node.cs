@@ -22,16 +22,12 @@ public class Node : MonoBehaviour
     } 
     public void NodePointerEnter()
     {
-        if (CanWalk())
-        {
-            GetComponent<Animator>().SetBool("isTouch", true);
-        }
+        GetComponent<Animator>().SetBool("isTouch", true);
     }
     public void NodePointerExit()
     {
         GetComponent<Animator>().SetBool("isTouch", false);
     }
-
     public void NodePointerClick()
     {    
         if (CanWalk()) 
@@ -49,7 +45,10 @@ public class Node : MonoBehaviour
                 if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
             }
 
-            SceneManager.LoadScene("BattleScene");
+            if (data.nodeType == NodeType.Store) 
+            {
+                SceneManager.LoadScene("StoreScene");
+            }
         }
     }
     private bool CanWalk()

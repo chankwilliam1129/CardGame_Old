@@ -8,7 +8,7 @@ public enum NodeType
     EliteEnemy,
     //Mystery,
     //Treasure,
-    //Store,
+    Store,
     //Boss,
     Max,
 }
