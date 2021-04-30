@@ -13,6 +13,10 @@ public class PowerSpaceDisplay : MonoBehaviour
 
     private void Start()
     {
+    }
+
+    public void SetUp()
+    {
         for (int i = 0; i < card.data.powerSpace; i++)
         {
             Vector3 pos = transform.position;

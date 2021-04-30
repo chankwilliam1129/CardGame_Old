@@ -9,7 +9,6 @@ public class CardDescription : MonoBehaviour
 
     private void Start()
     {
-        DescriptionUpdate();
     }
 
     public void DescriptionUpdate()

@@ -13,6 +13,10 @@ public class PowerDisplay : MonoBehaviour
 
     private void Start()
     {
+    }
+
+    public void SetUp()
+    {
         int maxPower = card.data.emptyPower + card.data.normalPower + card.data.brokenPower;
         for (int i = 0; i < maxPower; i++)
         {

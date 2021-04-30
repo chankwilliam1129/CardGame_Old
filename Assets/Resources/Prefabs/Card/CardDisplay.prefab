@@ -551,6 +551,7 @@ MonoBehaviour:
     modEffects: []
   nameText: {fileID: 2973268543484328595}
   cardImage: {fileID: 7276710370647708579}
+  powerDisplay: {fileID: 2973268543453565205}
   powerSpaceDisplay: {fileID: 7310156853514480781}
   cardDescription: {fileID: 7855206188505380580}
 --- !u!114 &1900496018582286537
