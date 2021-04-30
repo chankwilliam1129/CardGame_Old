@@ -32,6 +32,8 @@ public class CardEffectExecutor : MonoBehaviour
     public int totalEmptyPower;
     public int totalBrokenPower;
 
+    private int discardMode;
+
     public static CardEffectExecutor Instance { get; private set; }
 
     private void Awake()
@@ -41,9 +43,26 @@ public class CardEffectExecutor : MonoBehaviour
 
     private void Start()
     {
-        for(int i=0;i<(int)AffectType.MAX;i++)
+        for (int i = 0; i < (int)AffectType.MAX; i++)
         {
             affectLists.Add(new AffectList());
+        }
+    }
+
+    public bool IsDiscardMode()
+    {
+        return discardMode > 0;
+    }
+
+    public void SetDiscardMode(int num)
+    {
+    }
+
+    private void DiscardModeCheck()
+    {
+        if (HandCardDisplay.Instance.IsEmpty())
+        {
+            SetDiscardMode(0);
         }
     }
 
@@ -51,17 +70,24 @@ public class CardEffectExecutor : MonoBehaviour
     {
         if (HandCardDisplay.Instance.nowDraggingCard != null)
         {
-            foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.playEffects)
+            if (IsDiscardMode())
             {
-                effect.type.Execute(effect.value, totalNormalPower);
+                BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
             }
-            BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
-            foreach (var card in nowModCard)
+            else
             {
-                BattleDeckManager.Instance.Discard(card, card.data.removeType);
+                foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.playEffects)
+                {
+                    effect.type.Execute(effect.value, totalNormalPower);
+                }
+                BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
+                foreach (var card in nowModCard)
+                {
+                    BattleDeckManager.Instance.Discard(card, card.data.removeType);
+                }
+                nowModCard.Clear();
+                CountTotalPower();
             }
-            nowModCard.Clear();
-            CountTotalPower();
         }
     }
 
@@ -106,7 +132,7 @@ public class CardEffectExecutor : MonoBehaviour
     public Vector2Int GetValueAdd(AffectType type)
     {
         Vector2Int value = Vector2Int.zero;
-        foreach(var a in affectLists[(int)type].List)
+        foreach (var a in affectLists[(int)type].List)
         {
             value += a.GetValueAdd();
         }

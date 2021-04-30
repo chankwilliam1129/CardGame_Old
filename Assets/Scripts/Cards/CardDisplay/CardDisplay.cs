@@ -16,7 +16,6 @@ public class CardDisplay : MonoBehaviour
     public PowerSpaceDisplay powerSpaceDisplay;
     public CardDescription cardDescription;
 
-
     private void Start()
     {
         nameText.text = data.preset.name;
@@ -31,11 +30,11 @@ public class CardDisplay : MonoBehaviour
 
     public void OnInputSlot()
     {
-        GetComponent<Animator>().SetBool("isMod", true);
+        GetComponent<Animator>()?.SetBool("isMod", true);
     }
 
     public void SetUsable(bool isUsable)
     {
-        GetComponent<Animator>().SetBool("isUsable", isUsable);
+        GetComponent<Animator>()?.SetBool("isUsable", isUsable);
     }
 }

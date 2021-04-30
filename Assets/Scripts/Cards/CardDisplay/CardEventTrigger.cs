@@ -18,28 +18,31 @@ public class CardEventTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (isBeginDrag)
+        if (HandCardDisplay.Instance != null)
         {
-            float posY = Input.mousePosition.y - (HandCardDisplay.Instance.transform.position.y + HandCardDisplay.Instance.GetComponent<RectTransform>().rect.height * 0.5f);
-
-            if (isDrag)
+            if (isBeginDrag)
             {
-                if (posY < 0.0f)
+                float posY = Input.mousePosition.y - (HandCardDisplay.Instance.transform.position.y + HandCardDisplay.Instance.GetComponent<RectTransform>().rect.height * 0.5f);
+
+                if (isDrag)
                 {
-                    HandCardDisplay.Instance.SetNowDraggingCard(null);
+                    if (posY < 0.0f)
+                    {
+                        HandCardDisplay.Instance.SetNowDraggingCard(null);
+                    }
+                    else
+                    {
+                        if (element.IsMoving()) element.targetPosition = Input.mousePosition;
+                        else transform.position = Input.mousePosition;
+                    }
                 }
                 else
                 {
-                    if (element.IsMoving()) element.targetPosition = Input.mousePosition;
-                    else transform.position = Input.mousePosition;
-                }
-            }
-            else
-            {
-                if (posY >= 0.0f)
-                {
-                    HandCardDisplay.Instance.SetNowDraggingCard(cardDisplay);
-                    element.MovingTo(Input.mousePosition);
+                    if (posY >= 0.0f)
+                    {
+                        HandCardDisplay.Instance.SetNowDraggingCard(cardDisplay);
+                        element.MovingTo(Input.mousePosition);
+                    }
                 }
             }
         }

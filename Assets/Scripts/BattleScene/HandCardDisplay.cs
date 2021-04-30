@@ -59,4 +59,9 @@ public class HandCardDisplay : MonoBehaviour
             GetComponent<HandCardLayoutGroup>().ElementUpdate();
         }
     }
+
+    public bool IsEmpty()
+    {
+        return cardDisplayList.Count == 0;
+    }
 }

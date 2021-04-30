@@ -18,26 +18,32 @@ public abstract class CardEffect : ScriptableObject
         return;
     }
 
-
     protected Vector2Int GetValue(Vector2Int value)
     {
-        Vector2 temp = value;
-        temp += CardEffectExecutor.Instance.GetValueAdd(type) + CardEffectExecutor.Instance.GetValueAdd(CardEffectExecutor.AffectType.All);
-        Vector2 multi = CardEffectExecutor.Instance.GetValueMulti(type) + CardEffectExecutor.Instance.GetValueMulti(CardEffectExecutor.AffectType.All);
-        temp.x *= 1.0f + multi.x;
-        temp.y *= 1.0f + multi.y;
-
-        if (value.y == 0)
+        if (CardEffectExecutor.Instance != null)
         {
-            return new Vector2Int((int)temp.x, 0);
+            Vector2 temp = value;
+            temp += CardEffectExecutor.Instance.GetValueAdd(type) + CardEffectExecutor.Instance.GetValueAdd(CardEffectExecutor.AffectType.All);
+            Vector2 multi = CardEffectExecutor.Instance.GetValueMulti(type) + CardEffectExecutor.Instance.GetValueMulti(CardEffectExecutor.AffectType.All);
+            temp.x *= 1.0f + multi.x;
+            temp.y *= 1.0f + multi.y;
+
+            if (value.y == 0)
+            {
+                return new Vector2Int((int)temp.x, 0);
+            }
+            else
+            {
+                return new Vector2Int((int)temp.x, (int)temp.y);
+            }
         }
         else
         {
-            return new Vector2Int((int)temp.x, (int)temp.y);
+            return value;
         }
     }
 
-    protected int GetFinalValue(Vector2Int value,int power)
+    protected int GetFinalValue(Vector2Int value, int power)
     {
         Vector2Int temp = GetValue(value);
         return temp.x + temp.y * power;
