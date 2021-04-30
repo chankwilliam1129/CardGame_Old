@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d92ea928dd75874a8db5408206e6022, type: 3}
   m_Name: AddPowerAttack
   m_EditorClassIdentifier: 
+  type: 2
   addCondition: {fileID: 8782225051060949500, guid: 27a98f07197ffba4d85a8c3d41716645, type: 3}
   toPlayer: 1

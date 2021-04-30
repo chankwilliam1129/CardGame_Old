@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e020352260d3ea479791999330607e5, type: 3}
   m_Name: DrawCard
   m_EditorClassIdentifier: 
+  type: 6
   drawCardEvent: {fileID: 4889920597861384804, guid: 725dc457534a68f4fbd0f10c43a540b5, type: 3}

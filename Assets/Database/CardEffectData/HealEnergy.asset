@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9719506e4fb2c4f9112a36240f5254, type: 3}
   m_Name: HealEnergy
   m_EditorClassIdentifier: 
+  type: 6
   healEvent: {fileID: -5338200591867140686, guid: 0db46e1400617cb46a1bb2aacd5cdc3b, type: 3}

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4c3efde031da54a96f1c1bb8675fd5, type: 3}
   m_Name: SelfDamage
   m_EditorClassIdentifier: 
+  type: 6
   damageEvent: {fileID: -1647559749849954785, guid: 12426bf615dd22d47a33bbf04a4fbf82, type: 3}
