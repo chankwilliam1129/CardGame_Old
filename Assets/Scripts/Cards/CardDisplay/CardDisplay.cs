@@ -18,10 +18,7 @@ public class CardDisplay : MonoBehaviour
 
     private void Start()
     {
-        nameText.text = data.preset.name;
-        cardImage.sprite = data.preset.image;
-        cardImage.material = new Material(cardImage.material);
-        cardImage.material.SetTexture("_MainText", data.preset.image.texture);
+        SetUp();
     }
 
     private void Update()
@@ -36,5 +33,13 @@ public class CardDisplay : MonoBehaviour
     public void SetUsable(bool isUsable)
     {
         GetComponent<Animator>()?.SetBool("isUsable", isUsable);
+    }
+
+    public void SetUp()
+    {
+        nameText.text = data.preset.name;
+        cardImage.sprite = data.preset.image;
+        cardImage.material = new Material(cardImage.material);
+        cardImage.material.SetTexture("_MainText", data.preset.image.texture);
     }
 }
