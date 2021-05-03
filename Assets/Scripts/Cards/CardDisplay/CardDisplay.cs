@@ -30,7 +30,7 @@ public class CardDisplay : MonoBehaviour
         cardImage.material.SetTexture("_MainText", data.preset.image.texture);
         powerDisplay.SetUp();
         powerSpaceDisplay.SetUp();
-        cardDescription.DescriptionUpdate();
+        cardDescription.DescriptionUpdate(false);
     }
 
     private void Update()

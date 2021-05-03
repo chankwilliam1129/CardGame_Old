@@ -7,9 +7,9 @@ public class DealDamage : CardEffect
 {
     public DealDamageEvent damageEvent;
 
-    public override string GetDescription(Vector2Int value)
+    public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value) + "ダメージを与える。";
+        return GetValueString(value, isFinal) + "ダメージを与える。";
     }
 
     public override void Execute(Vector2Int value, int power)

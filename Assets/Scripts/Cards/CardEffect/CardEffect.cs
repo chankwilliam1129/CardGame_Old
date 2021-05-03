@@ -6,7 +6,7 @@ public abstract class CardEffect : ScriptableObject
 {
     public CardEffectExecutor.AffectType type;
 
-    public abstract string GetDescription(Vector2Int value);
+    public abstract string GetDescription(Vector2Int value, bool isFinal);
 
     public virtual void PreExecute(Vector2Int value)
     {
@@ -49,22 +49,34 @@ public abstract class CardEffect : ScriptableObject
         return temp.x + temp.y * power;
     }
 
-    protected string GetValueString(Vector2Int v)
+    protected string GetValueString(Vector2Int v, bool isFinal)
     {
         string valueString = "";
-        Vector2Int value = GetValue(v);
+        if (!isFinal)
+        {
+            Vector2Int value = GetValue(v);
 
-        if (value.x > v.x) valueString += "<#00FF00>";
-        else if (value.x < v.x) valueString += "<#FF0000>";
-        valueString += value.x.ToString();
-        if (value.x != v.x) valueString += "</color>";
-        if (value.y == 0) return valueString;
-        valueString += "(";
-        if (value.y > v.y) valueString += "<#00FF00>";
-        else if (value.y < v.y) valueString += "<#FF0000>";
-        valueString += value.y.ToString();
-        if (value.y != v.y) valueString += "</color>";
-        valueString += ")";
-        return valueString;
+            if (value.x > v.x) valueString += "<#55FF00>";
+            else if (value.x < v.x) valueString += "<#FF0000>";
+            valueString += value.x.ToString();
+            if (value.x != v.x) valueString += "</color>";
+            if (value.y == 0) return valueString;
+            valueString += "(";
+            if (value.y > v.y) valueString += "<#55FF00>";
+            else if (value.y < v.y) valueString += "<#FF0000>";
+            valueString += value.y.ToString();
+            if (value.y != v.y) valueString += "</color>";
+            valueString += ")";
+            return valueString;
+        }
+        else
+        {
+            int value = GetFinalValue(v, CardEffectExecutor.Instance.totalNormalPower);
+            if (value > v.x) valueString += "<#55FF00>";
+            else if (value < v.x) valueString += "<#FF0000>";
+            valueString += value.ToString();
+            if (value != v.x) valueString += "</color>";
+            return valueString;
+        }
     }
 }

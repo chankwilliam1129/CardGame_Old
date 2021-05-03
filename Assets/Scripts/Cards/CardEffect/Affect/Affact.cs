@@ -9,12 +9,12 @@ public class Affact : MonoBehaviour
     public Vector2Int valueAdd;
     public Vector2 valueMulti;
 
-    void Start()
+    private void Start()
     {
         CardEffectExecutor.Instance.affectLists[(int)type].List.Add(this);
-        foreach(var card in HandCardDisplay.Instance.cardDisplayList)
+        foreach (var card in HandCardDisplay.Instance.cardDisplayList)
         {
-            card.cardDescription.DescriptionUpdate();
+            card.cardDescription.DescriptionUpdate(false);
         }
     }
 
@@ -23,7 +23,7 @@ public class Affact : MonoBehaviour
         CardEffectExecutor.Instance.affectLists[(int)type].List.Remove(this);
         foreach (var card in HandCardDisplay.Instance.cardDisplayList)
         {
-            card.cardDescription.DescriptionUpdate();
+            card.cardDescription.DescriptionUpdate(false);
         }
     }
 

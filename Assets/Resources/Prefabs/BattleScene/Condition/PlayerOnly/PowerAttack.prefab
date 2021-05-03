@@ -191,6 +191,7 @@ MonoBehaviour:
   text: {fileID: 3038788829574630047}
   character: {fileID: 0}
   conditionName: "\u653B\u6483\u4E0A\u6607"
+  color: {r: 0.8113208, g: 0.4244596, b: 0, a: 0}
 --- !u!114 &1795809768942988168
 MonoBehaviour:
   m_ObjectHideFlags: 0

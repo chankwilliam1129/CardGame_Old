@@ -52,10 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6002853055abc24e8747f2e0d6ff309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
-  conditionName: "\u6BD2\u72B6\u614B"
   stack: 0
   text: {fileID: 5966762566902952686}
+  character: {fileID: 0}
+  conditionName: "\u6BD2\u72B6\u614B"
+  color: {r: 0.65098864, g: 0, b: 0.735849, a: 0}
 --- !u!222 &-7183423729675848105
 CanvasRenderer:
   m_ObjectHideFlags: 0

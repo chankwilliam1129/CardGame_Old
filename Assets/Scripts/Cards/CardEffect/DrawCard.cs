@@ -7,9 +7,9 @@ public class DrawCard : CardEffect
 {
     public GameObject drawCardEvent;
 
-    public override string GetDescription(Vector2Int value)
+    public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value) + "枚カードを引く。";
+        return "カードを" + GetValueString(value, isFinal) + "枚引く。";
     }
 
     public override void Execute(Vector2Int value, int power)

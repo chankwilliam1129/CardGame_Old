@@ -7,9 +7,9 @@ public class DiscardCard : CardEffect
 {
     public DiscardCardEvent discardCardEvent;
 
-    public override string GetDescription(Vector2Int value)
+    public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value) + "枚カードを廃棄する。";
+        return "カードを" + GetValueString(value, isFinal) + "枚捨てる。";
     }
 
     public override void Execute(Vector2Int value, int power)

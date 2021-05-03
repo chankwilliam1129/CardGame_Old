@@ -10,12 +10,18 @@ public abstract class Condition : MonoBehaviour
 
     public Character character;
     public string conditionName;
+    public Color color;
 
     public abstract Condition Exist(Character character);
 
     public abstract void Add(int value);
 
     public abstract void DestoryEvent();
+
+    public string GetText()
+    {
+        return "<#" + ColorUtility.ToHtmlStringRGB(color) + ">" + conditionName + "</color>";
+    }
 
     private void OnDestroy()
     {

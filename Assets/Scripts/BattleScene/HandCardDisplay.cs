@@ -47,6 +47,7 @@ public class HandCardDisplay : MonoBehaviour
     {
         if (nowDraggingCard != null)
         {
+            nowDraggingCard.cardDescription.DescriptionUpdate(false);
             nowDraggingCard.GetComponent<CardEventTrigger>().isDrag = false;
             nowDraggingCard.GetComponent<HandCardElement>().isActivity = true;
             GetComponent<HandCardLayoutGroup>().ElementUpdate();
@@ -54,6 +55,7 @@ public class HandCardDisplay : MonoBehaviour
         nowDraggingCard = card;
         if (nowDraggingCard != null)
         {
+            nowDraggingCard.cardDescription.DescriptionUpdate(true);
             nowDraggingCard.GetComponent<CardEventTrigger>().isDrag = true;
             nowDraggingCard.GetComponent<HandCardElement>().isActivity = false;
             GetComponent<HandCardLayoutGroup>().ElementUpdate();

@@ -8,9 +8,10 @@ public class AddCondition : CardEffect
     public AddConditionEvent addCondition;
     public bool toPlayer;
 
-    public override string GetDescription(Vector2Int value)
+    public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value) + addCondition.condition.conditionName + "ÅB";
+        if (toPlayer) return addCondition.condition.GetText() + GetValueString(value, isFinal) + "ÇìæÇÈÅB";
+        else return addCondition.condition.GetText() + GetValueString(value, isFinal) + "Çó^Ç¶ÇÈÅB";
     }
 
     public override void Execute(Vector2Int value, int power)

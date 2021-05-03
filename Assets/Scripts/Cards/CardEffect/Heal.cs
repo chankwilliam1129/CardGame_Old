@@ -7,9 +7,9 @@ public class Heal : CardEffect
 {
     public HealEvent healEvent;
 
-    public override string GetDescription(Vector2Int value)
+    public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value) + "‘Ì—Í‚ğ‰ñ•œ‚·‚éB";
+        return "‘Ì—Í‚ğ" + GetValueString(value, isFinal) + "‰ñ•œ‚·‚éB";
     }
 
     public override void Execute(Vector2Int value, int power)
