@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931d88bb794d95b47a175b7c91ac30dd, type: 3}
+  m_Name: DiscardCard
+  m_EditorClassIdentifier: 
+  type: 6
+  discardCardEvent: {fileID: 1750919252613225404, guid: 1d3bbd09729f55d4297a2c08a853d666, type: 3}

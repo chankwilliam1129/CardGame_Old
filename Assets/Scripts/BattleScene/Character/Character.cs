@@ -58,8 +58,7 @@ public class Character : MonoBehaviour
 
     public void HealEnergyPoint(int heal)
     {
-        //if (GetHealthPointMax() > healthPoint)
-        PlayerArea.Instance.cardUsage += heal;
+        PlayerArea.Instance.energy += heal;
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 

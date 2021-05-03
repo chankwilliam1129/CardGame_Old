@@ -32,7 +32,8 @@ public class CardEffectExecutor : MonoBehaviour
     public int totalEmptyPower;
     public int totalBrokenPower;
 
-    private int discardMode;
+    public bool isDiscardMode;
+    public DiscardCardEvent discardCardEvent;
 
     public static CardEffectExecutor Instance { get; private set; }
 
@@ -49,30 +50,14 @@ public class CardEffectExecutor : MonoBehaviour
         }
     }
 
-    public bool IsDiscardMode()
-    {
-        return discardMode > 0;
-    }
-
-    public void SetDiscardMode(int num)
-    {
-    }
-
-    private void DiscardModeCheck()
-    {
-        if (HandCardDisplay.Instance.IsEmpty())
-        {
-            SetDiscardMode(0);
-        }
-    }
-
     public void Execute()
     {
         if (HandCardDisplay.Instance.nowDraggingCard != null)
         {
-            if (IsDiscardMode())
+            if (isDiscardMode)
             {
                 BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
+                discardCardEvent.discardNumber--;
             }
             else
             {
@@ -80,13 +65,14 @@ public class CardEffectExecutor : MonoBehaviour
                 {
                     effect.type.Execute(effect.value, totalNormalPower);
                 }
-                BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
+                BattleDeckManager.Instance.Remove(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
                 foreach (var card in nowModCard)
                 {
-                    BattleDeckManager.Instance.Discard(card, card.data.removeType);
+                    BattleDeckManager.Instance.Remove(card, card.data.removeType);
                 }
                 nowModCard.Clear();
                 CountTotalPower();
+                PlayerArea.Instance.energy--;
             }
         }
     }
@@ -127,6 +113,24 @@ public class CardEffectExecutor : MonoBehaviour
         {
             card.powerSpaceDisplay.PowerDisplayUpdate();
         }
+    }
+
+    public void SetDiscardMode(bool mode)
+    {
+        if (mode)
+        {
+            foreach (var c in nowModCard)
+            {
+                c.GetComponent<Animator>()?.SetBool("isMod", false);
+            }
+            nowModCard.Clear();
+            CountTotalPower();
+        }
+        else
+        {
+        }
+
+        isDiscardMode = mode;
     }
 
     public Vector2Int GetValueAdd(AffectType type)

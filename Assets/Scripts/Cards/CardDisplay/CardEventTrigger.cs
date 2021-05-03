@@ -90,11 +90,10 @@ public class CardEventTrigger : MonoBehaviour
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            if (isDrag && PlayerArea.Instance.cardUsage != 0)
+            if (isDrag && (PlayerArea.Instance.energy != 0 | CardEffectExecutor.Instance.isDiscardMode))
             {
                 CardEffectExecutor.Instance.Execute();
                 HandCardDisplay.Instance.SetNowDraggingCard(null);
-                PlayerArea.Instance.cardUsage--;
             }
             else
             {

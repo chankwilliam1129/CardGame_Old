@@ -26,7 +26,9 @@ public class BattleDeckManager : MonoBehaviour
         Destory,
     }
 
-    public event EventHandler<RemoveType> OnRemoveCardFromHand;
+    public event EventHandler<CardBattleData> OnRemoveCardFromHand;
+
+    public event EventHandler<CardBattleData> OnDiscardCardFromHand;
 
     public static BattleDeckManager Instance { get; private set; }
 
@@ -94,8 +96,9 @@ public class BattleDeckManager : MonoBehaviour
         OnAddCardToHand?.Invoke(this, type);
     }
 
-    public void Discard(CardDisplay cardDisplay, RemoveType type)
+    public void Remove(CardDisplay cardDisplay, RemoveType type)
     {
+        OnRemoveCardFromHand?.Invoke(this, cardDisplay.data);
         switch (type)
         {
             case RemoveType.ToDiscardPile:
@@ -107,7 +110,12 @@ public class BattleDeckManager : MonoBehaviour
         }
 
         HandCardDisplay.Instance.Remove(cardDisplay);
-        OnRemoveCardFromHand?.Invoke(this, type);
+    }
+
+    public void Discard(CardDisplay cardDisplay, RemoveType type)
+    {
+        OnDiscardCardFromHand?.Invoke(this, cardDisplay.data);
+        Remove(cardDisplay, type);
     }
 
     public void ShuffleDeck(List<CardBattleData> cards)
