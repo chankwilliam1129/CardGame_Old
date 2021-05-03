@@ -118,10 +118,7 @@ public class BattleStateManager : MonoBehaviour
 
     public void PlayerTurnEnd()
     {
-        if (!isPause && IsPlayerTurn())
-        {
-            if (!BattleEventManager.Instance.Execute()) nowState = BattleSceneState.PLAYER_TURN_END;
-            OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
-        }
+        if (!BattleEventManager.Instance.Execute()) nowState = BattleSceneState.PLAYER_TURN_END;
+        OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
     }
 }

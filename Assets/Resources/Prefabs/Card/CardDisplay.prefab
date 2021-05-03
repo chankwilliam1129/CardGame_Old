@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_text: "\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E\u8AAC\u660E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e73e5e74f3e0ee846ad85866af4065b3, type: 2}
-  m_sharedMaterial: {fileID: -6242355511743057580, guid: e73e5e74f3e0ee846ad85866af4065b3, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 32144e386891e074689514b689a1de22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
