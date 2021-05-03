@@ -5,21 +5,19 @@ using UnityEngine;
 public class HealEnergyEvent : MonoBehaviour
 {
     public int heal;
-    public Character target;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
+
     private void OnDestroy()
     {
-        target.characterEvent.GetHealEnergy(heal);
+        PlayerArea.Instance.player.GetComponent<PlayerEvent>().HealEnergy(heal);
     }
 }

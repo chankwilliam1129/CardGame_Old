@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CardEventTrigger : MonoBehaviour
+public class CardEventTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public CardDisplay cardDisplay;
     private HandCardElement element;
@@ -48,7 +49,7 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnPointEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
@@ -61,7 +62,7 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnPointExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
@@ -74,7 +75,11 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnBeginDrag()
+    public void OnDrag(PointerEventData eventData)
+    {
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
@@ -86,7 +91,7 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnEndDrag()
+    public void OnEndDrag(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {

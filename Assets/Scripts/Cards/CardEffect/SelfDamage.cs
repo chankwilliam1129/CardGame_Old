@@ -9,7 +9,7 @@ public class SelfDamage : CardEffect
 
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return "体力を" + GetValueString(value, isFinal) + "失う。";
+        return GetValueString(value, isFinal) + "ダメージを受ける。";
     }
 
     public override void Execute(Vector2Int value, int power)

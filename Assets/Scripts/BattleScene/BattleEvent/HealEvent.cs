@@ -17,6 +17,6 @@ public class HealEvent : MonoBehaviour
 
     private void OnDestroy()
     {
-        target.characterEvent.GetHeal(heal);
+        target.characterEvent.HealHealth(heal);
     }
 }

@@ -30,38 +30,6 @@ public class Character : MonoBehaviour
     {
     }
 
-    public void SetHealthPointMax(int hp)
-    {
-        healthPointMax = hp;
-        healthPoint = hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void SetHealthPoint(int hp)
-    {
-        healthPoint = hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void LoseHealthPoint(int hp)
-    {
-        healthPoint -= hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void HealHealthPoint(int hp)
-    {
-        if (GetHealthPointMax() > healthPoint)
-            healthPoint += hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void HealEnergyPoint(int heal)
-    {
-        PlayerArea.Instance.energy += heal;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
     public int GetHealthPoint()
     {
         return healthPoint;
@@ -75,5 +43,24 @@ public class Character : MonoBehaviour
     public bool IsAlive()
     {
         return healthPoint > 0;
+    }
+
+    public void SetHealthPointMax(int hp)
+    {
+        healthPointMax = hp;
+        healthPoint = hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void SetHealthPoint(int hp)
+    {
+        healthPoint = hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void ChangeHealthPoint(int hp)
+    {
+        healthPoint += hp;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 }

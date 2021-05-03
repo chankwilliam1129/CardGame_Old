@@ -13,12 +13,12 @@ public class EnemyEvent : CharacterEvent
 
     private void OnEnemyTurnStart(object sender, System.EventArgs e)
     {
-        OnTurnStartEvent();
+        TurnStart();
     }
 
     private void OnEnemyTurnEnd(object sender, System.EventArgs e)
     {
-        OnTurnEndEvent();
+        TurnEnd();
     }
 
     public new void Update()

@@ -16,6 +16,5 @@ public class HealEnergy : CardEffect
     {
         HealEnergyEvent e = Instantiate(healEvent, BattleEventManager.Instance.transform);
         e.heal = GetFinalValue(value, power);
-        e.target = PlayerArea.Instance.player;
     }
 }
