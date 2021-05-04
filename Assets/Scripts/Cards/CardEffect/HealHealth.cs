@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card/CardEffect/Heal", fileName = "Heal")]
-public class Heal : CardEffect
+[CreateAssetMenu(menuName = "Card/CardEffect/HealHealth", fileName = "HealHealth")]
+public class HealHealth : CardEffect
 {
     public HealEvent healEvent;
 

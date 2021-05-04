@@ -49,7 +49,7 @@ public class BattleEventManager : MonoBehaviour
         }
         else
         {
-            eventList[0].gameObject.SetActive(true);
+            eventList[0].gameObject?.SetActive(true);
         }
         return true;
     }

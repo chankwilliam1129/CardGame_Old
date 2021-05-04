@@ -108,6 +108,13 @@ public class BattleDeckManager : MonoBehaviour
         OnAddCardToHand?.Invoke(this, args);
     }
 
+    public void DrawCard(CardDisplay card)
+    {
+        HandCardDisplay.Instance.Add(card.data);
+        CardEventArgs args = new CardEventArgs(card);
+        OnAddCardToHand?.Invoke(this, args);
+    }
+
     public void Remove(CardDisplay cardDisplay)
     {
         CardEventArgs args = new CardEventArgs(cardDisplay);
