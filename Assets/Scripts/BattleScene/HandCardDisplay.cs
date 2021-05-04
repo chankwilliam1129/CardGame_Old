@@ -30,11 +30,16 @@ public class HandCardDisplay : MonoBehaviour
     {
     }
 
-    public void Add(CardBattleData card)
+    public CardDisplay Add(CardBattleData card)
     {
         CardDisplay newCard = Instantiate(cardDisplay, battleDeckUI.position, transform.rotation, transform);
         newCard.data = card;
+        foreach (var effect in newCard.data.effects)
+        {
+            effect.type.Generate(effect.value, newCard);
+        }
         cardDisplayList.Add(newCard);
+        return newCard;
     }
 
     public void Remove(CardDisplay card)

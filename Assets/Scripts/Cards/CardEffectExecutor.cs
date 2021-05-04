@@ -56,19 +56,19 @@ public class CardEffectExecutor : MonoBehaviour
         {
             if (isDiscardMode)
             {
-                BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
+                BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard);
                 discardCardEvent.discardNumber--;
             }
             else
             {
-                foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.playEffects)
+                foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.effects)
                 {
                     effect.type.Execute(effect.value, totalNormalPower);
                 }
-                BattleDeckManager.Instance.Remove(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
+                BattleDeckManager.Instance.Remove(HandCardDisplay.Instance.nowDraggingCard);
                 foreach (var card in nowModCard)
                 {
-                    BattleDeckManager.Instance.Remove(card, card.data.removeType);
+                    BattleDeckManager.Instance.Remove(card);
                 }
                 nowModCard.Clear();
                 CountTotalPower();

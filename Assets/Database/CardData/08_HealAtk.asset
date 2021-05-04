@@ -22,9 +22,9 @@ MonoBehaviour:
     normalPower: 1
     brokenPower: 0
     removeType: 0
-    playEffects:
+    drawType: 0
+    effects:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 4, y: 1}
+      value: {x: 3, y: 2}
     - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
-      value: {x: 4, y: 1}
-    modEffects: []
+      value: {x: 3, y: 2}

@@ -15,7 +15,7 @@ public class CardDescription : MonoBehaviour
     {
         string text = "";
 
-        foreach (var effect in cardDisplay.data.playEffects)
+        foreach (var effect in cardDisplay.data.effects)
         {
             text += effect.type.GetDescription(effect.value, isFinal);
             text += "\n";
