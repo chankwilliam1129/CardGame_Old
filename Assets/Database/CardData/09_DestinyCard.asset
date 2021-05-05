@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 09_CardAttack
+  m_Name: 09_DestinyCard
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30AB\u30FC\u30C9\u30A2\u30BF\u30C3\u30AF"
+  name: "\u30C7\u30B9\u30C6\u30A3\u30CB\u30FC"
   image: {fileID: 21300000, guid: f66b25cf49af99c4b887418df036356f, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 3
-    emptyPower: 2
+    powerSpace: 1
+    emptyPower: 1
     normalPower: 1
     brokenPower: 0
     removeType: 0
-    playEffects:
-    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 5, y: 2}
-    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
-      value: {x: 1, y: 0}
-    modEffects: []
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 7aa6799f8765a074f95658a9e37db3d3, type: 2}
+      value: {x: 3, y: 0}
