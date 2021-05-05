@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 05_Draw
+  m_Name: BlueCard
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30C9\u30ED\u30FC"
-  image: {fileID: 21300000, guid: f66b25cf49af99c4b887418df036356f, type: 3}
+  name: "\u30D6\u30EB\u30FC\u30AB\u30FC\u30C9"
+  image: {fileID: 21300000, guid: de8b1cee4c6a3574eb0bc5563a3f7590, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 3
@@ -25,6 +25,6 @@ MonoBehaviour:
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
-      value: {x: 3, y: 1}
-    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
-      value: {x: 1, y: 0}
+      value: {x: 2, y: 1}
+    - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
+      value: {x: 1, y: 1}
