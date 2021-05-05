@@ -37,7 +37,8 @@ public class CardSelectGroup : CardDisplayOnlyGroup
 
     public override void OnClick(CardDisplay card)
     {
-        BattleDeckManager.Instance.DrawCard(card);
+        card.data.drawType = BattleDeckManager.DrawType.ByCreating;
+        BattleDeckManager.Instance.DrawCard(card, card.transform.position);
         Destroy(card.gameObject);
         selectNumber--;
 

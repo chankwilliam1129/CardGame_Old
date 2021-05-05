@@ -3,7 +3,8 @@ guid: 931d88bb794d95b47a175b7c91ac30dd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - discardCardEvent: {fileID: 1750919252613225404, guid: 1d3bbd09729f55d4297a2c08a853d666, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

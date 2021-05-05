@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Card/CardEffect/DrawCard", fileName = "DrawCard")]
 public class DrawCard : CardEffect
 {
-    public GameObject drawCardEvent;
+    public DrawCardEvent drawCardEvent;
 
     public override string GetDescription(Vector2Int value, bool isFinal)
     {

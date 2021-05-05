@@ -4056,7 +4056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b65fcb8b533ebc4fa33774c04204d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleDeckUI: {fileID: 56287736}
+  battleDeckUI: {fileID: 853784785}
+  mainGame: {fileID: 1048140920}
+  discardPileUI: {fileID: 598939399}
   cardDisplay: {fileID: 2973268544365596480, guid: 54b671862b3784d44852e4a4767a3b4c, type: 3}
   cardDisplayList: []
   cardSizeX: 200

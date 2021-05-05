@@ -3,7 +3,8 @@ guid: 8e020352260d3ea479791999330607e5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - drawCardEvent: {fileID: 4924943709301073047, guid: 725dc457534a68f4fbd0f10c43a540b5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

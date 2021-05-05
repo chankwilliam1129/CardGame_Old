@@ -8,15 +8,17 @@ public class SelectCard : CardEffect
     public CardSelectGroup cardSelect;
     public List<Card> cardList;
 
+    public Vector2Int selectCard;
+
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return "カードを" + GetValueString(value, isFinal) + "枚生成し、その中の１枚を手札に加える。";
+        return GetValueString(value, isFinal) + "枚のカードから" + GetValueString(selectCard, isFinal) + "枚を選び、手札に加える。";
     }
 
     public override void Execute(Vector2Int value, int power)
     {
         CardSelectGroup group = Instantiate(cardSelect, BattleEventManager.Instance.transform);
-        group.selectNumber = 1;
+        group.selectNumber = GetFinalValue(selectCard, power);
 
         int draw = GetFinalValue(value, power);
         for (int i = 0; i < draw; i++)
