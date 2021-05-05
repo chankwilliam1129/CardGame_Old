@@ -9,8 +9,16 @@ public class PlayerEvent : CharacterEvent
     public new void Start()
     {
         base.Start();
+
         BattleStateManager.Instance.OnPlayerTurnStart += OnPlayerTurnStart;
         BattleStateManager.Instance.OnPlayerTurnEnd += OnPlayerTurnEnd;
+    }
+
+    public override void StatusSetUp()
+    {
+        character.SetHealthPointMax(100);
+        character.SetHealthPoint(100);
+        character.SetShield(0);
     }
 
     private void OnPlayerTurnStart(object sender, System.EventArgs e)

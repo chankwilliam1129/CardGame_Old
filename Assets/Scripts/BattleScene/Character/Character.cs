@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [HideInInspector]
     public CharacterEvent characterEvent;
+
     private int healthPoint;
     private int healthPointMax;
+    private int shield;
 
     public Transform conditionDisplay;
     public List<Condition> conditionList;
 
     public event EventHandler OnHealthChanged;
+
+    public event EventHandler OnShieldChanged;
 
     private void HealthChangeCheck(object sender, EventArgs e)
     {
@@ -20,9 +25,13 @@ public class Character : MonoBehaviour
         if (healthPoint < 0) healthPoint = 0;
     }
 
-    private void Start()
+    private void Awake()
     {
         characterEvent = GetComponent<CharacterEvent>();
+    }
+
+    private void Start()
+    {
         OnHealthChanged += HealthChangeCheck;
     }
 
@@ -48,7 +57,6 @@ public class Character : MonoBehaviour
     public void SetHealthPointMax(int hp)
     {
         healthPointMax = hp;
-        healthPoint = hp;
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -62,5 +70,22 @@ public class Character : MonoBehaviour
     {
         healthPoint += hp;
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public int GetShield()
+    {
+        return shield;
+    }
+
+    public void ChangeShield(int value)
+    {
+        shield += value;
+        OnShieldChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void SetShield(int value)
+    {
+        shield = value;
+        OnShieldChanged?.Invoke(this, EventArgs.Empty);
     }
 }
