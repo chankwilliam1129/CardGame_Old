@@ -17,6 +17,6 @@ public class SelfDamageEvent : MonoBehaviour
 
     private void OnDestroy()
     {
-        target.characterEvent.GetSelfDamage(damage);
+        target.characterEvent.GetDamage(damage, target);
     }
 }

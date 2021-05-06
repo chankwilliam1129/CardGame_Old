@@ -8,16 +8,16 @@ public class AddCondition : CardEffect
     public AddConditionEvent addCondition;
     public bool toPlayer;
 
-    public override string GetDescription(Vector2Int value)
+    public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        if (value.y != 0) return value.x.ToString() + "(" + value.y.ToString() + ")" + addCondition.condition.conditionName + "。";
-        return value.x.ToString() + addCondition.condition.conditionName + "。";
+        if (toPlayer) return addCondition.condition.GetText() + GetValueString(value, isFinal) + "を得る。";
+        else return addCondition.condition.GetText() + GetValueString(value, isFinal) + "を与える。";
     }
 
     public override void Execute(Vector2Int value, int power)
     {
         AddConditionEvent e = Instantiate(addCondition, BattleEventManager.Instance.transform);
-        e.value = value.x + value.y * power;
+        e.value = GetFinalValue(value, power);
         if (toPlayer) e.target = PlayerArea.Instance.player;
         else e.target = EnemyArea.Instance.enemy;
     }

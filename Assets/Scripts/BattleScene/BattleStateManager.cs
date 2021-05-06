@@ -18,6 +18,8 @@ public class BattleStateManager : MonoBehaviour
         MAX,
     }
 
+    public bool isPause;
+
     public event EventHandler OnBattleStart;
 
     public event EventHandler OnPlayerTurnStart;

@@ -32,6 +32,9 @@ public class CardEffectExecutor : MonoBehaviour
     public int totalEmptyPower;
     public int totalBrokenPower;
 
+    public bool isDiscardMode;
+    public DiscardCardEvent discardCardEvent;
+
     public static CardEffectExecutor Instance { get; private set; }
 
     private void Awake()
@@ -41,7 +44,7 @@ public class CardEffectExecutor : MonoBehaviour
 
     private void Start()
     {
-        for(int i=0;i<(int)AffectType.MAX;i++)
+        for (int i = 0; i < (int)AffectType.MAX; i++)
         {
             affectLists.Add(new AffectList());
         }
@@ -51,17 +54,26 @@ public class CardEffectExecutor : MonoBehaviour
     {
         if (HandCardDisplay.Instance.nowDraggingCard != null)
         {
-            foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.playEffects)
+            if (isDiscardMode)
             {
-                effect.type.Execute(effect.value, totalNormalPower);
+                BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard);
+                discardCardEvent.discardNumber--;
             }
-            BattleDeckManager.Instance.Discard(HandCardDisplay.Instance.nowDraggingCard, HandCardDisplay.Instance.nowDraggingCard.data.removeType);
-            foreach (var card in nowModCard)
+            else
             {
-                BattleDeckManager.Instance.Discard(card, card.data.removeType);
+                foreach (var effect in HandCardDisplay.Instance.nowDraggingCard.data.effects)
+                {
+                    effect.type.Execute(effect.value, totalNormalPower);
+                }
+                BattleDeckManager.Instance.Remove(HandCardDisplay.Instance.nowDraggingCard);
+                foreach (var card in nowModCard)
+                {
+                    BattleDeckManager.Instance.Remove(card);
+                }
+                nowModCard.Clear();
+                CountTotalPower();
+                PlayerArea.Instance.energy--;
             }
-            nowModCard.Clear();
-            CountTotalPower();
         }
     }
 
@@ -103,10 +115,28 @@ public class CardEffectExecutor : MonoBehaviour
         }
     }
 
+    public void SetDiscardMode(bool mode)
+    {
+        if (mode)
+        {
+            foreach (var c in nowModCard)
+            {
+                c.GetComponent<Animator>()?.SetBool("isMod", false);
+            }
+            nowModCard.Clear();
+            CountTotalPower();
+        }
+        else
+        {
+        }
+
+        isDiscardMode = mode;
+    }
+
     public Vector2Int GetValueAdd(AffectType type)
     {
         Vector2Int value = Vector2Int.zero;
-        foreach(var a in affectLists[(int)type].List)
+        foreach (var a in affectLists[(int)type].List)
         {
             value += a.GetValueAdd();
         }

@@ -5,62 +5,30 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [HideInInspector]
     public CharacterEvent characterEvent;
+
     private int healthPoint;
     private int healthPointMax;
+    private int shield;
 
     public Transform conditionDisplay;
     public List<Condition> conditionList;
 
     public event EventHandler OnHealthChanged;
 
-    private void HealthChangeCheck(object sender, EventArgs e)
+    public event EventHandler OnShieldChanged;
+    private void Awake()
     {
-        if (healthPoint > healthPointMax) healthPoint = healthPointMax;
-        if (healthPoint < 0) healthPoint = 0;
+        characterEvent = GetComponent<CharacterEvent>();
     }
 
     private void Start()
     {
-        characterEvent = GetComponent<CharacterEvent>();
-        OnHealthChanged += HealthChangeCheck;
     }
 
     private void Update()
     {
-    }
-
-    public void SetHealthPointMax(int hp)
-    {
-        healthPointMax = hp;
-        healthPoint = hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void SetHealthPoint(int hp)
-    {
-        healthPoint = hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void LoseHealthPoint(int hp)
-    {
-        healthPoint -= hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void HealHealthPoint(int hp)
-    {
-        if (GetHealthPointMax() > healthPoint)
-            healthPoint += hp;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void HealEnergyPoint(int heal)
-    {
-        //if (GetHealthPointMax() > healthPoint)
-        PlayerArea.Instance.cardUsage += heal;
-        OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public int GetHealthPoint()
@@ -76,5 +44,43 @@ public class Character : MonoBehaviour
     public bool IsAlive()
     {
         return healthPoint > 0;
+    }
+
+    public void SetHealthPointMax(int hp)
+    {
+        healthPointMax = hp;
+        healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void SetHealthPoint(int hp)
+    {
+        healthPoint = hp;
+        healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void ChangeHealthPoint(int hp)
+    {
+        healthPoint += hp;
+        healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public int GetShield()
+    {
+        return shield;
+    }
+
+    public void ChangeShield(int value)
+    {
+        shield += value;
+        OnShieldChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void SetShield(int value)
+    {
+        shield = value;
+        OnShieldChanged?.Invoke(this, EventArgs.Empty);
     }
 }

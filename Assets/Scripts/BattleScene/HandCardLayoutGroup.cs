@@ -21,7 +21,7 @@ public class HandCardLayoutGroup : MonoBehaviour
             if (e.isActivity) totalWidth += e.flexibleWidth;
         }
         float curWidth = 0;
-        int order = 0;
+        int order = 20;
         foreach (HandCardElement e in elements)
         {
             if (e.isActivity)

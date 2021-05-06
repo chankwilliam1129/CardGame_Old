@@ -9,16 +9,16 @@ public class CardDescription : MonoBehaviour
 
     private void Start()
     {
-        DescriptionUpdate();
     }
 
-    public void DescriptionUpdate()
+    public void DescriptionUpdate(bool isFinal)
     {
         string text = "";
 
-        foreach (var effect in cardDisplay.data.playEffects)
+        foreach (var effect in cardDisplay.data.effects)
         {
-            text += effect.type.GetDescription(effect.value);
+            text += effect.type.GetDescription(effect.value, isFinal);
+            text += "\n";
         }
 
         GetComponent<TextMeshProUGUI>().text = text;

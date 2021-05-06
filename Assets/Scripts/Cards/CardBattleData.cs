@@ -5,8 +5,7 @@ using UnityEngine;
 [Serializable]
 public struct CardBattleData
 {
-    [HideInInspector]
-    public Card preset;
+    [HideInInspector] public Card preset;
 
     [Serializable]
     public class Effect
@@ -20,8 +19,9 @@ public struct CardBattleData
     [Range(0, 6)] public int normalPower;
     [Range(0, 6)] public int brokenPower;
 
-    public BattleDeckManager.RemoveType removeType;
+    [HideInInspector] public BattleDeckManager.RemoveType removeType;
 
-    [SerializeField] public List<Effect> playEffects;
-    [SerializeField] public List<Effect> modEffects;
+    [HideInInspector] public BattleDeckManager.DrawType drawType;
+
+    [SerializeField] public List<Effect> effects;
 }

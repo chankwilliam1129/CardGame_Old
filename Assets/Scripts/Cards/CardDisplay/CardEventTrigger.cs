@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CardEventTrigger : MonoBehaviour
+public class CardEventTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public CardDisplay cardDisplay;
     private HandCardElement element;
@@ -18,34 +19,37 @@ public class CardEventTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (isBeginDrag)
+        if (HandCardDisplay.Instance != null)
         {
-            float posY = Input.mousePosition.y - (HandCardDisplay.Instance.transform.position.y + HandCardDisplay.Instance.GetComponent<RectTransform>().rect.height * 0.5f);
-
-            if (isDrag)
+            if (isBeginDrag)
             {
-                if (posY < 0.0f)
+                float posY = Input.mousePosition.y - (HandCardDisplay.Instance.transform.position.y + HandCardDisplay.Instance.GetComponent<RectTransform>().rect.height * 0.5f);
+
+                if (isDrag)
                 {
-                    HandCardDisplay.Instance.SetNowDraggingCard(null);
+                    if (posY < 0.0f)
+                    {
+                        HandCardDisplay.Instance.SetNowDraggingCard(null);
+                    }
+                    else
+                    {
+                        if (element.IsMoving()) element.targetPosition = Input.mousePosition;
+                        else transform.position = Input.mousePosition;
+                    }
                 }
                 else
                 {
-                    if (element.IsMoving()) element.targetPosition = Input.mousePosition;
-                    else transform.position = Input.mousePosition;
-                }
-            }
-            else
-            {
-                if (posY >= 0.0f)
-                {
-                    HandCardDisplay.Instance.SetNowDraggingCard(cardDisplay);
-                    element.MovingTo(Input.mousePosition);
+                    if (posY >= 0.0f)
+                    {
+                        HandCardDisplay.Instance.SetNowDraggingCard(cardDisplay);
+                        element.MovingTo(Input.mousePosition);
+                    }
                 }
             }
         }
     }
 
-    public void OnPointEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
@@ -58,7 +62,7 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnPointExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
@@ -71,7 +75,11 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnBeginDrag()
+    public void OnDrag(PointerEventData eventData)
+    {
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
@@ -83,15 +91,14 @@ public class CardEventTrigger : MonoBehaviour
         }
     }
 
-    public void OnEndDrag()
+    public void OnEndDrag(PointerEventData eventData)
     {
         if (BattleStateManager.Instance.IsPlayerTurn())
         {
-            if (isDrag && PlayerArea.Instance.cardUsage != 0)
+            if (isDrag && (PlayerArea.Instance.energy != 0 | CardEffectExecutor.Instance.isDiscardMode))
             {
                 CardEffectExecutor.Instance.Execute();
                 HandCardDisplay.Instance.SetNowDraggingCard(null);
-                PlayerArea.Instance.cardUsage--;
             }
             else
             {

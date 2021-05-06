@@ -3,6 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class CardEventArgs : EventArgs
+{
+    public CardDisplay card { set; get; }
+
+    public CardEventArgs(CardDisplay c)
+    {
+        card = c;
+    }
+}
+
 public class BattleDeckManager : MonoBehaviour
 {
     public MainDeck mainDeck;
@@ -18,15 +28,17 @@ public class BattleDeckManager : MonoBehaviour
         ByCreating,
     }
 
-    public event EventHandler<DrawType> OnAddCardToHand;
+    public event EventHandler OnAddCardToHand;
 
     public enum RemoveType
     {
-        ToDiscardPile,
-        Destory,
+        Discard,
+        Exhausted,
     }
 
-    public event EventHandler<RemoveType> OnRemoveCardFromHand;
+    public event EventHandler OnRemoveCard;
+
+    public event EventHandler OnDiscardCard;
 
     public static BattleDeckManager Instance { get; private set; }
 
@@ -39,6 +51,14 @@ public class BattleDeckManager : MonoBehaviour
     {
         BattleStateManager.Instance.OnBattleStart += BattleDeckInit;
         BattleStateManager.Instance.OnPlayerTurnStart += TurnStartDrawCard;
+
+        OnRemoveCard += BattleDeckManager_OnRemoveCard;
+    }
+
+    private void BattleDeckManager_OnRemoveCard(object sender, EventArgs e)
+    {
+        CardEventArgs card = e as CardEventArgs;
+        card.card.data.powerSpace = 10;
     }
 
     private void OnDestroy()
@@ -71,43 +91,60 @@ public class BattleDeckManager : MonoBehaviour
     {
     }
 
-    public void DrawCard(DrawType type)
+    public void DrawCard()
     {
-        switch (type)
+        if (battleDeck.Count == 0)
         {
-            case DrawType.FromBattleDeck:
-                if (battleDeck.Count == 0)
-                {
-                    battleDeck = new List<CardBattleData>(discardPile);
-                    ShuffleDeck(battleDeck);
-                    discardPile.Clear();
-                }
-
-                HandCardDisplay.Instance.Add(battleDeck[0]);
-                battleDeck.Remove(battleDeck[0]);
-                break;
-
-            default:
-                break;
+            battleDeck = new List<CardBattleData>(discardPile);
+            ShuffleDeck(battleDeck);
+            discardPile.Clear();
         }
 
-        OnAddCardToHand?.Invoke(this, type);
+        CardDisplay card = HandCardDisplay.Instance.Add(battleDeck[0]);
+        card.data.drawType = DrawType.FromBattleDeck;
+        battleDeck.Remove(battleDeck[0]);
+
+        CardEventArgs args = new CardEventArgs(card);
+        OnAddCardToHand?.Invoke(this, args);
     }
 
-    public void Discard(CardDisplay cardDisplay, RemoveType type)
+    public void DrawCard(CardDisplay card)
     {
-        switch (type)
+        HandCardDisplay.Instance.Add(card.data);
+        CardEventArgs args = new CardEventArgs(card);
+        OnAddCardToHand?.Invoke(this, args);
+    }
+
+    public void DrawCard(CardDisplay card, Vector3 pos)
+    {
+        HandCardDisplay.Instance.Add(card.data, pos);
+        CardEventArgs args = new CardEventArgs(card);
+        OnAddCardToHand?.Invoke(this, args);
+    }
+
+    public void Remove(CardDisplay cardDisplay)
+    {
+        CardEventArgs args = new CardEventArgs(cardDisplay);
+        OnRemoveCard?.Invoke(this, args);
+
+        switch (args.card.data.removeType)
         {
-            case RemoveType.ToDiscardPile:
-                discardPile.Add(cardDisplay.data);
+            case RemoveType.Discard:
+                discardPile.Add(args.card.data);
                 break;
 
             default:
                 break;
         }
 
-        HandCardDisplay.Instance.Remove(cardDisplay);
-        OnRemoveCardFromHand?.Invoke(this, type);
+        HandCardDisplay.Instance.Remove(args.card);
+    }
+
+    public void Discard(CardDisplay cardDisplay)
+    {
+        CardEventArgs args = new CardEventArgs(cardDisplay);
+        OnDiscardCard?.Invoke(this, args);
+        Remove(args.card);
     }
 
     public void ShuffleDeck(List<CardBattleData> cards)

@@ -7,37 +7,25 @@ using TMPro;
 public class EnemyDisplay : MonoBehaviour
 {
     private Character character;
-
-    public TextMeshProUGUI healthText;
-    public Image healthBar;
     public EnemyData enemy;
-
-    public int count;
+    public int actionCount;
 
     private void Start()
     {
         character = GetComponent<Character>();
         EnemyArea.Instance.enemy = character;
-        character.OnHealthChanged += Enemy_OnHealthChanged;
-        character.SetHealthPointMax(enemy.health);
-        BattleStateManager.Instance.OnEnemyTurnStart += Instance_OnEnemyTurnStart;
-        count = 0;
+        BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
+        actionCount = 0;
     }
 
-    private void Instance_OnEnemyTurnStart(object sender, System.EventArgs e)
+    private void EnemyTurnStart(object sender, System.EventArgs e)
     {
-        if (count > enemy.EnemyActions.Count - 1)
+        if (actionCount > enemy.EnemyActions.Count - 1)
         {
-            count = 0;
+            actionCount = 0;
         }
-        enemy.EnemyActions[count].type.Execute(enemy.EnemyActions[count].value);
-        count = Random.Range(0, enemy.EnemyActions.Count);
-    }
-
-    private void Enemy_OnHealthChanged(object sender, System.EventArgs e)
-    {
-        healthText.text = character.GetHealthPoint().ToString() + "/" + character.GetHealthPointMax().ToString();
-        healthBar.rectTransform.localScale = new Vector3(character.GetHealthPoint() * 1.0f / character.GetHealthPointMax() * 1.0f, 1.0f, 1.0f);
+        enemy.EnemyActions[actionCount].type.Execute(enemy.EnemyActions[actionCount].value);
+        actionCount = Random.Range(0, enemy.EnemyActions.Count);
     }
 
     private void Update()
@@ -46,6 +34,6 @@ public class EnemyDisplay : MonoBehaviour
 
     private void OnDestroy()
     {
-        character.OnHealthChanged -= Enemy_OnHealthChanged;
+        BattleStateManager.Instance.OnEnemyTurnStart -= EnemyTurnStart;
     }
 }

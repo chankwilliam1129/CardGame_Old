@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class Node : MonoBehaviour
+public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public NodeData data;
     public Vector2Int location;
@@ -20,19 +21,15 @@ public class Node : MonoBehaviour
         location = lo;
         return this;
     } 
-    public void NodePointerEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if (CanWalk())
-        {
-            GetComponent<Animator>().SetBool("isTouch", true);
-        }
+        GetComponent<Animator>().SetBool("isTouch", true);
     }
-    public void NodePointerExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", false);
     }
-
-    public void NodePointerClick()
+    public void OnPointerClick(PointerEventData eventData)
     {    
         if (CanWalk()) 
         {
@@ -49,7 +46,10 @@ public class Node : MonoBehaviour
                 if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
             }
 
-            SceneManager.LoadScene("BattleScene");
+            if (data.nodeType == NodeType.Store) 
+            {
+                SceneManager.LoadScene("StoreScene");
+            }
         }
     }
     private bool CanWalk()
