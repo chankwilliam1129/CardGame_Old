@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
-  m_Name: Enemy01
+  m_Script: {fileID: 11500000, guid: b618773e7f1bb3349ad1a59ae63d5bf8, type: 3}
+  m_Name: EnemyShield
   m_EditorClassIdentifier: 
-  name: aaaa
-  image: {fileID: 0}
-  health: 100
-  EnemyActions:
-  - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
-    value: 1
+  shieldEvent: {fileID: 6696005677825574391, guid: e7dd4fb8c0d322d4ab9c719976e81e62, type: 3}

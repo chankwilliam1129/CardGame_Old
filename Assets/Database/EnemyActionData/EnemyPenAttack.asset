@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
-  m_Name: Enemy01
+  m_Script: {fileID: 11500000, guid: ababd401a15113f4780e5b9f14ebc322, type: 3}
+  m_Name: EnemyPenAttack
   m_EditorClassIdentifier: 
-  name: aaaa
-  image: {fileID: 0}
-  health: 100
-  EnemyActions:
-  - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
-    value: 1
+  damage: {fileID: 4732031226626908671, guid: 4cff4419053fa7e46b49f0cca46de065, type: 3}
