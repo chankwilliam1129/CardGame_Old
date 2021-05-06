@@ -18,13 +18,6 @@ public class Character : MonoBehaviour
     public event EventHandler OnHealthChanged;
 
     public event EventHandler OnShieldChanged;
-
-    private void HealthChangeCheck(object sender, EventArgs e)
-    {
-        if (healthPoint > healthPointMax) healthPoint = healthPointMax;
-        if (healthPoint < 0) healthPoint = 0;
-    }
-
     private void Awake()
     {
         characterEvent = GetComponent<CharacterEvent>();
@@ -32,7 +25,6 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        OnHealthChanged += HealthChangeCheck;
     }
 
     private void Update()
@@ -57,18 +49,21 @@ public class Character : MonoBehaviour
     public void SetHealthPointMax(int hp)
     {
         healthPointMax = hp;
+        healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void SetHealthPoint(int hp)
     {
         healthPoint = hp;
+        healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void ChangeHealthPoint(int hp)
     {
         healthPoint += hp;
+        healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
