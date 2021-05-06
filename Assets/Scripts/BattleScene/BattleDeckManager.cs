@@ -51,15 +51,8 @@ public class BattleDeckManager : MonoBehaviour
     {
         BattleStateManager.Instance.OnBattleStart += BattleDeckInit;
         BattleStateManager.Instance.OnPlayerTurnStart += TurnStartDrawCard;
-
-        OnRemoveCard += BattleDeckManager_OnRemoveCard;
     }
 
-    private void BattleDeckManager_OnRemoveCard(object sender, EventArgs e)
-    {
-        CardEventArgs card = e as CardEventArgs;
-        card.card.data.powerSpace = 10;
-    }
 
     private void OnDestroy()
     {
