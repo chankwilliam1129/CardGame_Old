@@ -53,12 +53,12 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public void Start()
     {
-        OnTurnStart += TurnStartShieldClear;
+        //OnTurnStart += TurnStartShieldClear;
     }
 
     private void TurnStartShieldClear(object sender, EventArgs e)
     {
-        character.SetShield(0);
+        character.SetShield(10);
     }
 
     public void Update()
@@ -85,6 +85,19 @@ public abstract class CharacterEvent : MonoBehaviour
             if (args.damage > 0) character.ChangeHealthPoint(-args.damage);
         }
     }
+
+    public void GetPenDamage(int damage, Character from)
+    {
+
+        if (damage > 0)
+        {
+            DamageEventArgs args = new DamageEventArgs(damage, from);
+            OnGetDamaged?.Invoke(this, args);
+            if (args.damage > 0) character.ChangeHealthPoint(-args.damage);
+        }
+
+    }
+
 
     public void LoseHealth(int value)
     {

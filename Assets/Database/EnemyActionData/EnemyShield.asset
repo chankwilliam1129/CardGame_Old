@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b618773e7f1bb3349ad1a59ae63d5bf8, type: 3}
+  m_Name: EnemyShield
+  m_EditorClassIdentifier: 
+  shieldEvent: {fileID: 6696005677825574391, guid: e7dd4fb8c0d322d4ab9c719976e81e62, type: 3}

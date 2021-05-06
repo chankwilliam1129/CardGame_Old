@@ -23,7 +23,8 @@ public class SelectCard : CardEffect
         int draw = GetFinalValue(value, power);
         for (int i = 0; i < draw; i++)
         {
-            group.Add(cardList[Random.Range(0, cardList.Count)].battleData);
+            //group.Add(cardList[Random.Range(0, cardList.Count)].battleData);
+            group.Add(cardList[i].battleData);
         }
     }
 }
