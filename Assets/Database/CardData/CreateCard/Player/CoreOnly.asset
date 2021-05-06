@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: CoreOnly
   m_EditorClassIdentifier: 
   index: 0
-  name: 
-  image: {fileID: 0}
+  name: "\u30B3\u30A2"
+  image: {fileID: 21300000, guid: de8b1cee4c6a3574eb0bc5563a3f7590, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0
     emptyPower: 0
-    normalPower: 0
+    normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects: []
+    effects:
+    - type: {fileID: 11400000, guid: 77c56437f5e31034eae3e8161abb408a, type: 2}
+      value: {x: 0, y: 0}
