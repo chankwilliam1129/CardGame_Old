@@ -18,4 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71cb337c03ca675499a08d2a4c652aa0, type: 2}
   - {fileID: 11400000, guid: 236deb445eed3e24fa7a68d31e44ba28, type: 2}
   - {fileID: 11400000, guid: cc2afde8498e9ee4badf77e89677190b, type: 2}
-  selectCard: {x: 0, y: 0}
+  selectCard: {x: 1, y: 0}
