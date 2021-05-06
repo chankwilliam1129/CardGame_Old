@@ -77,6 +77,16 @@ public class CardEffectExecutor : MonoBehaviour
         }
     }
 
+    public void CleaeModCard()
+    {
+        foreach (var c in nowModCard)
+        {
+            c.GetComponent<Animator>()?.SetBool("isMod", false);
+        }
+        nowModCard.Clear();
+        CountTotalPower();
+    }
+
     public void AddModCard(CardDisplay card)
     {
         nowModCard.Add(card);
@@ -119,12 +129,7 @@ public class CardEffectExecutor : MonoBehaviour
     {
         if (mode)
         {
-            foreach (var c in nowModCard)
-            {
-                c.GetComponent<Animator>()?.SetBool("isMod", false);
-            }
-            nowModCard.Clear();
-            CountTotalPower();
+            CleaeModCard();
         }
         else
         {

@@ -118,7 +118,8 @@ public class BattleStateManager : MonoBehaviour
 
     public void PlayerTurnEnd()
     {
-        if (!BattleEventManager.Instance.Execute()) nowState = BattleSceneState.PLAYER_TURN_END;
+        CardEffectExecutor.Instance?.CleaeModCard();
+        nowState = BattleSceneState.PLAYER_TURN_END;
         OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
     }
 }

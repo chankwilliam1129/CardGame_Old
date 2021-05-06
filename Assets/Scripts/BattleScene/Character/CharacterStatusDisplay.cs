@@ -41,6 +41,8 @@ public class CharacterStatusDisplay : MonoBehaviour
         shieldCur = 1.0f;
 
         character.characterEvent.StatusSetUp();
+        character.ChangeHealthPoint(0);
+        character.ChangeShield(0);
     }
 
     private void Healthchanged(object sender, System.EventArgs e)
@@ -48,7 +50,7 @@ public class CharacterStatusDisplay : MonoBehaviour
         healthText.text = character.GetHealthPoint().ToString() + "/" + character.GetHealthPointMax().ToString();
         healthBar.rectTransform.localScale = new Vector3(character.GetHealthPoint() * 1.0f / character.GetHealthPointMax() * 1.0f, 1.0f, 1.0f);
 
-        if(healthBar.rectTransform.localScale.x != healthCur)
+        if(healthBar.rectTransform.localScale.x != healthSubBar.rectTransform.localScale.x)
         {
             healthTarget = healthBar.rectTransform.localScale.x;
             healthCur = healthSubBar.rectTransform.localScale.x;
@@ -62,7 +64,7 @@ public class CharacterStatusDisplay : MonoBehaviour
         shieldText.text = character.GetShield().ToString();
         shieldBar.rectTransform.localScale = new Vector3(Mathf.Min(1.0f, character.GetShield() * 1.0f / character.GetHealthPointMax() * 1.0f), 1.0f, 1.0f);
 
-        if (shieldBar.rectTransform.localScale.x != shieldCur)
+        if (shieldBar.rectTransform.localScale.x != shieldSubBar.rectTransform.localScale.x)
         {
             shieldTarget = shieldBar.rectTransform.localScale.x;
             shieldCur = shieldSubBar.rectTransform.localScale.x;
