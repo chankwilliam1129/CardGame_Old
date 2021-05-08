@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Posion : Condition
+public class Poison : Condition
 {
     private void Start()
     {
@@ -35,7 +35,7 @@ public class Posion : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<Posion>();
+            condition = con.GetComponent<Poison>();
             if (condition != null) break;
         }
         return condition;
