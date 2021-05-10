@@ -12,5 +12,12 @@ public class MapData : ScriptableObject
     {
         Instance = this;
         playerLocation = new Vector2Int(0, 0);
+
+        //sample(MapManager.Instance.mapSize);
     }
+
+    //public void sample(int size)
+    //{
+
+    //}
 }

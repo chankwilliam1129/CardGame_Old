@@ -22,7 +22,8 @@ public class MapManager : MonoBehaviour
         CreateMap(NodeType.EliteEnemy, 1);
         for (int i = 0; i < mapSize; i++)
         {
-            CreateMap(NodeType.EliteEnemy, 5);
+            if (i == 3) CreateMap(NodeType.Store, 5);
+            else CreateMap(NodeType.MinorEnemy, 5);
         }
     }
     public Node CreateNode(NodeType nodeType, Vector2Int location)

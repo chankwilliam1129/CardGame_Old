@@ -189,6 +189,7 @@ MonoBehaviour:
   nodeDatas:
   - {fileID: 11400000, guid: f0d5db9f40569a74e8f9f441349777db, type: 2}
   - {fileID: 11400000, guid: e93fbf4b7d7cea844bbdcad80d8986b3, type: 2}
+  - {fileID: 11400000, guid: 421540b2591638d4c8933750ab73be91, type: 2}
 --- !u!4 &728838755
 Transform:
   m_ObjectHideFlags: 0
