@@ -16,6 +16,8 @@ public class Card : ScriptableObject
     [Header("CardData")]
     public CardBattleData battleData;
 
+    [Header("StoreData")]
+    public int price;
     public Card()
     {
         battleData.preset = this;

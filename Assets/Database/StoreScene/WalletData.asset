@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d064827a327bb343a05ba5a4a6825cb, type: 3}
   m_Name: WalletData
   m_EditorClassIdentifier: 
-  coin: 500
+  coin: 300

@@ -9,7 +9,7 @@ public class Wallet : ScriptableObject
 
     public static Wallet Instance { get; private set; }
     private Wallet()
-    {
+    {       
         Instance = this;
     }
 }

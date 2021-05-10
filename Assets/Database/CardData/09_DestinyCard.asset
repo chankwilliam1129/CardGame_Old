@@ -26,3 +26,4 @@ MonoBehaviour:
     effects:
     - type: {fileID: 11400000, guid: b4dfc33e9ae98064fa4ddd6f899dc990, type: 2}
       value: {x: 3, y: 0}
+  price: 400

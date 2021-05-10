@@ -8,21 +8,26 @@ public class Store : CardDisplayOnlyGroup
     public CardDatabase cardDatabase;
     public CardDisplay[] sellCard = new CardDisplay[5];
 
-    public Button buyButton;
-    public Button canselButton;
-
     public CardDisplay SelectCard;
 
+    public static Store Instance { get; private set; }
+
+    private Store()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         for (int i = 0; i < 5; i++) 
         {
             sellCard[i].data = cardDatabase.cardList[Random.Range(0, cardDatabase.cardList.Count)].battleData;
             sellCard[i].SetUp();
+            sellCard[i].GetComponent<StoreCardDisplay>().priceText.text = "" + sellCard[i].data.preset.price;
+            if (sellCard[i].data.preset.price > Wallet.Instance.coin)
+            {
+                sellCard[i].GetComponent<StoreCardDisplay>().priceText.color = new Color(1.0f, 0.0f, 0.3f, 1.0f);
+            }
         }
- 
-        buyButton.gameObject.SetActive(false);
-        canselButton.gameObject.SetActive(false);
     }
 
     public override void OnPointEnter(CardDisplay card) 
@@ -37,8 +42,23 @@ public class Store : CardDisplayOnlyGroup
 
     public override void OnClick(CardDisplay card)
     {
-        SelectCard = card;
-        buyButton.gameObject.SetActive(true);
-        canselButton.gameObject.SetActive(true);
+        if (Wallet.Instance.coin >= card.data.preset.price)
+        {
+            Wallet.Instance.coin -= card.data.preset.price;
+            TextManager.Instance.coinText.text = "" + Wallet.Instance.coin;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (sellCard[i].data.preset.price > Wallet.Instance.coin)
+                {
+                   sellCard[i].GetComponent<StoreCardDisplay>().priceText.color = new Color(1.0f, 0.0f, 0.3f, 1.0f);
+                }
+            }
+            card.gameObject.SetActive(false);
+        }
+        else
+        {
+            TextManager.Instance.notEnoughCoinText.gameObject.SetActive(true);
+        }
     }
 }
