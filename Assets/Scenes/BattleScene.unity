@@ -3090,7 +3090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 809429186}
-  energyText: {fileID: 0}
+  energyText: {fileID: 884839650}
   energy: 0
 --- !u!1 &1690663227
 GameObject:
