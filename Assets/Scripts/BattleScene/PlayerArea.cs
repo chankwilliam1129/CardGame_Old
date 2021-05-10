@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerArea : MonoBehaviour
 {
     public Character player;
-    public TextMeshProUGUI cardUsageText;
+    public TextMeshProUGUI energyText;
 
     public int energy;
     public static PlayerArea Instance { get; private set; }
@@ -28,6 +28,6 @@ public class PlayerArea : MonoBehaviour
 
     private void Update()
     {
-        cardUsageText.text = "エナジー：" + energy.ToString();
+        energyText.text = energy.ToString();
     }
 }
