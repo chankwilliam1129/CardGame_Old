@@ -8,12 +8,14 @@ public class EnemyAddCondition : EnemyAction
 {
 
     public AddConditionEvent addCondition;
+    public Condition condition;
 
     public bool toPlayer;
 
     public override void Execute(int value)
     {
         AddConditionEvent e = Instantiate(addCondition, BattleEventManager.Instance.transform);
+        e.condition = condition;
         e.value = value;
         if (toPlayer) e.target = PlayerArea.Instance.player;
         else e.target = EnemyArea.Instance.enemy;

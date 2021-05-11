@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: AddPowerAttack
   m_EditorClassIdentifier: 
   type: 2
-  addCondition: {fileID: 8782225051060949500, guid: 27a98f07197ffba4d85a8c3d41716645, type: 3}
+  addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
+  condition: {fileID: 3883042967919183067, guid: fcc60d3ae1c62764db4dfe31f464b9cb, type: 3}
   toPlayer: 1

@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class Poison : Condition
+public class Bleeding : Condition
 {
     private void Start()
     {
         character.conditionList.Add(this);
-        character.characterEvent.OnTurnStart += OnTurnStart;
+        character.characterEvent.OnTurnEnd += OnTurnEnd;
+        character.characterEvent.OnGetDamaged += OnGetDamaged;
     }
 
-    private void OnTurnStart(object sender, System.EventArgs e)
+    private void OnGetDamaged(object sender, System.EventArgs e)
+    {
+        DamageEventArgs args = e as DamageEventArgs;
+        if (args.from != null)
+        {
+            character.ChangeHealthPoint(-stack);
+        }
+    }
+
+    private void OnTurnEnd(object sender, System.EventArgs e)
     {
         Settlement();
         text.text = stack.ToString();
@@ -20,14 +29,13 @@ public class Poison : Condition
 
     public void Settlement()
     {
-        float value = character.GetHealthPoint() * (100.0f / (stack + 100.0f));
-        character.SetHealthPoint((int)value);
         stack /= 2;
     }
 
     public override void DestoryEvent()
     {
-        character.characterEvent.OnTurnStart -= OnTurnStart;
+        character.characterEvent.OnTurnEnd -= OnTurnEnd;
+        character.characterEvent.OnGetDamaged -= OnGetDamaged;
     }
 
     public override Condition Exist(Character character)
@@ -35,7 +43,7 @@ public class Poison : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<Poison>();
+            condition = con.GetComponent<Bleeding>();
             if (condition != null) break;
         }
         return condition;
