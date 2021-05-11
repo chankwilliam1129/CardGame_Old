@@ -39,8 +39,9 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             curNode.GetComponent<Animator>().SetBool("isSelected", true);
  
             MapData.Instance.playerLocation = location;
+            MapData.Instance.selectedNode.Add(location);
 
-            GetComponent<Animator>().SetBool("isSelect", true);
+           GetComponent<Animator>().SetBool("isSelect", true);
             foreach (var n in MapManager.Instance.GetNodeList(MapData.Instance.playerLocation.y))
             {
                 if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
@@ -66,10 +67,26 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     } 
     private bool IsUnderLocation()
     {
-        return location.y < MapData.Instance.playerLocation.y;
+        return location.y < MapData.Instance.playerLocation.y || (location.y == MapData.Instance.playerLocation.y && location.x != MapData.Instance.playerLocation.x);
     }
     private bool IsSameLocation()
     {
-        return location.y == MapData.Instance.playerLocation.y;
+        return location == MapData.Instance.playerLocation;
+    }
+
+    public void StateCheck()
+    {
+        if (IsUnderLocation()) GetComponent<Animator>().SetBool("isPass", true);
+        if (IsSameLocation())
+        {
+            GetComponent<Animator>().SetBool("isTouch", true);
+            GetComponent<Animator>().SetBool("isSelect", true);
+            GetComponent<Animator>().SetBool("isPass", false);
+        }
+        else if (MapData.Instance.selectedNode.FindIndex(n => n == location) != -1)
+        {
+            GetComponent<Animator>().SetBool("isPass", false);
+            GetComponent<Animator>().SetBool("isSelected", true);
+        }
     }
 }
