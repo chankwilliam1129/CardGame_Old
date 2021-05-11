@@ -27,7 +27,7 @@ public class PowerDown : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<PowerAttack>();
+            condition = con.GetComponent<PowerDown>();
             if (condition != null) break;
         }
         return condition;
