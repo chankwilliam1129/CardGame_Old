@@ -877,7 +877,6 @@ GameObject:
   m_Component:
   - component: {fileID: 598939399}
   - component: {fileID: 598939398}
-  - component: {fileID: 598939397}
   - component: {fileID: 598939396}
   - component: {fileID: 598939400}
   m_Layer: 5
@@ -904,29 +903,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &598939397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598939395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &598939398
 Canvas:
   m_ObjectHideFlags: 0
@@ -1422,7 +1398,6 @@ GameObject:
   m_Component:
   - component: {fileID: 853784785}
   - component: {fileID: 853784784}
-  - component: {fileID: 853784783}
   - component: {fileID: 853784782}
   - component: {fileID: 853784780}
   m_Layer: 5
@@ -1462,29 +1437,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &853784783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853784779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &853784784
 Canvas:
   m_ObjectHideFlags: 0
@@ -2751,6 +2703,7 @@ MonoBehaviour:
   battleDeck: []
   discardPile: []
   drawCardEvent: {fileID: -8283996898797481477, guid: 725dc457534a68f4fbd0f10c43a540b5, type: 3}
+  cardRemove: {fileID: 5012001740373878647, guid: 8fe63c81ab2ada945a3e49f4981d8c90, type: 3}
 --- !u!4 &1267462545
 Transform:
   m_ObjectHideFlags: 0
@@ -3135,7 +3088,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1815036689}
   - component: {fileID: 1815036693}
-  - component: {fileID: 1815036692}
   - component: {fileID: 1815036691}
   - component: {fileID: 1815036690}
   m_Layer: 5
@@ -3204,29 +3156,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1815036692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815036688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &1815036693
 Canvas:
   m_ObjectHideFlags: 0

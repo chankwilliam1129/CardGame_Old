@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DisplayPileUI : MonoBehaviour
+public class DiscardPileUI : MonoBehaviour
 {
     public TextMeshProUGUI total;
+    public static DiscardPileUI Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

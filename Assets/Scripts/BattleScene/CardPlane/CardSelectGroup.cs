@@ -44,7 +44,8 @@ public class CardSelectGroup : CardDisplayOnlyGroup
 
         if (selectNumber <= 0)
         {
-            Destroy(gameObject);
+            GetComponent<Animator>().SetTrigger("isDestory");
+            Destroy(gameObject, 0.2f);
         }
     }
 }

@@ -21,6 +21,8 @@ public class BattleDeckManager : MonoBehaviour
 
     public BattleEvent drawCardEvent;
 
+    public CardRemove cardRemove;
+
     public enum DrawType
     {
         FromBattleDeck,
@@ -52,7 +54,6 @@ public class BattleDeckManager : MonoBehaviour
         BattleStateManager.Instance.OnBattleStart += BattleDeckInit;
         BattleStateManager.Instance.OnPlayerTurnStart += TurnStartDrawCard;
     }
-
 
     private void OnDestroy()
     {
@@ -130,6 +131,7 @@ public class BattleDeckManager : MonoBehaviour
                 break;
         }
 
+        Instantiate(cardRemove, cardDisplay.transform.position, cardDisplay.transform.rotation, BattleEventManager.Instance.transform).cardDisplay.data = cardDisplay.data;
         HandCardDisplay.Instance.Remove(args.card);
     }
 
