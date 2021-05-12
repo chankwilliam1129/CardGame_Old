@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e5f047f4ceabf64a882ea25eeac28c2, type: 3}
-  m_Name: TurnEndExhausted
+  m_Name: Exhausted
   m_EditorClassIdentifier: 
   type: 6
-  generate: {fileID: -6848605473106923633, guid: a788e0acce7fffa46883497017fb700b, type: 3}
+  generate: {fileID: 7150134867019863252, guid: 1770d01fa740dfe44b4581c5e329bc15, type: 3}
