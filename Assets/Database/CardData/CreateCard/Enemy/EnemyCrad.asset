@@ -10,18 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: CardData
+  m_Name: EnemyCrad
   m_EditorClassIdentifier: 
   index: 0
-  name: 
-  image: {fileID: 0}
+  name: "\u3046\u3056\u3044\u30AB\u30FC\u30C9(\u4EEE)"
+  image: {fileID: 21300000, guid: b21425957861ee44a89b9cde67c80617, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
+    powerSpace: 10
+    emptyPower: 6
+    normalPower: 4
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects: []
+    effects:
+    - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
+      value: {x: 50, y: -5}
+    - type: {fileID: 11400000, guid: 7b7e8db21e0b7a9498b20e0060ef70cf, type: 2}
+      value: {x: 0, y: 0}
   price: 0

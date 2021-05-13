@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086ed8d699cc6e84b9a81a30bf5d6a37, type: 3}
   m_Name: WhenTurnStart
   m_EditorClassIdentifier: 
-  type: 0
-  effects: []
+  type: 6
+  effects:
+  - type: {fileID: 11400000, guid: bddad43e8757e0f4aa05883b939381b5, type: 2}
+    value: {x: 1, y: 0}

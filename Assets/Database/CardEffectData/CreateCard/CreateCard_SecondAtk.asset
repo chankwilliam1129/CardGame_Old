@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   createCardEvent: {fileID: 3111525524322736920, guid: 59ab249de57ea774191f7016681bd11d, type: 3}
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: fb17a0b5d3555954182b94f15798fb89, type: 2}

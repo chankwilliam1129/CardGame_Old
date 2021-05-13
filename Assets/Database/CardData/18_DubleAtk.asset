@@ -10,18 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 18_dubleatk
+  m_Name: 18_DubleAtk
   m_EditorClassIdentifier: 
   index: 0
-  name: 
-  image: {fileID: 0}
+  name: "\u30C0\u30D6\u30EB\u30A2\u30BF\u30C3\u30AF"
+  image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
+    powerSpace: 4
+    emptyPower: 4
+    normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects: []
+    effects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 5, y: 2}
+    - type: {fileID: 11400000, guid: 9bb1cab2a41c463449ea1f8e5e2a8349, type: 2}
+      value: {x: 1, y: 0}
+    - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
+      value: {x: 1, y: 0}
   price: 0

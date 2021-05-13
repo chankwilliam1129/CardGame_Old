@@ -13,15 +13,21 @@ MonoBehaviour:
   m_Name: SecondAtk
   m_EditorClassIdentifier: 
   index: 0
-  name: 
-  image: {fileID: 0}
+  name: "\u30BB\u30AB\u30F3\u30C9\u30A2\u30BF\u30C3\u30AF"
+  image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 0
+    powerSpace: 7
+    emptyPower: 2
     normalPower: 0
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects: []
+    effects:
+    - type: {fileID: 11400000, guid: e83ef9dc409eb9e478c5776d61839dfb, type: 2}
+      value: {x: 10, y: 4}
+    - type: {fileID: 11400000, guid: ae31dc4d2c15ced498349a2a1da905db, type: 2}
+      value: {x: 0, y: 0}
+    - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}
+      value: {x: 0, y: 0}
   price: 0
