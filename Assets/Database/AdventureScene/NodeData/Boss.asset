@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef11f738faa44a4db5eeff5c55841a5, type: 3}
-  m_Name: MapData
+  m_Script: {fileID: 11500000, guid: e8db2fa54509bd844b563c986bdfdf67, type: 3}
+  m_Name: Boss
   m_EditorClassIdentifier: 
-  playerLocation: {x: 1, y: 4}
-  selectedNode:
-  - {x: 0, y: 1}
-  - {x: 0, y: 2}
-  - {x: 1, y: 3}
-  - {x: 1, y: 4}
+  nodeType: 5
+  sprite: {fileID: 21300000, guid: 963590d7291926e4ea47ba2f7d1e5dab, type: 3}

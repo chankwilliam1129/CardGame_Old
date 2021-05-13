@@ -6,10 +6,10 @@ public enum NodeType
 {
     MinorEnemy,
     EliteEnemy,
-    //Mystery,
-    //Treasure,
+    Mystery,
+    Treasure,
     Store,
-    //Boss,
+    Boss,
     Max,
 }
 

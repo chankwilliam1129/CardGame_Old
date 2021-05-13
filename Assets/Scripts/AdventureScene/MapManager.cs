@@ -5,10 +5,14 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public Node node;
+    public GameObject parent;
     public Transform mapParent;
+    public LineRenderer line;
+
     public int mapSize;
 
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
+    public List<GameObject> parentList = new List<GameObject>();  
     public List<List<Node>> nodeMap = new List<List<Node>>();
 
     public static MapManager Instance { get; private set; }
@@ -30,18 +34,20 @@ public class MapManager : MonoBehaviour
                 else CreateMap(NodeType.MinorEnemy, 5);
             }
 
-            SaveNode();
-
             nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
             nodeMap[0][0].GetComponent<Animator>().SetBool("isTouch", false);
             nodeMap[0][0].GetComponent<Animator>().SetBool("isPass", false);
         }
         else LoadMap();
+
+        LineRenderer l = Instantiate(line);
+        l.SetPosition(0, nodeMap[0][0].transform.position);
+        l.SetPosition(1, nodeMap[1][0].transform.position);
     }
 
-    public Node CreateNode(NodeType nodeType, Vector2Int location)
+    public Node CreateNode(NodeType nodeType, Vector2Int location, Transform parent)
     {
-        return Instantiate(node, mapParent).SetNodeData(nodeDatas[(int)nodeType], location);
+        return Instantiate(node, parent).SetNodeData(nodeDatas[(int)nodeType], location);
     }
 
     public List<Node> CreateNodeList()
@@ -52,48 +58,41 @@ public class MapManager : MonoBehaviour
 
     private void CreateMap(NodeType nodeType, int value)
     {
+        GameObject p = Instantiate(parent, mapParent);
+
         List<Node> nodeList = CreateNodeList();
         List<NodeType> nodeTypeList = new List<NodeType>();
 
         for (int v = 0; v < value; v++)
         {
-            nodeList.Add(CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count)));
+            nodeList.Add(CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count), p.transform));
             nodeTypeList.Add(nodeType);
         }
+        parentList.Add(p);
         nodeMap.Add(nodeList);
         MapData.Instance.saveNodeMap.Add(nodeTypeList);
     }
 
     private void LoadMap()
-    {
+    {   
         foreach (var nodeTypeLists in MapData.Instance.saveNodeMap)
         {
+            GameObject p = Instantiate(parent, mapParent);
             List<Node> nodeList = CreateNodeList();
             foreach (var nodeType in nodeTypeLists)
             {
-                Node node = CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count));
+                Node node = CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count), p.transform);
                 nodeList.Add(node);
                 node.StateCheck();
             }
+            parentList.Add(p);
             nodeMap.Add(nodeList);
         }
     }
-
 
     public List<Node> GetNodeList(int y)
     {
         if (y < 0) { y = 0; }
         return nodeMap[y];
-    }
-
-    public void SaveNode()
-    {
-        for (int y = 0; y < 5; y++) 
-        {
-            for (int x = 0; x < 5; x++)
-            {
-                //MapData.Instance.saveNodeMap[y][x] = nodeMap[y][x].data.nodeType;
-            }               
-        }
     }
 }

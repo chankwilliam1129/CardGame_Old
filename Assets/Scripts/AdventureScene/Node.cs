@@ -13,22 +13,26 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     private void Start()
     {
         GetComponent<Image>().sprite = data.sprite;
-        transform.localPosition = new Vector3(location.x * 100, location.y * 100, 0);
+        //transform.localPosition = new Vector3(location.x * 100, location.y * 100, 0);
     }
+
     public Node SetNodeData(NodeData nodeData, Vector2Int lo)
     {
         data = nodeData;
         location = lo;
         return this;
     } 
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", true);
     }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", false);
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {    
         if (CanWalk()) 
@@ -41,34 +45,36 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             MapData.Instance.playerLocation = location;
             MapData.Instance.selectedNode.Add(location);
 
-           GetComponent<Animator>().SetBool("isSelect", true);
+            GetComponent<Animator>().SetBool("isSelect", true);
             foreach (var n in MapManager.Instance.GetNodeList(MapData.Instance.playerLocation.y))
             {
                 if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
             }
 
-            if (data.nodeType == NodeType.Store) 
-            {
-                SceneManager.LoadScene("StoreScene");
-            }
+            NodetypeCheck(data.nodeType);          
         }
     }
+
     private bool CanWalk()
-    {
+    {       
         return IsNextLocation();
     }
+
     private bool IsNextLocation()
     {
         return location.y == MapData.Instance.playerLocation.y + 1;
     }
+
     private bool IsUpLocation()
     {
         return location.y > MapData.Instance.playerLocation.y; 
     } 
+
     private bool IsUnderLocation()
     {
         return location.y < MapData.Instance.playerLocation.y || (location.y == MapData.Instance.playerLocation.y && location.x != MapData.Instance.playerLocation.x);
     }
+
     private bool IsSameLocation()
     {
         return location == MapData.Instance.playerLocation;
@@ -88,5 +94,34 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             GetComponent<Animator>().SetBool("isPass", false);
             GetComponent<Animator>().SetBool("isSelected", true);
         }
+    }
+
+    private void NodetypeCheck(NodeType nodeType)
+    {
+        switch(nodeType)
+        {
+            case NodeType.MinorEnemy:
+                break;
+            case NodeType.EliteEnemy:
+                break;
+            case NodeType.Mystery:
+                MysteryCheck();
+                break;
+            case NodeType.Treasure:
+                break;
+            case NodeType.Store:
+                SceneManager.LoadScene("StoreScene");
+                break;
+            case NodeType.Boss:
+                break;
+        }
+    }
+
+    private void MysteryCheck()
+    {
+        float n = Random.Range(0.0f, 100.0f);
+
+        if (n <= 30.0f) SceneManager.LoadScene("StoreScene");
+        //else if (n <= 50.0f) SceneManager.LoadScene("StoreScene");
     }
 }

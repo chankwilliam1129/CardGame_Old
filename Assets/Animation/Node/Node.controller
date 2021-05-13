@@ -317,9 +317,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isSelect
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isPass
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4139219695260302516}
   m_Solo: 0

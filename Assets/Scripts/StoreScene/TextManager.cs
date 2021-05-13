@@ -14,12 +14,14 @@ public class TextManager : MonoBehaviour
     {
         Instance = this;
     }
+
     private void Start()
     {
         coinText.text = "" + Wallet.Instance.coin;
         notEnoughCoinText.text = "ƒRƒCƒ“‚ª‘«‚è‚Ü‚¹‚ñI";
         notEnoughCoinText.gameObject.SetActive(false);
     }
+
     private void Update()
     {
         if (notEnoughCoinText.gameObject.activeSelf)
