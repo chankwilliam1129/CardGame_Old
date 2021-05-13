@@ -10,22 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: CoreOnly
+  m_Name: SecondAtk
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30B3\u30A2"
-  image: {fileID: 21300000, guid: ca37700f2d6c36440ae9a5e5985810e6, type: 3}
+  name: 
+  image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0
     emptyPower: 0
-    normalPower: 1
+    normalPower: 0
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}
-      value: {x: 0, y: 0}
-    - type: {fileID: 11400000, guid: ae31dc4d2c15ced498349a2a1da905db, type: 2}
-      value: {x: 0, y: 0}
+    effects: []
   price: 0

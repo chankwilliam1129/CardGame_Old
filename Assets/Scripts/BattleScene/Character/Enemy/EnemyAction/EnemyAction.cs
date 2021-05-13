@@ -4,5 +4,14 @@ using UnityEngine;
 
 public abstract class EnemyAction : ScriptableObject
 {
-    public abstract void Execute(int value);
+    public virtual void Execute(int value)
+    {
+        return;
+    }
+
+    public virtual void Generate(int value, CardDisplay cardDisplay)
+    {
+        return;
+    }
+
 }
