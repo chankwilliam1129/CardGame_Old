@@ -11,12 +11,14 @@ public class Character : MonoBehaviour
     private int healthPoint;
     private int healthPointMax;
     private int shield;
+    private int EnergyPoint;
+    private int EnergyPointMax;
 
     public Transform conditionDisplay;
     public List<Condition> conditionList;
 
     public event EventHandler OnHealthChanged;
-
+    public event EventHandler OnEnergyChanged;
     public event EventHandler OnShieldChanged;
     private void Awake()
     {
@@ -41,9 +43,32 @@ public class Character : MonoBehaviour
         return healthPointMax;
     }
 
+    public int GetEnergyPoint()
+    {
+        return EnergyPoint;
+    }  
+    public int GetEnergyPointMax()
+    {
+        return EnergyPointMax;
+    }
+
     public bool IsAlive()
     {
         return healthPoint > 0;
+    }
+
+    public void SetEnergyPointMax(int energy) 
+    {
+        EnergyPointMax = energy;
+        EnergyPoint = Mathf.Max(Mathf.Min(EnergyPoint, EnergyPointMax), 0);
+        OnEnergyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void SetEnergyPoint(int energy) 
+    {
+        EnergyPoint = energy;
+        EnergyPoint = Mathf.Max(Mathf.Min(EnergyPoint, EnergyPointMax), 0);
+        OnEnergyChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void SetHealthPointMax(int hp)

@@ -18,6 +18,8 @@ public class PlayerEvent : CharacterEvent
     {
         character.SetHealthPointMax(100);
         character.SetHealthPoint(100);
+        character.SetEnergyPointMax(3);
+        character.SetEnergyPoint(3);
         character.SetShield(0);
     }
 

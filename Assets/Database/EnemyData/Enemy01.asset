@@ -16,9 +16,9 @@ MonoBehaviour:
   image: {fileID: 0}
   health: 100
   EnemyActions:
-  - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
-    value: 1
-  - type: {fileID: 11400000, guid: 99b959e8b22fc4e489a320f010b8fc95, type: 2}
-    value: 1
+  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
+    value: 3
+  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
+    value: 2
   - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}
     value: 3

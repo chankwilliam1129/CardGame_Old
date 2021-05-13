@@ -23,7 +23,7 @@ public class PlayerArea : MonoBehaviour
 
     private void OnPlayerTurnStart(object sender, System.EventArgs e)
     {
-        energy = 3;
+        energy = player.GetEnergyPoint();
     }
 
     private void Update()
