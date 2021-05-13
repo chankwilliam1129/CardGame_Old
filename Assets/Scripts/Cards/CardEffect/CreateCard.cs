@@ -13,7 +13,7 @@ public class CreateCard : CardEffect
         return card.name + "‚ğ" + GetValueString(value, isFinal) + "–‡èD‚É‰Á‚¦‚éB";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         int draw = GetFinalValue(value, power);
         for (int i = 0; i < draw; i++)

@@ -12,7 +12,7 @@ public class DiscardCard : CardEffect
         return "カードを" + GetValueString(value, isFinal) + "枚捨てる。";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         int discard = GetFinalValue(value, power);
         if (discard > 0)

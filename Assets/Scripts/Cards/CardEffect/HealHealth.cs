@@ -12,7 +12,7 @@ public class HealHealth : CardEffect
         return "‘Ì—Í‚ğ" + GetValueString(value, isFinal) + "‰ñ•œ‚·‚éB";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         HealEvent e = Instantiate(healEvent, BattleEventManager.Instance.transform);
         e.heal = GetFinalValue(value, power);

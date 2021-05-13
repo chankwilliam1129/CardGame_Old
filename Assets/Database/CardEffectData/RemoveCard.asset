@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931435a2e7d2c01408dddc26a39167d6, type: 3}
-  m_Name: Exhausted
+  m_Script: {fileID: 11500000, guid: 7e6b531e536fcc94fb4f0d1789ee45d7, type: 3}
+  m_Name: RemoveCard
   m_EditorClassIdentifier: 
-  type: 0
+  type: 6

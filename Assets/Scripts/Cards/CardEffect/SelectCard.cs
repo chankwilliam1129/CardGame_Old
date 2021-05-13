@@ -15,7 +15,7 @@ public class SelectCard : CardEffect
         return GetValueString(value, isFinal) + "枚のカードから" + GetValueString(selectCard, isFinal) + "枚を選び、手札に加える。";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         CardSelectGroup group = Instantiate(cardSelect, BattleEventManager.Instance.transform);
         group.selectNumber = GetFinalValue(selectCard, power);

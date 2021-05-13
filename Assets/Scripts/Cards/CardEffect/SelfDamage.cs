@@ -12,7 +12,7 @@ public class SelfDamage : CardEffect
         return GetValueString(value, isFinal) + "ダメージを受ける。";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         SelfDamageEvent e = Instantiate(damageEvent, BattleEventManager.Instance.transform);
         e.damage = GetFinalValue(value, power);

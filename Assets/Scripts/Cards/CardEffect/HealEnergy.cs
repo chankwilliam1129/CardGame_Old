@@ -12,7 +12,7 @@ public class HealEnergy : CardEffect
         return "エナジーを" + GetValueString(value, isFinal) + "回復する";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         HealEnergyEvent e = Instantiate(healEvent, BattleEventManager.Instance.transform);
         e.heal = GetFinalValue(value, power);

@@ -12,7 +12,7 @@ public class GetShield : CardEffect
         return "シールドを" + GetValueString(value, isFinal) + "得る。";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         GetShieldEvent e = Instantiate(shieldEvent, BattleEventManager.Instance.transform);
         e.shield = GetFinalValue(value, power);

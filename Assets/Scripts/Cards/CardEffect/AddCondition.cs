@@ -16,7 +16,7 @@ public class AddCondition : CardEffect
         else return condition.GetText() + GetValueString(value, isFinal) + "Çó^Ç¶ÇÈÅB";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         AddConditionEvent e = Instantiate(addCondition, BattleEventManager.Instance.transform);
         e.condition = condition;

@@ -7,6 +7,8 @@ public class GenerateEffect : CardEffect
 {
     public CardGenerate generate;
 
+    [SerializeField] public List<CardBattleData.Effect> effects;
+
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
         return generate.GetDescription(value, isFinal);
@@ -14,7 +16,6 @@ public class GenerateEffect : CardEffect
 
     public override void Generate(Vector2Int value, CardDisplay cardDisplay)
     {
-        generate.SetUp(cardDisplay);
-        //Instantiate(cardGenerate, cardDisplay.transform).Generate();
+        generate.SetUp(cardDisplay).effects = effects;
     }
 }

@@ -12,7 +12,7 @@ public class PenDealDamage : CardEffect
         return GetValueString(value, isFinal) + "ダメージを与える。";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         PenDealDamageEvent e = Instantiate(damageEvent, BattleEventManager.Instance.transform);
         e.damage = GetFinalValue(value, power);

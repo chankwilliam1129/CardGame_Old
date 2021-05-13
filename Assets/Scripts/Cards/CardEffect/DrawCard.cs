@@ -12,7 +12,7 @@ public class DrawCard : CardEffect
         return "カードを" + GetValueString(value, isFinal) + "枚引く。";
     }
 
-    public override void Execute(Vector2Int value, int power)
+    public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         int draw = GetFinalValue(value, power);
         for (int i = 0; i < draw; i++)

@@ -13,7 +13,7 @@ public abstract class CardEffect : ScriptableObject
         return;
     }
 
-    public virtual void Execute(Vector2Int value, int power)
+    public virtual void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
         return;
     }
