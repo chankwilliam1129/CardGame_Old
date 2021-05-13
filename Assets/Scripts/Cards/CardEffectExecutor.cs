@@ -62,12 +62,11 @@ public class CardEffectExecutor : MonoBehaviour
             else
             {
                 PlayCard(HandCardDisplay.Instance.nowDraggingCard, totalNormalPower);
-                BattleDeckManager.Instance.Remove(HandCardDisplay.Instance.nowDraggingCard);
                 foreach (var card in nowModCard)
                 {
                     BattleDeckManager.Instance.Remove(card);
                 }
-
+                BattleDeckManager.Instance.Remove(HandCardDisplay.Instance.nowDraggingCard);
                 nowModCard.Clear();
                 CountTotalPower();
                 PlayerArea.Instance.energy--;

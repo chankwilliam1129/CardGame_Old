@@ -12,6 +12,7 @@ public class RemoveCard : CardEffect
 
     public override void Execute(Vector2Int value, int power, CardDisplay cardDisplay)
     {
+        cardDisplay.data.removeType = BattleDeckManager.RemoveType.Exhausted;
         BattleDeckManager.Instance.Remove(cardDisplay);
     }
 }
