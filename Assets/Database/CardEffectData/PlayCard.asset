@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921e327a319f92248b879a09a3c03863, type: 3}
   m_Name: PlayCard
   m_EditorClassIdentifier: 
-  type: 0
+  type: 6

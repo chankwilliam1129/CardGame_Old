@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5f047f4ceabf64a882ea25eeac28c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0028042d717977e4183423327c448548, type: 3}
   m_Name: PlayWhenDiscard
   m_EditorClassIdentifier: 
-  type: 0
-  generate: {fileID: 6750383934280199326, guid: 71a69b461eee7db498b33eb71351fc8b, type: 3}
+  type: 6
   effects:
   - type: {fileID: 11400000, guid: d60c755d21633104f8118ee62c72d944, type: 2}
     value: {x: 1, y: 0}
