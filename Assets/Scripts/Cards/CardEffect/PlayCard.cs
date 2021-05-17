@@ -7,16 +7,19 @@ public class PlayCard : CardEffect
 {
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value, isFinal) + "回プレイする。";
+        return "追加で" + GetValueString(value, isFinal) + "回プレイする。";
     }
 
     public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
     {
-        foreach (var effect in cardDisplay.data.effects)
+        for (int i = GetFinalValue(value, power); i > 0; i--)
         {
-            if (effect.type != this)
+            foreach (var effect in cardDisplay.data.effects)
             {
-                effect.type.Execute(effect.value, power, cardDisplay);
+                if (effect.type != this)
+                {
+                    effect.type.Execute(effect.value, power, cardDisplay);
+                }
             }
         }
     }
