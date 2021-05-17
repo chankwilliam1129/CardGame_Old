@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 086ed8d699cc6e84b9a81a30bf5d6a37, type: 3}
-  m_Name: WhenTurnStart
+  m_Name: FireBallWTStart
   m_EditorClassIdentifier: 
   type: 0
-  effects: []
+  effects:
+  - type: {fileID: 11400000, guid: 2449236bbb4bec34ca9d1249bc26720d, type: 2}
+    value: {x: 1, y: 0}
