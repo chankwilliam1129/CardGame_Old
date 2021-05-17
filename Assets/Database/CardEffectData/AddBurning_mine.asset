@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d92ea928dd75874a8db5408206e6022, type: 3}
+  m_Name: AddBurning_mine
+  m_EditorClassIdentifier: 
+  type: 1
+  addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
+  condition: {fileID: 1562761020270876248, guid: a707b868e59688e4eb0d24e983caf683, type: 3}
+  toPlayer: 1
