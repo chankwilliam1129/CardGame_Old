@@ -13,7 +13,9 @@ public class EnemyData : ScriptableObject
 
     public int health;
 
-    public int Atk_Ntimes;
+    public int NtimesAtk;
+
+    public bool On_NtimesAtk;
 
     [Serializable]
     public class EnemyActionData

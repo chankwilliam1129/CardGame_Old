@@ -17,20 +17,24 @@ public class EnemyDisplay : MonoBehaviour
         EnemyArea.Instance.enemy = character;
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
         actionCount = 0;
-        AtkCount = Random.Range(1, enemy.Atk_Ntimes);
+
+        if (enemy.On_NtimesAtk)
+            AtkCount = Random.Range(1, enemy.NtimesAtk);
+        else
+            AtkCount = enemy.NtimesAtk;
     }
 
     private void EnemyTurnStart(object sender, System.EventArgs e)
     {
-        //for (int i = 0; i < AtkCount; i++)
-        //{
+        for (int i = 0; i < AtkCount; i++)
+        {
             if (actionCount > enemy.EnemyActions.Count - 1)
             {
                 actionCount = 0;
             }
             enemy.EnemyActions[actionCount].type.Execute(enemy.EnemyActions[actionCount].value);
             actionCount = Random.Range(0, enemy.EnemyActions.Count);
-        //}
+        }
     }
     private void Update()
     {

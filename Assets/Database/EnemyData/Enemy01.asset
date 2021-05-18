@@ -15,13 +15,14 @@ MonoBehaviour:
   name: aaaa
   image: {fileID: 0}
   health: 100
-  Atk_Ntimes: 5
+  NtimesAtk: 5
+  On_NtimesAtk: 1
   EnemyActions:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
     value: 10
-  - type: {fileID: 11400000, guid: 3e6e897139f2d9d4cb80e0f863af84d8, type: 2}
-    value: 5
-  - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
-    value: 1
-  - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
-    value: 1
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 10
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 10
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 10
