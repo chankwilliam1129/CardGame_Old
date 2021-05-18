@@ -27,10 +27,8 @@ public class CharacterStatusDisplay : MonoBehaviour
     private float shieldCur;
     private float shieldTarget;
 
-
     public AnimationCurve changeCurve;
     public float changeTime;
-
 
     private void Start()
     {
@@ -41,8 +39,6 @@ public class CharacterStatusDisplay : MonoBehaviour
         shieldCur = 1.0f;
 
         character.characterEvent.StatusSetUp();
-        character.ChangeHealthPoint(0);
-        character.ChangeShield(0);
     }
 
     private void Healthchanged(object sender, System.EventArgs e)
@@ -50,7 +46,7 @@ public class CharacterStatusDisplay : MonoBehaviour
         healthText.text = character.GetHealthPoint().ToString() + "/" + character.GetHealthPointMax().ToString();
         healthBar.rectTransform.localScale = new Vector3(character.GetHealthPoint() * 1.0f / character.GetHealthPointMax() * 1.0f, 1.0f, 1.0f);
 
-        if(healthBar.rectTransform.localScale.x != healthSubBar.rectTransform.localScale.x)
+        if (healthBar.rectTransform.localScale.x != healthSubBar.rectTransform.localScale.x)
         {
             healthTarget = healthBar.rectTransform.localScale.x;
             healthCur = healthSubBar.rectTransform.localScale.x;
@@ -75,9 +71,9 @@ public class CharacterStatusDisplay : MonoBehaviour
 
     private void Update()
     {
-        if(isHealthChange)
+        if (isHealthChange)
         {
-            if(healthChangeTimeCounter> changeTime)
+            if (healthChangeTimeCounter > changeTime)
             {
                 healthChangeTimeCounter = changeTime;
                 isHealthChange = false;
@@ -98,7 +94,6 @@ public class CharacterStatusDisplay : MonoBehaviour
             shieldSubBar.rectTransform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
             shieldChangeTimeCounter += Time.deltaTime;
         }
-
     }
 
     private void OnDestroy()
