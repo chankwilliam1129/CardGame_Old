@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CardPreset01
   m_EditorClassIdentifier: 
   cardList:
+  - {fileID: 11400000, guid: 4c0a8b10123ca284687658ca3d504246, type: 2}
   - {fileID: 11400000, guid: 01bb11022381a4842be6617055c1d2b8, type: 2}
-  - {fileID: 11400000, guid: 01bb11022381a4842be6617055c1d2b8, type: 2}
-  - {fileID: 11400000, guid: 83352a6f04b2eb9468c759b9e817a25c, type: 2}
+  - {fileID: 11400000, guid: 4c0a8b10123ca284687658ca3d504246, type: 2}
   - {fileID: 11400000, guid: 83352a6f04b2eb9468c759b9e817a25c, type: 2}
   - {fileID: 11400000, guid: b5975390606642f4897850895173009a, type: 2}
   - {fileID: 11400000, guid: b5975390606642f4897850895173009a, type: 2}

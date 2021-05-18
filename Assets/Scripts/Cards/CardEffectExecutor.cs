@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,9 @@ public class CardEffectExecutor : MonoBehaviour
 
     public bool isDiscardMode;
     public DiscardCardEvent discardCardEvent;
+
+    public event EventHandler OnPlayCard;
+    public CardEffect playCardEffect;
 
     public static CardEffectExecutor Instance { get; private set; }
 
@@ -76,9 +80,15 @@ public class CardEffectExecutor : MonoBehaviour
 
     public void PlayCard(CardDisplay card,int power = 0)
     {
+        CardEventArgs args = new CardEventArgs(card);
+        OnPlayCard?.Invoke(this, args);
+
         foreach (var effect in card.data.effects)
         {
-            effect.type.Execute(effect.value, power, card);
+            if (effect.type != playCardEffect)
+            {
+                effect.type.Execute(effect.value, power, card);
+            }
         }
     }
 

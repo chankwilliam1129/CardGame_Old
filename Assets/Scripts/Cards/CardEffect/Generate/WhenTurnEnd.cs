@@ -7,7 +7,7 @@ public class WhenTurnEnd : MonoBehaviour
 
     private void Start()
     {
-        if (BattleDeckManager.Instance != null)
+        if (PlayerArea.Instance != null)
         {
             PlayerArea.Instance.player.characterEvent.OnTurnEnd += TurnEnd;
         }
@@ -15,7 +15,7 @@ public class WhenTurnEnd : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (BattleDeckManager.Instance != null)
+        if (PlayerArea.Instance != null)
         {
             PlayerArea.Instance.player.characterEvent.OnTurnEnd -= TurnEnd;
         }

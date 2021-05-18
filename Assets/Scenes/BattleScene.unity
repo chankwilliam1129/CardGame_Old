@@ -3382,6 +3382,7 @@ MonoBehaviour:
   totalBrokenPower: 0
   isDiscardMode: 0
   discardCardEvent: {fileID: 0}
+  playCardEffect: {fileID: 11400000, guid: d60c755d21633104f8118ee62c72d944, type: 2}
 --- !u!224 &1935921573
 RectTransform:
   m_ObjectHideFlags: 0
