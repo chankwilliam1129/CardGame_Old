@@ -10,10 +10,13 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public NodeData data;
     public Vector2Int location;
 
+    private float WidthSize = 110.0f;
+    private float HeightSize = 120.0f;
+
     private void Start()
     {
         GetComponent<Image>().sprite = data.sprite;
-        //transform.localPosition = new Vector3(location.x * 100, location.y * 100, 0);
+        transform.localPosition = SetNodePositions();
     }
 
     public Node SetNodeData(NodeData nodeData, Vector2Int lo)
@@ -22,6 +25,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         location = lo;
         return this;
     } 
+
+    public Vector3 SetNodePositions()
+    {     
+        return new Vector3(location.x * WidthSize, location.y * HeightSize, 0);
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {

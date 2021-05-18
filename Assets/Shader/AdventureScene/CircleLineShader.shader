@@ -44,7 +44,7 @@ Shader "Unlit/CircleLineShader"
 
             fixed4 frag(v2f i) : SV_TARGET
             {
-                i.uv.x = (i.uv.x + _Time * 50) % _Space;
+                i.uv.x = (i.uv.x + _Time * 20) % _Space;
 
                 fixed4 col = i.color;
 

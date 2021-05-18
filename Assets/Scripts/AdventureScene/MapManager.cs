@@ -23,7 +23,7 @@ public class MapManager : MonoBehaviour
     }
 
     private void Start()
-    {
+    {      
         if (MapData.Instance.saveNodeMap.Count == 0) 
         {
             CreateMap(NodeType.EliteEnemy, 1);
@@ -35,14 +35,12 @@ public class MapManager : MonoBehaviour
             }
 
             nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
-            nodeMap[0][0].GetComponent<Animator>().SetBool("isTouch", false);
-            nodeMap[0][0].GetComponent<Animator>().SetBool("isPass", false);
         }
         else LoadMap();
 
         LineRenderer l = Instantiate(line);
-        l.SetPosition(0, nodeMap[0][0].transform.position);
-        l.SetPosition(1, nodeMap[1][0].transform.position);
+        l.SetPosition(0, new Vector3(800, 450, 0));
+        l.SetPosition(1, new Vector3(800, 550, 0));
     }
 
     public Node CreateNode(NodeType nodeType, Vector2Int location, Transform parent)
@@ -68,6 +66,7 @@ public class MapManager : MonoBehaviour
             nodeList.Add(CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count), p.transform));
             nodeTypeList.Add(nodeType);
         }
+
         parentList.Add(p);
         nodeMap.Add(nodeList);
         MapData.Instance.saveNodeMap.Add(nodeTypeList);
@@ -76,15 +75,17 @@ public class MapManager : MonoBehaviour
     private void LoadMap()
     {   
         foreach (var nodeTypeLists in MapData.Instance.saveNodeMap)
-        {
+        {      
             GameObject p = Instantiate(parent, mapParent);
             List<Node> nodeList = CreateNodeList();
+
             foreach (var nodeType in nodeTypeLists)
             {
                 Node node = CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count), p.transform);
                 nodeList.Add(node);
                 node.StateCheck();
             }
+
             parentList.Add(p);
             nodeMap.Add(nodeList);
         }
@@ -92,7 +93,7 @@ public class MapManager : MonoBehaviour
 
     public List<Node> GetNodeList(int y)
     {
-        if (y < 0) { y = 0; }
+        if (y < 0) y = 0;
         return nodeMap[y];
     }
 }
