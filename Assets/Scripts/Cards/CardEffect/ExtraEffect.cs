@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card/CardEffect/PlayCard", fileName = "PlayCard")]
+[CreateAssetMenu(menuName = "Card/CardEffect/ExtraEffect", fileName = "ExtraEffect")]
 public class ExtraEffect : CardEffect
 {
     public override string GetDescription(Vector2Int value, bool isFinal)

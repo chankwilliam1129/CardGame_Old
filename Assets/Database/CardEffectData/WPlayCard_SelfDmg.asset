@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9903b488b24f241aa95b63e93e35e1, type: 3}
-  m_Name: EnemyCreateCard_01
+  m_Script: {fileID: 11500000, guid: 72429e9c2bbd81d4782a460804dbfdf6, type: 3}
+  m_Name: WPlayCard_SelfDmg
   m_EditorClassIdentifier: 
-  createCardEvent: {fileID: 3111525524322736920, guid: 59ab249de57ea774191f7016681bd11d, type: 3}
-  card: {fileID: 11400000, guid: 99fb44493ecd5e84baef2501ee53ae28, type: 2}
+  type: 0
+  card: {fileID: 0}
+  effects:
+  - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
+    value: {x: 1, y: 0}
