@@ -37,10 +37,6 @@ public class MapManager : MonoBehaviour
             nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
         }
         else LoadMap();
-
-        LineRenderer l = Instantiate(line);
-        l.SetPosition(0, new Vector3(800, 450, 0));
-        l.SetPosition(1, new Vector3(800, 550, 0));
     }
 
     public Node CreateNode(NodeType nodeType, Vector2Int location, Transform parent)

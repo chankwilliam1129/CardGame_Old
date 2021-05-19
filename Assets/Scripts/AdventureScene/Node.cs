@@ -11,7 +11,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public Vector2Int location;
 
     private float WidthSize = 110.0f;
-    private float HeightSize = 120.0f;
+    private float HeightSize = 100.0f;
 
     private void Start()
     {
@@ -27,7 +27,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     } 
 
     public Vector3 SetNodePositions()
-    {     
+    {
+        if (location.x == 0 && location.y == 0) 
+        {
+            return new Vector3(2 * WidthSize, location.y * HeightSize, 0);
+        }
         return new Vector3(location.x * WidthSize, location.y * HeightSize, 0);
     }
 
