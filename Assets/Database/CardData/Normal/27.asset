@@ -10,22 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 24_
+  m_Name: 27
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: shot
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 4
+    powerSpace: 8
     emptyPower: 1
-    normalPower: 4
+    normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
-      value: {x: 4, y: 2}
-    - type: {fileID: 11400000, guid: fb5f5c81ceab2ec4a8004e6ecdb6e1bb, type: 2}
-      value: {x: 4, y: 2}
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 2, y: 4}
   price: 0
