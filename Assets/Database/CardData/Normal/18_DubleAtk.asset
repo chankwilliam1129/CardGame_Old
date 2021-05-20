@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
+  m_Name: 18_DubleAtk
+  m_EditorClassIdentifier: 
+  index: 0
+  name: "\u30C0\u30D6\u30EB\u30A2\u30BF\u30C3\u30AF"
+  image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
+  battleData:
+    preset: {fileID: 11400000}
+    powerSpace: 4
+    emptyPower: 4
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 5, y: 2}
+    - type: {fileID: 11400000, guid: d60c755d21633104f8118ee62c72d944, type: 2}
+      value: {x: 1, y: 0}
+  price: 0
