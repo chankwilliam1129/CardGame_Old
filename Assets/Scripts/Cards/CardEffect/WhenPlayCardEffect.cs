@@ -29,9 +29,9 @@ public class WhenPlayCardEffect : CardEffect
         return text;
     }
 
-    public override void Generate(Vector2Int value, CardDisplay cardDisplay)
+    public override void Generate(Vector2Int value, GameObject cardDisplay)
     {
-        WhenPlayCard playcard = cardDisplay.gameObject.AddComponent<WhenPlayCard>();
+        WhenPlayCard playcard = cardDisplay.AddComponent<WhenPlayCard>();
         playcard.effects = effects;
         playcard.card = card;
     }

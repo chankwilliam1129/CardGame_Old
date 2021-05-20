@@ -154,7 +154,7 @@ RectTransform:
   m_Children:
   - {fileID: 884839649}
   m_Father: {fileID: 1681980459}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -389,6 +389,68 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &175049552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 175049553}
+  - component: {fileID: 175049554}
+  m_Layer: 5
+  m_Name: RelicDisplayGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &175049553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175049552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1681980459}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -128, y: 128}
+  m_SizeDelta: {x: 100, y: 640}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &175049554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175049552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 7
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 1
 --- !u!1 &402852358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 47c36b98f10cf0b4b93fbae535042bb6, type: 2}
   actionCount: 0
+  AtkCount: 0
 --- !u!114 &819792468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2699,7 +2762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bdd88cfbe7db245855e54b0322dddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDeck: {fileID: 11400000, guid: 0273e1a599829164192cb48b942028d2, type: 2}
   battleDeck: []
   discardPile: []
   drawCardEvent: {fileID: -8283996898797481477, guid: 725dc457534a68f4fbd0f10c43a540b5, type: 3}
@@ -3019,6 +3081,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 809429185}
+  - {fileID: 175049553}
   - {fileID: 25816631}
   - {fileID: 1841598673}
   - {fileID: 1935921573}
@@ -3044,6 +3107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 809429186}
   energyText: {fileID: 884839650}
+  relicDisplay: {fileID: 4669748878635732804, guid: c87195a627214b14f975b5f5b3548cbb, type: 3}
+  relicDisplayGroup: {fileID: 175049552}
   energy: 0
 --- !u!1 &1690663227
 GameObject:
@@ -3133,7 +3198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4c9e98184772d4daf83d9e40a39675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDeck: {fileID: 11400000, guid: 0273e1a599829164192cb48b942028d2, type: 2}
   icon1: {fileID: 965113521}
   icon2: {fileID: 575532177}
   icon3: {fileID: 1241527908}
@@ -3209,7 +3273,7 @@ RectTransform:
   m_Children:
   - {fileID: 691483968}
   m_Father: {fileID: 1681980459}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3395,7 +3459,7 @@ RectTransform:
   m_LocalScale: {x: 0.667, y: 0.667, z: 1}
   m_Children: []
   m_Father: {fileID: 1681980459}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}

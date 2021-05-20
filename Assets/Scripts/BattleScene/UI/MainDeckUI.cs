@@ -6,8 +6,6 @@ using TMPro;
 
 public class MainDeckUI : MonoBehaviour
 {
-    public MainDeck mainDeck;
-
     public Image icon1;
     public Image icon2;
     public Image icon3;
@@ -26,6 +24,6 @@ public class MainDeckUI : MonoBehaviour
 
     public void UpdateTotalNumber()
     {
-        total.text = mainDeck.deck.Count.ToString();
+        total.text = PlayerData.Instance.deck.Count.ToString();
     }
 }

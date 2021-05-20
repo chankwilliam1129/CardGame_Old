@@ -10,8 +10,8 @@ public class Exhausted : CardEffect
         return "è¡îÔÇ∑ÇÈÅB";
     }
 
-    public override void Generate(Vector2Int value, CardDisplay cardDisplay)
+    public override void Generate(Vector2Int value, GameObject cardDisplay)
     {
-        cardDisplay.data.removeType = BattleDeckManager.RemoveType.Exhausted;
+        cardDisplay.GetComponent<CardDisplay>().data.removeType = BattleDeckManager.RemoveType.Exhausted;
     }
 }

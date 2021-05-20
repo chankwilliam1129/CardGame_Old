@@ -47,7 +47,7 @@ public class HandCardDisplay : MonoBehaviour
         newCard.data = card;
         foreach (var effect in newCard.data.effects)
         {
-            effect.type.Generate(effect.value, newCard);
+            effect.type.Generate(effect.value, newCard.gameObject);
         }
         cardDisplayList.Add(newCard);
         return newCard;
@@ -59,7 +59,7 @@ public class HandCardDisplay : MonoBehaviour
         newCard.data = card;
         foreach (var effect in newCard.data.effects)
         {
-            effect.type.Generate(effect.value, newCard);
+            effect.type.Generate(effect.value, newCard.gameObject);
         }
         cardDisplayList.Add(newCard);
         return newCard;

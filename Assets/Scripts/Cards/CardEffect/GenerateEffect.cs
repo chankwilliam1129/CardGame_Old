@@ -12,8 +12,8 @@ public class GenerateEffect : CardEffect
         return generate.GetDescription(value, isFinal);
     }
 
-    public override void Generate(Vector2Int value, CardDisplay cardDisplay)
+    public override void Generate(Vector2Int value, GameObject cardDisplay)
     {
-        generate.SetUp(cardDisplay);
+        generate.SetUp(cardDisplay.GetComponent<CardDisplay>());
     }
 }

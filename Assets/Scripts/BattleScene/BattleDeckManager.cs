@@ -15,7 +15,6 @@ public class CardEventArgs : EventArgs
 
 public class BattleDeckManager : MonoBehaviour
 {
-    public MainDeck mainDeck;
     public List<CardBattleData> battleDeck;
     public List<CardBattleData> discardPile;
 
@@ -63,14 +62,16 @@ public class BattleDeckManager : MonoBehaviour
 
     private void BattleDeckInit(object sender, System.EventArgs e)
     {
-        mainDeck.CreateNewCard();
-        battleDeck = new List<CardBattleData>(mainDeck.deck);
+        PlayerData.Instance.CreateNewDeck();
+        battleDeck = new List<CardBattleData>(PlayerData.Instance.deck);
         ShuffleDeck(battleDeck);
         discardPile = new List<CardBattleData>();
     }
 
     private void TurnStartDrawCard(object sender, System.EventArgs e)
     {
+        Debug.Log("Player Draw Card");
+
         int num = 5 - HandCardDisplay.Instance.cardDisplayList.Count;
         if (num > 0)
         {

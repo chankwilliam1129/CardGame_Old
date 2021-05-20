@@ -23,7 +23,7 @@ public class WhenTurnStartEffect : CardEffect
         return text;
     }
 
-    public override void Generate(Vector2Int value, CardDisplay cardDisplay)
+    public override void Generate(Vector2Int value, GameObject cardDisplay)
     {
         cardDisplay.gameObject.AddComponent<WhenTurnEnd>().effects = effects;
     }

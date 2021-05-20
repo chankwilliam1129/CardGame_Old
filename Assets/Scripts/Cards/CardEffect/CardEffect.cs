@@ -8,7 +8,7 @@ public abstract class CardEffect : ScriptableObject
 
     public abstract string GetDescription(Vector2Int value, bool isFinal);
 
-    public virtual void Generate(Vector2Int value, CardDisplay cardDisplay)
+    public virtual void Generate(Vector2Int value, GameObject cardDisplay)
     {
         return;
     }

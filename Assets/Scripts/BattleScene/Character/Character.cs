@@ -90,6 +90,8 @@ public class Character : MonoBehaviour
         healthPoint += hp;
         healthPoint = Mathf.Max(Mathf.Min(healthPoint, healthPointMax), 0);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
+
+        if (healthPoint <= 0) characterEvent.CharacterDied();
     }
 
     public int GetShield()

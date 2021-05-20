@@ -88,14 +88,12 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public void GetPenDamage(int damage, Character from)
     {
-
         if (damage > 0)
         {
             DamageEventArgs args = new DamageEventArgs(damage, from);
             OnGetDamaged?.Invoke(this, args);
             if (args.damage > 0) character.ChangeHealthPoint(-args.damage);
         }
-
     }
 
 
@@ -118,6 +116,12 @@ public abstract class CharacterEvent : MonoBehaviour
         IntEventArgs args = new IntEventArgs(value);
         OnGetShield?.Invoke(this, args);
         if (args.value > 0) character.ChangeShield(args.value);
+    }
+
+    public void CharacterDied()
+    {
+        OnCharacterDied?.Invoke(this, EventArgs.Empty);
+        Debug.Log("charater died");
     }
 
     public void TurnStart()
