@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card/CardEffect/WhenTurnStart", fileName = "WhenTurnStart")]
-public class WhenTurnStartEffect : CardEffect
+[CreateAssetMenu(menuName = "Card/CardEffect/WhenGetDamage", fileName = "WhenGetDamage")]
+public class WhenGetDamageEffect : CardEffect
 {
+    public int damage;
     [SerializeField] public List<CardBattleData.Effect> effects;
 
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        string text = "ターン開始時:";
+        string text = damage.ToString() + "ダメージ以上受けた時:";
         text += "<size=80%>\n";
 
         foreach (var effect in effects)
@@ -25,6 +26,8 @@ public class WhenTurnStartEffect : CardEffect
 
     public override void Generate(Vector2Int value, GameObject cardDisplay)
     {
-        cardDisplay.gameObject.AddComponent<WhenTurnStart>().effects = effects;
+        WhenGetDamage whenGetDamage = cardDisplay.gameObject.AddComponent<WhenGetDamage>();
+        whenGetDamage.effects = effects;
+        whenGetDamage.damage = damage;
     }
 }

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 15_
+  m_Name: Thunder
   m_EditorClassIdentifier: 
   index: 0
-  name: 
-  image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
+  name: "\u96FB\u5149\u77F3\u706B"
+  image: {fileID: 21300000, guid: 24efb597988a8154d9c492bb5b0ec0bc, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 6
-    emptyPower: 4
+    powerSpace: 4
+    emptyPower: 2
     normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
-      value: {x: 1, y: 1}
-    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 15, y: 4}
-  price: 0
+    - type: {fileID: 11400000, guid: e83ef9dc409eb9e478c5776d61839dfb, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 1, y: 0}
+  price: 500

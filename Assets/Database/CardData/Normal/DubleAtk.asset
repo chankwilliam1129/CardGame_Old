@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 04_AbandonAttack
+  m_Name: DubleAtk
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u6368\u3066\u8EAB"
-  image: {fileID: 21300000, guid: ce4186074f0e6f34cadd3c9f2a03b885, type: 3}
+  name: "\u30C0\u30D6\u30EB\u30A2\u30BF\u30C3\u30AF"
+  image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 4
+    powerSpace: 5
     emptyPower: 3
     normalPower: 1
     brokenPower: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 10, y: 5}
-    - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
-      value: {x: 4, y: 1}
-  price: 400
+      value: {x: 4, y: 3}
+    - type: {fileID: 11400000, guid: d60c755d21633104f8118ee62c72d944, type: 2}
+      value: {x: 1, y: 0}
+  price: 0

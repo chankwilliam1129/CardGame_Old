@@ -9,17 +9,17 @@ public class WhenTurnStart : MonoBehaviour
 
     private void Start()
     {
-        if (BattleDeckManager.Instance != null)
+        if (PlayerArea.Instance != null)
         {
-            PlayerArea.Instance.player.characterEvent.OnTurnEnd += TurnStart;
+            PlayerArea.Instance.player.characterEvent.OnTurnStart += TurnStart;
         }
     }
 
     private void OnDestroy()
     {
-        if (BattleDeckManager.Instance != null)
+        if (PlayerArea.Instance != null)
         {
-            PlayerArea.Instance.player.characterEvent.OnTurnEnd -= TurnStart;
+            PlayerArea.Instance.player.characterEvent.OnTurnStart -= TurnStart;
         }
     }
 

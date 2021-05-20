@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 01_FireAttack
+  m_Name: FireFruit
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u708E\u653B\u6483"
-  image: {fileID: 21300000, guid: 57896c46c54225143a8d4e40e0ac6a57, type: 3}
+  name: 
+  image: {fileID: 21300000, guid: 2daa342313198d748a976fe0684f1afd, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 4
+    powerSpace: 0
     emptyPower: 2
-    normalPower: 1
+    normalPower: 2
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 5, y: 2}
-    - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
-      value: {x: 2, y: 1}
-  price: 200
+    - type: {fileID: 11400000, guid: fb5f5c81ceab2ec4a8004e6ecdb6e1bb, type: 2}
+      value: {x: 4, y: 0}
+    - type: {fileID: 11400000, guid: 97a0cce88c7a8bc47ae0b038f759d8b9, type: 2}
+      value: {x: 1, y: 0}
+  price: 0

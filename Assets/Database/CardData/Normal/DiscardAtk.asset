@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 19_FireFruit
+  m_Name: DiscardAtk
   m_EditorClassIdentifier: 
   index: 0
   name: 
-  image: {fileID: 21300000, guid: 2daa342313198d748a976fe0684f1afd, type: 3}
+  image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 2
-    normalPower: 2
+    powerSpace: 3
+    emptyPower: 1
+    normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: fb5f5c81ceab2ec4a8004e6ecdb6e1bb, type: 2}
-      value: {x: 4, y: 0}
-    - type: {fileID: 11400000, guid: 97a0cce88c7a8bc47ae0b038f759d8b9, type: 2}
-      value: {x: 1, y: 0}
+    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
+      value: {x: 1, y: 1}
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 7, y: 3}
   price: 0

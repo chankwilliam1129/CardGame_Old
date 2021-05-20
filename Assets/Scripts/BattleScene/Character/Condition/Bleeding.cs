@@ -14,7 +14,7 @@ public class Bleeding : Condition
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.from != null)
+        if (args.from != null && args.damage > 0) 
         {
             character.ChangeHealthPoint(-stack);
         }

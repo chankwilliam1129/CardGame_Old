@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 22_FirePotion
+  m_Name: FirePotion
   m_EditorClassIdentifier: 
   index: 0
   name: "\u30D5\u30A1\u30A4\u30A2\u30DD\u30FC\u30B7\u30E7\u30F3"
