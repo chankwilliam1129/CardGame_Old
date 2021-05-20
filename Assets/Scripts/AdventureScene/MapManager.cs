@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
     public List<GameObject> parentList = new List<GameObject>();  
     public List<List<Node>> nodeMap = new List<List<Node>>();
 
-    private float nodeWidthSize = 120;
+    private float nodeWidthSize = 240;
     private float nodeHeightSize = 130;
 
     public static MapManager Instance { get; private set; }
@@ -53,11 +53,11 @@ public class MapManager : MonoBehaviour
     {     
         if (nodeType == NodeType.Start || nodeType == NodeType.Boss)
         {
-            return Instantiate(node, new Vector3(2 * nodeWidthSize + 100, location.y * nodeHeightSize - 500, 0), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
+            return Instantiate(node, new Vector3(200, location.y * nodeHeightSize - 500, 0), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
         }
         else
         {
-            return Instantiate(node, new Vector3(location.x * nodeWidthSize + 100, location.y * nodeHeightSize - 500, 0), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
+            return Instantiate(node, NodeRandomPositions(location), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
         }
     }
 
@@ -147,5 +147,14 @@ public class MapManager : MonoBehaviour
         else if (r <= 30) return NodeType.MinorEnemy;
         else if (r <= 50) return NodeType.Mystery;
         else return NodeType.EliteEnemy;
+    }
+
+    private Vector3 NodeRandomPositions(Vector2Int location)
+    {
+        Vector3 pos = new Vector3(0, 0, 0);
+        float rx = Random.Range((location.x - 1) * nodeWidthSize + 100, location.x * nodeWidthSize);
+        pos.x = rx - 200;
+        pos.y = location.y * nodeHeightSize - 500;
+        return pos;
     }
 }
