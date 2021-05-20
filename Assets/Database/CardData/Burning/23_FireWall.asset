@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
+  m_Name: 23_FireWall
+  m_EditorClassIdentifier: 
+  index: 0
+  name: 
+  image: {fileID: 0}
+  battleData:
+    preset: {fileID: 11400000}
+    powerSpace: 4
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
+      value: {x: 3, y: 1}
+    - type: {fileID: 11400000, guid: b94ad828859018645ae70d04b4989c5d, type: 2}
+      value: {x: 5, y: 2}
+  price: 0

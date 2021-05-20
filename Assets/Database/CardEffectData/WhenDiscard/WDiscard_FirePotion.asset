@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0028042d717977e4183423327c448548, type: 3}
   m_Name: WDiscard_FirePotion
   m_EditorClassIdentifier: 
-  type: 6
+  type: 1
   effects:
   - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
     value: {x: 3, y: 0}

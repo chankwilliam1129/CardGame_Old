@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 22_FirePotion
+  m_Name: 23_PoisonPotion
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30D5\u30A1\u30A4\u30A2\u30DD\u30FC\u30B7\u30E7\u30F3"
+  name: "\u30DD\u30A4\u30BA\u30F3\u30DD\u30FC\u30B7\u30E7\u30F3"
   image: {fileID: 21300000, guid: 2daa342313198d748a976fe0684f1afd, type: 3}
   battleData:
     preset: {fileID: 11400000}
@@ -28,8 +28,8 @@ MonoBehaviour:
       value: {x: 10, y: 0}
     - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
       value: {x: 2, y: 0}
-    - type: {fileID: 11400000, guid: fb5f5c81ceab2ec4a8004e6ecdb6e1bb, type: 2}
+    - type: {fileID: 11400000, guid: 37ec59c8526cc0a46b93976bf45d0a3a, type: 2}
       value: {x: 2, y: 0}
-    - type: {fileID: 11400000, guid: 99fab41ce5a96a24ca5c44021e560721, type: 2}
-      value: {x: 0, y: 0}
+    - type: {fileID: 11400000, guid: a2e9bb554df43854999c575c8e375eb1, type: 2}
+      value: {x: 3, y: 0}
   price: 0
