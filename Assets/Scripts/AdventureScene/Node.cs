@@ -10,13 +10,9 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public NodeData data;
     public Vector2Int location;
 
-    private float WidthSize = 110.0f;
-    private float HeightSize = 100.0f;
-
     private void Start()
     {
         GetComponent<Image>().sprite = data.sprite;
-        transform.localPosition = SetNodePositions();
     }
 
     public Node SetNodeData(NodeData nodeData, Vector2Int lo)
@@ -25,15 +21,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         location = lo;
         return this;
     } 
-
-    public Vector3 SetNodePositions()
-    {
-        if (location.x == 0 && location.y == 0) 
-        {
-            return new Vector3(2 * WidthSize, location.y * HeightSize, 0);
-        }
-        return new Vector3(location.x * WidthSize, location.y * HeightSize, 0);
-    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -120,6 +107,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                 MysteryCheck();
                 break;
             case NodeType.Treasure:
+                SceneManager.LoadScene("TreasureScene");
                 break;
             case NodeType.Store:
                 SceneManager.LoadScene("StoreScene");
