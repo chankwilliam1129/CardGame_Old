@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 09_DestinyCard
+  m_Name: DestinyCard
   m_EditorClassIdentifier: 
   index: 0
   name: "\u30C7\u30B9\u30C6\u30A3\u30CB\u30FC"

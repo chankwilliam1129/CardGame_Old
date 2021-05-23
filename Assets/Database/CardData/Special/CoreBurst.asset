@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 10_CoreCard
+  m_Name: CoreBurst
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30B3\u30A2\u30D6\u30FC\u30B9\u30C8"
-  image: {fileID: 21300000, guid: dfd2a6bd612d90e40a66c177259683e9, type: 3}
+  name: "\u30B3\u30A2\u30D0\u30FC\u30B9\u30C8"
+  image: {fileID: 21300000, guid: 6ef52ebf3ef9ce64aba8aa4f5f7c5530, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 4
-    emptyPower: 2
+    powerSpace: 1
+    emptyPower: 3
     normalPower: 0
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 42e87313815c6354db8c01b21570a267, type: 2}
-      value: {x: 1, y: 1}
-  price: 100
+    - type: {fileID: 11400000, guid: e83ef9dc409eb9e478c5776d61839dfb, type: 2}
+      value: {x: 0, y: 30}
+  price: 0

@@ -9,21 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 25_
+  m_Script: {fileID: 11500000, guid: 8a658779b34fa2e48b62eec2aca4618d, type: 3}
+  m_Name: RelicData_test
   m_EditorClassIdentifier: 
-  index: 0
-  name: 
+  name: "\u6700\u5F37\u306E\u76FE"
   image: {fileID: 0}
-  battleData:
-    preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
-    brokenPower: 0
-    removeType: 0
-    drawType: 0
-    effects:
-    - type: {fileID: 0}
-      value: {x: 0, y: 0}
+  descriptionText: "\u3042\u3042\u3042\u3042"
   price: 0
+  effect: {fileID: 11400000, guid: 4feeb56a0f27d6342b0e68f703ff159b, type: 2}

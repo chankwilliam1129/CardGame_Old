@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: 11_Shield
+  m_Name: PoisonAttack
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30D6\u30ED\u30C3\u30AF"
-  image: {fileID: 21300000, guid: b4c1605cf0f331c43917d2121c9e87ac, type: 3}
+  name: "\u6BD2\u653B\u6483"
+  image: {fileID: 21300000, guid: 30bdf0d862b24d14589bb4a44d93b8bb, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 6
-    emptyPower: 3
+    powerSpace: 3
+    emptyPower: 1
     normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: b94ad828859018645ae70d04b4989c5d, type: 2}
-      value: {x: 5, y: 2}
-  price: 300
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 3, y: 2}
+    - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
+      value: {x: 3, y: 2}
+  price: 600
