@@ -9,6 +9,10 @@ public class EnemyCreateCard : EnemyAction
     public CreateCardEvent createCardEvent;
     public Card card;
 
+    public override string GetDescription(int value)
+    {
+        return card.name + "を" + value + "プレイヤーの枚手札に加える。";
+    }
 
     public override void Execute(int value)
     {

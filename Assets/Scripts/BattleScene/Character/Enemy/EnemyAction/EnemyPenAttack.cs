@@ -8,6 +8,11 @@ public class EnemyPenAttack : EnemyAction
 {
     public PenDealDamageEvent damage;
 
+    public override string GetDescription(int value)
+    {
+        return damage.ToString() + "の貫通ダメージ与える。";
+    }
+
     public override void Execute(int value)
     {
         PenDealDamageEvent e = Instantiate(damage, BattleEventManager.Instance.transform);

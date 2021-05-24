@@ -7,6 +7,11 @@ public class EnemyAttack : EnemyAction
 {
     public DealDamageEvent damage;
 
+    public override string GetDescription(int value)
+    {
+        return damage.ToString() + "ダメージ与える。";
+    }
+
     public override void Execute(int value)
     {
         DealDamageEvent e = Instantiate(damage, BattleEventManager.Instance.transform);

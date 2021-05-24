@@ -53,12 +53,12 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public void Start()
     {
-        //OnTurnStart += TurnStartShieldClear;
+        OnTurnStart += TurnStartShieldClear;
     }
 
     private void TurnStartShieldClear(object sender, EventArgs e)
     {
-        character.SetShield(10);
+        character.SetShield(0);
     }
 
     public void Update()

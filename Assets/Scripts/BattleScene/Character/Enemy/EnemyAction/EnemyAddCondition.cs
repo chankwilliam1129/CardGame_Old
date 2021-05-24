@@ -12,6 +12,10 @@ public class EnemyAddCondition : EnemyAction
 
     public bool toPlayer;
 
+    public override string GetDescription(int value)
+    {
+        return condition.GetText() + value + "Çó^Ç¶ÇÈÅB";
+    }
     public override void Execute(int value)
     {
         AddConditionEvent e = Instantiate(addCondition, BattleEventManager.Instance.transform);
