@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618773e7f1bb3349ad1a59ae63d5bf8, type: 3}
   m_Name: EnemyShield
   m_EditorClassIdentifier: 
+  sprite: {fileID: -8281631341028826348, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   shieldEvent: {fileID: 6696005677825574391, guid: e7dd4fb8c0d322d4ab9c719976e81e62, type: 3}

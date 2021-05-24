@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RelicData_test
   m_EditorClassIdentifier: 
   name: "\u6700\u5F37\u306E\u76FE"
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 06210df99b62bca47b94092d0296ce2c, type: 3}
   descriptionText: "\u3042\u3042\u3042\u3042"
   price: 0
   effect: {fileID: 11400000, guid: 4feeb56a0f27d6342b0e68f703ff159b, type: 2}

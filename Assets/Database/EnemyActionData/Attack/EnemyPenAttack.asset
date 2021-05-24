@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ababd401a15113f4780e5b9f14ebc322, type: 3}
   m_Name: EnemyPenAttack
   m_EditorClassIdentifier: 
+  sprite: {fileID: 2604778064009619167, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   damage: {fileID: 4732031226626908671, guid: 4cff4419053fa7e46b49f0cca46de065, type: 3}

@@ -9,7 +9,7 @@ public class EnemyAttack : EnemyAction
 
     public override string GetDescription(int value)
     {
-        return damage.ToString() + "ダメージ与える。";
+        return value.ToString() + "ダメージ与える。";
     }
 
     public override void Execute(int value)

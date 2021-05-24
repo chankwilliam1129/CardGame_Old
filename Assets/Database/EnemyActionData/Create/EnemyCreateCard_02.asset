@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9903b488b24f241aa95b63e93e35e1, type: 3}
   m_Name: EnemyCreateCard_02
   m_EditorClassIdentifier: 
+  sprite: {fileID: -7002552586175417786, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   createCardEvent: {fileID: 3111525524322736920, guid: 59ab249de57ea774191f7016681bd11d, type: 3}
   card: {fileID: 11400000, guid: 2f6d8eeb3cbb3d34fac8d276d242c912, type: 2}

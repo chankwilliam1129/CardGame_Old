@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9bfe17993d6ed44b251a5e8a0e764d, type: 3}
   m_Name: EnemyHeal
   m_EditorClassIdentifier: 
+  sprite: {fileID: 4286653652868265181, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   heal: {fileID: 6826624527149070198, guid: a992b719286bc224f98a1e085c7d2f78, type: 3}

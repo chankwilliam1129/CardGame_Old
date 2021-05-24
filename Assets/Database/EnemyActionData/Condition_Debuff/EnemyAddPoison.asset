@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de5df77a5b62a046a75d1cb738c5b01, type: 3}
   m_Name: EnemyAddPoison
   m_EditorClassIdentifier: 
+  sprite: {fileID: -4685603782433682049, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
   condition: {fileID: 2634967354107381714, guid: 8afe0e4eb5e95374b9dfaf099906a386, type: 3}
   toPlayer: 1

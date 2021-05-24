@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de5df77a5b62a046a75d1cb738c5b01, type: 3}
   m_Name: EnemyAddPowerDown
   m_EditorClassIdentifier: 
+  sprite: {fileID: 6576060013593066552, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
   condition: {fileID: -9046352657183017363, guid: 4ce58ebd7adee834dab719d23ff7eb39, type: 3}
   toPlayer: 1
