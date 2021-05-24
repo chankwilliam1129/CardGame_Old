@@ -13,9 +13,6 @@ public class EnemyData : ScriptableObject
 
     public int health;
 
-    public int NtimesAtk;
-
-    public bool On_NtimesAtk;
 
     [Serializable]
     public class EnemyActionData
@@ -24,5 +21,13 @@ public class EnemyData : ScriptableObject
         public int value;
     }
 
-    [SerializeField] public List<EnemyActionData> EnemyActions;
+    public bool isActionRandom;
+
+    [SerializeField] public List<EnemyActionData> EnemyNormalActions1;
+    [SerializeField] public List<EnemyActionData> EnemyNormalActions2;
+    [SerializeField] public List<EnemyActionData> EnemyNormalActions3;
+
+    [SerializeField] public List<EnemyActionData> EnemySpecialActions1;
+    [SerializeField] public List<EnemyActionData> EnemySpecialActions2;
+    [SerializeField] public List<EnemyActionData> EnemySpecialActions3;
 }
