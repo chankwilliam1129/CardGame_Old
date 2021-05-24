@@ -8,6 +8,8 @@ public class AddConditionEvent : MonoBehaviour
     public Character target;
     public int value;
 
+    [SerializeField] public List<CardBattleData.Effect> effects;
+
     private void Start()
     {
     }

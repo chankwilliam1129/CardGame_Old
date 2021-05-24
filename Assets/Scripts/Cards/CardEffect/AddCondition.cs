@@ -7,8 +7,8 @@ public class AddCondition : CardEffect
 {
     public AddConditionEvent addCondition;
     public Condition condition;
-
     public bool toPlayer;
+
 
     public override string GetDescription(Vector2Int value, bool isFinal)
     {

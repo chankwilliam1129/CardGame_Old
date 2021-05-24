@@ -2,21 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trap : Condition
+public class Reflect : Condition
 {
+    public int damage;
+    public Bleeding bleeding;
+
     private void Start()
     {
         character.conditionList.Add(this);
-        character.characterEvent.OnTurnEnd += OnTurnStart;
+        //character.characterEvent.OnTurnEnd += OnTurnStart;
+        PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamaged += OnGetDamaged;
     }
 
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.damage >= GetDamage)
+        if (args.from !=null && args.damage >= damage)
         {
-            character.ChangeHealthPoint(-args.damage);
+            Condition con = bleeding.Exist(args.from);
+            if (con == null)
+            {
+                con = Instantiate(bleeding, args.from.conditionDisplay);
+                con.character = args.from;
+            }
+            con.Add(3);
         }
     }
 
@@ -29,12 +39,12 @@ public class Trap : Condition
 
     public void Settlement()
     {
-        stack /= 2;
+        stack -= 1;
     }
 
     public override void DestoryEvent()
     {
-        character.characterEvent.OnTurnEnd -= OnTurnStart;
+        PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamaged -= OnGetDamaged;
     }
 
@@ -43,7 +53,7 @@ public class Trap : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<Bleeding>();
+            condition = con.GetComponent<Reflect>();
             if (condition != null) break;
         }
         return condition;

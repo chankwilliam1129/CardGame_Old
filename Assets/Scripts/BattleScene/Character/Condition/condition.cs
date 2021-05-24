@@ -6,7 +6,6 @@ using TMPro;
 
 public abstract class Condition : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public int GetDamage;
     public int stack;
     public TextMeshProUGUI text;
     public GameObject descriptionObject;
