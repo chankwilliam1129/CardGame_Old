@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reflect : Condition
+public class ReflectBleeding : Condition
 {
     public int damage;
     public Bleeding bleeding;
@@ -53,7 +53,7 @@ public class Reflect : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<Reflect>();
+            condition = con.GetComponent<ReflectBleeding>();
             if (condition != null) break;
         }
         return condition;
