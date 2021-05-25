@@ -26,8 +26,12 @@ public class EnemyData : ScriptableObject
     [SerializeField] public List<EnemyActionData> EnemyNormalActions1;
     [SerializeField] public List<EnemyActionData> EnemyNormalActions2;
     [SerializeField] public List<EnemyActionData> EnemyNormalActions3;
+    [SerializeField] public List<EnemyActionData> EnemyNormalActions4;
+    [SerializeField] public List<EnemyActionData> EnemyNormalActions5;
 
     [SerializeField] public List<EnemyActionData> EnemySpecialActions1;
     [SerializeField] public List<EnemyActionData> EnemySpecialActions2;
     [SerializeField] public List<EnemyActionData> EnemySpecialActions3;
+    [SerializeField] public List<EnemyActionData> EnemySpecialActions4;
+    [SerializeField] public List<EnemyActionData> EnemySpecialActions5;
 }

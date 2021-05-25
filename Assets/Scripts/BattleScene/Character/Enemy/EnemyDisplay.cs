@@ -19,15 +19,19 @@ public class EnemyDisplay : MonoBehaviour
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd += OnEnemyTurnEnd;
         actionCount = 0;
-        if (enemy.isActionRandom) actionCount = Random.Range(0, 3);
+        if (enemy.isActionRandom) actionCount = Random.Range(0, 5);
         switch (actionCount)
         {
             case 0: Setup(enemy.EnemyNormalActions1); break;
             case 1: Setup(enemy.EnemyNormalActions2); break;
             case 2: Setup(enemy.EnemyNormalActions3); break;
-            case 3: Setup(enemy.EnemySpecialActions1); break;
-            case 4: Setup(enemy.EnemySpecialActions2); break;
-            case 5: Setup(enemy.EnemySpecialActions3); break;
+            case 3: Setup(enemy.EnemyNormalActions4); break;
+            case 4: Setup(enemy.EnemyNormalActions5); break;
+            case 5: Setup(enemy.EnemySpecialActions1); break;
+            case 6: Setup(enemy.EnemySpecialActions2); break;
+            case 7: Setup(enemy.EnemySpecialActions3); break;
+            case 8: Setup(enemy.EnemySpecialActions4); break;
+            case 9: Setup(enemy.EnemySpecialActions5); break;
         }
 
     }
@@ -36,12 +40,17 @@ public class EnemyDisplay : MonoBehaviour
     {
         switch(actionCount)
         {
-            case 0:Execute(enemy.EnemyNormalActions1); break;
-            case 1:Execute(enemy.EnemyNormalActions2); break;
-            case 2:Execute(enemy.EnemyNormalActions3); break;
-            case 3:Execute(enemy.EnemySpecialActions1);break;
-            case 4:Execute(enemy.EnemySpecialActions2);break;
-            case 5:Execute(enemy.EnemySpecialActions3);break;
+            case 0: Execute(enemy.EnemyNormalActions1); break;
+            case 1: Execute(enemy.EnemyNormalActions2); break;
+            case 2: Execute(enemy.EnemyNormalActions3); break;
+            case 3: Execute(enemy.EnemyNormalActions4); break;
+            case 4: Execute(enemy.EnemyNormalActions5); break;
+            case 5: Execute(enemy.EnemySpecialActions1); break;
+            case 6: Execute(enemy.EnemySpecialActions2); break;
+            case 7: Execute(enemy.EnemySpecialActions3); break;
+            case 8: Execute(enemy.EnemySpecialActions4); break;
+            case 9: Execute(enemy.EnemySpecialActions5); break;
+            default: Debug.Log("EnemyCountError:" + actionCount); break;
         }
 
     }
@@ -50,14 +59,14 @@ public class EnemyDisplay : MonoBehaviour
     {
         if (enemy.isActionRandom)
         {
-            if (!isUseSpecial()) actionCount = Random.Range(0, 3);
-            else actionCount = Random.Range(3, 6);
+            if (!isUseSpecial()) actionCount = Random.Range(0, 5);
+            else actionCount = Random.Range(5, 9);
         }
         else if (!isUseSpecial())
         {
-            actionCount = actionCount + 1 > 2 ? 0 : actionCount + 1;
+            actionCount = actionCount + 1 > 4 ? 0 : actionCount + 1;
         }
-        else actionCount = actionCount + 1 > 5 ? 3 : actionCount + 1;
+        else actionCount = actionCount + 1 > 9 ? 5 : actionCount + 1;
 
         foreach (Transform child in enemyActionGroup)
         {
@@ -69,9 +78,13 @@ public class EnemyDisplay : MonoBehaviour
             case 0: Setup(enemy.EnemyNormalActions1); break;
             case 1: Setup(enemy.EnemyNormalActions2); break;
             case 2: Setup(enemy.EnemyNormalActions3); break;
-            case 3: Setup(enemy.EnemySpecialActions1); break;
-            case 4: Setup(enemy.EnemySpecialActions2); break;
-            case 5: Setup(enemy.EnemySpecialActions3); break;
+            case 3: Setup(enemy.EnemyNormalActions4); break;
+            case 4: Setup(enemy.EnemyNormalActions5); break;
+            case 5: Setup(enemy.EnemySpecialActions1); break;
+            case 6: Setup(enemy.EnemySpecialActions2); break;
+            case 7: Setup(enemy.EnemySpecialActions3); break;
+            case 8: Setup(enemy.EnemySpecialActions4); break;
+            case 9: Setup(enemy.EnemySpecialActions5); break;
         }
 
     }

@@ -17,14 +17,24 @@ MonoBehaviour:
   health: 100
   isActionRandom: 0
   EnemyNormalActions1:
-  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
     value: 10
   EnemyNormalActions2:
-  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
-    value: 5
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 10
   EnemyNormalActions3:
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
+  - type: {fileID: 11400000, guid: 3e6e897139f2d9d4cb80e0f863af84d8, type: 2}
     value: 5
-  EnemySpecialActions1: []
+  EnemyNormalActions4:
+  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
+    value: 4
+  EnemyNormalActions5:
+  - type: {fileID: 11400000, guid: 391a0f8c1ca29d84f8055aadb4173522, type: 2}
+    value: 1
+  EnemySpecialActions1:
+  - type: {fileID: 0}
+    value: 0
   EnemySpecialActions2: []
   EnemySpecialActions3: []
+  EnemySpecialActions4: []
+  EnemySpecialActions5: []

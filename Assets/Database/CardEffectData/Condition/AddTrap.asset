@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d92ea928dd75874a8db5408206e6022, type: 3}
-  m_Name: AddInvincible
+  m_Name: AddTrap
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
-  condition: {fileID: 5313241092027472220, guid: 32acb4d3134c14b4f854119ef5f72a70, type: 3}
+  condition: {fileID: 8725922258306471488, guid: d6bd3abfa8e3dee4590dac027c20bba9, type: 3}
   toPlayer: 1

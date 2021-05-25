@@ -9,7 +9,7 @@ public class EnemyShield : EnemyAction
     // Start is called before the first frame updat
     public override string GetDescription(int value)
     {
-        return shieldEvent.ToString() + "のシールドを得る";
+        return value.ToString() + "のシールドを得る";
     }
 
     public override void Execute(int value)

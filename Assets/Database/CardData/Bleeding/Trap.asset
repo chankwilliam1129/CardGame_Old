@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
+  m_Name: Trap
+  m_EditorClassIdentifier: 
+  index: 0
+  name: trap
+  image: {fileID: 21300000, guid: a6cd48c8b2ed5b047b4ca78d566229ae, type: 3}
+  battleData:
+    preset: {fileID: 11400000}
+    powerSpace: 5
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: dfc0b1b8446b42d4b982b90423fc8a6a, type: 2}
+      value: {x: 10, y: 0}
+  price: 0

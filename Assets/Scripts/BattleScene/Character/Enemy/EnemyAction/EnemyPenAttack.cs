@@ -10,7 +10,7 @@ public class EnemyPenAttack : EnemyAction
 
     public override string GetDescription(int value)
     {
-        return damage.ToString() + "の貫通ダメージ与える。";
+        return value.ToString() + "の貫通ダメージ与える。";
     }
 
     public override void Execute(int value)

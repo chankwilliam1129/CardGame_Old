@@ -10,7 +10,7 @@ public class EnemyHeal : EnemyAction
 
     public override string GetDescription(int value)
     {
-        return heal.ToString() + "‰ñ•œ‚·‚éB";
+        return value.ToString() + "‰ñ•œ‚·‚éB";
     }
 
     public override void Execute(int value)
