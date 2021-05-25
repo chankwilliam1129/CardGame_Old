@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectBleeding : Condition
+public class ReflectDamage : Condition
 {
     public int damage;
-    public Bleeding bleeding;
-    public int bleeding_stack;
-
+    private int reflectdmg;
     private void Start()
     {
         character.conditionList.Add(this);
@@ -19,15 +17,11 @@ public class ReflectBleeding : Condition
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.from !=null && args.damage >= damage)
+        if (args.damage >= damage)
         {
-            Condition con = bleeding.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(bleeding, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(bleeding_stack);
+            //reflectdmg = args.damage;
+            //args.damage -= 3;
+            EnemyArea.Instance.enemy.ChangeHealthPoint(-args.damage);
         }
     }
 
@@ -54,7 +48,7 @@ public class ReflectBleeding : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<ReflectBleeding>();
+            condition = con.GetComponent<ReflectDamage>();
             if (condition != null) break;
         }
         return condition;

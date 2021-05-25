@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 7817452648966247263}
   - component: {fileID: 8485973703817600363}
   m_Layer: 5
-  m_Name: Reflect
+  m_Name: ReflectBleeding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,10 +487,11 @@ MonoBehaviour:
   descriptionText: {fileID: 2573101890507955580}
   character: {fileID: 0}
   conditionName: "\u53CD\u5C04"
-  description: "\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u305D\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u6575\u306B\u4E0E\u3048\u308B"
-  color: {r: 0.29019612, g: 0.8172458, b: 0.8392157, a: 0}
+  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B\u51FA\u8840\u52B9\u679C\u3092\u4E0E\u3048\u308B"
+  color: {r: 0.9811321, g: 0.049473763, b: 0, a: 0}
   damage: 5
   bleeding: {fileID: 6334360807182123270, guid: 6068b164835603247b6fd1bb784d27a5, type: 3}
+  bleeding_stack: 4
 --- !u!114 &7817452648966247263
 MonoBehaviour:
   m_ObjectHideFlags: 0

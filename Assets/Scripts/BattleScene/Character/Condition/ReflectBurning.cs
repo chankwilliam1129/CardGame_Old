@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectBleeding : Condition
+public class ReflectBurning : Condition
 {
     public int damage;
-    public Bleeding bleeding;
-    public int bleeding_stack;
+    public Burning burning;
+    public int burning_stack;
 
     private void Start()
     {
@@ -19,15 +19,15 @@ public class ReflectBleeding : Condition
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.from !=null && args.damage >= damage)
+        if (args.from != null && args.damage >= damage)
         {
-            Condition con = bleeding.Exist(args.from);
+            Condition con = burning.Exist(args.from);
             if (con == null)
             {
-                con = Instantiate(bleeding, args.from.conditionDisplay);
+                con = Instantiate(burning, args.from.conditionDisplay);
                 con.character = args.from;
             }
-            con.Add(bleeding_stack);
+            con.Add(burning_stack);
         }
     }
 
@@ -54,7 +54,7 @@ public class ReflectBleeding : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<ReflectBleeding>();
+            condition = con.GetComponent<ReflectBurning>();
             if (condition != null) break;
         }
         return condition;

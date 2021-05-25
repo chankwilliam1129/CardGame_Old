@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectBleeding : Condition
+public class Invincible : Condition
 {
-    public int damage;
-    public Bleeding bleeding;
-    public int bleeding_stack;
+
 
     private void Start()
     {
@@ -19,16 +17,7 @@ public class ReflectBleeding : Condition
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.from !=null && args.damage >= damage)
-        {
-            Condition con = bleeding.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(bleeding, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(bleeding_stack);
-        }
+        args.damage = 0;
     }
 
     private void OnTurnStart(object sender, System.EventArgs e)
@@ -54,7 +43,7 @@ public class ReflectBleeding : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<ReflectBleeding>();
+            condition = con.GetComponent<Invincible>();
             if (condition != null) break;
         }
         return condition;
