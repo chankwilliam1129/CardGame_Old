@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 3
-  m_ScrollSensitivity: 20
+  m_ScrollSensitivity: 40
   m_Viewport: {fileID: 1706175148}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1861653005}
@@ -331,6 +331,7 @@ MonoBehaviour:
   parent: {fileID: 8546782492684080204, guid: b347acbf0365bc748b425d36a0fc987f, type: 3}
   mapParent: {fileID: 1329680758}
   mapSize: 10
+  lineRenderer: {fileID: 710778658456500663, guid: 34539abfad121af4b828df5d77d4d40a, type: 3}
   nodeDatas:
   - {fileID: 11400000, guid: f0d5db9f40569a74e8f9f441349777db, type: 2}
   - {fileID: 11400000, guid: e93fbf4b7d7cea844bbdcad80d8986b3, type: 2}
@@ -509,7 +510,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 450
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -533,7 +534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635427068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 800, y: 450, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -561,7 +562,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -843,7 +844,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2034032546}
   m_HandleRect: {fileID: 2034032545}
   m_Direction: 2
-  m_Value: -0.39444897
+  m_Value: -0.22997542
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -996,8 +997,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1394.449}
-  m_SizeDelta: {x: -1500, y: 1800}
+  m_AnchoredPosition: {x: 0, y: 1721.9656}
+  m_SizeDelta: {x: -1500, y: 2200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2069664216
 MonoBehaviour:

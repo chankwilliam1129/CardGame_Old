@@ -2,7 +2,7 @@ Shader "Unlit/CircleLineShader"
 {  
     Properties
     {
-        _Space("Space Between Dots", Range(1, 5)) = 1.2
+        _Space("Space Between Dots",Range(0.01,100)) = 1.2
     }
     SubShader
     {

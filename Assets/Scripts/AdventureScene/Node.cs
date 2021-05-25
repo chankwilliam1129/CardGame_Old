@@ -9,6 +9,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 {
     public NodeData data;
     public Vector2Int location;
+    public List<int> next;
 
     private void Start()
     {

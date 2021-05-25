@@ -33,6 +33,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _Space: 4.86
+    - _Space: 1
     m_Colors: []
   m_BuildTextureStacks: []
