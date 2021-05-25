@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
     public int GetEnergyPoint()
     {
         return EnergyPoint;
-    }  
+    }
     public int GetEnergyPointMax()
     {
         return EnergyPointMax;
@@ -57,14 +57,14 @@ public class Character : MonoBehaviour
         return healthPoint > 0;
     }
 
-    public void SetEnergyPointMax(int energy) 
+    public void SetEnergyPointMax(int energy)
     {
         EnergyPointMax = energy;
         EnergyPoint = Mathf.Max(Mathf.Min(EnergyPoint, EnergyPointMax), 0);
         OnEnergyChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void SetEnergyPoint(int energy) 
+    public void SetEnergyPoint(int energy)
     {
         EnergyPoint = energy;
         EnergyPoint = Mathf.Max(Mathf.Min(EnergyPoint, EnergyPointMax), 0);
@@ -101,8 +101,11 @@ public class Character : MonoBehaviour
 
     public void ChangeShield(int value)
     {
-        shield += value;
-        OnShieldChanged?.Invoke(this, EventArgs.Empty);
+        if (healthPoint > 0)
+        {
+            shield += value;
+            OnShieldChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public void SetShield(int value)
