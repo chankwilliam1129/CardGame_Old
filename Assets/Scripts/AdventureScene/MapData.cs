@@ -12,7 +12,6 @@ public class NodeSaveData
         type = t;
         next = new List<int>();
     }
-
 }
 
 [CreateAssetMenu]

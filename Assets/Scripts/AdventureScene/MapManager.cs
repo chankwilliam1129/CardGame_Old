@@ -32,12 +32,7 @@ public class MapManager : MonoBehaviour
 
         if (MapData.Instance.saveNodeMap.Count == 0)
         {
-            for (int i = 1; i <= mapSize; i++)
-            {
-                CreateMap(i);
-            }
-
-            nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
+            CreateMap();
         }
         else
         { 
@@ -50,13 +45,11 @@ public class MapManager : MonoBehaviour
     {
         if (nodeType == NodeType.Start || nodeType == NodeType.Boss)
         {
-            Vector3 pos = new Vector3(50, location.y * nodeHeightSize - 600, 0);
-            return Instantiate(node, pos, Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
+            return Instantiate(node, new Vector3(50, location.y * nodeHeightSize - 600, 0), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
         }
         else
         {
-            Vector3 pos = NodeRandomPositions(location);
-            return Instantiate(node, pos, Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
+            return Instantiate(node, NodeRandomPositions(location), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
         }
     }
 
@@ -66,7 +59,21 @@ public class MapManager : MonoBehaviour
         return nodeList;
     }
 
-    private void CreateMap(int level)
+    private void CreateMap()
+    {
+        for (int i = 1; i <= mapSize; i++)
+        {
+            SetMap(i);
+        }
+        nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
+        Transform children = nodeMap[0][0].GetComponentInChildren<Transform>();
+        foreach (Transform c in children)
+        {
+            c.GetComponent<Animator>().SetBool("isSelect", true);
+        }
+    }
+
+    private void SetMap(int level)
     {
         int value;
         if (level == 1 || level == mapSize) value = 1;
@@ -80,7 +87,6 @@ public class MapManager : MonoBehaviour
         int curListCount = 0;
         for (int v = 0; v < value; v++)
         {
-
             NodeType nodeType = GetLevelNodeType(level);
 
             Node newNode = CreateNode(nodeType, new Vector2Int(nodeList.Count, nodeMap.Count), p.transform);
@@ -95,6 +101,7 @@ public class MapManager : MonoBehaviour
                 {
                     nodeMap[nodeMap.Count - 1][curListCount].next.Add(v);
                     MapData.Instance.saveNodeMap[nodeMap.Count - 1][curListCount].next.Add(v);
+
                     LineRenderer line = Instantiate(lineRenderer, nodeMap[nodeMap.Count - 1][curListCount].transform);
                     line.SetPosition(0, Vector3.zero);
                     line.SetPosition(1, newNode.transform.position - nodeMap[nodeMap.Count - 1][curListCount].transform.position);
@@ -107,7 +114,6 @@ public class MapManager : MonoBehaviour
                             curListCount++;
                             range *= 0.4f;
                         }
-
                     }
                 }
             }
@@ -120,7 +126,6 @@ public class MapManager : MonoBehaviour
 
     private NodeType GetLevelNodeType(int level)
     {
-
         if (level == 1) return NodeType.Start;
         else if (level ==2) return NodeType.MinorEnemy;
         else if(level == 4) return NodeType.Treasure;
@@ -135,9 +140,7 @@ public class MapManager : MonoBehaviour
             else if (range < 85) return NodeType.MinorEnemy;
             else return NodeType.Mystery;
         }
-
     }
-
 
     private void LoadMap()
     {   
@@ -169,35 +172,10 @@ public class MapManager : MonoBehaviour
                 {
                     LineRenderer line = Instantiate(lineRenderer, node.transform);
                     line.SetPosition(0, node.transform.position);
-                    line.SetPosition(1, nodeMap[node.location.y+1][next].transform.position);
+                    line.SetPosition(1, nodeMap[node.location.y + 1][next].transform.position);
                 }
-
             }
         }
-    }
-
-    public List<Node> GetNodeList(int y)
-    {
-        if (y < 0) y = 0;
-        return nodeMap[y];
-    }
-
-    private NodeType CreateLevel1Node()
-    {
-        float r = Random.Range(0, 101);
-        if (r <= 15) return NodeType.Store;
-        else if (r <= 30) return NodeType.EliteEnemy;
-        else if (r <= 50) return NodeType.Mystery;
-        else return NodeType.MinorEnemy;       
-    }
-
-    private NodeType CreateLevel2Node()
-    {
-        float r = Random.Range(0, 101);
-        if (r <= 15) return NodeType.Store;
-        else if (r <= 30) return NodeType.MinorEnemy;
-        else if (r <= 50) return NodeType.Mystery;
-        else return NodeType.EliteEnemy;
     }
 
     private Vector3 NodeRandomPositions(Vector2Int location)

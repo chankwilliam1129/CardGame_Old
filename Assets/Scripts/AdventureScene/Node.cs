@@ -21,43 +21,85 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         data = nodeData;
         location = lo;
         return this;
-    } 
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", true);
+
+        if (!GetComponent<Animator>().GetBool("isPass") && !GetComponent<Animator>().GetBool("isSelected") && !GetComponent<Animator>().GetBool("isSelected")) 
+        {
+            Transform children = GetComponentInChildren<Transform>();
+            foreach (Transform c in children)
+            {
+                c.GetComponent<Animator>().SetBool("isTouch", true);
+            }
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", false);
+
+        if (!GetComponent<Animator>().GetBool("isPass") && !GetComponent<Animator>().GetBool("isSelected") && !GetComponent<Animator>().GetBool("isSelected"))
+        {
+            Transform children = GetComponentInChildren<Transform>();
+            foreach (Transform c in children)
+            {
+                c.GetComponent<Animator>().SetBool("isTouch", false);
+            }
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {    
-        if (CanWalk()) 
+        if (IsNextLocation()) 
         {
-            Node curNode = MapManager.Instance.GetNodeList(MapData.Instance.playerLocation.y)[MapData.Instance.playerLocation.x];
-            curNode.GetComponent<Animator>().SetBool("isSelect", false);
-            curNode.GetComponent<Animator>().SetBool("isPass", false);
-            curNode.GetComponent<Animator>().SetBool("isSelected", true);
- 
-            MapData.Instance.playerLocation = location;
-            MapData.Instance.selectedNode.Add(location);
-
-            GetComponent<Animator>().SetBool("isSelect", true);
-            foreach (var n in MapManager.Instance.GetNodeList(MapData.Instance.playerLocation.y))
+            foreach (var Next in MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y][MapData.Instance.playerLocation.x].next)
             {
-                if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
+                if (Next == location.x)
+                {
+                    Node curNode = MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y][MapData.Instance.playerLocation.x];
+                    curNode.GetComponent<Animator>().SetBool("isSelect", false);
+                    curNode.GetComponent<Animator>().SetBool("isPass", false);
+                    curNode.GetComponent<Animator>().SetBool("isSelected", true);
+
+                    Transform children = curNode.GetComponentInChildren<Transform>();
+                    foreach (Transform c in children)
+                    {
+                        c.GetComponent<Animator>().SetBool("isSelect", false);
+                        c.GetComponent<Animator>().SetBool("isSelected", true);
+                    }
+
+                    MapData.Instance.playerLocation = location;
+                    MapData.Instance.selectedNode.Add(location);
+
+                    GetComponent<Animator>().SetBool("isSelect", true);
+                    foreach (var n in MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y])
+                    {
+                        if (n != this) n.GetComponent<Animator>().SetBool("isPass", true);
+                    }
+
+                    if (MapData.Instance.playerLocation.y < MapManager.Instance.mapSize - 1) 
+                    {
+                        foreach (var node in MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y + 1])
+                        {
+                            if (!node.NextCheck()) node.GetComponent<Animator>().SetBool("isPass", true);
+                        }
+                    }
+
+                    children = MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y][MapData.Instance.playerLocation.x].GetComponentInChildren<Transform>();
+                    foreach (Transform c in children)
+                    {
+                        c.GetComponent<Animator>().SetBool("isSelect", true);
+                    }
+
+                    NodetypeCheck(data.nodeType);
+                   
+                    break;
+                }
             }
-
-            NodetypeCheck(data.nodeType);          
         }
-    }
-
-    private bool CanWalk()
-    {       
-        return IsNextLocation();
     }
 
     private bool IsNextLocation()
@@ -82,18 +124,41 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void StateCheck()
     {
+        Transform children = GetComponentInChildren<Transform>();
+       
         if (IsUnderLocation()) GetComponent<Animator>().SetBool("isPass", true);
         if (IsSameLocation())
         {
             GetComponent<Animator>().SetBool("isTouch", true);
             GetComponent<Animator>().SetBool("isSelect", true);
             GetComponent<Animator>().SetBool("isPass", false);
+
+            foreach (Transform c in children)
+            {
+                c.GetComponent<Animator>().SetBool("isSelect", true);
+                c.GetComponent<Animator>().SetBool("isSelected", false);
+            }
         }
         else if (MapData.Instance.selectedNode.FindIndex(n => n == location) != -1)
         {
             GetComponent<Animator>().SetBool("isPass", false);
             GetComponent<Animator>().SetBool("isSelected", true);
+
+            foreach (Transform c in children)
+            {
+                c.GetComponent<Animator>().SetBool("isSelect", false);
+                c.GetComponent<Animator>().SetBool("isSelected", true);
+            }
         }
+    }
+
+    public bool NextCheck()
+    {
+        foreach(var Next in MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y][MapData.Instance.playerLocation.x].next)
+        {
+            if (Next == location.x) return true;
+        }
+        return false;
     }
 
     private void NodetypeCheck(NodeType nodeType)
@@ -105,13 +170,13 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             case NodeType.EliteEnemy:
                 break;
             case NodeType.Mystery:
-                MysteryCheck();
+                //MysteryCheck();
                 break;
             case NodeType.Treasure:
-                SceneManager.LoadScene("TreasureScene");
+                //SceneManager.LoadScene("TreasureScene");
                 break;
             case NodeType.Store:
-                SceneManager.LoadScene("StoreScene");
+                //SceneManager.LoadScene("StoreScene");
                 break;
             case NodeType.Boss:
                 break;
