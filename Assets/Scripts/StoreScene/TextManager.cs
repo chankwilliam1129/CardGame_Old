@@ -17,7 +17,7 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
-        coinText.text = "" + Wallet.Instance.coin;
+        coinText.text = "" + PlayerData.Instance.coin;
         notEnoughCoinText.text = "ƒRƒCƒ“‚ª‘«‚è‚Ü‚¹‚ñI";
         notEnoughCoinText.gameObject.SetActive(false);
     }

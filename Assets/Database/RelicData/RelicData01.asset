@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\u7121\u9650\u30CA\u30A4\u30D5"
   image: {fileID: 21300000, guid: 67781b9def744fd47a94e991d8bdd9b6, type: 3}
-  descriptionText: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u3001\u30CA\u30A4\u30D5\u30921\u679A\u624B\u672D\u306B\u52A0\u3048\u308B\u3002"
+  descriptionText: "\u30BF\u30FC\u30F3\u958B\u59CB\u6642\u306B\u3001\u30CA\u30A4\u30D5\u30921\u679A\u624B\u672D\u306B\u52A0\u3048\u308B\u3002"
   price: 0
   effect: {fileID: 11400000, guid: d2f5dd6de51431846aba3db213c7d5d0, type: 2}

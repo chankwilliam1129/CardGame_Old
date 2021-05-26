@@ -17,19 +17,19 @@ public class Store : CardDisplayOnlyGroup
 
     private void Start()
     {
-        for (int i = 0; i < 5; i++) 
+        for (int i = 0; i < 5; i++)
         {
             sellCard[i].data = cardDatabase.cardList[Random.Range(0, cardDatabase.cardList.Count)].battleData;
             sellCard[i].SetUp();
             sellCard[i].GetComponent<StoreCardDisplay>().priceText.text = "" + sellCard[i].data.preset.price;
-            if (sellCard[i].data.preset.price > Wallet.Instance.coin)
+            if (sellCard[i].data.preset.price > PlayerData.Instance.coin)
             {
                 ChangeColor(sellCard[i], new Color(1.0f, 0.0f, 0.3f, 1.0f));
             }
         }
     }
 
-    public override void OnPointEnter(CardDisplay card) 
+    public override void OnPointEnter(CardDisplay card)
     {
         card.GetComponent<Animator>().SetBool("isTouch", true);
     }
@@ -41,14 +41,14 @@ public class Store : CardDisplayOnlyGroup
 
     public override void OnClick(CardDisplay card)
     {
-        if (Wallet.Instance.coin >= card.data.preset.price)
+        if (PlayerData.Instance.coin >= card.data.preset.price)
         {
-            Wallet.Instance.coin -= card.data.preset.price;
-            TextManager.Instance.coinText.text = "" + Wallet.Instance.coin;
+            PlayerData.Instance.coin -= card.data.preset.price;
+            TextManager.Instance.coinText.text = "" + PlayerData.Instance.coin;
 
             for (int i = 0; i < 5; i++)
             {
-                if (sellCard[i].data.preset.price > Wallet.Instance.coin)
+                if (sellCard[i].data.preset.price > PlayerData.Instance.coin)
                 {
                     ChangeColor(sellCard[i], new Color(1.0f, 0.0f, 0.3f, 1.0f));
                 }
@@ -61,12 +61,14 @@ public class Store : CardDisplayOnlyGroup
             TextManager.Instance.notEnoughCoinText.gameObject.SetActive(true);
         }
     }
+
     private void ChangeColor(CardDisplay card, Color co)
     {
         card.GetComponent<StoreCardDisplay>().priceText.color = new Color(co.r, co.g, co.b, co.a);
     }
+
     private void BuyCard(CardDisplay card)
     {
-
+        PlayerData.Instance.deck.Add(card.data);
     }
 }
