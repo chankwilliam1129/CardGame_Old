@@ -14,6 +14,7 @@ public class EnemyDisplay : MonoBehaviour
 
     private void Start()
     {
+        enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
         character = GetComponent<Character>();
         EnemyArea.Instance.enemy = character;
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;

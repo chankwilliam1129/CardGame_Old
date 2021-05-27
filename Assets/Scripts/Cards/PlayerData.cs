@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card/Other/PlayerData", fileName = "PlayerData")]
+[CreateAssetMenu(menuName = "Other/PlayerData", fileName = "PlayerData")]
 public class PlayerData : ScriptableObject
 {
     public List<CardBattleData> deck = new List<CardBattleData>();
     public List<Relic> relic = new List<Relic>();
 
     public int coin;
+
+    public BattleSceneData curBattleSceneData;
 
     public static PlayerData Instance { get; private set; }
 

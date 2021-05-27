@@ -170,13 +170,13 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             case NodeType.EliteEnemy:
                 break;
             case NodeType.Mystery:
-                //MysteryCheck();
+                MysteryCheck();
                 break;
             case NodeType.Treasure:
-                //SceneManager.LoadScene("TreasureScene");
+                SceneManager.LoadScene("TreasureScene");
                 break;
             case NodeType.Store:
-                //SceneManager.LoadScene("StoreScene");
+                SceneManager.LoadScene("StoreScene");
                 break;
             case NodeType.Boss:
                 break;

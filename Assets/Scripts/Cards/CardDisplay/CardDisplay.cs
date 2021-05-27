@@ -26,8 +26,6 @@ public class CardDisplay : MonoBehaviour
     {
         nameText.text = data.preset.name;
         cardImage.sprite = data.preset.image;
-        cardImage.material = new Material(cardImage.material);
-        cardImage.material.SetTexture("_MainText", data.preset.image.texture);
         powerDisplay.SetUp();
         powerSpaceDisplay.SetUp();
         cardDescription.DescriptionUpdate(false);

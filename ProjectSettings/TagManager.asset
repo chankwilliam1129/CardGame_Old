@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SelectPlane
+    uniqueID: 3621913495
+    locked: 0
   - name: AlwaysOnTop
     uniqueID: 4012946469
     locked: 0

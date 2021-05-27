@@ -27,8 +27,8 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        MapData.Instance.saveNodeMap.Clear();
-        MapData.Instance.selectedNode.Clear();
+        //MapData.Instance.saveNodeMap.Clear();
+        //MapData.Instance.selectedNode.Clear();
 
         if (MapData.Instance.saveNodeMap.Count == 0)
         {
@@ -109,11 +109,12 @@ public class MapManager : MonoBehaviour
                     if (curListCount >= nodeMap[nodeMap.Count - 1].Count - 1) break;
                     else
                     {
-                        if (v == value - 1 || Random.Range(0, 100) < range) 
+                        if (v == value - 1 || Random.Range(0, 100) < range)
                         {
                             curListCount++;
                             range *= 0.4f;
                         }
+                        else break;
                     }
                 }
             }
@@ -171,8 +172,8 @@ public class MapManager : MonoBehaviour
                 foreach (var next in node.next)
                 {
                     LineRenderer line = Instantiate(lineRenderer, node.transform);
-                    line.SetPosition(0, node.transform.position);
-                    line.SetPosition(1, nodeMap[node.location.y + 1][next].transform.position);
+                    line.SetPosition(0, Vector3.zero);
+                    line.SetPosition(1, nodeMap[node.location.y + 1][next].transform.position - node.transform.position);
                 }
             }
         }

@@ -12,6 +12,19 @@ public class PlayerEvent : CharacterEvent
 
         BattleStateManager.Instance.OnPlayerTurnStart += OnPlayerTurnStart;
         BattleStateManager.Instance.OnPlayerTurnEnd += OnPlayerTurnEnd;
+        OnCharacterDied += OnPlayerDied;
+    }
+
+    private void OnDestroy()
+    {
+        BattleStateManager.Instance.OnPlayerTurnStart -= OnPlayerTurnStart;
+        BattleStateManager.Instance.OnPlayerTurnEnd -= OnPlayerTurnEnd;
+        OnCharacterDied -= OnPlayerDied;
+    }
+
+    private void OnPlayerDied(object sender, EventArgs e)
+    {
+        BattleStateManager.Instance.SetBattleEnd(false);
     }
 
     public override void StatusSetUp()

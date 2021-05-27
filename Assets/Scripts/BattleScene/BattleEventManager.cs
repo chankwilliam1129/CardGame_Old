@@ -34,6 +34,15 @@ public class BattleEventManager : MonoBehaviour
         isExecute = false;
     }
 
+    public void Clear()
+    {
+        foreach(var e in eventList)
+        {
+            Destroy(e.gameObject);
+        }
+        eventList.Clear();
+    }
+
     public bool Execute()
     {
         turnEndButton.interactable = false;

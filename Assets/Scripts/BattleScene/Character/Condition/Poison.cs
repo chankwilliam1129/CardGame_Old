@@ -21,6 +21,9 @@ public class Poison : Condition
     public void Settlement()
     {
         float value = character.GetHealthPoint() * (100.0f / (stack + 100.0f));
+
+        Instantiate(particleEffect, character.transform);
+
         character.SetHealthPoint((int)value);
         stack /= 2;
     }

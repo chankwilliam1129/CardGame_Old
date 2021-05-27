@@ -196,6 +196,7 @@ MonoBehaviour:
   description: "\u30BF\u30FC\u30F3\u958B\u59CB\u306E\u6642\u3001\u4F53\u529B\u304C\u6E1B\u5C11\u3059\u308B\u3002\n\u4F53\u529B=\u5143\u4F53\u529B\xD7(100
     / (100 + \u6BD2\u72B6\u614B))"
   color: {r: 0.65098864, g: 0, b: 0.735849, a: 0}
+  particleEffect: {fileID: 2702396602015046796, guid: eab61a09a8fbb8f49b2c103386dffddd, type: 3}
 --- !u!222 &-7183423729675848105
 CanvasRenderer:
   m_ObjectHideFlags: 0

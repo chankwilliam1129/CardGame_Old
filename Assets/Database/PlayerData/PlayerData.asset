@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7daf5d7cf38404ba255a5d3329f721, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  cardDatabase: {fileID: 11400000, guid: 376c195b93b2e574dbb5147006b42c9a, type: 2}
   deck:
   - preset: {fileID: 11400000, guid: 4c0a8b10123ca284687658ca3d504246, type: 2}
     powerSpace: 0
@@ -254,3 +253,5 @@ MonoBehaviour:
       value: {x: 2, y: 0}
   relic:
   - {fileID: 11400000, guid: df168396c322de34da1b91ddae7da277, type: 2}
+  coin: 0
+  curBattleSceneData: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}

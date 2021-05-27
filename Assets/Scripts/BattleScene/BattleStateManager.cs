@@ -37,6 +37,11 @@ public class BattleStateManager : MonoBehaviour
     [Space]
     public BattleEvent playerTurnStartText;
 
+    [Space]
+    public PlayerWinPlane playerWin;
+    public GameObject playerLose;
+
+
     public static BattleStateManager Instance { get; private set; }
 
     private void Awake()
@@ -108,6 +113,7 @@ public class BattleStateManager : MonoBehaviour
                 break;
 
             case BattleSceneState.BATTLE_END:
+
                 break;
         }
     }
@@ -122,5 +128,20 @@ public class BattleStateManager : MonoBehaviour
         CardEffectExecutor.Instance?.CleaeModCard();
         nowState = BattleSceneState.PLAYER_TURN_END;
         OnPlayerTurnEnd?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void SetBattleEnd(bool isPlayerWin)
+    {
+        if (nowState != BattleSceneState.BATTLE_END)
+        {
+            BattleEventManager.Instance.Clear();
+            nowState = BattleSceneState.BATTLE_END;
+
+            if (isPlayerWin)
+            {
+                Instantiate(playerWin, BattleEventManager.Instance.transform);
+            }
+            else Instantiate(playerLose, BattleEventManager.Instance.transform);
+        }
     }
 }

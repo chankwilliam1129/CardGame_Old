@@ -32,6 +32,6 @@ public class CardRemove : MonoBehaviour
         transform.position = Vector3.Slerp(curPosition, targetPosition.position, TimeCounter);
         transform.rotation = Quaternion.Slerp(Quaternion.identity, targetRotation, TimeCounter);
 
-        //if (TimeCounter >= 1.0) Destroy(gameObject);
+        if (TimeCounter >= 1.0) Destroy(gameObject);
     }
 }
