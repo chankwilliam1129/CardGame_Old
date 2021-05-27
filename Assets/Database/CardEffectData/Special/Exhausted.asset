@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931435a2e7d2c01408dddc26a39167d6, type: 3}
   m_Name: Exhausted
   m_EditorClassIdentifier: 
-  type: 0
+  type: 6

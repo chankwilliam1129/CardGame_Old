@@ -25,5 +25,7 @@ MonoBehaviour:
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: dfc0b1b8446b42d4b982b90423fc8a6a, type: 2}
-      value: {x: 10, y: 0}
+      value: {x: 10, y: 2}
+    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
+      value: {x: 1, y: 1}
   price: 0

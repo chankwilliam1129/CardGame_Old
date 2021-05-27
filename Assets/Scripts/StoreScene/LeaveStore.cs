@@ -7,6 +7,6 @@ public class LeaveStore : MonoBehaviour
 {
     public void Click()
     {
-        SceneManager.LoadScene("AdventureScene");
+        SceneManager.LoadScene("BattleScene");
     }
 }

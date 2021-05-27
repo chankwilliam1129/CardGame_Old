@@ -25,11 +25,18 @@ public class RelicDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     void Start()
     {
+        if (relicData != null)
+        {
+            Setup();
+            relicData.Generate(this);
+        }
+    }
+
+    public void Setup()
+    {
         image.sprite = relicData.image;
         nameText.text = relicData.name;
         descriptionText.text = relicData.descriptionText;
-
-        relicData.Generate(this);
     }
 
     void Update()

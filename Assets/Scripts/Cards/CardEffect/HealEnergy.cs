@@ -9,7 +9,16 @@ public class HealEnergy : CardEffect
 
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return "エナジーを" + GetValueString(value, isFinal) + "回復する";
+
+        if(value.x < 0)
+        {
+            return "エナジーを" + GetValueString(-value, isFinal) + "追加で消費する";
+        }
+        else
+        {
+            return "エナジーを" + GetValueString(value, isFinal) + "回復する";
+        }
+
     }
 
     public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)

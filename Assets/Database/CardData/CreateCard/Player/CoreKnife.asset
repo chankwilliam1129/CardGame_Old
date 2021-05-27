@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
+  m_Name: CoreKnife
+  m_EditorClassIdentifier: 
+  index: 0
+  name: 
+  image: {fileID: 0}
+  battleData:
+    preset: {fileID: 11400000}
+    powerSpace: 8
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 7d677b71cef68884e8eb16f2a5e8bf19, type: 2}
+      value: {x: 4, y: 1}
+    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
+      value: {x: 3, y: 1}
+    - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}
+      value: {x: 0, y: 0}
+  price: 0

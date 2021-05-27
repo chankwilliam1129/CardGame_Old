@@ -24,7 +24,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: 2b390fa5d390f5a438965f0db39f8df6, type: 2}
       value: {x: 0, y: 0}
   - preset: {fileID: 11400000, guid: 01bb11022381a4842be6617055c1d2b8, type: 2}
-    powerSpace: 5
+    powerSpace: 8
     emptyPower: 2
     normalPower: 1
     brokenPower: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: 7d677b71cef68884e8eb16f2a5e8bf19, type: 2}
-      value: {x: 3, y: 1}
+      value: {x: 2, y: 1}
     - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
       value: {x: 1, y: 0}
   - preset: {fileID: 11400000, guid: 4c0a8b10123ca284687658ca3d504246, type: 2}
@@ -115,7 +115,7 @@ MonoBehaviour:
       value: {x: 8, y: 4}
     - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
       value: {x: 1, y: 2}
-  - preset: {fileID: 11400000, guid: f9d3e69a7d946f144af334fe9b7c6dcd, type: 2}
+  - preset: {fileID: 11400000, guid: 37934a44d974d3048a7f0491c4dfbaee, type: 2}
     powerSpace: 5
     emptyPower: 3
     normalPower: 1
@@ -124,10 +124,12 @@ MonoBehaviour:
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 4, y: 3}
-    - type: {fileID: 11400000, guid: d60c755d21633104f8118ee62c72d944, type: 2}
-      value: {x: 1, y: 0}
-  - preset: {fileID: 11400000, guid: f9d3e69a7d946f144af334fe9b7c6dcd, type: 2}
+      value: {x: 1, y: 1}
+    - type: {fileID: 11400000, guid: 47134014017559349830549ef8540b23, type: 2}
+      value: {x: 3, y: 1}
+    - type: {fileID: 11400000, guid: 73df8306c41d6db428fb221be7e6bb75, type: 2}
+      value: {x: 0, y: 0}
+  - preset: {fileID: 11400000, guid: 37934a44d974d3048a7f0491c4dfbaee, type: 2}
     powerSpace: 5
     emptyPower: 3
     normalPower: 1
@@ -136,9 +138,11 @@ MonoBehaviour:
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 4, y: 3}
-    - type: {fileID: 11400000, guid: d60c755d21633104f8118ee62c72d944, type: 2}
-      value: {x: 1, y: 0}
+      value: {x: 1, y: 1}
+    - type: {fileID: 11400000, guid: 47134014017559349830549ef8540b23, type: 2}
+      value: {x: 3, y: 1}
+    - type: {fileID: 11400000, guid: 73df8306c41d6db428fb221be7e6bb75, type: 2}
+      value: {x: 0, y: 0}
   - preset: {fileID: 11400000, guid: 7c43504627a4ce64a9f7436cca8b6ad3, type: 2}
     powerSpace: 0
     emptyPower: 2
@@ -155,103 +159,92 @@ MonoBehaviour:
       value: {x: 2, y: 0}
     - type: {fileID: 11400000, guid: 99fab41ce5a96a24ca5c44021e560721, type: 2}
       value: {x: 3, y: 0}
-  - preset: {fileID: 11400000, guid: fcd272f88f650e9409744f065e6449ed, type: 2}
+  - preset: {fileID: 11400000, guid: 1fc6996b2bb07ef4d8989b6f3b00eb4c, type: 2}
     powerSpace: 2
-    emptyPower: 3
-    normalPower: 1
+    emptyPower: 1
+    normalPower: 0
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
-      value: {x: 3, y: 1}
-    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
+    - type: {fileID: 11400000, guid: 6a1a6f080a1f0cf4f9e80ae06c53209c, type: 2}
       value: {x: 2, y: 0}
-  - preset: {fileID: 11400000, guid: 649574ed05e46b144b1cb82b6e996e5e, type: 2}
-    powerSpace: 4
-    emptyPower: 3
+  - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
+    powerSpace: 6
+    emptyPower: 1
     normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 3f8e1b8e0b418a048a870d2027acbc6a, type: 2}
-      value: {x: 2, y: 1}
-    - type: {fileID: 11400000, guid: bddad43e8757e0f4aa05883b939381b5, type: 2}
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+  - preset: {fileID: 11400000, guid: e80ea04c750545448aa11ab26386d429, type: 2}
+    powerSpace: 4
+    emptyPower: 1
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 34f4d3e57ed8ee145811fbbb4a36b436, type: 2}
       value: {x: 1, y: 1}
-  - preset: {fileID: 11400000, guid: 1832a4c64dd74f447bed3aa1bb0efb9d, type: 2}
-    powerSpace: 3
-    emptyPower: 1
-    normalPower: 1
+    - type: {fileID: 11400000, guid: b94ad828859018645ae70d04b4989c5d, type: 2}
+      value: {x: 5, y: 2}
+  - preset: {fileID: 11400000, guid: e636d0158c4ab6640beca37d970142a3, type: 2}
+    powerSpace: 5
+    emptyPower: 0
+    normalPower: 6
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
-      value: {x: 5, y: 4}
     - type: {fileID: 11400000, guid: 42e87313815c6354db8c01b21570a267, type: 2}
-      value: {x: 0, y: 1}
-  - preset: {fileID: 11400000, guid: 0af65a13fe2d24b448cd0ccf77caa59e, type: 2}
-    powerSpace: 3
+      value: {x: 1, y: 1}
+  - preset: {fileID: 11400000, guid: e636d0158c4ab6640beca37d970142a3, type: 2}
+    powerSpace: 5
+    emptyPower: 0
+    normalPower: 6
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 42e87313815c6354db8c01b21570a267, type: 2}
+      value: {x: 1, y: 1}
+  - preset: {fileID: 11400000, guid: e636d0158c4ab6640beca37d970142a3, type: 2}
+    powerSpace: 5
+    emptyPower: 0
+    normalPower: 6
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 42e87313815c6354db8c01b21570a267, type: 2}
+      value: {x: 1, y: 1}
+  - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
+    powerSpace: 6
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
-      value: {x: 3, y: 1}
-    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
-      value: {x: 1, y: 0}
-  - preset: {fileID: 11400000, guid: fcd272f88f650e9409744f065e6449ed, type: 2}
-    powerSpace: 2
-    emptyPower: 3
-    normalPower: 1
-    brokenPower: 0
-    removeType: 0
-    drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
-      value: {x: 3, y: 1}
-    - type: {fileID: 11400000, guid: 623a0fe1210b7b94f98144bf5a0f765f, type: 2}
-      value: {x: 2, y: 0}
-  - preset: {fileID: 11400000, guid: 27a7087cc7c58f043b71d21e275d24f8, type: 2}
-    powerSpace: 0
-    emptyPower: 2
-    normalPower: 2
-    brokenPower: 0
-    removeType: 0
-    drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
-      value: {x: 10, y: 0}
-    - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
-      value: {x: 2, y: 0}
-    - type: {fileID: 11400000, guid: 37ec59c8526cc0a46b93976bf45d0a3a, type: 2}
-      value: {x: 2, y: 0}
-    - type: {fileID: 11400000, guid: a2e9bb554df43854999c575c8e375eb1, type: 2}
-      value: {x: 3, y: 0}
-  - preset: {fileID: 11400000, guid: 923e31d3bb9292643b710a2c4156c118, type: 2}
-    powerSpace: 4
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+  - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
+    powerSpace: 6
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 680e13dd08cde604eaf5e3001df3e78f, type: 2}
-      value: {x: 2, y: 0}
-  - preset: {fileID: 11400000, guid: 923e31d3bb9292643b710a2c4156c118, type: 2}
-    powerSpace: 4
-    emptyPower: 1
-    normalPower: 1
-    brokenPower: 0
-    removeType: 0
-    drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: 680e13dd08cde604eaf5e3001df3e78f, type: 2}
-      value: {x: 2, y: 0}
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
   relic:
   - {fileID: 11400000, guid: df168396c322de34da1b91ddae7da277, type: 2}
+  - {fileID: 11400000, guid: fd0bd686ac742894788bc2f94e892b35, type: 2}
+  - {fileID: 11400000, guid: 8397d22483a17a34b83ac97f831fee9b, type: 2}
+  - {fileID: 11400000, guid: fd0bd686ac742894788bc2f94e892b35, type: 2}
   coin: 0
   curBattleSceneData: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}

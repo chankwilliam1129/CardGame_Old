@@ -18,8 +18,8 @@ MonoBehaviour:
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 5
-    emptyPower: 2
-    normalPower: 0
+    emptyPower: 0
+    normalPower: 6
     brokenPower: 0
     removeType: 0
     drawType: 0

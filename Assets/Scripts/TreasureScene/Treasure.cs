@@ -1,28 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Treasure : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class Treasure : MonoBehaviour
 {
-    public void OnPointerEnter(PointerEventData eventData)
+    public List<Relic> relics;
+    public Relic finalRelic;
+    public RelicDisplay relicDisplay;
+    public Button button;
+    
+    private int count = 0;
+    public void Start()
     {
-        GetComponent<Animator>().SetBool("isTouch", true);
+
+        foreach (var p in PlayerData.Instance.relic)
+        {
+            if (relics.Contains(p)) relics.Remove(p);
+        }
+
+        if (relics.Count == 0) relicDisplay.relicData = finalRelic;
+        else relicDisplay.relicData = relics[Random.Range(0, relics.Count)];
+        relicDisplay.Setup();
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        GetComponent<Animator>().SetBool("isTouch", false);
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        GetTreasure();
-        Debug.Log("Get");
-    }
 
     public void GetTreasure()
     {
+        if (relics.Count != 0)
+        {
+            PlayerData.Instance.relic.Add(relicDisplay.relicData);
+            SceneManager.LoadScene("BattleScene");
 
+
+            Debug.Log(PlayerData.Instance.relic.Count);
+        }
+        else
+        {
+          
+        }
     }
 }
