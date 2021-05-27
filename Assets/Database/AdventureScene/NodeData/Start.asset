@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   nodeType: 0
-  sprite: {fileID: 21300000, guid: 59a99484565bd3c4899aa3a217a6c2dd, type: 3}
+  sprite: {fileID: 21300000, guid: 1269f68fa73ac9f4f8034a4c497491ca, type: 3}

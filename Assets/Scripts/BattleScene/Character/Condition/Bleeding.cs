@@ -17,6 +17,7 @@ public class Bleeding : Condition
         if (args.from != null && args.damage > 0) 
         {
             character.ChangeHealthPoint(-stack);
+            Instantiate(particleEffect, character.transform);
         }
     }
 

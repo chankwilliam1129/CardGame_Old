@@ -16,6 +16,15 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         GetComponent<Image>().sprite = data.sprite;
     }
 
+
+    private void LateUpdate()
+    {
+        foreach (Transform child in transform)
+        {
+            child.localScale = new Vector3(1.0f / transform.localScale.x, 1.0f / transform.localScale.y, 1.0f);
+        }
+    }
+
     public Node SetNodeData(NodeData nodeData, Vector2Int lo)
     {
         data = nodeData;
@@ -26,29 +35,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", true);
-
-        if (!GetComponent<Animator>().GetBool("isPass") && !GetComponent<Animator>().GetBool("isSelected") && !GetComponent<Animator>().GetBool("isSelected")) 
-        {
-            Transform children = GetComponentInChildren<Transform>();
-            foreach (Transform c in children)
-            {
-                c.GetComponent<Animator>().SetBool("isTouch", true);
-            }
-        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         GetComponent<Animator>().SetBool("isTouch", false);
-
-        if (!GetComponent<Animator>().GetBool("isPass") && !GetComponent<Animator>().GetBool("isSelected") && !GetComponent<Animator>().GetBool("isSelected"))
-        {
-            Transform children = GetComponentInChildren<Transform>();
-            foreach (Transform c in children)
-            {
-                c.GetComponent<Animator>().SetBool("isTouch", false);
-            }
-        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -64,12 +55,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                     curNode.GetComponent<Animator>().SetBool("isPass", false);
                     curNode.GetComponent<Animator>().SetBool("isSelected", true);
 
-                    Transform children = curNode.GetComponentInChildren<Transform>();
-                    foreach (Transform c in children)
-                    {
-                        c.GetComponent<Animator>().SetBool("isSelect", false);
-                        c.GetComponent<Animator>().SetBool("isSelected", true);
-                    }
 
                     MapData.Instance.playerLocation = location;
                     MapData.Instance.selectedNode.Add(location);
@@ -86,12 +71,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                         {
                             if (!node.NextCheck()) node.GetComponent<Animator>().SetBool("isPass", true);
                         }
-                    }
-
-                    children = MapManager.Instance.nodeMap[MapData.Instance.playerLocation.y][MapData.Instance.playerLocation.x].GetComponentInChildren<Transform>();
-                    foreach (Transform c in children)
-                    {
-                        c.GetComponent<Animator>().SetBool("isSelect", true);
                     }
 
                     NodetypeCheck(data.nodeType);
@@ -124,8 +103,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void StateCheck()
     {
-        Transform children = GetComponentInChildren<Transform>();
-       
         if (IsUnderLocation()) GetComponent<Animator>().SetBool("isPass", true);
         if (IsSameLocation())
         {
@@ -133,22 +110,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             GetComponent<Animator>().SetBool("isSelect", true);
             GetComponent<Animator>().SetBool("isPass", false);
 
-            foreach (Transform c in children)
-            {
-                c.GetComponent<Animator>().SetBool("isSelect", true);
-                c.GetComponent<Animator>().SetBool("isSelected", false);
-            }
         }
         else if (MapData.Instance.selectedNode.FindIndex(n => n == location) != -1)
         {
             GetComponent<Animator>().SetBool("isPass", false);
             GetComponent<Animator>().SetBool("isSelected", true);
-
-            foreach (Transform c in children)
-            {
-                c.GetComponent<Animator>().SetBool("isSelect", false);
-                c.GetComponent<Animator>().SetBool("isSelected", true);
-            }
         }
     }
 

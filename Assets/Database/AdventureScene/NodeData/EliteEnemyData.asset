@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EliteEnemyData
   m_EditorClassIdentifier: 
   nodeType: 1
-  sprite: {fileID: 21300000, guid: 9d0e352d0b63cdf408ec5ac84a43de8e, type: 3}
+  sprite: {fileID: 21300000, guid: 4a431606fb0b1a1438614b1714690044, type: 3}

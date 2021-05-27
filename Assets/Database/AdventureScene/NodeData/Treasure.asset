@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Treasure
   m_EditorClassIdentifier: 
   nodeType: 3
-  sprite: {fileID: 21300000, guid: 327eebab00a741b43909330046d31e2a, type: 3}
+  sprite: {fileID: 21300000, guid: 6c873ebb912014b4bb9e25203ed365a1, type: 3}

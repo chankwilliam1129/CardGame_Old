@@ -66,11 +66,6 @@ public class MapManager : MonoBehaviour
             SetMap(i);
         }
         nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
-        Transform children = nodeMap[0][0].GetComponentInChildren<Transform>();
-        foreach (Transform c in children)
-        {
-            c.GetComponent<Animator>().SetBool("isSelect", true);
-        }
     }
 
     private void SetMap(int level)
@@ -114,7 +109,11 @@ public class MapManager : MonoBehaviour
                             curListCount++;
                             range *= 0.4f;
                         }
-                        else break;
+                        else 
+                        {
+                            if (Random.Range(0, 100) < 34) curListCount++;
+                            break;
+                        }
                     }
                 }
             }
@@ -182,9 +181,6 @@ public class MapManager : MonoBehaviour
     private Vector3 NodeRandomPositions(Vector2Int location)
     {
         Vector3 pos = new Vector3(0, 0, 0);
-        //float rx = Random.Range((location.x - 1) * nodeWidthSize + nodeImageSize, location.x * nodeWidthSize);
-        //float ry = Random.Range((location.y - 1) * nodeHeightSize + nodeImageSize, location.y * nodeHeightSize);
-
         float rx = location.x * nodeWidthSize;
         float ry = location.y * nodeHeightSize;
         pos.x = rx - 400;
