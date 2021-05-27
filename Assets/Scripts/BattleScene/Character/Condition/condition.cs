@@ -15,6 +15,7 @@ public abstract class Condition : MonoBehaviour, IPointerEnterHandler, IPointerE
     public string conditionName;
     [TextArea(1, 3)] public string description;
     public Color color;
+    public GameObject particleEffect;
 
     public abstract Condition Exist(Character character);
 

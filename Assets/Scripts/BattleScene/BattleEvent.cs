@@ -13,6 +13,9 @@ public class BattleEvent : MonoBehaviour
     public Transform from;
     public Transform target;
 
+    public float posXVariation;
+
+
     public BattleEvent()
     {
         BattleEventManager.Instance?.Add(this);
@@ -23,6 +26,18 @@ public class BattleEvent : MonoBehaviour
         gameObject.SetActive(false);
         timeCounter = 0.0f;
         BattleEventManager.Instance?.Execute();
+
+        if(from != null)
+        {
+            transform.position = from.position;
+        }
+        if(target != null)
+        {
+            transform.LookAt(target, Vector3.forward);
+        }
+
+        if (posXVariation != 0.0f) posXVariation = Random.Range(-posXVariation, posXVariation);
+
     }
 
     private void Update()
@@ -34,7 +49,9 @@ public class BattleEvent : MonoBehaviour
             if (autoMovement)
             {
                 float c = curve.Evaluate(timeCounter / destroyTime);
-                Vector3 pos = from.position + (target.position - from.position) * c;
+                Vector3 pos = Vector3.Lerp(from.position, target.position, c);
+                pos.x += (0.5f - Mathf.Abs(c - 0.5f)) * posXVariation;
+
                 transform.position = pos;
             }
 
