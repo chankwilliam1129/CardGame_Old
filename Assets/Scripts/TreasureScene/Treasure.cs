@@ -31,7 +31,7 @@ public class Treasure : MonoBehaviour
         if (relics.Count != 0)
         {
             PlayerData.Instance.relic.Add(relicDisplay.relicData);
-            SceneManager.LoadScene("BattleScene");
+            SceneManager.LoadScene("AdventureScene");
 
 
             Debug.Log(PlayerData.Instance.relic.Count);
