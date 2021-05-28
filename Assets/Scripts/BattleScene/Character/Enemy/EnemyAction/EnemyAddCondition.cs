@@ -14,7 +14,11 @@ public class EnemyAddCondition : EnemyAction
 
     public override string GetDescription(int value)
     {
-        return condition.GetText() + value + "‚ğ—^‚¦‚éB";
+        if(!toPlayer)
+            return condition.GetText() + value + "‚ğ“¾‚éB";
+
+        else
+            return condition.GetText() + value + "‚ğ—^‚¦‚éB";
     }
     public override void Execute(int value)
     {
