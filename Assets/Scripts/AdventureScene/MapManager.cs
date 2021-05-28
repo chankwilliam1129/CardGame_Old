@@ -43,14 +43,11 @@ public class MapManager : MonoBehaviour
 
     public Node CreateNode(NodeType nodeType, Vector2Int location, Transform parent)
     {
-        if (nodeType == NodeType.Start || nodeType == NodeType.Boss)
+        if (nodeType== NodeType.Start|| nodeType == NodeType.Boss)
         {
             return Instantiate(node, new Vector3(50, location.y * nodeHeightSize - 600, 0), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
         }
-        else
-        {
-            return Instantiate(node, NodeRandomPositions(location), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
-        }
+        return Instantiate(node, SetNodePosition(location), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);       
     }
 
     public List<Node> CreateNodeList()
@@ -65,7 +62,18 @@ public class MapManager : MonoBehaviour
         {
             SetMap(i);
         }
-        nodeMap[0][0].GetComponent<Animator>().SetBool("isSelect", true);
+        StateCheck();
+    }
+
+    public void StateCheck()
+    {
+        foreach(var l in nodeMap)
+        {
+            foreach (var n in l)
+            {
+                n.StateCheck();
+            }
+        }
     }
 
     private void SetMap(int level)
@@ -98,8 +106,8 @@ public class MapManager : MonoBehaviour
                     MapData.Instance.saveNodeMap[nodeMap.Count - 1][curListCount].next.Add(v);
 
                     LineRenderer line = Instantiate(lineRenderer, nodeMap[nodeMap.Count - 1][curListCount].transform);
-                    line.SetPosition(0, Vector3.zero);
-                    line.SetPosition(1, newNode.transform.position - nodeMap[nodeMap.Count - 1][curListCount].transform.position);
+                    line.SetPosition(1, Vector3.zero);
+                    line.SetPosition(0, newNode.transform.position - nodeMap[nodeMap.Count - 1][curListCount].transform.position);
 
                     if (curListCount >= nodeMap[nodeMap.Count - 1].Count - 1) break;
                     else
@@ -171,15 +179,19 @@ public class MapManager : MonoBehaviour
                 foreach (var next in node.next)
                 {
                     LineRenderer line = Instantiate(lineRenderer, node.transform);
-                    line.SetPosition(0, Vector3.zero);
-                    line.SetPosition(1, nodeMap[node.location.y + 1][next].transform.position - node.transform.position);
+                    line.SetPosition(1, Vector3.zero);
+                    line.SetPosition(0, nodeMap[node.location.y + 1][next].transform.position - node.transform.position);
                 }
             }
         }
     }
 
-    private Vector3 NodeRandomPositions(Vector2Int location)
+    private Vector3 SetNodePosition(Vector2Int location)
     {
+        //if (nodeMap[location.y][location.x] == nodeMap[0][0] || nodeMap[location.y][location.x] == nodeMap[mapSize - 1][0]) 
+        //{
+        //    return new Vector3(50, location.y * nodeHeightSize - 600, 0);
+        //}
         Vector3 pos = new Vector3(0, 0, 0);
         float rx = location.x * nodeWidthSize;
         float ry = location.y * nodeHeightSize;

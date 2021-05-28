@@ -30,4 +30,9 @@ public class MapData : ScriptableObject
         saveNodeMap.Clear();
         selectedNode.Clear();
     }
+
+    public Node GetPlayerNode()
+    {
+        return MapManager.Instance.nodeMap[playerLocation.y][playerLocation.x];
+    }
 }
