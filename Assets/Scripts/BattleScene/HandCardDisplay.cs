@@ -51,6 +51,7 @@ public class HandCardDisplay : MonoBehaviour
             effect.type.Generate(effect.value, newCard.gameObject);
         }
         cardDisplayList.Add(newCard);
+
         return newCard;
     }
 

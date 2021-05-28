@@ -54,6 +54,16 @@ public class BattleDeckManager : MonoBehaviour
     {
         BattleStateManager.Instance.OnBattleStart += BattleDeckInit;
         BattleStateManager.Instance.OnPlayerTurnStart += TurnStartDrawCard;
+        OnAddCardToHand += HandCardLimitCheck;
+    }
+
+    private void HandCardLimitCheck(object sender, EventArgs e)
+    {
+        if(HandCardDisplay.Instance.cardDisplayList.Count >10)
+        {
+            CardEventArgs args = e as CardEventArgs;
+            Discard(args.card);
+        }
     }
 
     private void OnDestroy()
@@ -107,15 +117,13 @@ public class BattleDeckManager : MonoBehaviour
 
     public void DrawCard(CardDisplay card)
     {
-        HandCardDisplay.Instance.Add(card.data);
-        CardEventArgs args = new CardEventArgs(card);
+        CardEventArgs args = new CardEventArgs(HandCardDisplay.Instance.Add(card.data));
         OnAddCardToHand?.Invoke(this, args);
     }
 
     public void DrawCard(CardDisplay card, Vector3 pos)
     {
-        HandCardDisplay.Instance.Add(card.data, pos);
-        CardEventArgs args = new CardEventArgs(card);
+        CardEventArgs args = new CardEventArgs(HandCardDisplay.Instance.Add(card.data, pos));
         OnAddCardToHand?.Invoke(this, args);
     }
 
