@@ -241,10 +241,43 @@ MonoBehaviour:
     effects:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
       value: {x: 4, y: 2}
+  - preset: {fileID: 11400000, guid: 37c54cb611cc0604ead126047e602560, type: 2}
+    powerSpace: 0
+    emptyPower: 0
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}
+      value: {x: 0, y: 0}
+    - type: {fileID: 11400000, guid: ae31dc4d2c15ced498349a2a1da905db, type: 2}
+      value: {x: 0, y: 0}
+  - preset: {fileID: 11400000, guid: 8a5adc5fb048df64ab99e371d2b1d193, type: 2}
+    powerSpace: 1
+    emptyPower: 1
+    normalPower: 0
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
+      value: {x: 2, y: 3}
+    - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}
+      value: {x: 0, y: 0}
+  - preset: {fileID: 11400000, guid: bda5be8f2c7815d4ea336ae078d7e2f4, type: 2}
+    powerSpace: 0
+    emptyPower: 0
+    normalPower: 0
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: b4dfc33e9ae98064fa4ddd6f899dc990, type: 2}
+      value: {x: 0, y: 0}
   relic:
-  - {fileID: 11400000, guid: df168396c322de34da1b91ddae7da277, type: 2}
   - {fileID: 11400000, guid: fd0bd686ac742894788bc2f94e892b35, type: 2}
   - {fileID: 11400000, guid: 8397d22483a17a34b83ac97f831fee9b, type: 2}
-  - {fileID: 11400000, guid: fd0bd686ac742894788bc2f94e892b35, type: 2}
-  coin: 0
+  - {fileID: 11400000, guid: df168396c322de34da1b91ddae7da277, type: 2}
+  coin: 360
   curBattleSceneData: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
+  m_Name: A4_ReflectDamage
+  m_EditorClassIdentifier: 
+  index: 0
+  name: "\u53CD\u5C04"
+  image: {fileID: 21300000, guid: 9d0e352d0b63cdf408ec5ac84a43de8e, type: 3}
+  battleData:
+    preset: {fileID: 11400000}
+    powerSpace: 2
+    emptyPower: 1
+    normalPower: 0
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: 6a1a6f080a1f0cf4f9e80ae06c53209c, type: 2}
+      value: {x: 2, y: 0}
+  price: 0

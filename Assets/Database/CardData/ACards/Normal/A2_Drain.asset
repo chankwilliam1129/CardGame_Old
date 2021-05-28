@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
+  m_Name: A2_Drain
+  m_EditorClassIdentifier: 
+  index: 0
+  name: "\u5149"
+  image: {fileID: 21300000, guid: de8b1cee4c6a3574eb0bc5563a3f7590, type: 3}
+  battleData:
+    preset: {fileID: 11400000}
+    powerSpace: 3
+    emptyPower: 2
+    normalPower: 1
+    brokenPower: 0
+    removeType: 0
+    drawType: 0
+    effects:
+    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
+      value: {x: 4, y: 2}
+    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
+      value: {x: 4, y: 2}
+  price: 0

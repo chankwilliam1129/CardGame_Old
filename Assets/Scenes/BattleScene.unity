@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bdd88cfbe7db245855e54b0322dddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDatabase: {fileID: 11400000, guid: 376c195b93b2e574dbb5147006b42c9a, type: 2}
+  cardDatabase: {fileID: 11400000, guid: 4d00e15ae2266964b90087444de5f554, type: 2}
   battleDeck: []
   discardPile: []
   drawCardEvent: {fileID: -8283996898797481477, guid: 725dc457534a68f4fbd0f10c43a540b5, type: 3}

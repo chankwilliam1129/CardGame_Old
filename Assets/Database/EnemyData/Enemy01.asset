@@ -15,10 +15,10 @@ MonoBehaviour:
   name: aaaa
   image: {fileID: 0}
   health: 10
-  isActionRandom: 1
+  isActionRandom: 0
   EnemyNormalActions1:
-  - type: {fileID: 11400000, guid: 391a0f8c1ca29d84f8055aadb4173522, type: 2}
-    value: 5
+  - type: {fileID: 11400000, guid: 99b959e8b22fc4e489a320f010b8fc95, type: 2}
+    value: 1
   EnemyNormalActions2:
   - type: {fileID: 11400000, guid: 391a0f8c1ca29d84f8055aadb4173522, type: 2}
     value: 10
