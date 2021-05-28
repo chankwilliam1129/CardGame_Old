@@ -17,8 +17,10 @@ MonoBehaviour:
   health: 100
   isActionRandom: 0
   EnemyNormalActions1:
-  - type: {fileID: 11400000, guid: 5411c74bc585db44292998afad117836, type: 2}
+  - type: {fileID: 11400000, guid: 5d760abc71585944ea38623fe27fb656, type: 2}
     value: 3
+  - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
+    value: 5
   EnemyNormalActions2: []
   EnemyNormalActions3: []
   EnemyNormalActions4: []

@@ -38,6 +38,8 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public event EventHandler OnBlockDamage;
 
+    public event EventHandler OnGetDamage;
+
     public event EventHandler OnGetDamaged;
 
     public event EventHandler OnLoseHealth;
@@ -69,18 +71,22 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public void GetDamage(int damage, Character from)
     {
+
+        DamageEventArgs damageargs = new DamageEventArgs(damage, from);
+        OnGetDamage?.Invoke(this, damageargs);
+
         if (character.GetShield() != 0)
         {
-            int canShield = Mathf.Min(damage, character.GetShield());
+            int canShield = Mathf.Min(damageargs.damage, character.GetShield());
             DamageEventArgs shieldArgs = new DamageEventArgs(canShield, from);
             OnBlockDamage?.Invoke(this, shieldArgs);
             character.ChangeShield(-shieldArgs.damage);
-            damage -= shieldArgs.damage;
+            damageargs.damage -= shieldArgs.damage;
         }
 
-        if (damage > 0)
+        if (damageargs.damage > 0)
         {
-            DamageEventArgs args = new DamageEventArgs(damage, from);
+            DamageEventArgs args = new DamageEventArgs(damageargs.damage, from);
             OnGetDamaged?.Invoke(this, args);
             if (args.damage > 0) character.ChangeHealthPoint(-args.damage);
         }

@@ -14,12 +14,27 @@ public class ReflectPoison : Condition
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamaged += OnGetDamaged;
+        character.characterEvent.OnBlockDamage += OnBlockDamage;
     }
 
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
         if (args.from != null && args.damage >= damage)
+        {
+            Condition con = poison.Exist(args.from);
+            if (con == null)
+            {
+                con = Instantiate(poison, args.from.conditionDisplay);
+                con.character = args.from;
+            }
+            con.Add(poison_stack);
+        }
+    }
+    private void OnBlockDamage(object sender, System.EventArgs e)
+    {
+        DamageEventArgs args = e as DamageEventArgs;
+        if (args.from != null && character.GetShield() != 0)
         {
             Condition con = poison.Exist(args.from);
             if (con == null)
@@ -47,6 +62,7 @@ public class ReflectPoison : Condition
     {
         PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamaged -= OnGetDamaged;
+        character.characterEvent.OnBlockDamage -= OnBlockDamage;
     }
 
     public override Condition Exist(Character character)

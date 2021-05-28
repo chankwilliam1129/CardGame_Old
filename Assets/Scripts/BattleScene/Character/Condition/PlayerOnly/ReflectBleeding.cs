@@ -2,26 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectDamage : Condition
+public class ReflectBleeding : Condition
 {
     public int damage;
-    private int reflectdmg;
+    public Bleeding bleeding;
+    public int bleeding_stack;
+
     private void Start()
     {
         character.conditionList.Add(this);
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamaged += OnGetDamaged;
+        character.characterEvent.OnBlockDamage += OnBlockDamage;
     }
 
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.damage >= damage)
+        if (args.from !=null && args.damage >= damage)
         {
-            //reflectdmg = args.damage;
-            //args.damage -= 3;
-            EnemyArea.Instance.enemy.ChangeHealthPoint(-args.damage);
+            Condition con = bleeding.Exist(args.from);
+            if (con == null)
+            {
+                con = Instantiate(bleeding, args.from.conditionDisplay);
+                con.character = args.from;
+            }
+            con.Add(bleeding_stack);
+        }
+    }
+
+    private void OnBlockDamage(object sender, System.EventArgs e)
+    {
+        DamageEventArgs args = e as DamageEventArgs;
+        if (args.from != null && character.GetShield() != 0)
+        {
+            Condition con = bleeding.Exist(args.from);
+            if (con == null)
+            {
+                con = Instantiate(bleeding, args.from.conditionDisplay);
+                con.character = args.from;
+            }
+            con.Add(bleeding_stack);
         }
     }
 
@@ -41,6 +63,7 @@ public class ReflectDamage : Condition
     {
         PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamaged -= OnGetDamaged;
+        character.characterEvent.OnBlockDamage -= OnBlockDamage;
     }
 
     public override Condition Exist(Character character)
@@ -48,7 +71,7 @@ public class ReflectDamage : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<ReflectDamage>();
+            condition = con.GetComponent<ReflectBleeding>();
             if (condition != null) break;
         }
         return condition;

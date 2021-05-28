@@ -11,7 +11,7 @@ public class EnemyCreateCard : EnemyAction
 
     public override string GetDescription(int value)
     {
-        return card.name + "を" + value + "プレイヤーの枚手札に加える。";
+        return card.name + "を" + value + "枚プレイヤーの手札に加える。";
     }
 
     public override void Execute(int value)

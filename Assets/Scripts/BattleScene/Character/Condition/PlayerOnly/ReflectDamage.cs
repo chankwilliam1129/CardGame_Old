@@ -2,34 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectBurning : Condition
+public class ReflectDamage : Condition
 {
     public int damage;
-    public Burning burning;
-    public int burning_stack;
-
+    private int reflectdmg;
     private void Start()
     {
         character.conditionList.Add(this);
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamaged += OnGetDamaged;
+        character.characterEvent.OnBlockDamage += OnBlockDamage;
     }
 
     private void OnGetDamaged(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.from != null && args.damage >= damage)
+        if (args.damage >= damage)
         {
-            Condition con = burning.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(burning, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(burning_stack);
+            EnemyArea.Instance.enemy.ChangeHealthPoint(-args.damage);
         }
     }
+
+    private void OnBlockDamage(object sender, System.EventArgs e)
+    {
+        DamageEventArgs args = e as DamageEventArgs;
+        if (character.GetShield() != 0)
+        {
+            EnemyArea.Instance.enemy.ChangeHealthPoint(-args.damage);
+        }
+    }
+
 
     private void OnTurnStart(object sender, System.EventArgs e)
     {
@@ -47,6 +50,7 @@ public class ReflectBurning : Condition
     {
         PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamaged -= OnGetDamaged;
+        character.characterEvent.OnBlockDamage -= OnBlockDamage;
     }
 
     public override Condition Exist(Character character)
@@ -54,7 +58,7 @@ public class ReflectBurning : Condition
         Condition condition = null;
         foreach (var con in character.conditionList)
         {
-            condition = con.GetComponent<ReflectBurning>();
+            condition = con.GetComponent<ReflectDamage>();
             if (condition != null) break;
         }
         return condition;

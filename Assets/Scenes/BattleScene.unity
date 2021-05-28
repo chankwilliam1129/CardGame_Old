@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571c73c8e706f6f44ae5a8d506b0a222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 11400000, guid: b4b560cdd6e82f9499ce5eb1f2e8a20c, type: 2}
+  enemy: {fileID: 11400000, guid: 47c36b98f10cf0b4b93fbae535042bb6, type: 2}
   enemyActionGroup: {fileID: 663945363}
   enemyAction: {fileID: 2326580279179055738, guid: aac22a10fc38ab44983d05a7fff8f434, type: 3}
   actionCount: 0

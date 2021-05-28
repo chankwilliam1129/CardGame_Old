@@ -15,19 +15,19 @@ MonoBehaviour:
   name: aaaa
   image: {fileID: 0}
   health: 10
-  isActionRandom: 0
+  isActionRandom: 1
   EnemyNormalActions1:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
     value: 10
   EnemyNormalActions2:
-  - type: {fileID: 11400000, guid: 391a0f8c1ca29d84f8055aadb4173522, type: 2}
-    value: 10
+  - type: {fileID: 11400000, guid: 140da893d188c6b429597542b0aab4f6, type: 2}
+    value: 1
   EnemyNormalActions3:
   - type: {fileID: 11400000, guid: 3e6e897139f2d9d4cb80e0f863af84d8, type: 2}
     value: 3
   EnemyNormalActions4:
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: 4
+  - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
+    value: 1
   EnemyNormalActions5:
   - type: {fileID: 11400000, guid: 391a0f8c1ca29d84f8055aadb4173522, type: 2}
     value: 1
@@ -38,11 +38,19 @@ MonoBehaviour:
     value: 5
   EnemySpecialActions2:
   - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
-    value: 10
+    value: 5
   EnemySpecialActions3:
   - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
     value: 5
+  - type: {fileID: 11400000, guid: 140da893d188c6b429597542b0aab4f6, type: 2}
+    value: 2
   EnemySpecialActions4:
-  - type: {fileID: 0}
-    value: 0
-  EnemySpecialActions5: []
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 5
+  - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
+    value: 1
+  EnemySpecialActions5:
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 4
+  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
+    value: 3

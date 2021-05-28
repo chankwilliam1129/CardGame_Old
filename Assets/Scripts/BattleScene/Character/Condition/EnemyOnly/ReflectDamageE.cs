@@ -12,6 +12,7 @@ public class ReflectDamageE : Condition
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         EnemyArea.Instance.enemy.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamaged += OnGetDamaged;
+        character.characterEvent.OnBlockDamage += OnBlockDamage;
     }
 
     private void OnGetDamaged(object sender, System.EventArgs e)
@@ -19,8 +20,19 @@ public class ReflectDamageE : Condition
         DamageEventArgs args = e as DamageEventArgs;
         if (args.damage >= damage)
         {
-            //reflectdmg = args.damage;
-            //args.damage -= 3;
+            PlayerArea.Instance.player.ChangeHealthPoint(-args.damage);
+        }
+        Settlement();
+        text.text = stack.ToString();
+        if (stack <= 0) Destroy(gameObject);
+
+    }
+    
+    private void OnBlockDamage(object sender, System.EventArgs e)
+    {
+        DamageEventArgs args = e as DamageEventArgs;
+        if (character.GetShield() != 0)
+        {
             PlayerArea.Instance.player.ChangeHealthPoint(-args.damage);
         }
         Settlement();
@@ -45,6 +57,7 @@ public class ReflectDamageE : Condition
     {
         EnemyArea.Instance.enemy.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamaged -= OnGetDamaged;
+        character.characterEvent.OnBlockDamage -= OnBlockDamage;
     }
 
     public override Condition Exist(Character character)
