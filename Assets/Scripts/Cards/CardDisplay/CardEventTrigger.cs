@@ -118,13 +118,13 @@ public class CardEventTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (!GetComponent<Animator>().GetBool("isMod"))
             {
-                CardEffectExecutor.Instance.AddModCard(cardDisplay);
                 GetComponent<Animator>().SetBool("isMod", true);
+                CardEffectExecutor.Instance.AddModCard(cardDisplay);
             }
             else
             {
-                CardEffectExecutor.Instance.RemoveModCard(cardDisplay);
                 GetComponent<Animator>().SetBool("isMod", false);
+                CardEffectExecutor.Instance.RemoveModCard(cardDisplay);
             }
         }
     }
