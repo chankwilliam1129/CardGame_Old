@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: A1_Kinfe_atk
+  m_Name: A9_
   m_EditorClassIdentifier: 
   index: 0
   name: 
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 3
-    emptyPower: 1
-    normalPower: 1
+    powerSpace: 1
+    emptyPower: 4
+    normalPower: 2
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: 7d677b71cef68884e8eb16f2a5e8bf19, type: 2}
-      value: {x: 1, y: 1}
-    - type: {fileID: 11400000, guid: 73df8306c41d6db428fb221be7e6bb75, type: 2}
-      value: {x: 0, y: 0}
+    - type: {fileID: 11400000, guid: e83ef9dc409eb9e478c5776d61839dfb, type: 2}
+      value: {x: 0, y: 50}
+    - type: {fileID: 11400000, guid: 2368e236d11399e4cb59ec0508f886d2, type: 2}
+      value: {x: 0, y: 25}
+    - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
+      value: {x: 2, y: -2}
+    - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
+      value: {x: 2, y: -2}
   price: 0

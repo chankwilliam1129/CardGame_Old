@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: A8_CoreSelect
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: a
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
+    emptyPower: 4
+    normalPower: 2
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects: []
+    effects:
+    - type: {fileID: 11400000, guid: c50d1aae550b92c49aeb66fa2541bd2f, type: 2}
+      value: {x: 0, y: 0}
   price: 0
