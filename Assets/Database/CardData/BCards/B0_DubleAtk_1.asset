@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: B0_DubleAtk_2
+  m_Name: B0_DubleAtk_1
   m_EditorClassIdentifier: 
   index: 0
   name: "\u30C0\u30D6\u30EB\u30A2\u30BF\u30C3\u30AF"
   image: {fileID: 21300000, guid: fcda95b057b61154fa60947bf1cb1ada, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 5
-    emptyPower: 3
+    powerSpace: 4
+    emptyPower: 2
     normalPower: 1
     brokenPower: 0
     removeType: 0
