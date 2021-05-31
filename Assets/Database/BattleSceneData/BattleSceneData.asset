@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BattleSceneData
   m_EditorClassIdentifier: 
   enemyList:
-  - {fileID: 11400000, guid: b4b560cdd6e82f9499ce5eb1f2e8a20c, type: 2}
+  - {fileID: 11400000, guid: 8fed21dff3ee0304dbe1bee56d40b568, type: 2}
   cardList:
   - {fileID: 11400000, guid: aee1ed75161a43d44bd6acf1cf074c2d, type: 2}
   - {fileID: 11400000, guid: e3e11eec494a9d24f80e2aa4f7487e46, type: 2}

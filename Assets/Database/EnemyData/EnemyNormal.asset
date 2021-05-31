@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
-  m_Name: Enemy01
+  m_Name: EnemyNormal
   m_EditorClassIdentifier: 
   name: aaaa
   image: {fileID: 0}
-  health: 10
+  health: 100
   isActionRandom: 1
   EnemyNormalActions1:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 10
+    value: 5
   EnemyNormalActions2:
   - type: {fileID: 11400000, guid: 140da893d188c6b429597542b0aab4f6, type: 2}
     value: 1
@@ -33,9 +33,9 @@ MonoBehaviour:
     value: 1
   EnemySpecialActions1:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 10
+    value: 7
   - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
-    value: 5
+    value: 4
   EnemySpecialActions2:
   - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
     value: 5
@@ -52,5 +52,5 @@ MonoBehaviour:
   EnemySpecialActions5:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
     value: 4
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: 3
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 4

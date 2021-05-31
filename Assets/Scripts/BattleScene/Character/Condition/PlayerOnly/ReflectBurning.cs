@@ -13,11 +13,11 @@ public class ReflectBurning : Condition
         character.conditionList.Add(this);
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
-        character.characterEvent.OnGetDamaged += OnGetDamaged;
-        character.characterEvent.OnBlockDamage += OnBlockDamage;
+        character.characterEvent.OnGetDamage += OnGetDamage;
+
     }
 
-    private void OnGetDamaged(object sender, System.EventArgs e)
+    private void OnGetDamage(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
         if (args.from != null && args.damage >= damage)
@@ -32,21 +32,7 @@ public class ReflectBurning : Condition
         }
     }
 
-    private void OnBlockDamage(object sender, System.EventArgs e)
-    {
-        DamageEventArgs args = e as DamageEventArgs;
-        if (args.from != null && character.GetShield() != 0)
-        {
-            Condition con = burning.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(burning, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(burning_stack);
-        }
-    }
-
+    
     private void OnTurnStart(object sender, System.EventArgs e)
     {
         Settlement();
@@ -62,8 +48,8 @@ public class ReflectBurning : Condition
     public override void DestoryEvent()
     {
         PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
-        character.characterEvent.OnGetDamaged -= OnGetDamaged;
-        character.characterEvent.OnBlockDamage -= OnBlockDamage;
+        character.characterEvent.OnGetDamage -= OnGetDamage;
+
     }
 
     public override Condition Exist(Character character)

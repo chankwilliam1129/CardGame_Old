@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: A1_FireAdd
+  m_Name: CCoreSelect_Bleeding
   m_EditorClassIdentifier: 
   index: 0
   name: 
-  image: {fileID: 21300000, guid: 4efbef6da7865574d8c95744fe0f3e78, type: 3}
+  image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 4
-    emptyPower: 1
-    normalPower: 1
+    powerSpace: 0
+    emptyPower: 0
+    normalPower: 0
     brokenPower: 0
     removeType: 0
     drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
-      value: {x: 4, y: 1}
+    effects: []
   price: 0

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
+  m_Name: EnemyBleed
+  m_EditorClassIdentifier: 
+  name: 
+  image: {fileID: 0}
+  health: 0
+  isActionRandom: 0
+  EnemyNormalActions1:
+  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
+    value: 3
+  EnemyNormalActions2:
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 2
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 2
+  EnemyNormalActions3:
+  - type: {fileID: 11400000, guid: 5d760abc71585944ea38623fe27fb656, type: 2}
+    value: 2
+  EnemyNormalActions4:
+  - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
+    value: 4
+  EnemyNormalActions5:
+  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
+    value: 2
+  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
+    value: 1
+  EnemySpecialActions1:
+  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
+    value: 6
+  EnemySpecialActions2:
+  - type: {fileID: 11400000, guid: 0e8071c6bdddbb340861f499ca028d4d, type: 2}
+    value: 3
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 3
+  EnemySpecialActions3:
+  - type: {fileID: 11400000, guid: 5d760abc71585944ea38623fe27fb656, type: 2}
+    value: 4
+  - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
+    value: 4
+  EnemySpecialActions4:
+  - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
+    value: 2
+  EnemySpecialActions5:
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 2
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 2
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: 2

@@ -12,12 +12,11 @@ public class Trap : Condition
     {
         character.conditionList.Add(this);
         character.characterEvent.OnTurnStart += OnTurnStart;
-        character.characterEvent.OnGetDamaged += OnGetDamaged;
-        character.characterEvent.OnBlockDamage += OnBlockDamage;
+        character.characterEvent.OnGetDamage += OnGetDamage;
 
     }
 
-    private void OnGetDamaged(object sender, System.EventArgs e)
+    private void OnGetDamage(object sender, System.EventArgs e)
     {
 
         DamageEventArgs args = e as DamageEventArgs;
@@ -43,29 +42,8 @@ public class Trap : Condition
 
     }
     
-    private void OnBlockDamage(object sender, System.EventArgs e)
-    {
-
-        DamageEventArgs args = e as DamageEventArgs;
-        if (args.from != null && character.GetShield() != 0)
-        {
-            EnemyArea.Instance.enemy.ChangeHealthPoint(-stack);
-
-            Condition con = bleeding.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(bleeding, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(bleeding_stack);
-
-            Settlement();
-            text.text = stack.ToString();
-            if (stack <= 0) Destroy(gameObject);
-
-        }
-    }
-
+ 
+    
     private void OnTurnStart(object sender, System.EventArgs e)
     {
         //Settlement();
@@ -81,8 +59,7 @@ public class Trap : Condition
     public override void DestoryEvent()
     {
         character.characterEvent.OnTurnStart -= OnTurnStart;
-        character.characterEvent.OnGetDamaged -= OnGetDamaged;
-        character.characterEvent.OnBlockDamage -= OnBlockDamage;
+        character.characterEvent.OnGetDamage -= OnGetDamage;
     }
 
     public override Condition Exist(Character character)

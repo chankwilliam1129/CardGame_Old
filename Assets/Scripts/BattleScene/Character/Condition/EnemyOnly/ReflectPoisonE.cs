@@ -13,11 +13,11 @@ public class ReflectPoisonE : Condition
         character.conditionList.Add(this);
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         EnemyArea.Instance.enemy.characterEvent.OnTurnStart += OnTurnStart;
-        character.characterEvent.OnGetDamaged += OnGetDamaged;
-        character.characterEvent.OnBlockDamage += OnBlockDamage;
+        character.characterEvent.OnGetDamage += OnGetDamage;
+
     }
 
-    private void OnGetDamaged(object sender, System.EventArgs e)
+    private void OnGetDamage(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
         if (args.from != null && args.damage >= damage)
@@ -36,25 +36,7 @@ public class ReflectPoisonE : Condition
         if (stack <= 0) Destroy(gameObject);
     }
 
-    private void OnBlockDamage(object sender, System.EventArgs e)
-    {
-        DamageEventArgs args = e as DamageEventArgs;
-        if (args.from != null && character.GetShield() != 0)
-        {
-            Condition con = poison.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(poison, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(poison_stack);
-        }
-
-        Settlement();
-        text.text = stack.ToString();
-        if (stack <= 0) Destroy(gameObject);
-    }
-
+ 
     private void OnTurnStart(object sender, System.EventArgs e)
     {
         Settlement();
@@ -70,9 +52,7 @@ public class ReflectPoisonE : Condition
     public override void DestoryEvent()
     {
         EnemyArea.Instance.enemy.characterEvent.OnTurnStart -= OnTurnStart;
-        character.characterEvent.OnGetDamaged -= OnGetDamaged;
-        character.characterEvent.OnBlockDamage -= OnBlockDamage;
-
+        character.characterEvent.OnGetDamage -= OnGetDamage;
     }
 
     public override Condition Exist(Character character)

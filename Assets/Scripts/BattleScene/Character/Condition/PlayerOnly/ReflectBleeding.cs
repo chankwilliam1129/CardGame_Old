@@ -13,11 +13,10 @@ public class ReflectBleeding : Condition
         character.conditionList.Add(this);
         //character.characterEvent.OnTurnEnd += OnTurnStart;
         PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
-        character.characterEvent.OnGetDamaged += OnGetDamaged;
-        character.characterEvent.OnBlockDamage += OnBlockDamage;
+        character.characterEvent.OnGetDamage += OnGetDamage;
     }
 
-    private void OnGetDamaged(object sender, System.EventArgs e)
+    private void OnGetDamage(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
         if (args.from !=null && args.damage >= damage)
@@ -32,20 +31,6 @@ public class ReflectBleeding : Condition
         }
     }
 
-    private void OnBlockDamage(object sender, System.EventArgs e)
-    {
-        DamageEventArgs args = e as DamageEventArgs;
-        if (args.from != null && character.GetShield() != 0)
-        {
-            Condition con = bleeding.Exist(args.from);
-            if (con == null)
-            {
-                con = Instantiate(bleeding, args.from.conditionDisplay);
-                con.character = args.from;
-            }
-            con.Add(bleeding_stack);
-        }
-    }
 
     private void OnTurnStart(object sender, System.EventArgs e)
     {
@@ -62,8 +47,7 @@ public class ReflectBleeding : Condition
     public override void DestoryEvent()
     {
         PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
-        character.characterEvent.OnGetDamaged -= OnGetDamaged;
-        character.characterEvent.OnBlockDamage -= OnBlockDamage;
+        character.characterEvent.OnGetDamage -= OnGetDamage;
     }
 
     public override Condition Exist(Character character)
