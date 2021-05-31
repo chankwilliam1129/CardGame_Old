@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   name: trap
-  image: {fileID: 21300000, guid: a6cd48c8b2ed5b047b4ca78d566229ae, type: 3}
+  image: {fileID: 21300000, guid: 5cf64219965d6e946a3e538b7db05dc0, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 5
