@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
     public Node node;
-    public GameObject parent;
-    public Transform mapParent;
-    public int mapSize;
     public LineRenderer lineRenderer;
+
+    [Space]
+    public Transform mapParent;
+    public GameObject parent;
+
+    [Header("ScrollBar")]
+    public Scrollbar scrollbar;
+    public GameObject content;  
+
+    [Space]
+    public int mapSize;
+    public float nodeWidthSize;
+    public float nodeHeightSize;
 
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
     public List<GameObject> parentList = new List<GameObject>();  
     public List<List<Node>> nodeMap = new List<List<Node>>();
-
-    private float nodeWidthSize = 260f;
-    private float nodeHeightSize = 200f;
-    private float nodeImageSize = 100f;
-
+  
     public static MapManager Instance { get; private set; }
 
     private MapManager()
@@ -27,27 +34,20 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        //MapData.Instance.saveNodeMap.Clear();
-        //MapData.Instance.selectedNode.Clear();
-
         if (MapData.Instance.saveNodeMap.Count == 0)
         {
-            CreateMap();
+            SetMap();
         }
         else
-        { 
+        {
             LoadMap();
-            LoadLineRenderer();
         }
+        LoadLineRenderer();
     }
 
     public Node CreateNode(NodeType nodeType, Vector2Int location, Transform parent)
     {
-        if (nodeType== NodeType.Start|| nodeType == NodeType.Boss)
-        {
-            return Instantiate(node, new Vector3(50, location.y * nodeHeightSize - 600, 0), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);
-        }
-        return Instantiate(node, SetNodePosition(location), Quaternion.identity, parent).SetNodeData(nodeDatas[(int)nodeType], location);       
+        return Instantiate(node, parent).SetNodeData(nodeDatas[(int)nodeType], location);       
     }
 
     public List<Node> CreateNodeList()
@@ -56,27 +56,17 @@ public class MapManager : MonoBehaviour
         return nodeList;
     }
 
-    private void CreateMap()
+    private void SetMap()
     {
         for (int i = 1; i <= mapSize; i++)
         {
-            SetMap(i);
+            CreateMap(i);
         }
+        SetNodePosition();
         StateCheck();
     }
 
-    public void StateCheck()
-    {
-        foreach(var l in nodeMap)
-        {
-            foreach (var n in l)
-            {
-                n.StateCheck();
-            }
-        }
-    }
-
-    private void SetMap(int level)
+    private void CreateMap(int level)
     {
         int value;
         if (level == 1 || level == mapSize) value = 1;
@@ -105,10 +95,6 @@ public class MapManager : MonoBehaviour
                     nodeMap[nodeMap.Count - 1][curListCount].next.Add(v);
                     MapData.Instance.saveNodeMap[nodeMap.Count - 1][curListCount].next.Add(v);
 
-                    LineRenderer line = Instantiate(lineRenderer, nodeMap[nodeMap.Count - 1][curListCount].transform);
-                    line.SetPosition(1, Vector3.zero);
-                    line.SetPosition(0, newNode.transform.position - nodeMap[nodeMap.Count - 1][curListCount].transform.position);
-
                     if (curListCount >= nodeMap[nodeMap.Count - 1].Count - 1) break;
                     else
                     {
@@ -132,24 +118,6 @@ public class MapManager : MonoBehaviour
         MapData.Instance.saveNodeMap.Add(nodeSaveList);
     }
 
-    private NodeType GetLevelNodeType(int level)
-    {
-        if (level == 1) return NodeType.Start;
-        else if (level ==2) return NodeType.MinorEnemy;
-        else if(level == 4) return NodeType.Treasure;
-        else if (level == mapSize) return NodeType.Boss;
-        else
-        {
-            int range = Random.Range(0, 100);
-
-            if (range < 15) return NodeType.Store;
-            else if (range < 25) return NodeType.Treasure;
-            else if (range < 50) return NodeType.EliteEnemy;
-            else if (range < 85) return NodeType.MinorEnemy;
-            else return NodeType.Mystery;
-        }
-    }
-
     private void LoadMap()
     {   
         foreach (var nodeTypeLists in MapData.Instance.saveNodeMap)
@@ -168,6 +136,7 @@ public class MapManager : MonoBehaviour
             parentList.Add(p);
             nodeMap.Add(nodeList);
         }
+        SetNodePosition();
     }
 
     private void LoadLineRenderer()
@@ -186,17 +155,43 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private Vector3 SetNodePosition(Vector2Int location)
+    public void StateCheck()
     {
-        //if (nodeMap[location.y][location.x] == nodeMap[0][0] || nodeMap[location.y][location.x] == nodeMap[mapSize - 1][0]) 
-        //{
-        //    return new Vector3(50, location.y * nodeHeightSize - 600, 0);
-        //}
-        Vector3 pos = new Vector3(0, 0, 0);
-        float rx = location.x * nodeWidthSize;
-        float ry = location.y * nodeHeightSize;
-        pos.x = rx - 400;
-        pos.y = ry - 600;
-        return pos;
+        foreach (var l in nodeMap)
+        {
+            foreach (var n in l)
+            {
+                n.StateCheck();
+            }
+        }
+    }
+
+    private NodeType GetLevelNodeType(int level)
+    {
+        if (level == 1) return NodeType.Start;
+        else if (level == 2) return NodeType.MinorEnemy;
+        else if (level == 4) return NodeType.Treasure;
+        else if (level == mapSize) return NodeType.Boss;
+        else
+        {
+            int range = Random.Range(0, 100);
+
+            if (range < 15) return NodeType.Store;
+            else if (range < 25) return NodeType.Treasure;
+            else if (range < 50) return NodeType.EliteEnemy;
+            else if (range < 85) return NodeType.MinorEnemy;
+            else return NodeType.Mystery;
+        }
+    }
+
+    private void SetNodePosition()
+    {
+        foreach (var l in nodeMap)
+        {
+            foreach (var n in l)
+            {
+                n.SetPosition();
+            }
+        }
     }
 }

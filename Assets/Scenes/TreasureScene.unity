@@ -1063,9 +1063,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1716336919}
+      - m_Target: {fileID: 11500000, guid: 76e7dbb7aae2f5447b73caef486e746b, type: 3}
         m_TargetAssemblyTypeName: LeaveStore, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

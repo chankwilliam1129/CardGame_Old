@@ -16,7 +16,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         GetComponent<Image>().sprite = data.sprite;
     }
 
-
     private void LateUpdate()
     {
         foreach (Transform child in transform)
@@ -48,6 +47,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         {
             MapData.Instance.playerLocation = location;
             MapData.Instance.selectedNode.Add(location);
+            MapData.Instance.ScrollBarPivot = MapManager.Instance.content.GetComponent<RectTransform>().pivot;
+            MapData.Instance.ScrollBarValue = MapManager.Instance.scrollbar.value;
             NodetypeCheck(data.nodeType);
 
             foreach(var l in MapManager.Instance.nodeMap)
@@ -57,8 +58,20 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                     n.StateCheck();
                 }
             }
-
         }
+    }
+
+    public void SetPosition()
+    {
+        float height = MapManager.Instance.nodeHeightSize;
+        float weight = MapManager.Instance.nodeWidthSize;
+
+        float posY = height / MapManager.Instance.nodeMap.Count;
+        posY *= location.y;
+
+        float posX = location.x * weight - (MapManager.Instance.nodeMap[location.y].Count - 1) * weight * 0.5f;
+
+        transform.position = new Vector3(posX, posY - 600.0f, 0.0f);
     }
 
     private bool IsNextLocation()
@@ -102,7 +115,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         {
             GetComponent<Animator>().SetInteger("State", 3);
         }
-        else GetComponent<Animator>().SetInteger("State", 1);
+        else if (location.y == MapData.Instance.playerLocation.y + 1 && !MapData.Instance.GetPlayerNode().next.Contains(location.x)) 
+        {
+            GetComponent<Animator>().SetInteger("State", 1);
+        }
+        else GetComponent<Animator>().SetInteger("State", 4);
     }
 
     public bool NextCheck(Vector2Int loc)

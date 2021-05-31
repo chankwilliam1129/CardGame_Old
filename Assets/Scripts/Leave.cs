@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LeaveStore : MonoBehaviour
+public class Leave : MonoBehaviour
 {
     public void Click()
     {

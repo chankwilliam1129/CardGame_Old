@@ -11,7 +11,7 @@ public class Treasure : MonoBehaviour
     public RelicDisplay relicDisplay;
     public Button button;
     
-    private int count = 0;
+    //private int count = 0;
     public void Start()
     {
 

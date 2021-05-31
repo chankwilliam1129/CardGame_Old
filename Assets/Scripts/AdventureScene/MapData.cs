@@ -18,15 +18,22 @@ public class NodeSaveData
 public class MapData : ScriptableObject
 {
     public Vector2Int playerLocation;
+    [Header("ScrollBar")]
+    public Vector2 ScrollBarPivot;
+    public float ScrollBarValue;
 
+    [Space]
     public List<List<NodeSaveData>> saveNodeMap = new List<List<NodeSaveData>>();
     public List<Vector2Int> selectedNode = new List<Vector2Int>();
+
     public static MapData Instance { get; private set; }
 
     private void OnEnable()
     {
         Instance = this;
         playerLocation = new Vector2Int(0, 0);
+        ScrollBarPivot = new Vector2(0, 1);
+        ScrollBarValue = 0;
         saveNodeMap.Clear();
         selectedNode.Clear();
     }
