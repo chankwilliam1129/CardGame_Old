@@ -24,7 +24,7 @@ public class Store : CardDisplayOnlyGroup
             sellCard[i].GetComponent<StoreCardDisplay>().priceText.text = "" + sellCard[i].data.preset.price;
             if (sellCard[i].data.preset.price > PlayerData.Instance.coin)
             {
-                ChangeColor(sellCard[i], new Color(1.0f, 0.0f, 0.3f, 1.0f));
+                sellCard[i].GetComponent<StoreCardDisplay>().priceText.color = new Color(1.0f, 0.0f, 0.3f, 1.0f);
             }
         }
     }
@@ -50,7 +50,7 @@ public class Store : CardDisplayOnlyGroup
             {
                 if (sellCard[i].data.preset.price > PlayerData.Instance.coin)
                 {
-                    ChangeColor(sellCard[i], new Color(1.0f, 0.0f, 0.3f, 1.0f));
+                    sellCard[i].GetComponent<StoreCardDisplay>().priceText.color = new Color(1.0f, 0.0f, 0.3f, 1.0f);
                 }
             }
             BuyCard(card);
@@ -60,11 +60,6 @@ public class Store : CardDisplayOnlyGroup
         {
             TextManager.Instance.notEnoughCoinText.gameObject.SetActive(true);
         }
-    }
-
-    private void ChangeColor(CardDisplay card, Color co)
-    {
-        card.GetComponent<StoreCardDisplay>().priceText.color = new Color(co.r, co.g, co.b, co.a);
     }
 
     private void BuyCard(CardDisplay card)

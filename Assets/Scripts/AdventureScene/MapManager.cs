@@ -14,7 +14,7 @@ public class MapManager : MonoBehaviour
 
     [Header("ScrollBar")]
     public Scrollbar scrollbar;
-    public GameObject content;  
+    public GameObject content;
 
     [Space]
     public int mapSize;
@@ -22,9 +22,9 @@ public class MapManager : MonoBehaviour
     public float nodeHeightSize;
 
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
-    public List<GameObject> parentList = new List<GameObject>();  
+    public List<GameObject> parentList = new List<GameObject>();
     public List<List<Node>> nodeMap = new List<List<Node>>();
-  
+
     public static MapManager Instance { get; private set; }
 
     private MapManager()
@@ -47,7 +47,7 @@ public class MapManager : MonoBehaviour
 
     public Node CreateNode(NodeType nodeType, Vector2Int location, Transform parent)
     {
-        return Instantiate(node, parent).SetNodeData(nodeDatas[(int)nodeType], location);       
+        return Instantiate(node, parent).SetNodeData(nodeDatas[(int)nodeType], location);
     }
 
     public List<Node> CreateNodeList()
@@ -103,7 +103,7 @@ public class MapManager : MonoBehaviour
                             curListCount++;
                             range *= 0.4f;
                         }
-                        else 
+                        else
                         {
                             if (Random.Range(0, 100) < 34) curListCount++;
                             break;
@@ -119,9 +119,9 @@ public class MapManager : MonoBehaviour
     }
 
     private void LoadMap()
-    {   
+    {
         foreach (var nodeTypeLists in MapData.Instance.saveNodeMap)
-        {      
+        {
             GameObject p = Instantiate(parent, mapParent);
             List<Node> nodeList = CreateNodeList();
 
@@ -137,13 +137,14 @@ public class MapManager : MonoBehaviour
             nodeMap.Add(nodeList);
         }
         SetNodePosition();
+        SetScrollBarPosition();
     }
 
     private void LoadLineRenderer()
     {
-        foreach(var nodeList in nodeMap)
+        foreach (var nodeList in nodeMap)
         {
-            foreach(var node in nodeList)
+            foreach (var node in nodeList)
             {
                 foreach (var next in node.next)
                 {
@@ -193,5 +194,11 @@ public class MapManager : MonoBehaviour
                 n.SetPosition();
             }
         }
+    }
+
+    private void SetScrollBarPosition()
+    {
+        scrollbar.value = MapData.Instance.ScrollBarValue;
+        content.GetComponent<RectTransform>().pivot = MapData.Instance.ScrollBarPivot;
     }
 }
