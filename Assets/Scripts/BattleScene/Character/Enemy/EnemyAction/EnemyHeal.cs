@@ -8,15 +8,15 @@ public class EnemyHeal : EnemyAction
 
     public HealEvent heal;
 
-    public override string GetDescription(int value)
+    public override string GetDescription(Vector2Int value, int level)
     {
-        return value.ToString() + "‰ñ•œ‚·‚éB";
+        return GetValue(value, level).ToString() + "‰ñ•œ‚·‚éB";
     }
 
-    public override void Execute(int value)
+    public override void Execute(Vector2Int value, int level)
     {
         HealEvent e = Instantiate(heal, BattleEventManager.Instance.transform);
-        e.heal = value;
+        e.heal = GetValue(value, level);
         e.target = EnemyArea.Instance.enemy;
     }
 }

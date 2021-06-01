@@ -10,11 +10,13 @@ public class EnemyDisplay : MonoBehaviour
     public EnemyData enemy;
     public Transform enemyActionGroup;
     public EnemyActionDisplay enemyAction;
+    public int level;
     public int actionCount;
 
     private void Start()
     {
         enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
+        level = MapData.Instance.playerLocation.y;
         character = GetComponent<Character>();
         EnemyArea.Instance.enemy = character;
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
@@ -94,7 +96,7 @@ public class EnemyDisplay : MonoBehaviour
     {
         foreach(var a in enemyActions)
         {
-            a.type.Execute(a.value);
+            a.type.Execute(a.value, level);
         }
     }
 
@@ -102,7 +104,7 @@ public class EnemyDisplay : MonoBehaviour
     {
         foreach (var a in enemyActions)
         {
-            Instantiate(enemyAction, enemyActionGroup).Setup(a.type, a.value);
+            Instantiate(enemyAction, enemyActionGroup).Setup(a.type, a.value, level);
         }
     }
 

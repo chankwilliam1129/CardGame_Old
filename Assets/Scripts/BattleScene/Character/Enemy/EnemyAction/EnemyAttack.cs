@@ -7,15 +7,15 @@ public class EnemyAttack : EnemyAction
 {
     public DealDamageEvent damage;
 
-    public override string GetDescription(int value)
+    public override string GetDescription(Vector2Int value, int level)
     {
-        return value.ToString() + "ダメージ与える。";
+        return GetValue(value, level).ToString() + "ダメージ与える。";
     }
 
-    public override void Execute(int value)
+    public override void Execute(Vector2Int value, int level)
     {
         DealDamageEvent e = Instantiate(damage, BattleEventManager.Instance.transform);
-        e.damage = value;
+        e.damage = GetValue(value, level);
         e.target = PlayerArea.Instance.player;
         e.from = EnemyArea.Instance.enemy;
     }

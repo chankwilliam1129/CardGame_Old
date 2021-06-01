@@ -18,7 +18,7 @@ public class PlayerWinPlane : MonoBehaviour
             c.data = PlayerData.Instance.curBattleSceneData.GetCard();
             c.SetUp();
         }
-        coin = PlayerData.Instance.curBattleSceneData.coin;
+        coin = PlayerData.Instance.curBattleSceneData.GetCoin();
 
         coinText.text = coin.ToString();
     }

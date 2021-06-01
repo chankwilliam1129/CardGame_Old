@@ -11,14 +11,14 @@ public class EnemyData : ScriptableObject
 
     public Sprite image;
 
-    public int health;
+    public Vector2Int health;
 
 
     [Serializable]
     public class EnemyActionData
     {
         public EnemyAction type;
-        public int value;
+        public Vector2Int value;
     }
 
     public bool isActionRandom;
@@ -34,4 +34,9 @@ public class EnemyData : ScriptableObject
     [SerializeField] public List<EnemyActionData> EnemySpecialActions3;
     [SerializeField] public List<EnemyActionData> EnemySpecialActions4;
     [SerializeField] public List<EnemyActionData> EnemySpecialActions5;
+
+    public int GetHealth(int level)
+    {
+        return health.x + health.y * level;
+    }
 }

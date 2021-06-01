@@ -7,15 +7,15 @@ public class EnemyShield : EnemyAction
 {
     public GetShieldEvent shieldEvent;
     // Start is called before the first frame updat
-    public override string GetDescription(int value)
+    public override string GetDescription(Vector2Int value, int level)
     {
-        return value.ToString() + "のシールドを得る";
+        return GetValue(value, level).ToString() + "のシールドを得る";
     }
 
-    public override void Execute(int value)
+    public override void Execute(Vector2Int value, int level)
     {
         GetShieldEvent e = Instantiate(shieldEvent, BattleEventManager.Instance.transform);
-        e.shield = value;
+        e.shield = GetValue(value, level);
         e.target = EnemyArea.Instance.enemy;
     }
 }

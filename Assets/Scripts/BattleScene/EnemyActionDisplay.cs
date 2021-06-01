@@ -20,9 +20,9 @@ public class EnemyActionDisplay : MonoBehaviour,IPointerEnterHandler,IPointerExi
         GetComponent<Animator>().SetBool("isSelect", false);
     }
 
-    public void Setup(EnemyAction enemyAction,int value)
+    public void Setup(EnemyAction enemyAction,Vector2Int value,int level)
     {
-        text.text = enemyAction.GetDescription(value);
+        text.text = enemyAction.GetDescription(value, level);
         number.text = value.ToString();
         GetComponent<Image>().sprite = enemyAction.sprite;
     }

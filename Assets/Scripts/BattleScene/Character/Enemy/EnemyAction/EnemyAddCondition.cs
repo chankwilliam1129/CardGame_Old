@@ -12,19 +12,19 @@ public class EnemyAddCondition : EnemyAction
 
     public bool toPlayer;
 
-    public override string GetDescription(int value)
+    public override string GetDescription(Vector2Int value, int level)
     {
         if(!toPlayer)
-            return condition.GetText() + value + "を得る。";
+            return condition.GetText() + GetValue(value, level) + "を得る。";
 
         else
-            return condition.GetText() + value + "を与える。";
+            return condition.GetText() + GetValue(value, level) + "を与える。";
     }
-    public override void Execute(int value)
+    public override void Execute(Vector2Int value, int level)
     {
         AddConditionEvent e = Instantiate(addCondition, BattleEventManager.Instance.transform);
         e.condition = condition;
-        e.value = value;
+        e.value = GetValue(value, level);
         if (toPlayer) e.target = PlayerArea.Instance.player;
         else e.target = EnemyArea.Instance.enemy;
     }
