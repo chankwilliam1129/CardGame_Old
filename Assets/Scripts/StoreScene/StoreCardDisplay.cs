@@ -6,4 +6,5 @@ using TMPro;
 public class StoreCardDisplay : MonoBehaviour
 {
     public TextMeshProUGUI priceText;
+    public bool isSet;
 }

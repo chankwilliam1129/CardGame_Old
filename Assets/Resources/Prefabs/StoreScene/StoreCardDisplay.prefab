@@ -608,6 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 4405123585608812733}
+  isSet: 1
 --- !u!223 &6088809333600513685
 Canvas:
   m_ObjectHideFlags: 0

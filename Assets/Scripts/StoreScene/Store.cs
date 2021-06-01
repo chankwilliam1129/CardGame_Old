@@ -42,6 +42,7 @@ public class Store : CardDisplayOnlyGroup
 
     public override void OnClick(CardDisplay card)
     {
+        if (!card.GetComponent<StoreCardDisplay>().isSet) return;
         if (PlayerData.Instance.coin >= card.data.preset.price)
         {
             PlayerData.Instance.coin -= card.data.preset.price;
