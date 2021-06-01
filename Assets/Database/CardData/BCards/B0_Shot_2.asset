@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: B0_Shot_2
   m_EditorClassIdentifier: 
   index: 0
-  name: shot
+  name: "\u30C1\u30E3\u30FC\u30B8\u30B7\u30E7\u30C3\u30C8"
   image: {fileID: 21300000, guid: ad57169a167c3e84487a7c2c72e8fdb9, type: 3}
   battleData:
     preset: {fileID: 11400000}

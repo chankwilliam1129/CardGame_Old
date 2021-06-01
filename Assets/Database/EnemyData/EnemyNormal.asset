@@ -14,49 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: aaaa
   image: {fileID: 0}
-  health: 100
+  health: {x: 50, y: 10}
   isActionRandom: 1
   EnemyNormalActions1:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 10
+    value: {x: 6, y: 1}
   EnemyNormalActions2:
   - type: {fileID: 11400000, guid: 140da893d188c6b429597542b0aab4f6, type: 2}
-    value: 1
+    value: {x: 1, y: 0}
   EnemyNormalActions3:
-  - type: {fileID: 11400000, guid: 3e6e897139f2d9d4cb80e0f863af84d8, type: 2}
-    value: 4
-  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 4
+  - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
+    value: {x: 5, y: 1}
   EnemyNormalActions4:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 5
+    value: {x: 4, y: 1}
   - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
-    value: 1
+    value: {x: 1, y: 0}
   EnemyNormalActions5:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 5
+    value: {x: 2, y: 1}
   - type: {fileID: 11400000, guid: 391a0f8c1ca29d84f8055aadb4173522, type: 2}
-    value: 1
+    value: {x: 2, y: 0}
   EnemySpecialActions1:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 7
-  - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
-    value: 4
+    value: {x: 4, y: 1}
+  - type: {fileID: 11400000, guid: 3e6e897139f2d9d4cb80e0f863af84d8, type: 2}
+    value: {x: 4, y: 1}
   EnemySpecialActions2:
   - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
-    value: 5
+    value: {x: 4, y: 1}
   EnemySpecialActions3:
   - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
-    value: 5
+    value: {x: 3, y: 1}
   - type: {fileID: 11400000, guid: 140da893d188c6b429597542b0aab4f6, type: 2}
-    value: 2
+    value: {x: 1, y: 0}
   EnemySpecialActions4:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 5
+    value: {x: 5, y: 1}
   - type: {fileID: 11400000, guid: b2de05a62fbf8014da7b98df141bb048, type: 2}
-    value: 1
+    value: {x: 2, y: 0}
   EnemySpecialActions5:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 6
+    value: {x: 3, y: 1}
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: 6
+    value: {x: 3, y: 1}

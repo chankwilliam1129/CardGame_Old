@@ -23,7 +23,7 @@ public class EnemyActionDisplay : MonoBehaviour,IPointerEnterHandler,IPointerExi
     public void Setup(EnemyAction enemyAction,Vector2Int value,int level)
     {
         text.text = enemyAction.GetDescription(value, level);
-        number.text = value.ToString();
+        number.text = enemyAction.GetValue(value, level).ToString();
         GetComponent<Image>().sprite = enemyAction.sprite;
     }
 

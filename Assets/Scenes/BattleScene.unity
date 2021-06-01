@@ -1487,6 +1487,7 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: 47c36b98f10cf0b4b93fbae535042bb6, type: 2}
   enemyActionGroup: {fileID: 663945363}
   enemyAction: {fileID: 2326580279179055738, guid: aac22a10fc38ab44983d05a7fff8f434, type: 3}
+  level: 0
   actionCount: 0
 --- !u!114 &819792468
 MonoBehaviour:

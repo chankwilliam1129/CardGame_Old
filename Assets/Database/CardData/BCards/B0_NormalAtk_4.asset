@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: B0_NormalAtk_4
   m_EditorClassIdentifier: 
   index: 0
-  name: Normal
+  name: "\u30B7\u30E7\u30C3\u30C8"
   image: {fileID: 21300000, guid: eb058cf6c4ed2934582270c9580adb98, type: 3}
   battleData:
     preset: {fileID: 11400000}
