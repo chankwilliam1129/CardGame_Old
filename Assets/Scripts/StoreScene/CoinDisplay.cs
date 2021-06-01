@@ -12,4 +12,12 @@ public class CoinDisplay : MonoBehaviour
         text.text = PlayerData.Instance.coin.ToString();
     }
 
+    private void Update()
+    {
+        if (text.text != PlayerData.Instance.coin.ToString())
+        {
+            text.text = PlayerData.Instance.coin.ToString();
+        }
+    }
+
 }

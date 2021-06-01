@@ -45,7 +45,6 @@ public class Store : CardDisplayOnlyGroup
         if (PlayerData.Instance.coin >= card.data.preset.price)
         {
             PlayerData.Instance.coin -= card.data.preset.price;
-            TextManager.Instance.coinText.text = "" + PlayerData.Instance.coin;
 
             for (int i = 0; i < 5; i++)
             {

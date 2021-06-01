@@ -5,7 +5,6 @@ using TMPro;
 
 public class TextManager : MonoBehaviour
 {
-    public TextMeshProUGUI coinText;
     public TextMeshProUGUI notEnoughCoinText;
     private float countTime;
     public static TextManager Instance { get; private set; }
@@ -17,7 +16,6 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
-        coinText.text = "" + PlayerData.Instance.coin;
         notEnoughCoinText.text = "ÉRÉCÉìÇ™ë´ÇËÇ‹ÇπÇÒÅI";
         notEnoughCoinText.gameObject.SetActive(false);
     }
