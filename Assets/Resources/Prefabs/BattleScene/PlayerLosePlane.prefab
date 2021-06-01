@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1110750342904044322, guid: 4f321278d2f20ae459cad4c919e4b8d7, type: 3}
         m_TargetAssemblyTypeName: PlayerWinPlane, Assembly-CSharp
-        m_MethodName: ButtonClick
+        m_MethodName: ButtonLoseClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

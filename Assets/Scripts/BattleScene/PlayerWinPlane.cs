@@ -33,4 +33,9 @@ public class PlayerWinPlane : MonoBehaviour
         PlayerData.Instance.coin += coin;
         SceneManager.LoadScene("AdventureScene");
     }
+
+    public void ButtonLoseClick()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
 }
