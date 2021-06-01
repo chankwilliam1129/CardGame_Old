@@ -7,6 +7,7 @@ public class Store : CardDisplayOnlyGroup
 {
     public CardDatabase cardDatabase;
     public CardDisplay[] sellCard = new CardDisplay[5];
+    public GameObject soldout;
 
     public static Store Instance { get; private set; }
 
@@ -55,6 +56,7 @@ public class Store : CardDisplayOnlyGroup
             }
             BuyCard(card);
             card.gameObject.SetActive(false);
+            Instantiate(soldout, card.transform.position, soldout.transform.rotation, transform);
         }
         else
         {

@@ -36,6 +36,7 @@ public class MapData : ScriptableObject
         ScrollBarPivot = new Vector2(0, 1);    
         saveNodeMap.Clear();
         selectedNode.Clear();
+        selectedNode.Add(Vector2Int.zero);
     }
 
     public Node GetPlayerNode()

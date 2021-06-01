@@ -36,7 +36,7 @@ public class MapManager : MonoBehaviour
     {
         if (MapData.Instance.saveNodeMap.Count == 0)
         {
-            SetMap();
+            SetMap();       
         }
         else
         {
