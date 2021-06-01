@@ -6,18 +6,15 @@ public class BattleEndCardSelectGroup : CardDisplayOnlyGroup
 {
     public List<CardDisplay> cardList;
     public int selectNumber;
+    public CardRemove cardRemove;
 
-
-    void Start()
+    private void Start()
     {
-        
     }
 
-    void Update()
+    private void Update()
     {
-        
     }
-
 
     public override void OnPointEnter(CardDisplay card)
     {
@@ -31,6 +28,7 @@ public class BattleEndCardSelectGroup : CardDisplayOnlyGroup
 
     public override void OnClick(CardDisplay card)
     {
+        Instantiate(cardRemove, BattleEventManager.Instance.transform).SetUp(card);
         PlayerData.Instance.deck.Add(card.data);
         cardList.Remove(card);
         Destroy(card.gameObject);
@@ -38,7 +36,11 @@ public class BattleEndCardSelectGroup : CardDisplayOnlyGroup
 
         if (selectNumber <= 0)
         {
-
+            foreach (var c in cardList)
+            {
+                Destroy(c.gameObject);
+            }
+            cardList.Clear();
         }
     }
 }

@@ -26,6 +26,9 @@ public class CardDisplayOnlyEventTrigger : MonoBehaviour, IPointerEnterHandler, 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        group?.OnClick(card);
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            group?.OnClick(card);
+        }
     }
 }

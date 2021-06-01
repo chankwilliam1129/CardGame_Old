@@ -647,6 +647,7 @@ MonoBehaviour:
   - {fileID: 3598664332509834027}
   - {fileID: 3598664331859486591}
   selectNumber: 1
+  cardRemove: {fileID: 5923345871199665101, guid: bdc1c5d58b29408479fb239c26df8293, type: 3}
 --- !u!1 &7825782558623596498
 GameObject:
   m_ObjectHideFlags: 0

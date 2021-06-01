@@ -51,13 +51,16 @@ public class CardEventTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (BattleStateManager.Instance.IsPlayerTurn())
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if (!GetComponent<Animator>().GetBool("isMod") && HandCardDisplay.Instance.nowDraggingCard == null)
+            if (BattleStateManager.Instance.IsPlayerTurn())
             {
-                GetComponent<HandCardElement>().isFront = true;
-                GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
-                GetComponent<Animator>().SetBool("isSelect", true);
+                if (!GetComponent<Animator>().GetBool("isMod") && HandCardDisplay.Instance.nowDraggingCard == null)
+                {
+                    GetComponent<HandCardElement>().isFront = true;
+                    GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
+                    GetComponent<Animator>().SetBool("isSelect", true);
+                }
             }
         }
     }

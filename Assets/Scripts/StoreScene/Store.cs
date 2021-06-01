@@ -8,6 +8,7 @@ public class Store : CardDisplayOnlyGroup
     public CardDatabase cardDatabase;
     public CardDisplay[] sellCard = new CardDisplay[5];
     public GameObject soldout;
+    public CardRemove cardRemove;
 
     public static Store Instance { get; private set; }
 
@@ -55,8 +56,9 @@ public class Store : CardDisplayOnlyGroup
                 }
             }
             BuyCard(card);
-            card.gameObject.SetActive(false);
+            Instantiate(cardRemove, card.transform.position, card.transform.rotation, transform).SetUp(card);
             Instantiate(soldout, card.transform.position, soldout.transform.rotation, transform);
+            card.gameObject.SetActive(false);
         }
         else
         {

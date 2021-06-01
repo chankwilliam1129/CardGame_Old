@@ -385,6 +385,7 @@ MonoBehaviour:
   - {fileID: 786121606}
   - {fileID: 935829175}
   soldout: {fileID: 3602571728028071736, guid: ac53a2beebbaa9f4e91d58474b547c61, type: 3}
+  cardRemove: {fileID: 5923345871199665101, guid: bdc1c5d58b29408479fb239c26df8293, type: 3}
 --- !u!1 &459376269
 GameObject:
   m_ObjectHideFlags: 0

@@ -2030,7 +2030,7 @@ Canvas:
   m_GameObject: {fileID: 1048140919}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1195724757}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3434,6 +3434,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1048140920}
     m_Modifications:
+    - target: {fileID: 414064188, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 414064188, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338704679, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338704679, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827520016, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827520016, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827520016, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 955278337566711490, guid: 92542444c5156984e98e8de9f5b4d6c6, type: 3}
       propertyPath: m_Name
       value: MainDeckUI

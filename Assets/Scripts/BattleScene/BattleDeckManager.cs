@@ -59,7 +59,7 @@ public class BattleDeckManager : MonoBehaviour
 
     private void HandCardLimitCheck(object sender, EventArgs e)
     {
-        if(HandCardDisplay.Instance.cardDisplayList.Count >10)
+        if (HandCardDisplay.Instance.cardDisplayList.Count > 10)
         {
             CardEventArgs args = e as CardEventArgs;
             Discard(args.card);
@@ -142,7 +142,7 @@ public class BattleDeckManager : MonoBehaviour
                 break;
         }
 
-        Instantiate(cardRemove, cardDisplay.transform.position, cardDisplay.transform.rotation, BattleEventManager.Instance.transform).cardDisplay.data = cardDisplay.data;
+        Instantiate(cardRemove, BattleEventManager.Instance.transform).SetUp(cardDisplay);
         HandCardDisplay.Instance.Remove(args.card);
     }
 

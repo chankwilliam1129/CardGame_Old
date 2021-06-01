@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class MainDeckUI : MonoBehaviour
+public class MainDeckUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    public Image icon1;
-    public Image icon2;
-    public Image icon3;
-    public Image icon4;
-
     public TextMeshProUGUI total;
+    public CardDisplay card;
+    public ShowDeck showDeck;
+
+    private ShowDeck curShowDeck;
+    public static MainDeckUI Instance { get; private set; }
 
     private void Start()
     {
+        Instance = this;
     }
 
     private void Update()
@@ -25,5 +26,24 @@ public class MainDeckUI : MonoBehaviour
     public void UpdateTotalNumber()
     {
         total.text = PlayerData.Instance.deck.Count.ToString();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        GetComponent<Animator>().SetBool("isSelect", true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        GetComponent<Animator>().SetBool("isSelect", false);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            if (curShowDeck) Destroy(curShowDeck.gameObject);
+            else curShowDeck = Instantiate(showDeck, transform.parent);
+        }
     }
 }

@@ -11,19 +11,30 @@ public class CardRemove : MonoBehaviour
     private Transform targetPosition;
     private Quaternion targetRotation;
 
+    public bool isToMainDeck;
+
     private void Start()
     {
         curPosition = transform.position;
-        switch (cardDisplay.data.removeType)
-        {
-            case BattleDeckManager.RemoveType.Discard:
-                targetPosition = DiscardPileUI.Instance.transform;
-                targetRotation = Quaternion.Euler(0.0f, 0.0f, 125f);
-                break;
 
-            case BattleDeckManager.RemoveType.Exhausted:
-                targetPosition = transform;
-                break;
+        if (isToMainDeck)
+        {
+            targetPosition = MainDeckUI.Instance.transform;
+            targetRotation = Quaternion.Euler(0.0f, 0.0f, 125f);
+        }
+        else
+        {
+            switch (cardDisplay.data.removeType)
+            {
+                case BattleDeckManager.RemoveType.Discard:
+                    targetPosition = DiscardPileUI.Instance.transform;
+                    targetRotation = Quaternion.Euler(0.0f, 0.0f, 125f);
+                    break;
+
+                case BattleDeckManager.RemoveType.Exhausted:
+                    targetPosition = transform;
+                    break;
+            }
         }
     }
 
@@ -33,5 +44,13 @@ public class CardRemove : MonoBehaviour
         transform.rotation = Quaternion.Slerp(Quaternion.identity, targetRotation, TimeCounter);
 
         if (TimeCounter >= 1.0) Destroy(gameObject);
+    }
+
+    public void SetUp(CardDisplay card)
+    {
+        transform.position = card.transform.position;
+        transform.rotation = card.transform.rotation;
+        cardDisplay.data = card.data;
+        cardDisplay.SetUp();
     }
 }
