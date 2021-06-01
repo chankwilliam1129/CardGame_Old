@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547522fc78817f9429afa48bfdcbd65a, type: 3}
   m_Name: SelectCard
   m_EditorClassIdentifier: 
-  type: 0
+  type: 6
   cardSelect: {fileID: 2523305652341731612, guid: 2576562f3a713294988e1ce703bed77d, type: 3}
   cardList:
   - {fileID: 11400000, guid: 7c43504627a4ce64a9f7436cca8b6ad3, type: 2}
   - {fileID: 11400000, guid: 27a7087cc7c58f043b71d21e275d24f8, type: 2}
   - {fileID: 11400000, guid: 39bc99228134fcd4fa98f33c57634007, type: 2}
-  selectCard: {x: 1, y: 1}
+  selectCard: {x: 1, y: 0}

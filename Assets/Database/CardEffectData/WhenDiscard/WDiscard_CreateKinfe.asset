@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0028042d717977e4183423327c448548, type: 3}
   m_Name: WDiscard_CreateKinfe
   m_EditorClassIdentifier: 
-  type: 0
+  type: 6
   effects:
   - type: {fileID: 11400000, guid: 7d677b71cef68884e8eb16f2a5e8bf19, type: 2}
+    value: {x: 2, y: 0}
+  - type: {fileID: 11400000, guid: c1a9a5fba887b614d9570d15de6ea710, type: 2}
     value: {x: 2, y: 0}
