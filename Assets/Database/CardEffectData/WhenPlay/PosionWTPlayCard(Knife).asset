@@ -16,4 +16,4 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: 6a5a3adb339855a428fe83fab0d07c89, type: 2}
   effects:
   - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
-    value: {x: 3, y: 0}
+    value: {x: 2, y: 0}

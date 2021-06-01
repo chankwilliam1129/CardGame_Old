@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3845c260db7d3274fbfecc3c9ecb22bb, type: 3}
   m_Name: CreateCard_FireBall
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   createCardEvent: {fileID: 3111525524322736920, guid: 59ab249de57ea774191f7016681bd11d, type: 3}
   card: {fileID: 11400000, guid: 8a5adc5fb048df64ab99e371d2b1d193, type: 2}

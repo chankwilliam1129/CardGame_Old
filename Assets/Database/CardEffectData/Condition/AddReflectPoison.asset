@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d92ea928dd75874a8db5408206e6022, type: 3}
   m_Name: AddReflectPoison
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
   condition: {fileID: 4457688270108581152, guid: 86b5bf21aa2778f40b99a0e1777d5712, type: 3}
   toPlayer: 1

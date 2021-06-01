@@ -17,13 +17,13 @@ MonoBehaviour:
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 0
-    emptyPower: 0
-    normalPower: 0
+    powerSpace: 4
+    emptyPower: 3
+    normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: 308cbdc9643a55848bb1b938e0e64c27, type: 2}
-      value: {x: 0, y: 0}
+      value: {x: 3, y: 0}
   price: 0
