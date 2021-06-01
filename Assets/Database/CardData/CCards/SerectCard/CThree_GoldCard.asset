@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CThree_GoldCard
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30B4\u30FC\u30EB\u30C9\u30AB\u30FC\u30C9"
+  name: "\u652F\u63F4\u7269\u8CC7"
   image: {fileID: 21300000, guid: 511ca5a7b0ecd1f4e82afbb3af3cf00f, type: 3}
   battleData:
     preset: {fileID: 11400000}

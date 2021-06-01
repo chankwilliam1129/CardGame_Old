@@ -13,7 +13,7 @@ public abstract class EnemyAction : ScriptableObject
         return;
     }
 
-    protected int GetValue(Vector2Int value,int level)
+    public int GetValue(Vector2Int value,int level)
     {
         return value.x + value.y * level;
     }

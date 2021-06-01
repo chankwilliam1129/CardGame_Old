@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: B0_ThreeCard_2
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30B9\u30EA\u30FC\u30AB\u30FC\u30C9"
+  name: "\u652F\u63F4\u54C1"
   image: {fileID: 21300000, guid: 944a20056613dd54bacd53f23f746b58, type: 3}
   battleData:
     preset: {fileID: 11400000}
