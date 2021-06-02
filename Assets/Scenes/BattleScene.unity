@@ -1063,6 +1063,7 @@ MonoBehaviour:
   playerTurnStartText: {fileID: 6384518359546145358, guid: 8cc0a20f031f6624a9c810a00e780ec2, type: 3}
   playerWin: {fileID: 1110750342904044322, guid: 4f321278d2f20ae459cad4c919e4b8d7, type: 3}
   playerLose: {fileID: 8873293319310905513, guid: 85bf19afb20fe804697c3ff20cb0312b, type: 3}
+  playerGameClear: {fileID: 7690934565997072717, guid: bb4c69c5a102ffb40be4cfb1b2ef2e3c, type: 3}
 --- !u!4 &753272156
 Transform:
   m_ObjectHideFlags: 0

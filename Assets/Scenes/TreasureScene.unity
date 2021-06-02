@@ -508,7 +508,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df168396c322de34da1b91ddae7da277, type: 2}
   - {fileID: 11400000, guid: 8397d22483a17a34b83ac97f831fee9b, type: 2}
   - {fileID: 11400000, guid: fd0bd686ac742894788bc2f94e892b35, type: 2}
-  finalRelic: {fileID: 11400000, guid: fd0bd686ac742894788bc2f94e892b35, type: 2}
+  - {fileID: 11400000, guid: 3f00d227b2288f94cba5d094541a8f4c, type: 2}
+  - {fileID: 11400000, guid: fc6f1a55914ae83459080ba80502dcfe, type: 2}
+  - {fileID: 11400000, guid: 461a143016114cb40b938fe74deafbb2, type: 2}
+  - {fileID: 11400000, guid: 2232264d0d597be4a92ae50caead1d0f, type: 2}
+  - {fileID: 11400000, guid: 6afd3d2b7dc4c0c4a85d078d5e6c8b9f, type: 2}
+  finalRelic: {fileID: 11400000, guid: 3f00d227b2288f94cba5d094541a8f4c, type: 2}
   relicDisplay: {fileID: 226638082}
   button: {fileID: 134628081}
   audioSource: {fileID: 1596360752}

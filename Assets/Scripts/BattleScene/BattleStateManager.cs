@@ -39,8 +39,9 @@ public class BattleStateManager : MonoBehaviour
 
     [Space]
     public PlayerWinPlane playerWin;
-    public GameObject playerLose;
 
+    public GameObject playerLose;
+    public GameObject playerGameClear;
 
     public static BattleStateManager Instance { get; private set; }
 
@@ -139,7 +140,8 @@ public class BattleStateManager : MonoBehaviour
 
             if (isPlayerWin)
             {
-                Instantiate(playerWin, BattleEventManager.Instance.transform);
+                if (MapData.Instance.isLastMap()) Instantiate(playerGameClear, BattleEventManager.Instance.transform);
+                else Instantiate(playerWin, BattleEventManager.Instance.transform);
             }
             else Instantiate(playerLose, BattleEventManager.Instance.transform);
         }

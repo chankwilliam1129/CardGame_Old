@@ -29,6 +29,9 @@ public class MapData : ScriptableObject
 
     public List<Vector2Int> selectedNode = new List<Vector2Int>();
 
+    [Space]
+    public int mapSize;
+
     public static MapData Instance { get; private set; }
 
     private void OnEnable()
@@ -44,6 +47,11 @@ public class MapData : ScriptableObject
         saveNodeMap.Clear();
         selectedNode.Clear();
         selectedNode.Add(Vector2Int.zero);
+    }
+
+    public bool isLastMap()
+    {
+        return playerLocation.y == mapSize - 1;
     }
 
     public Node GetPlayerNode()

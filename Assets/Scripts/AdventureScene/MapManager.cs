@@ -18,18 +18,17 @@ public class MapManager : MonoBehaviour
 
     public GameObject content;
 
-    [Space]
-    public int mapSize;
-
     public float nodeWidthSize;
     public float nodeHeightSize;
 
     [Header("Sound")]
     public AudioSource audioSource;
+
     public List<AudioClip> sounds = new List<AudioClip>();
 
     [Space]
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
+
     public List<GameObject> parentList = new List<GameObject>();
     public List<List<Node>> nodeMap = new List<List<Node>>();
 
@@ -71,7 +70,7 @@ public class MapManager : MonoBehaviour
 
     private void SetMap()
     {
-        for (int i = 1; i <= mapSize; i++)
+        for (int i = 1; i <= MapData.Instance.mapSize; i++)
         {
             CreateMap(i);
         }
@@ -82,7 +81,7 @@ public class MapManager : MonoBehaviour
     private void CreateMap(int level)
     {
         int value;
-        if (level == 1 || level == mapSize) value = 1;
+        if (level == 1 || level == MapData.Instance.mapSize) value = 1;
         else value = Random.Range(3, 6);
 
         GameObject p = Instantiate(parent, mapParent);
@@ -185,7 +184,7 @@ public class MapManager : MonoBehaviour
         if (level == 1) return NodeType.Start;
         else if (level == 2) return NodeType.MinorEnemy;
         else if (level == 4) return NodeType.Treasure;
-        else if (level == mapSize) return NodeType.Boss;
+        else if (level == MapData.Instance.mapSize) return NodeType.Boss;
         else
         {
             int range = Random.Range(0, 100);
