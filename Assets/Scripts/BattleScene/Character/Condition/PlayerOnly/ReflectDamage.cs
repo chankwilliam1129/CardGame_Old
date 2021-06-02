@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class ReflectDamage : Condition
 {
-    public int damage;
-    private int reflectdmg;
     private void Start()
     {
         character.conditionList.Add(this);
-        //character.characterEvent.OnTurnEnd += OnTurnStart;
         PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamage += OnGetDamage;
     }
@@ -17,12 +14,11 @@ public class ReflectDamage : Condition
     private void OnGetDamage(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.damage >= damage)
+        if (args.damage >= 1)
         {
             EnemyArea.Instance.enemy.ChangeHealthPoint(-args.damage);
         }
     }
-
 
     private void OnTurnStart(object sender, System.EventArgs e)
     {

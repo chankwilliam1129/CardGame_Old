@@ -58,9 +58,10 @@ MonoBehaviour:
   descriptionObject: {fileID: 8656567820535152185}
   descriptionText: {fileID: 1719516587682205409}
   character: {fileID: 0}
-  conditionName: "\u708E\u4E0A"
+  conditionName: "\u611F\u96FB"
   description: "\u30BF\u30FC\u30F3\u7D42\u4E86\u306E\u6642\u3001\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u3002"
-  color: {r: 1, g: 0.3718843, b: 0.13679248, a: 0}
+  color: {r: 1, g: 0.91838396, b: 0, a: 0}
+  particleEffect: {fileID: 0}
 --- !u!222 &474016321479100836
 CanvasRenderer:
   m_ObjectHideFlags: 0

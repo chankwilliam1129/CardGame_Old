@@ -141,9 +141,9 @@ MonoBehaviour:
   descriptionObject: {fileID: 8149074053744457190}
   descriptionText: {fileID: 8920160811797059314}
   character: {fileID: 0}
-  conditionName: "\u51FA\u8840"
+  conditionName: "\u7834\u58CA"
   description: "\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u305F\u969B\u3001\u4F53\u529B\u304C\u6E1B\u5C11\u3059\u308B\u3002"
-  color: {r: 1, g: 0.11792451, b: 0.17649858, a: 0}
+  color: {r: 0.7924528, g: 0, b: 0.052830137, a: 0}
   particleEffect: {fileID: 4030693197552650742, guid: d27c52c2dd0a8024c84a8d2cf34375bf, type: 3}
 --- !u!114 &3747720249450633425
 MonoBehaviour:

@@ -15,8 +15,6 @@ public class CardEventArgs : EventArgs
 
 public class BattleDeckManager : MonoBehaviour
 {
-    public CardDatabase cardDatabase;
-
     public List<CardBattleData> battleDeck;
     public List<CardBattleData> discardPile;
 
@@ -74,7 +72,6 @@ public class BattleDeckManager : MonoBehaviour
 
     private void BattleDeckInit(object sender, System.EventArgs e)
     {
-        PlayerData.Instance.CreateNewDeck(cardDatabase);
         battleDeck = new List<CardBattleData>(PlayerData.Instance.deck);
         ShuffleDeck(battleDeck);
         discardPile = new List<CardBattleData>();

@@ -487,8 +487,8 @@ MonoBehaviour:
   descriptionText: {fileID: 2573101890507955580}
   character: {fileID: 0}
   conditionName: "\u53CD\u5C04"
-  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B\u51FA\u8840\u52B9\u679C\u3092\u4E0E\u3048\u308B"
-  color: {r: 0.9811321, g: 0.049473763, b: 0, a: 0}
+  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B4\u7834\u58CA\u3092\u4E0E\u3048\u308B"
+  color: {r: 0.6603774, g: 0, b: 0.012547836, a: 0}
   particleEffect: {fileID: 0}
   damage: 5
   bleeding: {fileID: 6334360807182123270, guid: 6068b164835603247b6fd1bb784d27a5, type: 3}

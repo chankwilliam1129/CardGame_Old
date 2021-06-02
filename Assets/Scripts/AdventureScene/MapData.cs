@@ -6,7 +6,7 @@ public class NodeSaveData
 {
     public NodeType type;
     public List<int> next;
-    
+
     public NodeSaveData(NodeType t)
     {
         type = t;
@@ -18,12 +18,15 @@ public class NodeSaveData
 public class MapData : ScriptableObject
 {
     public Vector2Int playerLocation;
+
     [Header("ScrollBar")]
     public float ScrollBarValue;
+
     public Vector2 ScrollBarPivot;
 
     [Space]
     public List<List<NodeSaveData>> saveNodeMap = new List<List<NodeSaveData>>();
+
     public List<Vector2Int> selectedNode = new List<Vector2Int>();
 
     public static MapData Instance { get; private set; }
@@ -31,9 +34,13 @@ public class MapData : ScriptableObject
     private void OnEnable()
     {
         Instance = this;
+    }
+
+    public void StartNewGame()
+    {
         playerLocation = new Vector2Int(0, 0);
         ScrollBarValue = 0;
-        ScrollBarPivot = new Vector2(0, 1);    
+        ScrollBarPivot = new Vector2(0, 1);
         saveNodeMap.Clear();
         selectedNode.Clear();
         selectedNode.Add(Vector2Int.zero);
