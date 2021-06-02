@@ -27,5 +27,5 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: 7d677b71cef68884e8eb16f2a5e8bf19, type: 2}
       value: {x: 3, y: 1}
     - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
-      value: {x: 1, y: 0}
+      value: {x: 2, y: 0}
   price: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e41e84eefdf014ab973f0d6701a929, type: 3}
+  m_Name: BattleSceneData_Normal
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 11400000, guid: 47c36b98f10cf0b4b93fbae535042bb6, type: 2}
+  cardList:
+  - {fileID: 11400000, guid: f00ac6ec184a6af49b14c91a578cd8ba, type: 2}
+  - {fileID: 11400000, guid: 5ccb7c19f9019bf4299a6a733b2fdd4a, type: 2}
+  - {fileID: 11400000, guid: 74184e289a6d63a4589f3bc2727d7ebd, type: 2}
+  - {fileID: 11400000, guid: 649574ed05e46b144b1cb82b6e996e5e, type: 2}
+  - {fileID: 11400000, guid: 097633b3ed03beb418698c3f0007fcf7, type: 2}
+  - {fileID: 11400000, guid: aee1ed75161a43d44bd6acf1cf074c2d, type: 2}
+  - {fileID: 11400000, guid: 8309955ce6045ee4b88088e3452228c3, type: 2}
+  - {fileID: 11400000, guid: e3e11eec494a9d24f80e2aa4f7487e46, type: 2}
+  - {fileID: 11400000, guid: b5975390606642f4897850895173009a, type: 2}
+  - {fileID: 11400000, guid: d4fa0f36c9939db4ea4748a63290c28e, type: 2}
+  - {fileID: 11400000, guid: c32ea298c3252a1479b01fe07cd17bc2, type: 2}
+  coin: {x: 0, y: 0}

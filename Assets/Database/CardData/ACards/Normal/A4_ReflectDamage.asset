@@ -17,7 +17,7 @@ MonoBehaviour:
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 3
+    powerSpace: 2
     emptyPower: 3
     normalPower: 1
     brokenPower: 0
