@@ -36,7 +36,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
       value: {x: 4, y: 1}
   - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
-    powerSpace: 5
+    powerSpace: 4
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
       value: {x: 4, y: 2}
   - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
-    powerSpace: 5
+    powerSpace: 4
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
       value: {x: 4, y: 2}
   - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
-    powerSpace: 5
+    powerSpace: 4
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
       value: {x: 4, y: 2}
   - preset: {fileID: 11400000, guid: 6be422beb8ec9374390add749c7dfded, type: 2}
-    powerSpace: 5
+    powerSpace: 4
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
@@ -182,4 +182,4 @@ MonoBehaviour:
   drawCard: 5
   shieldClear: 0
   coin: 360
-  curBattleSceneData: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}
+  curBattleSceneData: {fileID: 11400000, guid: a17fa5ce7acf5c64f9d23d9b1b8284c1, type: 2}
