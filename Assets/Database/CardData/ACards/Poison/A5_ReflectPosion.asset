@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A5_ReflectPosion
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u3069\u304F"
+  name: "\u653E\u5C04\u30B7\u30FC\u30EB\u30C9"
   image: {fileID: 21300000, guid: f8987ddc2efd91a478c5acc1eddf8fdc, type: 3}
   battleData:
     preset: {fileID: 11400000}

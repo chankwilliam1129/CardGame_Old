@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A8_CoreSelect
   m_EditorClassIdentifier: 
   index: 0
-  name: a
+  name: "\u96FB\u6C60\u5909\u5316"
   image: {fileID: 21300000, guid: 7ab0f2e5ca468ee44af0d794625daac5, type: 3}
   battleData:
     preset: {fileID: 11400000}
@@ -28,4 +28,4 @@ MonoBehaviour:
       value: {x: 3, y: 0}
     - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
       value: {x: 1, y: 0}
-  price: 0
+  price: 900

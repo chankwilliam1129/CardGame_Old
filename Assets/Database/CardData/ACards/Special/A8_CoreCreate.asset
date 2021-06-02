@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A8_CoreCreate
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30B3\u30A2\u30D6\u30FC\u30B9\u30C8"
+  name: "\u96FB\u6C60\u751F\u6210"
   image: {fileID: 21300000, guid: b1ea07bae09e7b5438f12bc6e0fb6449, type: 3}
   battleData:
     preset: {fileID: 11400000}
@@ -26,4 +26,4 @@ MonoBehaviour:
     effects:
     - type: {fileID: 11400000, guid: 42e87313815c6354db8c01b21570a267, type: 2}
       value: {x: 1, y: 1}
-  price: 0
+  price: 900

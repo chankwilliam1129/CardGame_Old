@@ -43,6 +43,7 @@ public class PlayerData : ScriptableObject
         shieldClear = startShieldClear;
         curHealth = health;
         coin = startCoin;
+        relic.Clear();
         MapData.Instance.StartNewGame();
     }
 

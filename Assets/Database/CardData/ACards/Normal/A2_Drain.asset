@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A2_Drain
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u5149"
+  name: "\u4F53\u529B\u5438\u53CE"
   image: {fileID: 21300000, guid: 42a3a586445219d42989ab9a5a3483e3, type: 3}
   battleData:
     preset: {fileID: 11400000}
