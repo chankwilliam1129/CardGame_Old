@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyNormal
   m_EditorClassIdentifier: 
   name: aaaa
-  image: {fileID: 21300000, guid: b310867978d85e04f80f7ac9266dfb18, type: 3}
+  image: {fileID: 21300000, guid: 2d36abe7b815ffb46bf86c8a0461bbef, type: 3}
   health: {x: 45, y: 5}
   isActionRandom: 0
   EnemyNormalActions1:
