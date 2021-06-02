@@ -33,7 +33,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //if(IsNext()) MapManager.Instance.audioSource.PlayOneShot(MapManager.Instance.sounds[0]);
+        if (IsNext()) MapManager.Instance.audioSource.PlayOneShot(MapManager.Instance.sounds[0]);
         GetComponent<Animator>().SetBool("isTouch", true);
     }
 
