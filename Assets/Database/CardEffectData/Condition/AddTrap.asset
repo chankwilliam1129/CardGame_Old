@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d92ea928dd75874a8db5408206e6022, type: 3}
   m_Name: AddTrap
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
   condition: {fileID: 8725922258306471488, guid: d6bd3abfa8e3dee4590dac027c20bba9, type: 3}
   toPlayer: 1
