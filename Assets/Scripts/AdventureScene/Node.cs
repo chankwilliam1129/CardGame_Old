@@ -163,7 +163,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         float n = Random.Range(0.0f, 100.0f);
 
-        if (n <= 30.0f) SceneManager.LoadScene("StoreScene");
+        if (n <= 10.0f) SceneManager.LoadScene("TreasureScene");
+        else if (n <= 30.0f) SceneManager.LoadScene("StoreScene");
         //else if (n <= 50.0f) SceneManager.LoadScene("StoreScene");
     }
 }
