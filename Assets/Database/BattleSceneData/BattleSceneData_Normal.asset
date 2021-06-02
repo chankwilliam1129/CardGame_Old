@@ -26,4 +26,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b5975390606642f4897850895173009a, type: 2}
   - {fileID: 11400000, guid: d4fa0f36c9939db4ea4748a63290c28e, type: 2}
   - {fileID: 11400000, guid: c32ea298c3252a1479b01fe07cd17bc2, type: 2}
-  coin: {x: 0, y: 0}
+  coin: {x: 10, y: 5}

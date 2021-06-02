@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   image: {fileID: 0}
-  descriptionText: "\u30BF\u30FC\u30F3\u958B\u59CB\u6642\u3001\u30AB\u30FC\u30C9\u5F15\u304F\u6700\u5927\u6570+1\u3002"
+  descriptionText: "\u30BF\u30FC\u30F3\u958B\u59CB\u6642\u3001\u30B7\u30FC\u30EB\u30C9\u304C50%\u30AD\u30FC\u30D7\u3059\u308B\u3002"
   price: 0
   isEffect: 0
   effect: {fileID: 0}
   isPlayerData: 1
   health: 0
   energy: 0
-  drawCard: 1
-  shieldClear: 0
+  drawCard: 0
+  shieldClear: 0.5
   isAffect: 0
   type: 0
   valueAdd: {x: 0, y: 0}

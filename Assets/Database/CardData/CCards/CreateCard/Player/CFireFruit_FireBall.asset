@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CFireFruit_FireBall
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30D5\u30A1\u30A4\u30A2\u30DC\u30FC\u30EB"
-  image: {fileID: 21300000, guid: 57896c46c54225143a8d4e40e0ac6a57, type: 3}
+  name: "\u96FB\u6483"
+  image: {fileID: 21300000, guid: 07c9b9892a3ac364d89681eb1e9b086b, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 6

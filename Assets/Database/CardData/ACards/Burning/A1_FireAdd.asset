@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A1_FireAdd
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u96FB\u6483"
   image: {fileID: 21300000, guid: 07c9b9892a3ac364d89681eb1e9b086b, type: 3}
   battleData:
     preset: {fileID: 11400000}

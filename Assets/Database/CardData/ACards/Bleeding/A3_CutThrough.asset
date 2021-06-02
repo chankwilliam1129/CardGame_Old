@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A3_CutThrough
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u5207\u308A\u88C2\u304F"
+  name: "\u8CAB\u901A\u7834\u7247\u5F3E"
   image: {fileID: 21300000, guid: 6f3f07ed645a26e449f83a3c0ebfee8c, type: 3}
   battleData:
     preset: {fileID: 11400000}
