@@ -10,11 +10,11 @@ public class Treasure : MonoBehaviour
     public Relic finalRelic;
     public RelicDisplay relicDisplay;
     public Button button;
+    public AudioSource audioSource;
     
     //private int count = 0;
     public void Start()
     {
-
         foreach (var p in PlayerData.Instance.relic)
         {
             if (relics.Contains(p)) relics.Remove(p);
@@ -23,6 +23,7 @@ public class Treasure : MonoBehaviour
         if (relics.Count == 0) relicDisplay.relicData = finalRelic;
         else relicDisplay.relicData = relics[Random.Range(0, relics.Count)];
         relicDisplay.Setup();
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
 
