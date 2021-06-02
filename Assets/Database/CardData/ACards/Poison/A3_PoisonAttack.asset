@@ -28,4 +28,4 @@ MonoBehaviour:
       value: {x: 4, y: 3}
     - type: {fileID: 11400000, guid: 2bf0a2fb76e4a2f4abcdfb512a30a167, type: 2}
       value: {x: 3, y: 2}
-  price: 0
+  price: 200

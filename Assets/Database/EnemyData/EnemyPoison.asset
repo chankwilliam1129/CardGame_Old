@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   image: {fileID: 0}
-  health: {x: 60, y: 10}
+  health: {x: 40, y: 10}
   isActionRandom: 1
   EnemyNormalActions1:
   - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}

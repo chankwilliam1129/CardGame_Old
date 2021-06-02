@@ -32,4 +32,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04f8b1827cebc0c49ae466dbea3a52bc, type: 2}
   - {fileID: 11400000, guid: bda5be8f2c7815d4ea336ae078d7e2f4, type: 2}
   - {fileID: 11400000, guid: 4c0a8b10123ca284687658ca3d504246, type: 2}
-  coin: {x: 100, y: 20}
+  coin: {x: 120, y: 20}

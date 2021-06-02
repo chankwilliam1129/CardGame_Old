@@ -25,4 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e4738c74b026d034faaf7dcaf62f60d2, type: 2}
   - {fileID: 11400000, guid: 2561eeaa69648634282bfb37c3e75a3d, type: 2}
   - {fileID: 11400000, guid: e4738c74b026d034faaf7dcaf62f60d2, type: 2}
-  coin: {x: 150, y: 20}
+  coin: {x: 200, y: 20}
