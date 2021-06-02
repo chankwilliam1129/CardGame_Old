@@ -1,37 +1,40 @@
 fileFormatVersion: 2
-guid: 2b1dc8e12b8c2ee45929cb5877920d13
+guid: 695bcc5f41e51844983fb34d537e0a66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2604778064009619167
-    second: enemyAction_0
+      213: -4846997359910241475
+    second: Condition_0
   - first:
-      213: -8281631341028826348
-    second: enemyAction_1
+      213: -7786453261209894968
+    second: Condition_1
   - first:
-      213: 1394240923028194485
-    second: enemyAction_2
+      213: 137528438538000066
+    second: Condition_2
   - first:
-      213: -7002552586175417786
-    second: enemyAction_3
+      213: -6889994133643305536
+    second: Condition_3
   - first:
-      213: -6476535153815308690
-    second: enemyAction_4
+      213: -1484266439208823027
+    second: Condition_4
   - first:
-      213: -2951889013903080892
-    second: enemyAction_5
+      213: 6456840660336432361
+    second: Condition_5
   - first:
-      213: -4685603782433682049
-    second: enemyAction_6
+      213: 4796524945219556162
+    second: Condition_6
   - first:
-      213: 6576060013593066552
-    second: enemyAction_7
+      213: 5998008687768775427
+    second: Condition_7
   - first:
-      213: 4286653652868265181
-    second: enemyAction_8
+      213: -3824353819309693937
+    second: Condition_8
   - first:
-      213: -8956885372491634003
-    second: enemyAction_9
+      213: -2002838264205888148
+    second: Condition_9
+  - first:
+      213: -6956372786609121226
+    second: Condition_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemyAction_0
+      name: Condition_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 64
-        height: 64
+        y: 200
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd6e50839d7062420800000000000000
-      internalID: 2604778064009619167
+      spriteID: d3b3b47e4910cbcb0800000000000000
+      internalID: -4846997359910241475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_1
+      name: Condition_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
-        width: 64
-        height: 64
+        x: 50
+        y: 200
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4132c3d5c2cb11d80800000000000000
-      internalID: -8281631341028826348
+      spriteID: 8cff6696306f0f390800000000000000
+      internalID: -7786453261209894968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_2
+      name: Condition_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
-        width: 64
-        height: 64
+        x: 100
+        y: 200
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b488648bb6595310800000000000000
-      internalID: 1394240923028194485
+      spriteID: 2c6529dd26998e100800000000000000
+      internalID: 137528438538000066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_3
+      name: Condition_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
-        width: 64
-        height: 64
+        x: 150
+        y: 200
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6427504268fe1de90800000000000000
-      internalID: -7002552586175417786
+      spriteID: 0cd5aa717d2d160a0800000000000000
+      internalID: -6889994133643305536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_4
+      name: Condition_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 64
-        height: 64
+        x: 200
+        y: 200
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e66328d7799be16a0800000000000000
-      internalID: -6476535153815308690
+      spriteID: d079cea9983d66be0800000000000000
+      internalID: -1484266439208823027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_5
+      name: Condition_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 64
-        height: 64
+        y: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 442cde5e498c807d0800000000000000
-      internalID: -2951889013903080892
+      spriteID: 9e4d6aaee5e4b9950800000000000000
+      internalID: 6456840660336432361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_6
+      name: Condition_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
+        x: 50
+        y: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7d40dd6f2469feb0800000000000000
-      internalID: -4685603782433682049
+      spriteID: 2439c1c460ea09240800000000000000
+      internalID: 4796524945219556162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_7
+      name: Condition_7
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
+        x: 100
+        y: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83c7ddbadbbd24b50800000000000000
-      internalID: 6576060013593066552
+      spriteID: 30b2a2a6f153d3350800000000000000
+      internalID: 5998008687768775427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_8
+      name: Condition_8
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 64
+        x: 150
+        y: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd4f75e19c04d7b30800000000000000
-      internalID: 4286653652868265181
+      spriteID: f0423a0b67a2deac0800000000000000
+      internalID: -3824353819309693937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyAction_9
+      name: Condition_9
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
-        width: 64
-        height: 64
+        x: 200
+        y: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,8 +327,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa6eb69530c2b380800000000000000
-      internalID: -8956885372491634003
+      spriteID: c65b27fc53d7434e0800000000000000
+      internalID: -2002838264205888148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Condition_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63818f89ecff57f90800000000000000
+      internalID: -6956372786609121226
       vertices: []
       indices: 
       edges: []
