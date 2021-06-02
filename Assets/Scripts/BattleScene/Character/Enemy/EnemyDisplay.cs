@@ -16,8 +16,7 @@ public class EnemyDisplay : MonoBehaviour
     private void Start()
     {
         if(enemy == null)enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
-        //level = MapData.Instance.playerLocation.y;
-        level = 9;
+        level = MapData.Instance.playerLocation.y;
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd += OnEnemyTurnEnd;
         actionCount = 0;

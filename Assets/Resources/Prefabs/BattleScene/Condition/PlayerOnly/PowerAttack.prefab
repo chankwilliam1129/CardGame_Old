@@ -405,6 +405,7 @@ MonoBehaviour:
   conditionName: "\u653B\u6483\u4E0A\u6607"
   description: "\u30AB\u30FC\u30C9\u306B\u3088\u308B\u30A2\u30BF\u30C3\u30AF\u52B9\u679C\u304C50%\u4E0A\u6607\u3059\u308B\u3002"
   color: {r: 0.8113208, g: 0.4244596, b: 0, a: 0}
+  particleEffect: {fileID: 0}
 --- !u!114 &1795809768942988168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 963590d7291926e4ea47ba2f7d1e5dab, type: 3}
+  m_Sprite: {fileID: -6889994133643305536, guid: 695bcc5f41e51844983fb34d537e0a66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

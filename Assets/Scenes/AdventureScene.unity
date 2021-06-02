@@ -322,6 +322,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60f4cb1124a57b548bde5ef5a0b354cd, type: 2}
   - {fileID: 11400000, guid: 594934c9bcccdb94a8a6098466dc2fed, type: 2}
   parentList: []
+  minor: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}
+  elite: {fileID: 11400000, guid: a17fa5ce7acf5c64f9d23d9b1b8284c1, type: 2}
+  boss: {fileID: 11400000, guid: a9bef25be3682b047870504b0042ec2f, type: 2}
 --- !u!4 &728838755
 Transform:
   m_ObjectHideFlags: 0
@@ -1179,7 +1182,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2034032545}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0
+  m_Size: 0.4090909
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

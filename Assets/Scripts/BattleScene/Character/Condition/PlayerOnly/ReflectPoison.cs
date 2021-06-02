@@ -11,7 +11,6 @@ public class ReflectPoison : Condition
     private void Start()
     {
         character.conditionList.Add(this);
-        //character.characterEvent.OnTurnEnd += OnTurnStart;
         character.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamage += OnGetDamage;
     }

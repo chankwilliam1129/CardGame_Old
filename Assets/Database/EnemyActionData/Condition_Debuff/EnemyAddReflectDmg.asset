@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de5df77a5b62a046a75d1cb738c5b01, type: 3}
   m_Name: EnemyAddReflectDmg
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 963590d7291926e4ea47ba2f7d1e5dab, type: 3}
+  sprite: {fileID: 4286653652868265181, guid: 2b1dc8e12b8c2ee45929cb5877920d13, type: 3}
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
   condition: {fileID: -5846911865916519766, guid: ac6241ebc3c3a2c4f8ee2cf7e656f465, type: 3}
   toPlayer: 0

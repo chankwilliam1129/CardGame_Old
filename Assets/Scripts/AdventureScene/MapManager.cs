@@ -10,14 +10,17 @@ public class MapManager : MonoBehaviour
 
     [Space]
     public Transform mapParent;
+
     public GameObject parent;
 
     [Header("ScrollBar")]
     public Scrollbar scrollbar;
+
     public GameObject content;
 
     [Space]
     public int mapSize;
+
     public float nodeWidthSize;
     public float nodeHeightSize;
 
@@ -30,6 +33,11 @@ public class MapManager : MonoBehaviour
     public List<GameObject> parentList = new List<GameObject>();
     public List<List<Node>> nodeMap = new List<List<Node>>();
 
+    [Space]
+    public BattleSceneData minor;
+
+    public BattleSceneData elite;
+    public BattleSceneData boss;
     public static MapManager Instance { get; private set; }
 
     private MapManager()
@@ -41,7 +49,7 @@ public class MapManager : MonoBehaviour
     {
         if (MapData.Instance.saveNodeMap.Count == 0)
         {
-            SetMap();       
+            SetMap();
         }
         else
         {
