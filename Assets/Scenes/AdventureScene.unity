@@ -307,7 +307,6 @@ MonoBehaviour:
   parent: {fileID: 8546782492684080204, guid: b347acbf0365bc748b425d36a0fc987f, type: 3}
   scrollbar: {fileID: 1861653005}
   content: {fileID: 2069664214}
-  mapSize: 10
   nodeWidthSize: 260
   nodeHeightSize: 1900
   audioSource: {fileID: 1365572223}
@@ -687,8 +686,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.3
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1182,7 +1181,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2034032545}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.4090909
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
