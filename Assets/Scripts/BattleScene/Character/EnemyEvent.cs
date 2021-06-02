@@ -10,6 +10,7 @@ public class EnemyEvent : CharacterEvent
 
         BattleStateManager.Instance.OnEnemyTurnStart += OnEnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd += OnEnemyTurnEnd;
+        OnTurnStart += TurnStartShieldClear;
         OnCharacterDied += OnEnemyDied;
     }
 
@@ -17,12 +18,18 @@ public class EnemyEvent : CharacterEvent
     {
         BattleStateManager.Instance.OnEnemyTurnStart -= OnEnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd -= OnEnemyTurnEnd;
+        OnTurnStart -= TurnStartShieldClear;
         OnCharacterDied -= OnEnemyDied;
     }
 
     private void OnEnemyDied(object sender, EventArgs e)
     {
         BattleStateManager.Instance.SetBattleEnd(true);
+    }
+
+    private void TurnStartShieldClear(object sender, EventArgs e)
+    {
+        character.SetShield(0);
     }
 
     public override void StatusSetUp()

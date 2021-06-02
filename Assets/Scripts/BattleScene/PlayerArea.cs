@@ -24,14 +24,15 @@ public class PlayerArea : MonoBehaviour
 
         foreach(var relic in PlayerData.Instance.relic)
         {
-            Instantiate(relicDisplay, relicDisplayGroup.transform).relicData = relic;
+            var r = Instantiate(relicDisplay, relicDisplayGroup.transform);
+            r.relicData = relic;
+            r.relicData.Generate(r);
         }
     }
 
     private void OnPlayerTurnStart(object sender, System.EventArgs e)
     {
-        Debug.Log("Add Energy");
-        energy = player.GetEnergyPoint();
+        energy = PlayerData.Instance.energy;
     }
 
     private void Update()

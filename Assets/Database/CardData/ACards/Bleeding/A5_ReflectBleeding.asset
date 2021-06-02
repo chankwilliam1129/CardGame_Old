@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   name: Reflect
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 18f8bdbc041f79741a1ac69df4c3d48b, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 4

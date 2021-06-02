@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   name: a
-  image: {fileID: 21300000, guid: a5088e7a304de0849895182324ef130d, type: 3}
+  image: {fileID: 21300000, guid: dc8a2edfbd8f8ca4c851d7275d113e79, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 4

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: A5_NnifeBurst
+  m_Name: A5_KnifeBurst
   m_EditorClassIdentifier: 
   index: 0
   name: 
-  image: {fileID: 21300000, guid: 8be9a0c95cb92d645aa51499c2b1f4db, type: 3}
+  image: {fileID: 21300000, guid: 4a565878abfd8ed4ca0f342ad6338499, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 6

@@ -84,7 +84,7 @@ public class BattleDeckManager : MonoBehaviour
     {
         Debug.Log("Player Draw Card");
 
-        int num = 5 - HandCardDisplay.Instance.cardDisplayList.Count;
+        int num = PlayerData.Instance.drawCard - HandCardDisplay.Instance.cardDisplayList.Count;
         if (num > 0)
         {
             for (int i = 0; i < num; i++)
