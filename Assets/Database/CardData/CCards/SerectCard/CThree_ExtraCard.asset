@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f057eadaa86414086078c0a2420861, type: 3}
-  m_Name: CThree_RedCard
+  m_Name: CThree_ExtraCard
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u652F\u63F4\u653B\u6483"
-  image: {fileID: 21300000, guid: d26f12c9feb33fa43bdf613beb5849c1, type: 3}
+  name: 
+  image: {fileID: 21300000, guid: 4a8bcf357a802fc4a875173f1193754b, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 3
+    powerSpace: 4
     emptyPower: 1
     normalPower: 1
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
-    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 5, y: 3}
+    - type: {fileID: 11400000, guid: 03534e861f5bacd48a287483c81dd8ec, type: 2}
+      value: {x: 4, y: 2}
     - type: {fileID: 11400000, guid: ae31dc4d2c15ced498349a2a1da905db, type: 2}
       value: {x: 0, y: 0}
     - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}

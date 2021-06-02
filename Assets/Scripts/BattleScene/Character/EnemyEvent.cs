@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyEvent : CharacterEvent
 {
+    public EnemyDisplay enemyDisplay;
     public new void Start()
     {
         base.Start();
@@ -34,10 +35,9 @@ public class EnemyEvent : CharacterEvent
 
     public override void StatusSetUp()
     {
-        character.SetHealthPointMax(GetComponent<EnemyDisplay>().enemy.GetHealth(9));
-        //character.SetHealthPointMax(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
-        character.SetHealthPoint(GetComponent<EnemyDisplay>().enemy.GetHealth(9));
-        //character.SetHealthPoint(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
+        enemyDisplay.enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
+        character.SetHealthPointMax(enemyDisplay.enemy.GetHealth(MapData.Instance.playerLocation.y));
+        character.SetHealthPoint(enemyDisplay.enemy.GetHealth(MapData.Instance.playerLocation.y));
         character.SetShield(0);
     }
 

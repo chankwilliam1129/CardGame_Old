@@ -6,7 +6,7 @@ using TMPro;
 
 public class EnemyDisplay : MonoBehaviour
 {
-    private Character character;
+    public Character character;
     public EnemyData enemy;
     public Transform enemyActionGroup;
     public EnemyActionDisplay enemyAction;
@@ -15,11 +15,8 @@ public class EnemyDisplay : MonoBehaviour
 
     private void Start()
     {
-        enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
-        //level = MapData.Instance.playerLocation.y;
-        level = 9;
-        character = GetComponent<Character>();
-        EnemyArea.Instance.enemy = character;
+        if(enemy == null)enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
+        level = MapData.Instance.playerLocation.y;
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd += OnEnemyTurnEnd;
         actionCount = 0;
