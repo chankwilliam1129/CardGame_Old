@@ -42,8 +42,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     }
 
     public void OnPointerClick(PointerEventData eventData)
-    {    
-        if(GetComponent<Animator>().GetInteger("State") == 3)
+    {
+        if (GetComponent<Animator>().GetInteger("State") == 3)
         {
             MapData.Instance.playerLocation = location;
             MapData.Instance.selectedNode.Add(location);
@@ -51,7 +51,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             MapData.Instance.ScrollBarValue = MapManager.Instance.scrollbar.value;
             NodetypeCheck(data.nodeType);
 
-            foreach(var l in MapManager.Instance.nodeMap)
+            foreach (var l in MapManager.Instance.nodeMap)
             {
                 foreach (var n in l)
                 {
@@ -81,8 +81,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     private bool IsUpLocation()
     {
-        return location.y > MapData.Instance.playerLocation.y; 
-    } 
+        return location.y > MapData.Instance.playerLocation.y;
+    }
 
     private bool IsUnderLocation()
     {
@@ -115,7 +115,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         {
             GetComponent<Animator>().SetInteger("State", 3);
         }
-        else if (location.y == MapData.Instance.playerLocation.y + 1 && !MapData.Instance.GetPlayerNode().next.Contains(location.x)) 
+        else if (location.y == MapData.Instance.playerLocation.y + 1 && !MapData.Instance.GetPlayerNode().next.Contains(location.x))
         {
             GetComponent<Animator>().SetInteger("State", 1);
         }
@@ -124,7 +124,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public bool NextCheck(Vector2Int loc)
     {
-        foreach(var Next in MapManager.Instance.nodeMap[loc.y][loc.x].next)
+        foreach (var Next in MapManager.Instance.nodeMap[loc.y][loc.x].next)
         {
             if (Next == location.x) return true;
         }
@@ -133,22 +133,33 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     private void NodetypeCheck(NodeType nodeType)
     {
-        switch(nodeType)
+        switch (nodeType)
         {
             case NodeType.MinorEnemy:
+                PlayerData.Instance.curBattleSceneData = MapManager.Instance.minor;
+                SceneManager.LoadScene("BattleScene");
                 break;
+
             case NodeType.EliteEnemy:
+                PlayerData.Instance.curBattleSceneData = MapManager.Instance.elite;
+                SceneManager.LoadScene("BattleScene");
                 break;
+
             case NodeType.Mystery:
                 MysteryCheck();
                 break;
+
             case NodeType.Treasure:
                 SceneManager.LoadScene("TreasureScene");
                 break;
+
             case NodeType.Store:
                 SceneManager.LoadScene("StoreScene");
                 break;
+
             case NodeType.Boss:
+                PlayerData.Instance.curBattleSceneData = MapManager.Instance.boss;
+                SceneManager.LoadScene("BattleScene");
                 break;
         }
     }
