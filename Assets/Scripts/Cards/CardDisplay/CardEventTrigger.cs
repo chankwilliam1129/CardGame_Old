@@ -60,6 +60,8 @@ public class CardEventTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExi
                     GetComponent<HandCardElement>().isFront = true;
                     GetComponent<HandCardElement>().SetFlexibleWidth(1.5f);
                     GetComponent<Animator>().SetBool("isSelect", true);
+
+                    GetComponent<AudioSource>().Play();
                 }
             }
         }

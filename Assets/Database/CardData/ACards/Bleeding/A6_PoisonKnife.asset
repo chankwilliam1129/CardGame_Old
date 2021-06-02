@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A6_PoisonKnife
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u653E\u5C04\u7834\u7247"
   image: {fileID: 21300000, guid: 2ae07c572d591824281a9b754c82d21d, type: 3}
   battleData:
     preset: {fileID: 11400000}

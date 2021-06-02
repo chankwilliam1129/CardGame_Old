@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A6_CreatePotion
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u30AE\u30A2\u751F\u6210"
   image: {fileID: 21300000, guid: d337e9cac9c3ae54c90dc76c00f32c06, type: 3}
   battleData:
     preset: {fileID: 11400000}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CThree_ExtraCard
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u5FDC\u6025\u30EA\u30DA\u30A2"
   image: {fileID: 21300000, guid: 4a8bcf357a802fc4a875173f1193754b, type: 3}
   battleData:
     preset: {fileID: 11400000}

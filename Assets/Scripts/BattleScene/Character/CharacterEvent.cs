@@ -30,6 +30,9 @@ public abstract class CharacterEvent : MonoBehaviour
     [HideInInspector]
     public Character character;
 
+    public AudioClip damageSound;
+    public AudioClip shieldSound;
+
     public event EventHandler OnTurnStart;
 
     public event EventHandler OnTurnEnd;
@@ -55,7 +58,6 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public void Start()
     {
-
     }
 
     public void Update()
@@ -66,7 +68,6 @@ public abstract class CharacterEvent : MonoBehaviour
 
     public void GetDamage(int damage, Character from)
     {
-
         DamageEventArgs damageargs = new DamageEventArgs(damage, from);
         OnGetDamage?.Invoke(this, damageargs);
 
@@ -77,6 +78,12 @@ public abstract class CharacterEvent : MonoBehaviour
             OnBlockDamage?.Invoke(this, shieldArgs);
             character.ChangeShield(-shieldArgs.damage);
             damageargs.damage -= shieldArgs.damage;
+
+            if (damageargs.damage <= 0)
+            {
+                GetComponent<AudioSource>().clip = shieldSound;
+                GetComponent<AudioSource>().Play();
+            }
         }
 
         if (damageargs.damage > 0)
@@ -84,6 +91,9 @@ public abstract class CharacterEvent : MonoBehaviour
             DamageEventArgs args = new DamageEventArgs(damageargs.damage, from);
             OnGetDamaged?.Invoke(this, args);
             if (args.damage > 0) character.ChangeHealthPoint(-args.damage);
+
+            GetComponent<AudioSource>().clip = damageSound;
+            GetComponent<AudioSource>().Play();
         }
     }
 
@@ -96,7 +106,6 @@ public abstract class CharacterEvent : MonoBehaviour
             if (args.damage > 0) character.ChangeHealthPoint(-args.damage);
         }
     }
-
 
     public void LoseHealth(int value)
     {
