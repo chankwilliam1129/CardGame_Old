@@ -7,7 +7,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b7daf5d7cf38404ba255a5d3329f721, type: 3}
   m_Name: PlayerData
@@ -127,10 +127,6 @@ MonoBehaviour:
       value: {x: 4, y: 2}
     - type: {fileID: 11400000, guid: 47134014017559349830549ef8540b23, type: 2}
       value: {x: 1, y: 0}
-<<<<<<< Updated upstream
-  relic:
-  - {fileID: 11400000, guid: 6afd3d2b7dc4c0c4a85d078d5e6c8b9f, type: 2}
-=======
   - preset: {fileID: 11400000, guid: f9d3e69a7d946f144af334fe9b7c6dcd, type: 2}
     powerSpace: 5
     emptyPower: 2
@@ -144,16 +140,11 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: 47134014017559349830549ef8540b23, type: 2}
       value: {x: 1, y: 0}
   relic: []
->>>>>>> Stashed changes
   health: 100
   energy: 3
   drawCard: 5
   shieldClear: 0
-<<<<<<< Updated upstream
-  curHealth: 56
-=======
-  curHealth: 90
->>>>>>> Stashed changes
+  curHealth: 100
   coin: 100
   curBattleSceneData: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}
   cardDatabase: {fileID: 11400000, guid: 4d00e15ae2266964b90087444de5f554, type: 2}
