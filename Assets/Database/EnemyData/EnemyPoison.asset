@@ -10,47 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
-  m_Name: EnemyBurn
+  m_Name: EnemyPoison
   m_EditorClassIdentifier: 
-  name: a2
-  image: {fileID: 21300000, guid: 10133e15bb575a646a480f3f1948c15e, type: 3}
+  name: 
+  image: {fileID: 0}
   health: {x: 60, y: 10}
   isActionRandom: 1
   EnemyNormalActions1:
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: {x: 4, y: 1}
+  - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}
+    value: {x: 3, y: 1}
   EnemyNormalActions2:
-  - type: {fileID: 11400000, guid: 5411c74bc585db44292998afad117836, type: 2}
-    value: {x: 1, y: 0}
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: {x: 3, y: 1}
   EnemyNormalActions3:
-  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: {x: 5, y: 1}
-  EnemyNormalActions4:
-  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: {x: 1, y: 1}
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: {x: 5, y: 0}
-  EnemyNormalActions5:
   - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
     value: {x: 2, y: 1}
+  EnemyNormalActions4:
+  - type: {fileID: 11400000, guid: a25c0b503f42076479455617fe32309a, type: 2}
+    value: {x: 1, y: 0}
+  EnemyNormalActions5:
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: {x: 1, y: 1}
+  - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}
+    value: {x: 1, y: 1}
   EnemySpecialActions1:
-  - type: {fileID: 11400000, guid: 5411c74bc585db44292998afad117836, type: 2}
+  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
+    value: {x: 1, y: 1}
+  - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}
+    value: {x: 2, y: 1}
+  EnemySpecialActions2:
+  - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}
+    value: {x: 2, y: 2}
+  EnemySpecialActions3:
+  - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
+    value: {x: 2, y: 1}
+  - type: {fileID: 11400000, guid: 2e7c7e8f3df6b144783f25715b9ba409, type: 2}
+    value: {x: 2, y: 1}
+  EnemySpecialActions4:
+  - type: {fileID: 11400000, guid: a25c0b503f42076479455617fe32309a, type: 2}
     value: {x: 2, y: 0}
   - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
     value: {x: 3, y: 1}
-  EnemySpecialActions2:
-  - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
-    value: {x: 2, y: 2}
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: {x: 2, y: 1}
-  EnemySpecialActions3:
-  - type: {fileID: 11400000, guid: 1d6bb761f1bd8ba4ba725da7f67f6ebb, type: 2}
-    value: {x: 1, y: 1}
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: {x: 2, y: 1}
-  EnemySpecialActions4:
-  - type: {fileID: 11400000, guid: b3725869eac7e884bbbf2c7414e72d30, type: 2}
-    value: {x: 2, y: 2}
   EnemySpecialActions5:
   - type: {fileID: 11400000, guid: 3e6e897139f2d9d4cb80e0f863af84d8, type: 2}
     value: {x: 5, y: 0}
