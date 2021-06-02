@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CCreKnife_Knife
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u30CA\u30A4\u30D5"
-  image: {fileID: 21300000, guid: ee7ed04ee7b269843b91eae31ab6257b, type: 3}
+  name: "\u7834\u7247"
+  image: {fileID: 21300000, guid: 34d1e0f792823cc4482be211955c24ee, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0

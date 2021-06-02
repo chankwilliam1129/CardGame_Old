@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a658779b34fa2e48b62eec2aca4618d, type: 3}
-  m_Name: RelicData09
+  m_Name: RelicData08
   m_EditorClassIdentifier: 
   name: 
   image: {fileID: 0}

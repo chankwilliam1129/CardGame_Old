@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A8_Charge
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u30C1\u30E3\u30FC\u30B8\u30B7\u30FC\u30EB\u30C9"
   image: {fileID: 0}
   battleData:
     preset: {fileID: 11400000}
