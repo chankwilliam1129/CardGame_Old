@@ -199,6 +199,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   from: {fileID: 0}
   target: {fileID: 0}
+  posXVariation: 0
 --- !u!114 &1750919252613225404
 MonoBehaviour:
   m_ObjectHideFlags: 0
