@@ -11,7 +11,7 @@ public class Treasure : MonoBehaviour
     public RelicDisplay relicDisplay;
     public Button button;
     public AudioSource audioSource;
-    
+
     //private int count = 0;
     public void Start()
     {
@@ -26,18 +26,10 @@ public class Treasure : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
     }
 
-
     public void GetTreasure()
     {
-        if (relics.Count != 0)
-        {
-            relicDisplay.relicData.Add();
-            PlayerData.Instance.relic.Add(relicDisplay.relicData);
-            SceneManager.LoadScene("AdventureScene");
-        }
-        else
-        {
-          
-        }
+        relicDisplay.relicData.Add();
+        PlayerData.Instance.relic.Add(relicDisplay.relicData);
+        SceneManager.LoadScene("AdventureScene");
     }
 }

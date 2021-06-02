@@ -29,6 +29,11 @@ public class PlayerData : ScriptableObject
 
     public static PlayerData Instance { get; private set; }
 
+    private PlayerData()
+    {
+        Instance = this;
+    }
+
     private void OnEnable()
     {
         Instance = this;
@@ -44,7 +49,6 @@ public class PlayerData : ScriptableObject
         curHealth = health;
         coin = startCoin;
         relic.Clear();
-        MapData.Instance.StartNewGame();
     }
 
     public void CreateNewDeck(CardDatabase cardDatabase)

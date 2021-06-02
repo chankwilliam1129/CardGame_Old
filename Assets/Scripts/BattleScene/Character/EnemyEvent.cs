@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyEvent : CharacterEvent
 {
     public EnemyDisplay enemyDisplay;
+    public Image image;
 
     public new void Start()
     {
@@ -37,6 +39,7 @@ public class EnemyEvent : CharacterEvent
     public override void StatusSetUp()
     {
         enemyDisplay.enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
+        image.sprite = enemyDisplay.enemy.image;
         character.SetHealthPointMax(enemyDisplay.enemy.GetHealth(MapData.Instance.playerLocation.y));
         character.SetHealthPoint(enemyDisplay.enemy.GetHealth(MapData.Instance.playerLocation.y));
         character.SetShield(0);
