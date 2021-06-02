@@ -34,8 +34,10 @@ public class EnemyEvent : CharacterEvent
 
     public override void StatusSetUp()
     {
-        character.SetHealthPointMax(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
-        character.SetHealthPoint(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
+        character.SetHealthPointMax(GetComponent<EnemyDisplay>().enemy.GetHealth(9));
+        //character.SetHealthPointMax(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
+        character.SetHealthPoint(GetComponent<EnemyDisplay>().enemy.GetHealth(9));
+        //character.SetHealthPoint(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
         character.SetShield(0);
     }
 

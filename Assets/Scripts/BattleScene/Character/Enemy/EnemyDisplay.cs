@@ -16,7 +16,8 @@ public class EnemyDisplay : MonoBehaviour
     private void Start()
     {
         enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
-        level = MapData.Instance.playerLocation.y;
+        //level = MapData.Instance.playerLocation.y;
+        level = 9;
         character = GetComponent<Character>();
         EnemyArea.Instance.enemy = character;
         BattleStateManager.Instance.OnEnemyTurnStart += EnemyTurnStart;
