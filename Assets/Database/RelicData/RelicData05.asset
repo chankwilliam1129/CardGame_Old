@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a658779b34fa2e48b62eec2aca4618d, type: 3}
   m_Name: RelicData05
   m_EditorClassIdentifier: 
-  name: 
-  image: {fileID: 0}
+  name: "\u5149\u306E\u584A"
+  image: {fileID: 2978030535826364694, guid: 27f53db6a244ad844a7dc0e690633275, type: 3}
   descriptionText: "\u30A8\u30CA\u30B8\u30FC\uFF11\u3092\u4E0A\u6607\u3059\u308B\u3002"
   price: 0
   isEffect: 0
