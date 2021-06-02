@@ -175,37 +175,15 @@ MonoBehaviour:
       value: {x: 3, y: 2}
     - type: {fileID: 11400000, guid: 51f379e412015ee42a77e127210b27de, type: 2}
       value: {x: 1, y: 0}
-  - preset: {fileID: 11400000, guid: 00a70789c5c945542acbf2446313c1ac, type: 2}
-    powerSpace: 3
-    emptyPower: 3
-    normalPower: 0
-    brokenPower: 0
-    removeType: 0
-    drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: e83ef9dc409eb9e478c5776d61839dfb, type: 2}
-      value: {x: 0, y: 10}
-  - preset: {fileID: 11400000, guid: 45f93c188ec768a4092b3e17d1a066e2, type: 2}
-    powerSpace: 4
-    emptyPower: 3
-    normalPower: 1
-    brokenPower: 0
-    removeType: 0
-    drawType: 0
-    effects:
-    - type: {fileID: 11400000, guid: f9d049357aac13046b47853e6da940c4, type: 2}
-      value: {x: 5, y: 3}
-    - type: {fileID: 11400000, guid: a1cdb9ca2babb1148a874146bb8f3409, type: 2}
-      value: {x: 3, y: 1}
   relic:
   - {fileID: 11400000, guid: 6afd3d2b7dc4c0c4a85d078d5e6c8b9f, type: 2}
   health: 100
   energy: 3
   drawCard: 5
   shieldClear: 0
-  curHealth: 100
+  curHealth: 56
   coin: 100
-  curBattleSceneData: {fileID: 11400000, guid: a17fa5ce7acf5c64f9d23d9b1b8284c1, type: 2}
+  curBattleSceneData: {fileID: 11400000, guid: 4e9c280ddd5072844901b0df3c46ec6b, type: 2}
   cardDatabase: {fileID: 11400000, guid: 4d00e15ae2266964b90087444de5f554, type: 2}
   startHealth: 100
   startEnergy: 3

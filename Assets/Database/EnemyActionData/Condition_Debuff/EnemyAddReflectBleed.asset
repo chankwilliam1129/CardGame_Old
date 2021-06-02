@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 376aa09d488db5842ad99f3f683f6150, type: 3}
   addCondition: {fileID: 6596643623146930149, guid: 3422cbdb9ec0df64992fc2a4ef580b86, type: 3}
-  condition: {fileID: 4867204155788135912, guid: b0c7536317da1524cac2276fab9f17f3, type: 3}
+  condition: {fileID: -5106975299866540781, guid: dde7583aacaeefb44a034476779c7070, type: 3}
   toPlayer: 0

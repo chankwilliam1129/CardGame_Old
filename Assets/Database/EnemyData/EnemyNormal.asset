@@ -15,7 +15,7 @@ MonoBehaviour:
   name: aaaa
   image: {fileID: 0}
   health: {x: 50, y: 10}
-  isActionRandom: 1
+  isActionRandom: 0
   EnemyNormalActions1:
   - type: {fileID: 11400000, guid: 1bb2cdd6666af1c4f8229af52da98879, type: 2}
     value: {x: 6, y: 1}
