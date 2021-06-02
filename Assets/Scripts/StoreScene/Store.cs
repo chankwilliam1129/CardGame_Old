@@ -9,6 +9,8 @@ public class Store : CardDisplayOnlyGroup
     public CardDisplay[] sellCard = new CardDisplay[5];
     public GameObject soldout;
     public CardRemove cardRemove;
+    public AudioSource audioSource;
+    public List<AudioClip> sounds = new List<AudioClip>();
 
     public static Store Instance { get; private set; }
 
@@ -33,6 +35,7 @@ public class Store : CardDisplayOnlyGroup
 
     public override void OnPointEnter(CardDisplay card)
     {
+        audioSource.PlayOneShot(sounds[2]);
         card.GetComponent<Animator>().SetBool("isTouch", true);
     }
 
@@ -59,10 +62,13 @@ public class Store : CardDisplayOnlyGroup
             Instantiate(cardRemove, card.transform.position, card.transform.rotation, transform).SetUp(card);
             Instantiate(soldout, card.transform.position, soldout.transform.rotation, transform);
             card.gameObject.SetActive(false);
+
+            audioSource.PlayOneShot(sounds[0]);
         }
         else
         {
             TextManager.Instance.notEnoughCoinText.gameObject.SetActive(true);
+            audioSource.PlayOneShot(sounds[1]);
         }
     }
 
