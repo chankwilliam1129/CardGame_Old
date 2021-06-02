@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
+    public PlayerData playerData;
+    public MapData mapData;
+
     public void OnClickStartButton()
     {
-        PlayerData.Instance.StartNewGame();
+        playerData.StartNewGame();
+        mapData.StartNewGame();
         SceneManager.LoadScene("AdventureScene");
     }
 }

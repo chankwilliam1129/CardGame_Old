@@ -7,10 +7,12 @@ public class RelicData : Relic
 {
     [Header("CardEffect")]
     public bool isEffect;
+
     public CardEffect effect;
 
     [Header("PlayerData")]
     public bool isPlayerData;
+
     public int health;
     public int energy;
     public int drawCard;
@@ -18,6 +20,7 @@ public class RelicData : Relic
 
     [Header("Affect")]
     public bool isAffect;
+
     public CardEffectExecutor.AffectType type;
     public Vector2Int valueAdd;
     public Vector2 valueMulti;
@@ -27,6 +30,10 @@ public class RelicData : Relic
         if (isPlayerData)
         {
             PlayerData.Instance.health += health;
+            if (health != 0)
+            {
+                PlayerData.Instance.curHealth = PlayerData.Instance.health;
+            }
             PlayerData.Instance.energy += energy;
             PlayerData.Instance.drawCard += drawCard;
             PlayerData.Instance.shieldClear += shieldClear;
@@ -35,7 +42,7 @@ public class RelicData : Relic
 
     public override void Generate(RelicDisplay relicDisplay)
     {
-        if(isEffect) effect.Generate(Vector2Int.zero, relicDisplay.gameObject);
+        if (isEffect) effect.Generate(Vector2Int.zero, relicDisplay.gameObject);
         if (isAffect)
         {
             Affact a = relicDisplay.gameObject.AddComponent<Affact>();
@@ -44,5 +51,4 @@ public class RelicData : Relic
             a.valueMulti = valueMulti;
         }
     }
-
 }

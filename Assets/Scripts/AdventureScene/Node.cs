@@ -174,8 +174,22 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         float n = Random.Range(0.0f, 100.0f);
 
-        if (n <= 10.0f) SceneManager.LoadScene("TreasureScene");
-        else if (n <= 30.0f) SceneManager.LoadScene("StoreScene");
-        //else if (n <= 50.0f) SceneManager.LoadScene("StoreScene");
+        if (n <= 20.0f) SceneManager.LoadScene("TreasureScene");
+        else if (n <= 45.0f) SceneManager.LoadScene("StoreScene");
+        else if (n <= 70.0f)
+        {
+            PlayerData.Instance.curBattleSceneData = MapManager.Instance.elite;
+            SceneManager.LoadScene("BattleScene");
+        }
+        else if (n < 93.0f)
+        {
+            PlayerData.Instance.curBattleSceneData = MapManager.Instance.minor;
+            SceneManager.LoadScene("BattleScene");
+        }
+        else
+        {
+            PlayerData.Instance.curBattleSceneData = MapManager.Instance.boss;
+            SceneManager.LoadScene("BattleScene");
+        }
     }
 }
