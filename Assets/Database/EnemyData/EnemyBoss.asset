@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851469f42ce5f5a4d9d6aa230523c757, type: 3}
-  m_Name: EnemyStrong
+  m_Name: EnemyBoss
   m_EditorClassIdentifier: 
   name: 
   image: {fileID: 0}
@@ -55,15 +55,9 @@ MonoBehaviour:
     value: {x: 1, y: 1}
   EnemySpecialActions3:
   - type: {fileID: 11400000, guid: 4736c871eaa5bc8479258f1964b25cf8, type: 2}
-    value: {x: 2, y: 2}
-  - type: {fileID: 11400000, guid: 5411c74bc585db44292998afad117836, type: 2}
-    value: {x: 1, y: 0}
-  - type: {fileID: 11400000, guid: a25c0b503f42076479455617fe32309a, type: 2}
-    value: {x: 1, y: 0}
+    value: {x: 12, y: 2}
   - type: {fileID: 11400000, guid: 140da893d188c6b429597542b0aab4f6, type: 2}
-    value: {x: 1, y: 0}
-  - type: {fileID: 11400000, guid: 5d760abc71585944ea38623fe27fb656, type: 2}
-    value: {x: 1, y: 0}
+    value: {x: 3, y: 0}
   EnemySpecialActions4:
   - type: {fileID: 11400000, guid: 99b959e8b22fc4e489a320f010b8fc95, type: 2}
     value: {x: 1, y: 0}

@@ -191,12 +191,13 @@ MonoBehaviour:
   descriptionObject: {fileID: 8980578199419309650}
   descriptionText: {fileID: 8537972878774971718}
   character: {fileID: 0}
-  conditionName: "\u708E"
-  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B\u708E\u4E0A\u52B9\u679C\u3092\u4E0E\u3048\u308B"
-  color: {r: 0, g: 0, b: 0, a: 0}
+  conditionName: "\u96FB\u6C17"
+  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B6\u611F\u96FB\u3092\u4E0E\u3048\u308B"
+  color: {r: 0.6603774, g: 0.5160374, b: 0.003114995, a: 0}
+  particleEffect: {fileID: 0}
   damage: 5
   burning: {fileID: 1562761020270876248, guid: a707b868e59688e4eb0d24e983caf683, type: 3}
-  burning_stack: 4
+  burning_stack: 6
 --- !u!1 &3785246291503731738
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A6_FireFruit
   m_EditorClassIdentifier: 
   index: 0
-  name: 
+  name: "\u767A\u96FB"
   image: {fileID: 21300000, guid: 03b4e9aa57c43f140a520b37a6e43a97, type: 3}
   battleData:
     preset: {fileID: 11400000}

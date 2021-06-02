@@ -230,10 +230,10 @@ MonoBehaviour:
   descriptionObject: {fileID: 4642288194649808784}
   descriptionText: {fileID: 5382133427641990276}
   character: {fileID: 0}
-  conditionName: "\u53CD\u5C04"
-  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u3068\u6575\u306B\u305D\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B"
-  color: {r: 0, g: 0.970598, b: 1, a: 0}
-  damage: 5
+  conditionName: "\u53CD\u6483"
+  description: "\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u3068\u6575\u306B\u540C\u3058\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B"
+  color: {r: 0, g: 0.4609695, b: 0.6603774, a: 0}
+  particleEffect: {fileID: 0}
 --- !u!114 &2071778149655215251
 MonoBehaviour:
   m_ObjectHideFlags: 0

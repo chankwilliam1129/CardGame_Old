@@ -9,7 +9,6 @@ public class ReflectDamageE : Condition
     private void Start()
     {
         character.conditionList.Add(this);
-        //character.characterEvent.OnTurnEnd += OnTurnStart;
         EnemyArea.Instance.enemy.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamage += OnGetDamage;
     }

@@ -11,8 +11,7 @@ public class ReflectBleeding : Condition
     private void Start()
     {
         character.conditionList.Add(this);
-        //character.characterEvent.OnTurnEnd += OnTurnStart;
-        PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
+        character.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamage += OnGetDamage;
     }
 
@@ -29,6 +28,10 @@ public class ReflectBleeding : Condition
             }
             con.Add(bleeding_stack);
         }
+        Settlement();
+        text.text = stack.ToString();
+        if (stack <= 0) Destroy(gameObject);
+
     }
 
 
@@ -46,7 +49,7 @@ public class ReflectBleeding : Condition
 
     public override void DestoryEvent()
     {
-        PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
+        character.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamage -= OnGetDamage;
     }
 

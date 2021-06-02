@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: B0_Draw_2
   m_EditorClassIdentifier: 
   index: 0
-  name: "\u4F9B\u7D66"
+  name: "\u4F9B\u7D66\u54C1"
   image: {fileID: 21300000, guid: 53fc23c7825766f4e8fe3bb258ac6ff1, type: 3}
   battleData:
     preset: {fileID: 11400000}

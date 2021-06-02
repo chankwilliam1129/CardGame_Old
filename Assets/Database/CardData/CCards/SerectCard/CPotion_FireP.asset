@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   name: "\u30D5\u30A1\u30A4\u30A2\u30DD\u30FC\u30B7\u30E7\u30F3"
-  image: {fileID: 21300000, guid: 2daa342313198d748a976fe0684f1afd, type: 3}
+  image: {fileID: 21300000, guid: e78850d2e46204d4d8ee4ea805343048, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: fb5f5c81ceab2ec4a8004e6ecdb6e1bb, type: 2}
       value: {x: 4, y: 0}
     - type: {fileID: 11400000, guid: 99fab41ce5a96a24ca5c44021e560721, type: 2}
-      value: {x: 3, y: 0}
+      value: {x: 6, y: 0}
     - type: {fileID: 11400000, guid: 71f0c8e5c6a991240b4b0025296c6046, type: 2}
       value: {x: 0, y: 0}
   price: 0

@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class ReflectDamage : Condition
 {
-    public int damage;
-    private int reflectdmg;
     private void Start()
     {
         character.conditionList.Add(this);
-        //character.characterEvent.OnTurnEnd += OnTurnStart;
-        PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
+        //PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
+        character.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamage += OnGetDamage;
     }
 
     private void OnGetDamage(object sender, System.EventArgs e)
     {
         DamageEventArgs args = e as DamageEventArgs;
-        if (args.damage >= damage)
+        if (args.damage >= 1)
         {
-            EnemyArea.Instance.enemy.ChangeHealthPoint(-args.damage);
+            args.from.ChangeHealthPoint(-args.damage);
+            //character.ChangeHealthPoint(-args.damage);
         }
-    }
 
+        Settlement();
+        text.text = stack.ToString();
+        if (stack <= 0) Destroy(gameObject);
+
+    }
 
     private void OnTurnStart(object sender, System.EventArgs e)
     {
@@ -38,7 +41,7 @@ public class ReflectDamage : Condition
 
     public override void DestoryEvent()
     {
-        PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
+        character.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamage -= OnGetDamage;
     }
 

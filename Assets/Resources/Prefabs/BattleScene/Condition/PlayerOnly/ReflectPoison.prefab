@@ -325,12 +325,13 @@ MonoBehaviour:
   descriptionObject: {fileID: 7419071980982382422}
   descriptionText: {fileID: 7793553900326243394}
   character: {fileID: 0}
-  conditionName: "\u3069\u304F"
-  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B\u6BD2\u52B9\u679C\u3092\u4E0E\u3048\u308B"
-  color: {r: 0.9276705, g: 0, b: 1, a: 0}
+  conditionName: "\u6BD2\u808C"
+  description: "5\u4EE5\u4E0A\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u308B\u3068\u6575\u306B8\u8150\u8755\u3092\u4E0E\u3048\u308B"
+  color: {r: 0, g: 0.6037736, b: 0.097115286, a: 0}
+  particleEffect: {fileID: 0}
   damage: 5
   poison: {fileID: 2634967354107381714, guid: 8afe0e4eb5e95374b9dfaf099906a386, type: 3}
-  poison_stack: 6
+  poison_stack: 8
 --- !u!1 &6870053239730774306
 GameObject:
   m_ObjectHideFlags: 0

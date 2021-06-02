@@ -488,7 +488,7 @@ MonoBehaviour:
   character: {fileID: 0}
   conditionName: "\u5F31\u4F53"
   description: "\u30AB\u30FC\u30C9\u306B\u3088\u308B\u30A2\u30BF\u30C3\u30AF\u52B9\u679C\u304C1\u6E1B\u5C11\u3059\u308B\u3002"
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 1, g: 0.5424528, b: 0.81223035, a: 0}
   particleEffect: {fileID: 0}
 --- !u!114 &1976162326146329599
 MonoBehaviour:

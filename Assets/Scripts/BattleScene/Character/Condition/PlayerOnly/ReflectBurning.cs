@@ -11,8 +11,7 @@ public class ReflectBurning : Condition
     private void Start()
     {
         character.conditionList.Add(this);
-        //character.characterEvent.OnTurnEnd += OnTurnStart;
-        PlayerArea.Instance.player.characterEvent.OnTurnStart += OnTurnStart;
+        character.characterEvent.OnTurnStart += OnTurnStart;
         character.characterEvent.OnGetDamage += OnGetDamage;
 
     }
@@ -30,9 +29,12 @@ public class ReflectBurning : Condition
             }
             con.Add(burning_stack);
         }
+        Settlement();
+        text.text = stack.ToString();
+        if (stack <= 0) Destroy(gameObject);
     }
 
-    
+
     private void OnTurnStart(object sender, System.EventArgs e)
     {
         Settlement();
@@ -47,7 +49,7 @@ public class ReflectBurning : Condition
 
     public override void DestoryEvent()
     {
-        PlayerArea.Instance.player.characterEvent.OnTurnStart -= OnTurnStart;
+        character.characterEvent.OnTurnStart -= OnTurnStart;
         character.characterEvent.OnGetDamage -= OnGetDamage;
 
     }
