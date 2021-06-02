@@ -21,6 +21,11 @@ public class MapManager : MonoBehaviour
     public float nodeWidthSize;
     public float nodeHeightSize;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public List<AudioClip> sounds = new List<AudioClip>();
+
+    [Space]
     public NodeData[] nodeDatas = new NodeData[(int)NodeType.Max];
     public List<GameObject> parentList = new List<GameObject>();
     public List<List<Node>> nodeMap = new List<List<Node>>();

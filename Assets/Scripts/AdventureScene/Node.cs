@@ -33,6 +33,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if(IsNext()) MapManager.Instance.audioSource.PlayOneShot(MapManager.Instance.sounds[0]);
         GetComponent<Animator>().SetBool("isTouch", true);
     }
 
@@ -94,6 +95,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         return location == MapData.Instance.playerLocation;
     }
 
+    private bool IsNext()
+    {
+        return location.y == MapData.Instance.playerLocation.y + 1 && MapData.Instance.GetPlayerNode().next.Contains(location.x);
+    }
+
     public void StateCheck()
     {
         if (IsSameLocation())
@@ -111,7 +117,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                 GetComponent<Animator>().SetInteger("State", 1);
             }
         }
-        else if (location.y == MapData.Instance.playerLocation.y + 1 && MapData.Instance.GetPlayerNode().next.Contains(location.x))
+        else if (IsNext())
         {
             GetComponent<Animator>().SetInteger("State", 3);
         }
