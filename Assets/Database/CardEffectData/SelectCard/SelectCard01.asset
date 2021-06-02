@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 236deb445eed3e24fa7a68d31e44ba28, type: 2}
   - {fileID: 11400000, guid: cc2afde8498e9ee4badf77e89677190b, type: 2}
   selectCard: {x: 1, y: 0}
+  cardName: "\u652F\u63F4\u30AB\u30FC\u30C9"

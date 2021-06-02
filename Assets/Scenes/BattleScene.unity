@@ -1153,8 +1153,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819792466}
-  - component: {fileID: 819792468}
   - component: {fileID: 819792467}
+  - component: {fileID: 819792468}
   - component: {fileID: 819792472}
   - component: {fileID: 819792470}
   - component: {fileID: 819792469}
@@ -1200,7 +1200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571c73c8e706f6f44ae5a8d506b0a222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 11400000, guid: 47c36b98f10cf0b4b93fbae535042bb6, type: 2}
+  character: {fileID: 819792468}
+  enemy: {fileID: 0}
   enemyActionGroup: {fileID: 663945363}
   enemyAction: {fileID: 2326580279179055738, guid: aac22a10fc38ab44983d05a7fff8f434, type: 3}
   level: 0
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 0}
+  enemyDisplay: {fileID: 819792467}
 --- !u!1 &853784779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,7 +2641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f1094032c53af49b26f46778e0ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 819792468}
 --- !u!1 &1531594881
 GameObject:
   m_ObjectHideFlags: 0

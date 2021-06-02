@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   name: "\u9023\u6483"
-  image: {fileID: 21300000, guid: f5418f7e07707e14993ddbeb29791bf2, type: 3}
+  image: {fileID: 21300000, guid: 72b5c9a84aea28741abd6731aa7d2b59, type: 3}
   battleData:
     preset: {fileID: 11400000}
-    powerSpace: 5
+    powerSpace: 6
     emptyPower: 3
     normalPower: 1
     brokenPower: 0

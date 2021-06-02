@@ -28,7 +28,6 @@ public class RelicDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (relicData != null)
         {
             Setup();
-            relicData.Generate(this);
         }
     }
 

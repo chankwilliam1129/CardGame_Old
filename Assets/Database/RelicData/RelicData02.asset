@@ -14,6 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\u30B3\u30A2"
   image: {fileID: 21300000, guid: 67781b9def744fd47a94e991d8bdd9b6, type: 3}
-  descriptionText: "\u30BF\u30FC\u30F3\u958B\u59CB\u6642\u306B\u30AB\u30FC\u30C9\u30921\u679A\u5F15\u304F\u3002"
+  descriptionText: "\u30BF\u30FC\u30F3\u958B\u59CB\u6642\u306B\u30AB\u30FC\u30C9\u30921\u679A\u5F15\u304F\u3001\u30AB\u30FC\u30C9\u30921\u679A\u6368\u3066\u308B\u3002"
   price: 0
+  isEffect: 1
   effect: {fileID: 11400000, guid: 5c64b22cd20ad3d43b178f7d818a3c9b, type: 2}
+  isPlayerData: 0
+  health: 0
+  energy: 0
+  drawCard: 0
+  shieldClear: 0
+  isAffect: 0
+  type: 0
+  valueAdd: {x: 0, y: 0}
+  valueMulti: {x: 0, y: 0}

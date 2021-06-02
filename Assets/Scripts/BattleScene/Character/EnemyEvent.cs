@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyEvent : CharacterEvent
 {
+    public EnemyDisplay enemyDisplay;
     public new void Start()
     {
         base.Start();
 
         BattleStateManager.Instance.OnEnemyTurnStart += OnEnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd += OnEnemyTurnEnd;
+        OnTurnStart += TurnStartShieldClear;
         OnCharacterDied += OnEnemyDied;
     }
 
@@ -17,6 +19,7 @@ public class EnemyEvent : CharacterEvent
     {
         BattleStateManager.Instance.OnEnemyTurnStart -= OnEnemyTurnStart;
         BattleStateManager.Instance.OnEnemyTurnEnd -= OnEnemyTurnEnd;
+        OnTurnStart -= TurnStartShieldClear;
         OnCharacterDied -= OnEnemyDied;
     }
 
@@ -25,10 +28,16 @@ public class EnemyEvent : CharacterEvent
         BattleStateManager.Instance.SetBattleEnd(true);
     }
 
+    private void TurnStartShieldClear(object sender, EventArgs e)
+    {
+        character.SetShield(0);
+    }
+
     public override void StatusSetUp()
     {
-        character.SetHealthPointMax(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
-        character.SetHealthPoint(GetComponent<EnemyDisplay>().enemy.GetHealth(MapData.Instance.playerLocation.y));
+        enemyDisplay.enemy = PlayerData.Instance.curBattleSceneData.GetEnemy();
+        character.SetHealthPointMax(enemyDisplay.enemy.GetHealth(MapData.Instance.playerLocation.y));
+        character.SetHealthPoint(enemyDisplay.enemy.GetHealth(MapData.Instance.playerLocation.y));
         character.SetShield(0);
     }
 

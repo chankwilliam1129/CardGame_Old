@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   name: 
-  image: {fileID: 21300000, guid: 2daa342313198d748a976fe0684f1afd, type: 3}
+  image: {fileID: 21300000, guid: 03b4e9aa57c43f140a520b37a6e43a97, type: 3}
   battleData:
     preset: {fileID: 11400000}
     powerSpace: 0
-    emptyPower: 2
+    emptyPower: 3
     normalPower: 2
     brokenPower: 0
     removeType: 0
     drawType: 0
     effects:
     - type: {fileID: 11400000, guid: fb5f5c81ceab2ec4a8004e6ecdb6e1bb, type: 2}
-      value: {x: 5, y: 0}
+      value: {x: 8, y: 0}
     - type: {fileID: 11400000, guid: e0bfcd8262223e344949fbd3df50c4d4, type: 2}
       value: {x: 2, y: 0}
     - type: {fileID: 11400000, guid: 97a0cce88c7a8bc47ae0b038f759d8b9, type: 2}

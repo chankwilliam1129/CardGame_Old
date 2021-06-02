@@ -14,5 +14,6 @@ public abstract class Relic : ScriptableObject
     [Header("StoreData")]
     public int price;
 
+    public abstract void Add();
     public abstract void Generate(RelicDisplay relicDisplay);
 }

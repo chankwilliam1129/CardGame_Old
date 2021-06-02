@@ -8,6 +8,14 @@ public class PlayerData : ScriptableObject
     public List<CardBattleData> deck = new List<CardBattleData>();
     public List<Relic> relic = new List<Relic>();
 
+    public int health;
+    public int energy;
+    public int drawCard;
+    public float shieldClear;
+
+    [Space]
+    public int curHealth;
+
     public int coin;
 
     public BattleSceneData curBattleSceneData;

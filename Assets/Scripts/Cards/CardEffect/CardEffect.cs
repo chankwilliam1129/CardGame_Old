@@ -30,7 +30,7 @@ public abstract class CardEffect : ScriptableObject
 
             if (value.y == 0)
             {
-                return new Vector2Int((int)temp.x, 0);
+                return new Vector2Int(Mathf.Max((int)temp.x, 1), 0);
             }
             else
             {

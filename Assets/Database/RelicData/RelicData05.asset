@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a658779b34fa2e48b62eec2aca4618d, type: 3}
+  m_Name: RelicData05
+  m_EditorClassIdentifier: 
+  name: 
+  image: {fileID: 0}
+  descriptionText: "\u30A8\u30CA\u30B8\u30FC\uFF11\u3092\u4E0A\u6607\u3059\u308B\u3002"
+  price: 0
+  isEffect: 0
+  effect: {fileID: 0}
+  isPlayerData: 1
+  health: 0
+  energy: 1
+  drawCard: 0
+  shieldClear: 0
+  isAffect: 0
+  type: 0
+  valueAdd: {x: 0, y: 0}
+  valueMulti: {x: 0, y: 0}

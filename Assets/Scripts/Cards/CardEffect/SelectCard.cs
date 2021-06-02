@@ -9,10 +9,11 @@ public class SelectCard : CardEffect
     public List<Card> cardList;
 
     public Vector2Int selectCard;
+    public string cardName;
 
     public override string GetDescription(Vector2Int value, bool isFinal)
     {
-        return GetValueString(value, isFinal) + "枚のカードから" + GetValueString(selectCard, isFinal) + "枚を選び、手札に加える。";
+        return GetValueString(value, isFinal) + "枚の" + cardName + "から" + GetValueString(selectCard, isFinal) + "枚を選び、手札に加える。";
     }
 
     public override void Execute(Vector2Int value, int power,CardDisplay cardDisplay)
@@ -23,8 +24,8 @@ public class SelectCard : CardEffect
         int draw = GetFinalValue(value, power);
         for (int i = 0; i < draw; i++)
         {
-            //group.Add(cardList[Random.Range(0, cardList.Count)].battleData);
-            group.Add(cardList[i].battleData);
+            if (i >= cardList.Count) group.Add(cardList[Random.Range(0, cardList.Count)].battleData);
+            else group.Add(cardList[i].battleData);
         }
     }
 }
