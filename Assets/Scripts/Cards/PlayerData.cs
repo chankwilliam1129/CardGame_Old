@@ -13,6 +13,9 @@ public class PlayerData : ScriptableObject
     public int drawCard;
     public float shieldClear;
 
+    [Space]
+    public int curHealth;
+
     public int coin;
 
     public BattleSceneData curBattleSceneData;

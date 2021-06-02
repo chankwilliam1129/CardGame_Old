@@ -22,6 +22,8 @@ public class PlayerEvent : CharacterEvent
         BattleStateManager.Instance.OnPlayerTurnEnd -= OnPlayerTurnEnd;
         OnTurnStart -= TurnStartShieldClear;
         OnCharacterDied -= OnPlayerDied;
+
+        PlayerData.Instance.curHealth = character.GetHealthPoint();
     }
 
     private void TurnStartShieldClear(object sender, EventArgs e)
@@ -36,8 +38,8 @@ public class PlayerEvent : CharacterEvent
 
     public override void StatusSetUp()
     {
-        character.SetHealthPointMax(100);
-        character.SetHealthPoint(100);
+        character.SetHealthPointMax(PlayerData.Instance.health);
+        character.SetHealthPoint(PlayerData.Instance.curHealth);
         character.SetShield(0);
     }
 
